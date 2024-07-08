@@ -1,0 +1,112 @@
+---
+title: Display
+description: A title designed for prominent display at large sizes, specifically for use in the hero section of a webpage.
+priorityOrder : 18
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import ComponentPreview from "@components/ComponentPreview"
+import { Display } from "@components/typography"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import { displayProps } from "@react-ui/typography/reference"
+import Table from "@components/Table.astro"
+
+export const components = {
+    ..._components
+}
+
+export const componentCode = `import React from "react"
+import {
+    display,
+    type DisplayProps as DisplayVariants,
+    type TextAlignProp,
+    type TextWeightProp
+} from "@tailus/themer"
+
+type DisplaySize = DisplayVariants["size"]
+type DisplaySizeProp = DisplaySize |  {
+    initial?: DisplaySize,
+    sm?: DisplaySize,
+    md?: DisplaySize,
+    lg?: DisplaySize,
+    xl?: DisplaySize,
+    xxl?: DisplaySize,
+}
+
+export interface DisplayProps extends React.HTMLAttributes<HTMLHeadingElement> {
+    as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div" | "span",
+    children: React.ReactNode,
+    className?: string,
+    size?: DisplaySizeProp;
+    align?: TextAlignProp;
+    weight? : TextWeightProp
+}
+
+export const Display: React.FC<DisplayProps> = ({
+    size,
+    as="h1",
+    weight,
+    align,
+    children,
+    className,
+    ...props
+}) => {
+    const DisplayElement = as
+    return (
+        <DisplayElement className={display({
+            size,
+            weight,
+            align,
+            className
+        })} {...props}>
+            {children}
+        </DisplayElement>
+    )
+}
+
+Display.displayName = "Display"`
+
+export const component = {
+    code : componentCode,
+    lang:"tsx",
+    file:"tsx",
+    filename:"Display.tsx",
+}
+
+export const usage = [
+  {
+    code: `import { Display } from "@tailus-ui/typography";`,
+    lang: "tsx",
+  },
+  {
+    code: `const HeroSection = () => (
+    <Display>A Display</Display>
+)`,
+    lang: "tsx",
+  }
+]
+
+<div className="space-y-20">
+    <ComponentPreview>
+        <Display>A Display</Display>
+    </ComponentPreview>
+    <div>
+        ## Installation
+        Copy-Paste the component code in a `.tsx` file.
+
+        <CodeSnippet {...component} client:visible />
+    </div>
+
+    <div>
+        ## Usage
+        Import the `<Display/>` in your hero section component and start building.
+        <DocsStackedSnippets snippets={usage} client:visible />
+    </div>
+
+    <div>
+        ## Reference
+        The Display component has the following props
+        <Table data={displayProps} />
+    </div>
+</div>

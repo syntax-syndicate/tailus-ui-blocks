@@ -1,0 +1,99 @@
+---
+title: Cartesian Grid
+description: Learn how to use Data Visualization components in Tailus UI
+priorityOrder : 61
+frameworkDocs : 
+    name : Recharts
+    link : https://recharts.org/en-US/api/CartesianGrid
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import Banner from "@components/Banner"
+import { Code, Text, Title } from "@components/typography"
+import {
+    CartesianGridOverview,
+    CartesianGridDashed,
+    CartesianGridHorizontal,
+    CartesianGridVertical,
+    dashedCode,
+    verticalCode,
+    horizontalCode
+} from "@react-ui/visualizations"
+import ComponentPreview from "@components/ComponentPreview"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+
+export const components = {
+    ..._components
+}
+
+export const usage = [
+    {
+        code: `import { CartesianGrid } from 'recharts';
+import { cartesianGrid } from '@tailus/themer';`,
+        lang : "tsx"
+    },
+    {
+        code: `<CartesianGrid
+    className={cartesianGrid()}
+    stroke="currentColor"
+/>`,
+        lang: "tsx",
+    }
+]
+
+<div className="space-y-20">
+    <ComponentPreview>
+        <CartesianGridOverview client:visible />
+    </ComponentPreview>
+    <div>
+        ## Installation
+
+        No installation is required for the Cartesian Grid component. You can use it directly in your project.
+    </div>
+
+    <div>
+        ## Usage
+        
+        Import the `<CartesianGrid />` and start using
+        
+        <DocsStackedSnippets snippets={usage} />
+    </div>
+
+    <div>
+        ## Examples
+        
+        <div className="space-y-12">
+            <div>
+                ### Dashed Stroke
+
+                <PreviewBlock
+                    codeBlocks={dashedCode}
+                >
+                    <CartesianGridDashed client:visible/>
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Vertical Only
+
+                <PreviewBlock
+                    codeBlocks={verticalCode}
+                >
+                    <CartesianGridVertical client:visible/>
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Horizontal Only
+
+                <PreviewBlock
+                    codeBlocks={horizontalCode}
+                >
+                    <CartesianGridHorizontal client:visible/>
+                </PreviewBlock>
+            </div>
+        </div>
+    </div>
+</div>

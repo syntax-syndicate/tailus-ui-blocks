@@ -1,0 +1,22 @@
+---
+title: Hover Card
+description: For sighted users to preview content available behind a link.
+priorityOrder : 43
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import ComponentPreview from "@components/ComponentPreview"
+import {  overviewCode } from "@react-ui/banner/Overview"
+import { Overview } from "@react-ui/hover-card/Overview"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <ComponentPreview>
+        <Overview client:visible/>
+    </ComponentPreview>
+</div>

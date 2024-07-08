@@ -1,0 +1,128 @@
+---
+title: Toggle
+description: A two-state button that can be either on or off.
+priorityOrder : 58
+frameworkDocs : 
+    name : Radix UI
+    link : https://www.radix-ui.com/primitives/docs/components/toggle#api-reference
+---
+
+import _components from "@content/_components"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+
+import { Overview, overviewCode } from "@react-ui/toggle/Overview"
+import { WithLabel, withLabelCode } from "@react-ui/toggle/WithLabel"
+import { Mixed, mixedCode } from "@react-ui/toggle/Mixed"
+import { Plain, plainCode } from "@react-ui/toggle/Plain"
+import { SoftToSolid, softToSolidCode } from "@react-ui/toggle/SoftToSolid"
+import { Colors, colorsCode } from "@react-ui/toggle/Colors"
+import { Sizes, sizesCode } from "@react-ui/toggle/Sizes"
+import { rootProps, iconProps } from "@react-ui/toggle/reference"
+import { installation, usage } from "@react-ui/toggle/codeSnippets"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+
+    <PreviewBlock
+        codeBlocks={overviewCode}
+    >
+        <Overview client:visible/>
+    </PreviewBlock>
+
+
+    <div>
+        ## Installation
+
+        Install the primitive and Copy-Paste the component code in a `.tsx` file.
+
+        <DocsStackedSnippets snippets={installation} client:visible/>
+    </div>
+
+    <div>
+        ## Usage
+
+        Import all the parts and build your Toggle.
+        
+        <DocsStackedSnippets snippets={usage} client:visible/>
+    </div>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 space-y-12 mb-12"> 
+            <div>
+                ### Root 
+
+                The parent component of the `Toggle` component
+
+                <Table data={rootProps} />
+            </div>
+
+            <div>
+                ### Icon
+
+                The Icon of the Toggle component
+                <Table data={iconProps} />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        ## Examples
+
+        <div className="mt-6 space-y-12">
+            <div>
+                ### With Label
+
+                <PreviewBlock codeBlocks={withLabelCode}>
+                    <WithLabel client:visible/>
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Plain
+
+                <PreviewBlock codeBlocks={plainCode}>
+                    <Plain client:visible/>
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Mixed
+
+                <PreviewBlock codeBlocks={mixedCode}>
+                    <Mixed client:visible/>
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Soft To Solid
+
+                <PreviewBlock codeBlocks={softToSolidCode}>
+                    <SoftToSolid client:visible/>
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Colors
+
+                <PreviewBlock codeBlocks={colorsCode}>
+                    <Colors client:visible/>
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Sizes
+
+                <PreviewBlock codeBlocks={sizesCode}>
+                    <Sizes client:visible/>
+                </PreviewBlock>
+            </div>
+        </div>
+    </div>
+</div>

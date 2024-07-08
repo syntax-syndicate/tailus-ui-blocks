@@ -1,0 +1,66 @@
+---
+name: 'astrolus-free'
+title: Sleek landing page
+priority: 9
+coverImageLink: /images/templates/astrolus-free/1.webp
+shortDescription: Beautiful landing page template, built Tailus UI Astro.
+price : Free
+rating : 
+    rate : 5
+    count : 54
+stack : ["html"]
+previewLink: 'https://preview.tailus.io/astrolus-free'
+purchaseLink: 'https://github.com/Tailus-UI/astro-theme/archive/refs/heads/main.zip'
+githubLink : "https://github.com/Tailus-UI/astro-theme"
+---
+
+import _components from "@content/_components"
+import CustomImage from "@components/utilities/TemplateImage"
+import { Card } from "@components/Card"
+import { NextIcon, HTMLIcon, AstroIcon, NuxtIcon } from "@components/utilities/icons"
+import { RatingComparison } from "@components/Rating"
+
+export const components = {
+    ..._components
+}
+
+<div>
+    Astrolus is perfect for a SaaS, startup or your next marketing campaign to showcase your business and services. The template includes various design blocks including : 
+
+    - Hero section 
+    - Logo cloud
+    - Features section 
+    - Content section
+    - Wall Of Love
+    - Call to action
+    - Blog articles
+    - Footer 
+</div>
+
+<div>
+    ## Screenshots
+
+    <CustomImage src="/images/templates/astrolus-free/2.webp" alt="Tailus UI Astrolus Free home screenshot" client:visible />
+    <CustomImage src="/images/templates/astrolus-free/3.webp" alt="Tailus UI Astrolus Free home screenshot" client:visible />
+    <CustomImage src="/images/templates/astrolus-free/4.webp" alt="Tailus UI Astrolus Free home screenshot" client:visible />
+    <CustomImage src="/images/templates/astrolus-free/5.webp" alt="Tailus UI Astrolus Free home screenshot" client:visible />
+</div>
+
+<div>
+    ## Dark mode
+
+    <CustomImage src="/images/templates/astrolus-free/6.webp" alt="Tailus UI Astrolus Free home dark mode screenshot" client:visible />
+    <CustomImage src="/images/templates/astrolus-free/7.webp" alt="Tailus UI Astrolus Free home dark mode screenshot" client:visible />
+</div>
+
+<div>
+    <RatingComparison
+        rating={{
+            one : 0,
+            two: 0,
+            three: 0,
+            four: 4,
+            five: 96
+        }}
+    />
+</div>

@@ -1,0 +1,88 @@
+---
+title: Linear Gradient
+description: Use linear gradients to style your aria charts
+priorityOrder : 64
+frameworkDocs : 
+    name : Recharts
+    link : https://recharts.org/en-US/api/XAxis
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import { Code, Text, Title } from "@components/typography"
+import {
+    LinearGradientOverview,
+    linearGradientProps
+} from "@react-ui/visualizations"
+import ComponentPreview from "@components/ComponentPreview"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import Table from "@components/Table.astro"
+
+export const components = {
+    ..._components
+}
+
+export const componentCode = `import React from 'react';
+import { gradientStop, type AreaProps as AreaVariants } from "@tailus/themer"
+
+export const LinearGradient: React.FC<Omit<AreaVariants, "gradient"> & {id:string}> = ({intent, id}) => {
+    return (
+        <linearGradient x1={0} y1={0} x2={0} y2={1} id={id}>
+            <stop className={gradientStop({intent})} offset="5%" stopColor="currentColor" stopOpacity={0.8} />
+            <stop className="text-white dark:text-gray-950" offset="95%" stopColor="currentColor" stopOpacity={0} />
+        </linearGradient>
+    )
+}`
+export const component = {
+    code : componentCode,
+    lang:"tsx",
+}
+
+export const usage = [
+    {
+        code: `import { LinearGradient } from '@tailus-ui/visualizations';`,
+        lang : "tsx"
+    },
+    {
+        code: `<defs>
+    <LinearGradient intent="gray" id="Gray" />
+    <LinearGradient intent="accent" id="Accent" />
+    <LinearGradient intent="primary" id="Primary" />
+</defs>`,
+        lang: "tsx",
+    }
+]
+
+<div className="space-y-20">
+    <ComponentPreview >
+        <LinearGradientOverview client:visible />
+    </ComponentPreview>
+    <div>
+        ## Installation
+
+        Copy-paste the component code in a file named `LinearGradient.tsx` in your tailus-ui/visualizations folder.
+        
+        <CodeSnippet {...component} client:visible />
+    </div>
+
+    <div>
+        ## Usage
+        
+        Import the `<LinearGradient />` component from your local files and use it inside the `<defs>` tag in your AreaChart component.
+        
+        <DocsStackedSnippets snippets={usage} client:visible/>
+
+        Assign a unique identifier to the `<LinearGradient />` component using the `id` prop, for example `id="Gray"`. Then, use this `id` as the value for the `fill` prop of the `<Area />` component in your AreaChart, like so: `fill="url(#Gray)"`. This links the gradient with the `id="Gray"` to the area it should be applied to.
+
+        <CodeSnippet code={`<Area stroke="currentColor" fill="url(#Gray)" dataKey="Gray" />`} lang="tsx" />
+    </div>
+
+    <div>
+        ## Reference
+        
+        The LinearGradient component has the following props
+
+        <Table data={linearGradientProps} />
+    </div>
+</div>

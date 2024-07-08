@@ -1,0 +1,223 @@
+---
+title: Typography
+description: Hyperlinks create a web of information, allowing readers to explore related topics in more detail.
+priorityOrder : 17
+slug : typography
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import Banner from "@components/Banner"
+import ComponentPreview from "@components/ComponentPreview"
+import { Link, Display, Title, Text, List, Caption, Code, Kbd } from "@components/typography"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import Table from "@components/Table.astro"
+import PreviewBlock from "@components/PreviewBlock.astro"
+
+export const components = {
+    ..._components
+}
+
+export const componentCode = `📂 tailus-ui
+   📂 typography
+       📄 Caption.tsx
+       📄 Code.tsx
+       📄 Display.tsx
+       📄 index.ts
+       📄 Kbd.tsx
+       📄 Link.tsx
+       📄 List.tsx
+       📄 Text.tsx
+       📄 Title.tsx
+
+// ... your other components
+`
+
+export const component = {
+    code : componentCode,
+    lang:"tsx",
+    file:"tsx",
+    filename:"Link.tsx",
+}
+
+export const usage = [
+  {
+    code: `import {
+    Text,
+    Link,
+    List,
+    Display,
+    Title,
+    Caption,
+    Code,
+    Kbd
+} from "@tailus-ui/typography";`,
+    lang: "tsx",
+  },
+  {
+    code: `const MyComponent = () => (
+    <div>
+        <Display>Build Custom Web UIs</Display>
+        <Title className="mt-6" size="3xl">Title for Headings</Title>
+        <Text>
+            Highly <Link variant="underlined" size="base" href="https://tailus.io" target="_blank" rel="noopener noreferrer">customizable components</Link> for building <Text as="strong">modern</Text> websites and <Text as="em">applications</Text> that look and feel the way you want.
+        </Text>
+        <Caption className="mb-6">Caption</Caption>
+        
+        <div className="flex gap-3">
+            <Code className="-mt-px">Code</Code>
+            <Kbd className="-mb-px">Kbd</Kbd>
+        </div>
+        <List neutral>
+            <li>Modern</li>
+            <li>Customizable</li>
+            <li>Responsive</li>
+            <li>Accessible</li>
+        </List>
+    </div>
+)`,
+    lang: "tsx",
+  }
+]
+
+export const intent = [
+  {
+    code: `const MyCodes = () => (
+    <div className="flex flex-wrap gap-3">
+        <Link href="#" intent="primary">primary</Link>
+        <Link href="#" intent="secondary">secondary</Link>
+        <Link href="#" intent="accent">accent</Link>
+        <Link href="#" intent="success">success</Link>
+        <Link href="#" intent="danger">danger</Link>
+        <Link href="#" intent="info">info</Link>
+        <Link href="#" intent="warning">warning</Link>
+        <Link href="#" intent="gray">gray</Link>
+        <Link href="#" intent="neutral">neutral</Link>
+    </div>
+)`,
+    lang: "tsx",
+  }
+]
+
+export const variant = [
+  {
+    code: `const MyCodes = () => (
+    <div className="flex flex-wrap gap-3">
+        <Link href="#" variant="plain">plain</Link>
+        <Link href="#" variant="underlined">underlined</Link>
+        <Link href="#" variant="ghost">ghost</Link>
+        <Link href="#" variant="animated">animated</Link>
+    </div>
+)`,
+    lang: "tsx",
+  }
+]
+
+export const size = [
+  {
+        code: `<Display 
+    as="h1"
+
+    size={{
+        initial: "4xl",
+        sm: "5xl",
+        md: "6xl",
+        lg: "7xl",
+        xl: "8xl",
+        xxl: "9xl"
+    }}
+
+    align={{
+        initial: "left",
+        sm: "center",
+    }}
+
+    weight={{
+        initial: "bold",
+        sm: "black",
+    }}
+>
+    Build Custom Web UIs
+</Display>`,
+    lang: "tsx",
+  }
+]
+
+<div className="space-y-20">
+    <ComponentPreview>
+        <div className="[--body-text-color:theme(colors.gray.600)] dark:[--body-text-color:theme(colors.gray.400)]">
+            <Display size={{initial:"4xl", xl:"8xl"}} className="text-5xl">Build Custom Web UIs</Display>
+            <Title className="mt-6" size="3xl">Title for Headings</Title>
+            <Text>
+                Highly <Link variant="underlined" size="base" href="https://tailus.io" target="_blank" rel="noopener noreferrer">customizable components</Link> for building <Text as="strong">modern</Text> websites and <Text as="em">applications</Text> that look and feel the way you want.
+            </Text>
+            <Caption className="mb-6">Caption</Caption>
+            
+            <div className="flex gap-3">
+                <Code className="-mt-px">Code</Code>
+                <Kbd className="-mb-px">Kbd</Kbd>
+            </div>
+            <List neutral>
+                <li>Modern</li>
+                <li>Customizable</li>
+                <li>Responsive</li>
+                <li>Accessible</li>
+            </List>
+        </div>
+    </ComponentPreview>
+    <div>
+        ## Installation
+        <Link href="/react-typography.zip" download>Download</Link> and place typography components in **tailus-ui/typography** folder or install each component individually.
+        <CodeSnippet {...component} client:visible />
+
+        <Banner.Root intent="gray" className="border-none mt-6">
+            <Banner.Content>
+                <Banner.Icon>
+                    <svg className="size-6 text-[--title-text-color] opacity-50" xmlns="http://www.w3.org/2000/svg" width="0.75em" height="1em" viewBox="0 0 384 512"><path fill="currentColor" d="m252.879 446.324l-94.223 25.247c-6.713 1.798-13.676-2.222-15.475-8.935c-1.798-6.712 2.222-13.676 8.934-15.474l94.223-25.247c6.713-1.798 13.676 2.221 15.475 8.934c1.8 6.713-2.222 13.676-8.934 15.475m-43.626-289.558c-.844 11.486-7.341 17.96-17.428 17.796c-10.043-.162-17.352-7.045-17.111-17.526c.234-10.198 6.628-16.897 17.505-16.778c10.87.117 16.258 6.54 17.034 16.508m120.795-38.71C292.565 56.148 218.325 26.069 149.354 46.22C88.995 63.856 49.64 103.71 35.33 165.003c-14.164 60.666 3.466 112.846 48.085 156.545c10.464 10.249 20.085 22.663 25.984 35.91c5.914 13.278 7.81 17.43 22.215 13.944c20.006-4.841 39.744-10.787 59.746-15.646c10.254-2.491 14.15-8.216 14.082-18.553c-.274-41.72-.182-83.443-.03-125.164c.033-9.444-2.935-17.22-13.096-17.456c-10.286-.239-13.435 7.277-13.349 16.905c.238 27.049.072 54.1.07 81.15c-.001 43.515 0 43.515-42.787 49.767c-16.266-18.638-31.078-35.392-45.653-52.351c-52.31-60.866-42.744-150.842 22.543-197.443c46.904-33.481 97.29-35.344 147.525-7.075c46.644 26.25 72.02 80.33 65.294 132.645c-4.493 34.948-21.181 62.845-45.933 86.826c-14.938 14.473-28.55 30.055-33.45 50.982c-2.292 9.788-7.78 14.643-17.262 16.98c1.772-1.647-102.202 27.486-102.202 27.486c-6.578 1.762-10.517 8.586-8.754 15.163l.271 1.017c1.763 6.577 8.586 10.517 15.164 8.755c0 0 119.3-32.058 120.864-32.501c11.048-3.05 17.061-10.915 17.313-22.141c.376-16.759 7.658-29.803 19.508-40.938c6.344-5.962 12.66-11.977 18.63-18.306c49.276-52.263 57.408-131.562 19.94-193.449z"/></svg>
+                </Banner.Icon>
+                <div className="space-y-3 -mb-4">
+                    <Title as="h3" size="base" weight="medium">Important</Title>
+                    <Text className="[--body-text-color:theme(colors.gray.700)] dark:[--body-text-color:theme(colors.gray.300)]">
+                        If you're installing each component separately, it's important to remember to export all of these components in the <Code intent="neutral">index.ts</Code> file. This ensures that they can be easily imported from other parts of your application.
+                    </Text>
+                </div>
+            </Banner.Content>
+        </Banner.Root>
+    </div>
+
+    <div>
+        ## Usage
+        Import the needed components and use them in your project.
+        <DocsStackedSnippets snippets={usage} />
+    </div>
+
+    <div>
+        ## Responsive
+
+        Some of the typography components props such as `size`, `align`, `weight` support responsive values. You can pass a string or an object to the prop where the key is the breakpoint and the value is the prop value. 
+        <CodeSnippet {...size[0]} client:visible />   
+
+        <Banner.Root intent="gray" className="border-none mt-6">
+            <Banner.Content>
+                <Banner.Icon>
+                    <svg className="size-6 text-[--title-text-color] opacity-50" xmlns="http://www.w3.org/2000/svg" width="0.75em" height="1em" viewBox="0 0 384 512"><path fill="currentColor" d="m252.879 446.324l-94.223 25.247c-6.713 1.798-13.676-2.222-15.475-8.935c-1.798-6.712 2.222-13.676 8.934-15.474l94.223-25.247c6.713-1.798 13.676 2.221 15.475 8.934c1.8 6.713-2.222 13.676-8.934 15.475m-43.626-289.558c-.844 11.486-7.341 17.96-17.428 17.796c-10.043-.162-17.352-7.045-17.111-17.526c.234-10.198 6.628-16.897 17.505-16.778c10.87.117 16.258 6.54 17.034 16.508m120.795-38.71C292.565 56.148 218.325 26.069 149.354 46.22C88.995 63.856 49.64 103.71 35.33 165.003c-14.164 60.666 3.466 112.846 48.085 156.545c10.464 10.249 20.085 22.663 25.984 35.91c5.914 13.278 7.81 17.43 22.215 13.944c20.006-4.841 39.744-10.787 59.746-15.646c10.254-2.491 14.15-8.216 14.082-18.553c-.274-41.72-.182-83.443-.03-125.164c.033-9.444-2.935-17.22-13.096-17.456c-10.286-.239-13.435 7.277-13.349 16.905c.238 27.049.072 54.1.07 81.15c-.001 43.515 0 43.515-42.787 49.767c-16.266-18.638-31.078-35.392-45.653-52.351c-52.31-60.866-42.744-150.842 22.543-197.443c46.904-33.481 97.29-35.344 147.525-7.075c46.644 26.25 72.02 80.33 65.294 132.645c-4.493 34.948-21.181 62.845-45.933 86.826c-14.938 14.473-28.55 30.055-33.45 50.982c-2.292 9.788-7.78 14.643-17.262 16.98c1.772-1.647-102.202 27.486-102.202 27.486c-6.578 1.762-10.517 8.586-8.754 15.163l.271 1.017c1.763 6.577 8.586 10.517 15.164 8.755c0 0 119.3-32.058 120.864-32.501c11.048-3.05 17.061-10.915 17.313-22.141c.376-16.759 7.658-29.803 19.508-40.938c6.344-5.962 12.66-11.977 18.63-18.306c49.276-52.263 57.408-131.562 19.94-193.449z"/></svg>
+                </Banner.Icon>
+                <div className="space-y-3 -mb-4">
+                    <Title as="h3" size="base" weight="medium">Important</Title>
+                    <Text className="[--body-text-color:theme(colors.gray.700)] dark:[--body-text-color:theme(colors.gray.300)]">
+                        Read each component's reference to see which props support responsive values. Responsive props are marked with a <Code intent="neutral">~</Code> symbol.
+                    </Text>
+                </div>
+            </Banner.Content>
+        </Banner.Root>
+
+        The breakpoints are defined as follows:
+        
+        - `initial` (default)
+        - `sm` (640px)
+        - `md` (768px)
+        - `lg` (1024px)
+        - `xl` (1280px)
+        - `xxl` (1536px)
+    </div>
+</div>

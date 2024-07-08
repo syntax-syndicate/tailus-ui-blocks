@@ -1,0 +1,28 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import ThemerLayout from "@layouts/ThemerLayout.astro";
+
+export async function getStaticPaths() {
+  const themer = await getCollection("themer");
+  return themer.map((page, index) => ({
+    params: { slug: page.slug },
+    props: {
+      ...page,
+      prev: themer[index - 1],
+      next: themer[index + 1],
+    },
+  }));
+}
+
+type Props = CollectionEntry<"themer"> & {
+  prev: CollectionEntry<"themer">;
+  next: CollectionEntry<"themer">;
+};
+
+const page = Astro.props;
+const { Content } = await page.render();
+---
+
+<ThemerLayout {...page}>
+  <Content />
+</ThemerLayout>

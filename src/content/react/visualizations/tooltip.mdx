@@ -1,0 +1,196 @@
+---
+title: Tooltip
+description: Use the Custom Tooltip in your charts
+priorityOrder : 63
+frameworkDocs : 
+    name : Recharts
+    link : https://recharts.org/en-US/api/Tooltip
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import { Code, Text, Title } from "@components/typography"
+import {
+    TooltipFancy,
+    TooltipMixed,
+    TooltipOverview,
+    TooltipMixedGlassy,
+    fancyCode,
+    mixedCode,
+    mixedGlassyCode,
+    tooltipProps,
+} from "@react-ui/visualizations"
+import ComponentPreview from "@components/ComponentPreview"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import Table from "@components/Table.astro"
+
+export const components = {
+    ..._components
+}
+
+export const componentCode = `import React from "react";
+import { vTooltip as tooltip, type VTooltipProps as TooltipVariants } from "@tailus/themer";
+import { twMerge } from "tailwind-merge";
+
+type PayloadEntry = {
+    name: string;
+    value: number;
+    color: string;
+};
+
+interface CustomTooltipProps extends React.HTMLAttributes<HTMLDivElement>, TooltipVariants {
+    active: boolean;
+    payload: PayloadEntry[];
+    label: string;
+}
+
+const { root, title, separator, content, entry:entryTheme, entryValue, entryNameContainer, entryName, entryIndicator } = tooltip()
+
+export const Custom: React.FC<CustomTooltipProps> = ({
+    active,
+    payload,
+    label,
+    mixed,
+    fancy,
+    className
+}) => {
+
+    if (mixed && fancy) {
+        throw new Error("Tooltip cannot be both mixed and fancy");
+    }
+    
+    if (active && payload && payload.length) {
+        return (
+            <div role="tooltip" className={root({fancy, mixed, className:twMerge("relative z-50", className)})}>
+                <span className={title()}>{label}</span>
+                <div role="separator" className={separator({fancy})} />
+
+                <div className={content()}>
+                    {payload.map((entry:PayloadEntry, index:number) => (
+                        <div key={index} className={entryTheme()}>
+                            <div className={entryNameContainer()}>
+                                <div aria-hidden className={entryIndicator()} style={
+                                    {
+                                        "--entry-indicator-color": entry.color,
+                                    } as React.CSSProperties
+                                } />
+                                <span className={entryName()}>{entry.name}</span>
+                            </div>
+                            <span className={entryValue()}>{entry.value}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    }
+
+  return null;
+};
+
+export default Custom;`
+export const component = {
+    code : componentCode,
+    lang:"tsx",
+}
+
+export const usage = [
+    {
+        code: `import { CustomTooltip } from "@tailus-ui/visualizations";
+import { Tooltip } from "recharts"`,
+        lang : "tsx"
+    },
+    {
+        code: `import { ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { CartesianGrid } from "@tailus-ui/visualizations";
+
+const data = [];
+
+export const MyChart = () => {
+    return (
+        <div className="h-56 sm:h-72 w-full sm:max-w-2xl sm:min-w-[36rem]">
+            <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={data}>
+                    
+                    <Tooltip
+                        cursor={{ stroke: 'var(--ui-border-color)', strokeWidth: 1 }}
+                        content={
+                            <Custom payload={[]} active label={""}/>
+                        }
+                    />
+
+                    <CartesianGrid />
+
+                    /...your areas
+                </AreaChart>
+            </ResponsiveContainer>
+        </div>
+    )
+}`,
+        lang: "tsx",
+        highlightedLines:"12-17"
+    }
+]
+
+<div className="space-y-20">
+    <ComponentPreview>
+        <TooltipOverview client:visible />
+    </ComponentPreview>
+    <div>
+        ## Installation
+
+        Copy-paste the component code in a file named `Tooltip.tsx` in your tailus-ui/visualizations folder.
+        
+        <CodeSnippet {...component} client:visible />
+    </div>
+
+    <div>
+        ## Usage
+        
+        First, import the `<Tooltip />` component from the `recharts` library and the `<CustomTooltip />` component from your local files. Then, assign `<CustomTooltip />` to the content prop of the `<Tooltip />` component.
+        
+        <DocsStackedSnippets snippets={usage} />
+    </div>
+
+    <div>
+        ## Reference
+        The Custom Tooltip component has the following props
+        <Table data={tooltipProps} />
+    </div>
+
+    <div>
+        ## Examples
+        
+        <div className="space-y-12">
+            <div>
+                ### Mixed
+
+                <PreviewBlock
+                    codeBlocks={mixedCode}
+                >
+                    <TooltipMixed client:visible/>
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Fancy
+
+                <PreviewBlock
+                    codeBlocks={fancyCode}
+                >
+                    <TooltipFancy client:visible/>
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Mixed Glassy
+
+                <PreviewBlock
+                    codeBlocks={mixedGlassyCode}
+                >
+                    <TooltipMixedGlassy client:visible/>
+                </PreviewBlock>
+            </div>
+        </div>
+    </div>
+</div>

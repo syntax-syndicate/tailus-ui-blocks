@@ -1,0 +1,113 @@
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	background: none;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+
+	@apply text-[#4a4a4a] dark:text-[#B2B7C1];
+
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	overflow: auto;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	@apply text-[#426c3a] dark:text-[#5c7386];
+}
+
+.token.punctuation {
+	@apply text-[#5c7386];
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+	@apply text-[#828781] dark:text-[#93c788];
+}
+
+.token.function-name {
+	@apply text-[#6b5bb3] dark:text-[#9F8EEC]
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+	@apply text-[#9a6550] dark:text-[#9F8EEC];
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+	@apply text-[#616e7c] dark:text-[#aeb9c6];
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	@apply text-[#808080] dark:text-[#A7D49D];
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+	@apply text-[#5a8f40] dark:text-[#6a99c1];
+}
+
+.token.operator{
+	@apply text-[#828A9E];
+}
+.token.entity,
+.token.url {
+	@apply text-[#828A9E];
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.inserted {
+	color: rgb(115, 193, 115);
+}

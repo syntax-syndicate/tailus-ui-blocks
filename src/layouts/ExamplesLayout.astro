@@ -1,0 +1,34 @@
+---
+import { Display, Text, Link, Caption } from '@components/typography';
+import BaseLayout from './BaseLayout.astro';
+import { twMerge } from 'tailwind-merge';
+import { ChevronRight } from 'lucide-react';
+
+const { title, description, image = '/ogs/app-og.png', breadcrumb = true } = Astro.props;
+---
+
+<BaseLayout title={`${title} - Tailus UI React`} description={description} image={image}>
+    <section class={twMerge('pt-6 sm:pt-32 md:pt-40 space-y-12', breadcrumb && 'md:pt-20')}>
+        <div class="max-w-8xl px-2 lg:px-12 mx-auto xl:px-16">
+            {
+                breadcrumb && (
+                    <nav class="mb-[4.5rem] flex gap-2 items-center px-4 lg:px-0">
+                        <Link size="sm" intent="gray" variant="underlined" href="/examples">
+                            Examples
+                        </Link>
+                        <ChevronRight className="size-3.5 text-[--caption-text-color]" />
+                        <Caption neutral>{title}</Caption>
+                    </nav>
+                )
+            }
+            <div>
+                <div class="px-4 lg:px-0">
+                    <Display weight={{ initial: 'medium' }} size="4xl" className="sm:text-5xl">{title}</Display>
+                    <Text className="max-w-lg mb-0">{description}</Text>
+                </div>
+
+                <slot />
+            </div>
+        </div>
+    </section>
+</BaseLayout>

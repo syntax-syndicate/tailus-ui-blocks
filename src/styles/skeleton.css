@@ -1,0 +1,50 @@
+@keyframes react-loading-skeleton {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.react-loading-skeleton {
+    --base-color: rgb(var(--colors-gray-200));
+    --base-dark-color: rgb(var(--colors-gray-900));
+    --highlight-color: rgb(var(--colors-gray-100));
+    --highlight-dark-color: rgb(var(--colors-gray-800));
+    --animation-duration: 1.5s;
+    --animation-direction: normal;
+    --pseudo-element-display: block; /* Enable animation */
+
+    @apply bg-[--base-color] dark:bg-[--base-dark-color];
+    width: 100%;
+    border-radius: 0.25rem;
+    display: inline-flex;
+    line-height: 1;
+
+    position: relative;
+    user-select: none;
+    overflow: hidden;
+    z-index: 1; /* Necessary for overflow: hidden to work correctly in Safari */
+}
+
+.react-loading-skeleton::after {
+    content: ' ';
+    display: var(--pseudo-element-display);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-repeat: no-repeat;
+    transform: translateX(-100%);
+    animation-name: react-loading-skeleton;
+    animation-direction: var(--animation-direction);
+    animation-duration: var(--animation-duration);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    @apply bg-[linear-gradient(90deg,var(--base-color),var(--highlight-color),var(--base-color))] dark:bg-[linear-gradient(90deg,var(--base-dark-color),var(--highlight-dark-color),var(--base-dark-color))]
+}
+
+@media (prefers-reduced-motion) {
+  .react-loading-skeleton {
+    --pseudo-element-display: none; /* Disable animation */
+  }
+}

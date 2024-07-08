@@ -1,0 +1,64 @@
+---
+title: Area Chart
+description: Some examples of how to use the AreaChart component
+priorityOrder : 70
+frameworkDocs : 
+    name : Recharts
+    link : https://recharts.org/en-US/api/bar
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import {
+    SimpleAreaChart,
+    simpleAreaChartCode,
+    StackedAreaChart,
+    stackedAreaChartCode,
+    TwoAreasChart,
+    twoAreasChartCode,
+    GradientAreaChart,
+    gradientAreaChartCode,
+} from "@react-ui/visualizations"
+import ComponentPreview from "@components/ComponentPreview"
+import Table from "@components/Table.astro"
+import PreviewBlock from "@components/PreviewBlock.astro"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+
+    <div>
+        ## Simple
+
+        <PreviewBlock codeBlocks={simpleAreaChartCode}>
+            <SimpleAreaChart client:visible />
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Two Areas
+
+        <PreviewBlock codeBlocks={twoAreasChartCode}>
+            <TwoAreasChart client:visible />
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Stacked
+
+        <PreviewBlock codeBlocks={stackedAreaChartCode}>
+            <StackedAreaChart client:visible />
+        </PreviewBlock>
+    </div>
+
+    <div data-shade="900">
+        ## Linear Gradient
+
+        <PreviewBlock codeBlocks={gradientAreaChartCode}>
+            <GradientAreaChart client:visible />
+        </PreviewBlock>
+    </div>
+
+</div>

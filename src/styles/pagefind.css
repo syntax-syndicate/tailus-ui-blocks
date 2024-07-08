@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pagefind-ui__form{
+    @apply relative w-full before:pointer-events-none before:w-5 before:h-5 before:flex before:absolute before:top-5 dark:before:opacity-75 before:left-[1.35rem] before:bg-[url(/searchIcon.svg)] dark:before:bg-[url(/searchIconDark.svg)]
+}
+.pagefind-ui__search-clear {
+    @apply hidden
+}
+.pagefind-ui__drawer{
+    @apply relative max-h-[32rem] overflow-y-scroll before:fixed before:inset-x-0 bottom-0 before:h-0.5 before:border-b dark:before:border-gray-700/80 dark:before:bg-gray-950
+}
+.pagefind-ui__search-input{
+    @apply text-lg py-4 px-[--card-padding] pl-[3.25rem] top-1 z-10 w-full text-gray-700 placeholder-[--caption-text-color] outline-none dark:text-white bg-transparent;
+}
+
+.pagefind-ui__result-excerpt{
+    @apply text-[--body-text-color] text-sm
+}
+
+.pagefind-ui__message{
+    @apply px-[--card-padding] my-3 text-[--body-text-color]
+}
+
+.pagefind-ui__results-area{
+    @apply relative p-1
+}
+
+.pagefind-ui__result-title{
+    @apply text-[--title-text-color] relative flex gap-[0.75rem] items-center text-[15px] before:size-5 before:inset-0 before:inline-block before:bg-[url("/docsIcon.svg")] dark:before:bg-[url("/docsDarkIcon.svg")] dark:before:opacity-75
+}
+
+.pagefind-ui__results{
+    @apply space-y-0
+}
+
+.pagefind-ui__result-excerpt{
+    @apply text-[13px] ml-[33px] line-clamp-1 text-[--caption-text-color]
+}
+
+.pagefind-ui__result-nested .pagefind-ui__result-excerpt{
+    @apply !pl-0
+}
+
+.pagefind-ui__result{
+    @apply relative hover:bg-[--ui-soft-bg] dark:hover:bg-gray-950/30 rounded-lg py-3.5 px-4 hover:before:opacity-0 last:before:hidden before:absolute before:right-0 before:left-12 before:bottom-0 before:h-px before:bg-[--ui-border-color]
+}
+
+.pagefind-ui__result-link{
+    @apply hover:text-info-600 dark:hover:text-info-400
+}
+
+mark{
+    @apply !bg-transparent !font-medium text-[--title-text-color]
+}
+
+.pagefind-ui__button {
+    @apply flex justify-center items-center mx-auto mt-6 mb-2 h-9 px-4 text-sm dark:border text-[--title-text-color] hover:brightness-95 font-medium w-fit bg-[--ui-soft-bg] rounded-[--btn-radius]
+}

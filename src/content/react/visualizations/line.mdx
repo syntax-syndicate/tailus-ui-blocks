@@ -1,0 +1,109 @@
+---
+title: Line
+description: Learn how to apply styles to your Line components in Recharts
+priorityOrder : 66
+frameworkDocs : 
+    name : Recharts
+    link : https://recharts.org/en-US/api/Line
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import {
+    LineOverview,
+    areaStyleProps
+} from "@react-ui/visualizations"
+import ComponentPreview from "@components/ComponentPreview"
+import Table from "@components/Table.astro"
+
+export const components = {
+    ..._components
+}
+
+export const componentCode = `import React from 'react';
+import { gradientStop, type AreaProps as AreaVariants } from "@tailus/themer"
+
+export const LinearGradient: React.FC<Omit<AreaVariants, "gradient"> & {id:string}> = ({intent, id}) => {
+    return (
+        <linearGradient x1={0} y1={0} x2={0} y2={1} id={id}>
+            <stop className={gradientStop({intent})} offset="5%" stopColor="currentColor" stopOpacity={0.8} />
+            <stop className="text-white dark:text-gray-950" offset="95%" stopColor="currentColor" stopOpacity={0} />
+        </linearGradient>
+    )
+}`
+export const component = {
+    code : componentCode,
+    lang:"tsx",
+}
+
+export const importation = {
+    code: `import { Line } from 'recharts';
+import { area } from "@tailus/themer";`,
+    lang : "tsx"
+}
+
+
+export const applyStyles = {
+        code: `<Line 
+    type="monotone"
+    className={area({ intent: "primary" })}
+    stroke="currentColor"
+    fill="url(#dotFill)"
+    dataKey="Primary"
+    activeDot={
+        {
+            r:4,
+            color:"var(--area-primary-stroke)",
+            stroke:"currentColor"
+        }
+    }
+/>`,
+        lang: "tsx",
+    }
+
+<div className="space-y-20">
+    <ComponentPreview >
+        <LineOverview client:visible />
+    </ComponentPreview>
+    <div>
+        ## Installation
+
+        No installation is required for the Line component. You can use it directly in your project.
+    </div>
+
+    <div>
+        ## Usage
+        
+        Import the `<Line />` component from the recharts library and the `area` styles from `@tailus/themer`.
+        
+        <CodeSnippet {...importation} client:visible/>
+
+        To change the color of the line in the `<Line />` component, set the `stroke` prop to `currentColor` and apply the `area` styles to the `className` prop. You can further customize the line dot by setting the `fill` prop.
+        
+        <CodeSnippet {...applyStyles} client:visible/>
+
+        The `fill` is used as the background of the dot, and the `activeDot` is used to customize the active dot on hover.
+    </div>
+
+    <div>
+        ## Reference
+
+        Although we didn't create a custom Line component, you can change the Line component's color using the `area` styles, its `intent` variant and CSS variables to customize the `activeDot`.
+
+        <Table data={areaStyleProps} />
+
+        The available CSS variables for customizing the `activeDot` are as follows:
+
+        - `--area-primary-stroke`
+        - `--area-secondary-stroke`
+        - `--area-accent-stroke`
+        - `--area-gray-stroke`
+        - `--area-neutral-stroke`
+    </div>
+
+    <div>
+        ## Examples
+
+        See the LineChart example on the [Line Chart](/react/visualizations/line-chart) page
+    </div>
+</div>

@@ -1,0 +1,74 @@
+---
+title: Bar Chart
+description: Some examples of how to use the BarChart component
+priorityOrder : 71
+frameworkDocs : 
+    name : Recharts
+    link : https://recharts.org/en-US/api/bar
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import {
+    SimpleBarChart,
+    ListBarChart,
+    listBarChartCode,
+    simpleBarChartCode,
+    StackedBarChart,
+    stackedBarChartCode,
+    TwoBarChart,
+    twoBarChartCode,
+    Traffic,
+    trafficCode
+} from "@react-ui/visualizations"
+import ComponentPreview from "@components/ComponentPreview"
+import Table from "@components/Table.astro"
+import PreviewBlock from "@components/PreviewBlock.astro"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+
+    <div>
+        ## Simple
+
+        <PreviewBlock codeBlocks={simpleBarChartCode}>
+            <SimpleBarChart client:visible />
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Two Per Group
+
+        <PreviewBlock codeBlocks={twoBarChartCode}>
+            <TwoBarChart client:visible />
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Stacked
+
+        <PreviewBlock codeBlocks={stackedBarChartCode}>
+            <StackedBarChart client:visible />
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## List
+
+        <PreviewBlock codeBlocks={listBarChartCode}>
+            <ListBarChart client:visible />
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Traffic Comparison
+
+        <PreviewBlock codeBlocks={trafficCode}>
+            <Traffic client:visible />
+        </PreviewBlock>
+    </div>
+
+</div>

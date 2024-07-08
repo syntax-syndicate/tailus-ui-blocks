@@ -1,0 +1,115 @@
+---
+import { BrandIcon } from './utilities/BrandIcon';
+import { SITE_SOCIAL_GITHUB } from '../const';
+import { GitHubIcon } from './utilities/icons/';
+import ThemeSwitcher from './ThemeSwitcher';
+import Button from '@react-ui/button/Button';
+import { MenuListIcon } from '@components/utilities/icons';
+import { ChevronDownIcon } from '@radix-ui/react-icons';
+import NavLinks from './NavLinks.astro';
+import SearchButton from './Button/SearchButton';
+
+const { asThemer = false } = Astro.props;
+---
+
+<script>
+    document.addEventListener('astro:page-load', () => {
+        const navitems = document.querySelector('#mobile-navitems') as HTMLElement;
+        const hamburger = document.querySelector('#mobile-navitems-trigger');
+        let isActive = navitems?.getAttribute('data-state') === 'open';
+
+        function toggleItems() {
+            isActive = !isActive;
+            navitems?.setAttribute('data-state', isActive ? 'open' : 'closed');
+            hamburger?.setAttribute('data-state', isActive ? 'open' : 'closed');
+        }
+
+        hamburger?.addEventListener('click', toggleItems);
+    });
+</script>
+
+<script>
+    document.addEventListener('astro:page-load', () => {
+        const menuList = document.getElementById('menu-list');
+        const menuListTrigger = document.getElementById('menu-list-trigger');
+        const tableOfContent = document.querySelector('#table-of-content');
+        const tableOfContentTrigger = document.querySelector('#table-of-content-trigger');
+
+        tableOfContentTrigger?.addEventListener('click', () => {
+            tableOfContent?.classList.toggle('hidden');
+            !menuList?.classList.contains('hidden') && menuList?.classList.toggle('hidden');
+            tableOfContent?.classList.contains('hidden') ? document.body.classList.remove('overflow-hidden') : document.body.classList.add('overflow-hidden');
+        });
+
+        menuListTrigger?.addEventListener('click', () => {
+            menuList?.classList.toggle('hidden');
+            !tableOfContent?.classList.contains('hidden') && tableOfContent?.classList.toggle('hidden');
+            menuList?.classList.contains('hidden') ? document.body.classList.remove('overflow-hidden') : document.body.classList.add('overflow-hidden');
+        });
+    });
+</script>
+
+<header class="fixed inset-x-0 z-10 lg:h-16 flex flex-col border-b bg-white dark:bg-gray-925 lg:bg-transparent dark:lg:bg-transparent dark:border-white/[0.07] dark:[box-shadow:0_1px_1px_0_rgb(var(--colors-gray-925))]">
+    <div class="w-full px-8 xl:px-0 h-fit my-auto mx-auto flex gap-4 sm:gap-6 justify-between py-2 items-center" class:list={asThemer ? 'max-w-5xl' : 'max-w-[76rem]'}>
+        <div class="flex items-center sm:gap-6">
+            <a href="/" aria-label="Home page" class="rounded-full">
+                <BrandIcon className="h-7" />
+            </a>
+
+            <div data-state="closed" id="mobile-navitems" class="absolute -z-50 h-0 overflow-hidden transition-[height] duration-300 top-[5.78rem] bottom-0 inset-x-0 bg-white dark:bg-gray-925/75 dark:backdrop-blur-xl dark:border-white/10 px-5 shadow-lg shadow-gray-950/5 border-gray-950/10 data-[state=open]:h-dvh lg:hidden">
+                <div class="py-8">
+                    <NavLinks />
+                </div>
+            </div>
+
+            <nav class="hidden lg:block">
+                <NavLinks />
+            </nav>
+        </div>
+
+        <div class="flex lg:gap-1.5 items-center justify-between">
+            <SearchButton client:idle />
+            <div class="flex items-center gap-1.5">
+                <ThemeSwitcher client:load />
+                <Button.Root variant="ghost" intent="gray" href={SITE_SOCIAL_GITHUB} aria-label="Visit our GitHub" size="md" className="px-0 size-9">
+                    <Button.Icon type="only" size="md">
+                        <GitHubIcon className="size-4" />
+                    </Button.Icon>
+                </Button.Root>
+                <Button.Root id="mobile-navitems-trigger" data-state="closed" variant="ghost" intent="gray" size="md" aria-label="Toggle navlinks" className="group relative flex flex-col size-9 lg:hidden -mr-2.5 transition duration-200 hover:bg-transparent dark:hover:bg-transparent">
+                    <Button.Icon type="only">
+                        <div class="absolute inset-0 m-auto duration-300 transition-transform group-data-[state=open]:rotate-45 group-data-[state=open]:translate-y-0.5 group-data-[state=open]:-translate-x-px">
+                            <div aria-hidden="true" class="absolute inset-x-0 mx-auto top-0 translate-y-[13.5px] h-[1.5px] w-[1.125rem] rounded bg-gray-950 transition-transform duration-200 dark:bg-white group-data-[state=open]:translate-y-4"></div>
+                            <div aria-hidden="true" class="absolute inset-x-0 mx-auto top-0 translate-y-[21.5px] h-[1.5px] w-[1.125rem] rounded bg-gray-950 transition-transform duration-200 dark:bg-white group-data-[state=open]:translate-y-4 group-data-[state=open]:rotate-90"></div>
+                        </div>
+                    </Button.Icon>
+                </Button.Root>
+            </div>
+        </div>
+    </div>
+
+    <div class="relative z-[55] px-4 sm:px-2 border-t dark:border-gray-500/20 w-full lg:hidden h-10 flex justify-between">
+        <button id="menu-list-trigger" class="flex text-sm items-center text-gray-700 dark:text-gray-300 gap-1.5 group px-4 sm:px-6 h-full">
+            <MenuListIcon />
+            Menu
+        </button>
+        <button id="table-of-content-trigger" class="-mr-1 flex text-sm items-center text-gray-700 dark:text-gray-300 gap-1.5 group px-4 sm:px-6 h-full">
+            On this page
+            <ChevronDownIcon />
+        </button>
+    </div>
+</header>
+
+<script>
+    window.addEventListener('DOMContentLoaded', event => {
+        document.addEventListener('astro:page-load', () => {
+            // @ts-ignore
+            new PagefindUI({
+                element: '#search',
+                showSubResults: false,
+                resultsCount: false,
+                showImages: false
+            });
+        });
+    });
+</script>

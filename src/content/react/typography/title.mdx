@@ -1,0 +1,112 @@
+---
+title: Title
+description: Titles (Headings) create a layered system, highlighting key points within the content.
+priorityOrder : 19
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import ComponentPreview from "@components/ComponentPreview"
+import { Title } from "@components/typography"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import { titleProps } from "@react-ui/typography/reference"
+import Table from "@components/Table.astro"
+
+export const components = {
+    ..._components
+}
+
+export const componentCode = `import React from "react"
+import {
+    title,
+    type TitleProps as TitleVariants,
+    type TextAlignProp,
+    type TextWeightProp
+} from "@tailus/themer"
+
+type TitleSize = TitleVariants["size"]
+type TitleSizeProp = TitleSize |  {
+    initial?: TitleSize,
+    sm?: TitleSize,
+    md?: TitleSize,
+    lg?: TitleSize,
+    xl?: TitleSize,
+    xxl?: TitleSize,
+}
+
+export interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
+    as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div" | "span",
+    children: React.ReactNode,
+    className?: string,
+    size?: TitleSizeProp;
+    align?: TextAlignProp;
+    weight? : TextWeightProp
+}
+
+export const Title: React.FC<TitleProps> = ({
+    size,
+    as="h1",
+    weight,
+    align,
+    children,
+    className,
+    ...props
+}) => {
+    const TitleElement = as
+    return (
+        <TitleElement className={title({
+            size,
+            weight,
+            align,
+            className
+        })} {...props}>
+            {children}
+        </TitleElement>
+    )
+}
+
+Title.displayName = "Title"`
+
+export const component = {
+    code : componentCode,
+    lang:"tsx",
+    file:"tsx",
+    filename:"Title.tsx",
+}
+
+export const usage = [
+  {
+    code: `import { Title } from "@tailus-ui/typography";`,
+    lang: "tsx",
+  },
+  {
+    code: `const HeroSection = () => (
+    <Title>A Title</Title>
+)`,
+    lang: "tsx",
+  }
+]
+
+<div className="space-y-20">
+    <ComponentPreview>
+        <Title size="3xl">A Title</Title>
+    </ComponentPreview>
+    <div>
+        ## Installation
+        Copy-Paste the component code in a `.tsx` file.
+
+        <CodeSnippet {...component} client:visible />
+    </div>
+
+    <div>
+        ## Usage
+        Import the `<Title/>` in your hero section component and start building.
+        <DocsStackedSnippets snippets={usage} client:visible />
+    </div>
+
+    <div>
+        ## Reference
+        The Title component has the following props
+        <Table data={titleProps} />
+    </div>
+</div>

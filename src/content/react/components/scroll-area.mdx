@@ -1,0 +1,55 @@
+---
+title: Scroll Area
+description: Augments native scroll functionality for custom, cross-browser styling.
+priorityOrder : 49
+frameworkDocs : 
+    name : Radix UI
+    link : https://www.radix-ui.com/primitives/docs/components/scroll-area#api-reference
+---
+
+import _components from "@content/_components"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import PreviewBlock from "@components/PreviewBlock.astro"
+
+import { Overview, overviewCode} from "@react-ui/scroll-area/Overview"
+import { installation, usage } from "@react-ui/scroll-area/codeSnippets"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+
+    <PreviewBlock
+        codeBlocks={overviewCode}
+    >
+        <Overview client:visible/>
+    </PreviewBlock>
+
+
+    <div>
+        ## Installation
+
+        Install the primitive and Copy-Paste the component code in a `.tsx` file.
+
+        <DocsStackedSnippets snippets={installation} client:visible/>
+    </div>
+
+    <div>
+        ## Usage
+
+        Import all the parts and build your Scroll Area.
+        
+        <DocsStackedSnippets snippets={usage} client:visible/>
+    </div>
+
+    <div>
+        ## Examples
+
+        <div className="space-y-12">
+            <div>
+                
+            </div>
+        </div>
+    </div>
+</div>

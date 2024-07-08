@@ -1,0 +1,123 @@
+---
+title: Checkbox
+description: A control that allows the user to toggle between checked and not checked.
+priorityOrder : 36
+frameworkDocs : 
+    name : Radix UI
+    link : https://www.radix-ui.com/primitives/docs/components/checkbox#api-reference
+---
+
+import _components from "@content/_components"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import ComponentPreview from "@components/ComponentPreview"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import Table from "@components/Table.astro"
+
+import { Overview, overviewCode } from "@react-ui/checkbox/Overview"
+import { Disabled, disabledCode } from "@react-ui/checkbox/Disabled"
+import { Indeterminate, indeterminateCode } from "@react-ui/checkbox/Indeterminate"
+import { checkboxProps, alignerProps } from "@react-ui/checkbox/reference"
+import { installation, aligner } from "@react-ui/checkbox/codeSnippets"
+
+export const components = {
+    ..._components
+}
+
+export const usage = [
+    {
+        code: `import Checkbox from "@tailus-ui/Checkbox";
+import Label from "@tailus-ui/Label";`,
+        lang: "tsx",
+    },
+    {
+        code: `const MyComponent = () => (
+    <div>
+        <Checkbox.Root id="c1">
+            <Checkbox.Indicator asChild>
+                <CheckIcon />
+            </Checkbox.Indicator>
+        </Checkbox.Root>
+        <Label htmlFor="c1">Checkbox</Label>
+    </div>
+)`,
+        lang: "tsx",
+    }
+]
+
+<div className="space-y-20">
+
+    <PreviewBlock codeBlocks={overviewCode}>
+        <Overview client:visible/>
+    </PreviewBlock>
+
+    <div>
+        ## Installation
+
+        Install the primitive and Copy-Paste the component code in a `.tsx` file.
+
+        <DocsStackedSnippets snippets={installation} client:visible/>
+
+        <div className="mt-12">
+
+            ### Add Aligner component
+
+            Useful for aligning `Checkbox`, `RadioGroup`, and `Switch` components with their associated `Label` and `Caption`
+
+            <CodeSnippet {...aligner} client:visible/>
+        </div>
+    </div>
+
+    <div>
+        ## Usage
+
+        Import all the parts and build your Checkbox.
+        
+        <DocsStackedSnippets snippets={usage} client:visible/>
+    </div>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 mb-12 space-y-12"> 
+            
+            <div>
+                ### Checkbox
+                
+                The Checkbox component has the following additional props.
+
+                <Table data={checkboxProps}/>
+            </div>
+            
+            <div>
+                ### Aligner
+                
+                The Aligner component has the following props.
+
+                <Table data={alignerProps}/>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        ## Examples
+
+        <div className="space-y-12">
+            <div>
+                ### Disabled 
+                <PreviewBlock
+                    codeBlocks={disabledCode}
+                >
+                    <Disabled />
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Indeterminate 
+                <PreviewBlock codeBlocks={indeterminateCode}>
+                    <Indeterminate client:visible/>
+                </PreviewBlock>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+export { ColoredButtons } from "./examples/Colors"
+export { SizeButtons } from "./examples/Sizes"
+export { IconButtons } from "./examples/Icons"
+export { component } from "./codeSnippets"
+export * as reference from "./reference"

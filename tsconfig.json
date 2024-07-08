@@ -1,0 +1,19 @@
+{
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"],
+      "@lib/*": ["src/lib/*"],
+      "@react-ui/*": ["src/uikits/react/*"],
+      "@tailus-ui/*": ["src/uikits/react/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@content/*": ["src/content/*"],
+      "@store/*": ["src/store/*"],
+    }
+  },
+}

@@ -1,0 +1,90 @@
+---
+title: Responsive
+description: Learn how to use responsive variants in Tailus UI React.
+priorityOrder : 3
+---
+
+import _components from "@content/_components"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import Banner from "@components/Banner"
+import { Title, Text } from "@components/typography"
+
+export const components = {
+    ..._components
+}
+
+export const responsiveVariants = [
+    {
+        code: `// Without responsive variants
+<Display as="h1" size="4xl" align="center" weight="bold">
+    Build Custom Web UIs
+</Display>`,
+    lang: "tsx",
+    },
+  {
+        code: `// With responsive variants
+<Display 
+    as="h1"
+
+    size={{
+        initial: "4xl",
+        sm: "5xl",
+        md: "6xl",
+        lg: "7xl",
+        xl: "8xl",
+        xxl: "9xl"
+    }}
+
+    align={{
+        initial: "left",
+        sm: "center",
+    }}
+
+    weight={{
+        initial: "bold",
+        sm: "black",
+    }}
+>
+    Build Custom Web UIs
+</Display>`,
+    lang: "tsx",
+  }
+]
+
+<div>
+    <div className="space-y-20">
+        <div>
+            ## Responsive Variants
+
+            Tailus UI React, built on top of [Tailus Themer](/themer/get-started/introduction), incorporates [Tailwind Variants](https://www.tailwind-variants.org/docs/getting-started#responsive-variants-optional). This means you can use responsive variants directly within Tailus UI React.
+
+            To use responsive variants, provide an object to the prop. In this object, the key should represent the breakpoint, and the corresponding value should represent the desired prop value at that breakpoint.
+
+            <DocsStackedSnippets snippets={responsiveVariants} client:visible />
+
+            <Banner.Root intent="gray" className="border-none mt-6">
+                <Banner.Content>
+                    <div className="space-y-3 -mb-4">
+                        <Title as="h3" size="base" weight="medium" className="text-warning-700 dark:text-warning-400">Important</Title>
+                        <Text className="[--body-text-color:theme(colors.gray.700)] dark:[--body-text-color:theme(colors.gray.300)]">
+                            At this time, only [typography](/react/typography/) components support responsive variants. For the rest of the components, we will add support as soon as the need arises.
+                        </Text>
+                    </div>
+                </Banner.Content>
+            </Banner.Root>
+        </div>
+
+        <div>
+            ## Breackpoints
+
+            All the default tailwindcss breakpoints are supported 
+
+            - `initial` (default)
+            - `sm` (640px)
+            - `md` (768px)
+            - `lg` (1024px)
+            - `xl` (1280px)
+            - `xxl` (1536px)
+        </div>
+    </div>
+</div>

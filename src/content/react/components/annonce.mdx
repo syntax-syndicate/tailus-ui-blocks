@@ -1,0 +1,362 @@
+---
+title: Annonce
+description: The annonce component is used to display an announcement on top of the hero section.
+priorityOrder : 28
+---
+import Table from "@components/Table.astro"
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import ComponentPreview from "@components/ComponentPreview"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Annonce from "@react-ui/annonce/Annonce"
+import { Link } from "@components/typography"
+import { reference, installation } from "@react-ui/annonce"
+
+export const components = {
+    ..._components
+}
+
+export const variantsCode = [{
+    code : `import Annonce from "@tailus-ui/Annonce"
+
+export const MyComponent = () => (
+    <div className="space-y-4">
+        <Annonce.Root variant="plain">
+            <Annonce.Concern size="xs">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+
+        <Annonce.Root variant="outlined">
+            <Annonce.Concern size="xs">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+
+        <Annonce.Root variant="soft" data-shade="900">
+            <Annonce.Concern size="xs">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+
+        <Annonce.Root variant="mixed">
+            <Annonce.Concern size="xs">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+    </div>
+)`,
+    lang:"tsx"
+}]
+
+export const sizesCode = [{
+    code : `import Annonce from "@tailus-ui/Annonce"
+
+export const MyComponent = () => (
+    <div className="space-y-4">
+        <Annonce.Root variant="mixed" size="xs">
+            <Annonce.Concern size="xs">Xs</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+        <Annonce.Root variant="mixed" size="sm">
+            <Annonce.Concern size="sm">Sm</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+        <Annonce.Root variant="mixed" size="md">
+            <Annonce.Concern size="md">Md</Annonce.Concern>
+            <Annonce.Message>Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+        <Annonce.Root variant="mixed" size="lg">
+            <Annonce.Concern size="lg">Lg</Annonce.Concern>
+            <Annonce.Message>Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+    </div>
+)`,
+    lang:"tsx"
+}]
+
+export const asLinkCode = [{
+    code : `import Annonce from "@tailus-ui/Annonce"
+
+export const MyComponent = () => (
+    <Annonce.Root variant="mixed" href="/">
+        <Annonce.Concern size="xs">New</Annonce.Concern>
+        <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+    </Annonce.Root>
+)`,
+    lang:"tsx"
+}]
+
+export const asLinkWithIconCode = [{
+    code : `import Annonce from "@tailus-ui/Annonce"
+
+export const MyComponent = () => (
+    <Annonce.Root href="/" variant="mixed" size="md" className="pr-2">
+        <Annonce.Concern size="xs">New</Annonce.Concern>
+        <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        <div className="relative flex ml-2 items-center transition-transform duration-300">
+            <span className="absolute inset-y-0 right-[5px] my-auto w-2.5 block opacity-0 h-[1.5px] -translate-y-[0.25px] bg-gray-950 dark:bg-white origin-left scale-x-0 transition duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
+            <svg aria-hidden xmlns="http://www.w3.org/2000/svg" className="size-4 -translate-x-2 text-[--title-text-color] transition duration-300 group-hover:translate-x-px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+        </div>
+    </Annonce.Root>
+)`,
+    lang:"tsx"
+}]
+
+export const withLinkCode = [{
+    code: `import Annonce from "@tailus-ui/Annonce"
+import {Link} from "@tailus-ui/typography"
+
+export const MyComponent = () => (
+    <Annonce.Root variant="mixed" size="md">
+        <Annonce.Concern>New</Annonce.Concern>
+        <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        <Link href="/" weight="medium" intent="neutral" size="sm" variant="underlined"> Learn more</Link>
+    </Annonce.Root>
+)`,
+    lang:"tsx"
+}]
+
+export const intentsCode = [{
+        code : `import Annonce from "@tailus-ui/Annonce"
+
+export const MyComponent = () => (
+    <div className="space-y-4">
+        <Annonce.Root variant="mixed">
+            <Annonce.Concern size="xs" intent="primary">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+        <Annonce.Root variant="mixed">
+            <Annonce.Concern size="xs" intent="secondary">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+        <Annonce.Root variant="mixed">
+            <Annonce.Concern size="xs" intent="accent">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+        <Annonce.Root variant="mixed">
+            <Annonce.Concern size="xs" intent="info">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+        <Annonce.Root variant="mixed">
+            <Annonce.Concern size="xs" intent="danger">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+        <Annonce.Root variant="mixed">
+            <Annonce.Concern size="xs" intent="warning">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+        <Annonce.Root variant="mixed">
+            <Annonce.Concern size="xs" intent="success">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+        <Annonce.Root variant="mixed">
+            <Annonce.Concern size="xs" intent="gray">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+        <Annonce.Root variant="mixed">
+            <Annonce.Concern size="xs" intent="neutral">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+    </div>
+)`,
+    lang:"tsx"
+}]
+
+<div className="space-y-20">
+    <ComponentPreview>
+        <Annonce.Root>
+            <Annonce.Concern size="xs">New</Annonce.Concern>
+            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+        </Annonce.Root>
+    </ComponentPreview>
+
+    <div>
+        ## Installation
+
+        Copy-Paste the component code in a `.tsx` file.
+        <CodeSnippet {...installation} client:visible />
+    </div>
+
+    <div>
+        ## Usage
+
+        Import all parts and piece them together.
+
+        <CodeSnippet code={`import Annonce from "@tailus-ui/Annonce"
+
+export default () => (
+    <Annonce.Root>
+        <Annonce.Concern />
+        <Annonce.Message />
+    </Annonce.Root>
+)`}
+                  lang="tsx"
+                  client:visible />
+
+        See [examples](#examples) below for more use cases.
+    </div>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 space-y-12 mb-12"> 
+            <div>
+                ### Root 
+
+                The parent component of the `Annonce` component
+
+                <Table data={reference.root} />
+            </div>
+
+            <div>
+                ### Concern
+
+                The subject of the announcement
+
+                <Table data={reference.concern} />
+            </div>
+
+            <div>
+                ### Message
+
+                The message of the announcement
+            </div>
+        </div>
+    </div>
+
+    <div>
+        ## Examples
+
+        <div className="space-y-12">
+            <div> 
+                ### Variants
+                <PreviewBlock codeBlocks={variantsCode}>
+                    <div className="space-y-4">
+                        <Annonce.Root variant="plain">
+                            <Annonce.Concern size="xs">New</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+
+                        <Annonce.Root variant="outlined">
+                            <Annonce.Concern size="xs">New</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+
+                        <Annonce.Root variant="soft" data-shade="900">
+                            <Annonce.Concern size="xs">New</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+
+                        <Annonce.Root variant="mixed">
+                            <Annonce.Concern size="xs">New</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                    </div>
+                </PreviewBlock>
+            </div>
+            <div> 
+                ### Intents
+                <PreviewBlock codeBlocks={variantsCode}>
+                    <div className="space-y-4">
+                        <Annonce.Root variant="mixed">
+                            <Annonce.Concern size="xs" intent="primary">New</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                        <Annonce.Root variant="mixed">
+                            <Annonce.Concern size="xs" intent="secondary">New</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                        <Annonce.Root variant="mixed">
+                            <Annonce.Concern size="xs" intent="accent">New</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                        <Annonce.Root variant="mixed">
+                            <Annonce.Concern size="xs" intent="info">New</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                        <Annonce.Root variant="mixed">
+                            <Annonce.Concern size="xs" intent="danger">New</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                        <Annonce.Root variant="mixed">
+                            <Annonce.Concern size="xs" intent="warning">New</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                        <Annonce.Root variant="mixed">
+                            <Annonce.Concern size="xs" intent="success">New</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                        <Annonce.Root variant="mixed">
+                            <Annonce.Concern size="xs" intent="gray">New</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                        <Annonce.Root variant="mixed">
+                            <Annonce.Concern size="xs" intent="neutral">New</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                    </div>
+                </PreviewBlock>
+            </div>
+
+            <div> 
+                ### Sizes
+                <PreviewBlock codeBlocks={sizesCode}>
+                    <div className="space-y-4">
+                        <Annonce.Root variant="mixed" size="xs">
+                            <Annonce.Concern size="xs">Xs</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                        <Annonce.Root variant="mixed" size="sm">
+                            <Annonce.Concern size="sm">Sm</Annonce.Concern>
+                            <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                        <Annonce.Root variant="mixed" size="md">
+                            <Annonce.Concern size="md">Md</Annonce.Concern>
+                            <Annonce.Message>Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                        <Annonce.Root variant="mixed" size="lg">
+                            <Annonce.Concern size="lg">Lg</Annonce.Concern>
+                            <Annonce.Message>Introducing Tailus UI React</Annonce.Message>
+                        </Annonce.Root>
+                    </div>
+                </PreviewBlock>
+            </div>
+
+            <div> 
+                ### As Link
+                <PreviewBlock codeBlocks={asLinkCode}>
+                    <Annonce.Root href="/" variant="mixed" size="md">
+                        <Annonce.Concern size="xs">New</Annonce.Concern>
+                        <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                    </Annonce.Root>
+                </PreviewBlock>
+            </div>
+
+            <div> 
+                ### As Link with Icon
+                <PreviewBlock codeBlocks={asLinkWithIconCode}>
+                    <Annonce.Root href="/" variant="mixed" size="md" className="pr-2">
+                        <Annonce.Concern size="xs">New</Annonce.Concern>
+                        <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message>
+                        <div className="relative flex ml-2 items-center transition-transform duration-300">
+                            <span className="absolute inset-y-0 right-[5px] my-auto w-2.5 block opacity-0 h-[1.5px] -translate-y-[0.25px] bg-gray-950 dark:bg-white origin-left scale-x-0 transition duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
+                            <svg aria-hidden xmlns="http://www.w3.org/2000/svg" className="size-4 -translate-x-2 text-[--title-text-color] transition duration-300 group-hover:translate-x-px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </Annonce.Root>
+                </PreviewBlock>
+            </div>
+
+            <div> 
+                ### With Link
+                <PreviewBlock codeBlocks={withLinkCode}>
+                    <Annonce.Root variant="mixed" size="md">
+                        <Annonce.Concern>New</Annonce.Concern>
+                        <Annonce.Message className="text-sm">Introducing Tailus UI React</Annonce.Message><Link href="/" weight="medium" intent="neutral" size="sm" variant="underlined"> Learn more</Link>
+                    </Annonce.Root>
+                </PreviewBlock>
+            </div>
+        </div>
+    </div>
+</div>

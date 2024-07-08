@@ -1,0 +1,95 @@
+---
+import { getCollection} from 'astro:content'
+import UIKitsSwitcher from './UIKitsSwitcher';
+import { Title } from './typography';
+import { BlurDivs } from './utilities/DocsProgressiveBlur';
+
+const themer = await getCollection('themer')
+const react = await getCollection('react')
+const currentPath = Astro.url.pathname
+
+const sidebarPages = {
+    themer: themer,
+    react: react,
+};
+
+interface Props {
+    target : keyof typeof sidebarPages
+}
+
+const { target } = Astro.props
+const activeLinkClasses = "font-medium text-info-600 dark:text-info-400 hover:text-info-700 dark:hover:text-info-300"
+
+const reactOrder = ['get-started', 'theming', 'guides', 'typography', 'components', 'visualizations', 'blocks'];
+console.log(currentPath)
+---
+
+<script>
+    document.addEventListener('astro:page-load', () => {
+        let timeoutId;
+        const linksParent = document.querySelector("#linksParent")
+        const currentScroll = sessionStorage.getItem('scrollPosition') || '0';
+        linksParent!.scrollTop = JSON.parse(currentScroll);
+
+        const handleScroll = (event) => {
+            if (timeoutId !== null) {
+                clearTimeout(timeoutId);
+            }
+
+            timeoutId = setTimeout(() => {
+                sessionStorage.setItem("scrollPosition", event.target.scrollTop)
+            }, 100); 
+        }
+
+        linksParent?.addEventListener("scroll", (event)=> {
+            handleScroll(event)
+        })
+    })
+</script>
+
+<div class="h-full relative px-8 lg:px-0 pt-6 lg:pt-0">
+    <div class="z-50 -ml-1 lg:ml-0 h-12">
+        <UIKitsSwitcher defaultValue={target} client:load transition:persist/>
+    </div>
+    <div aria-hidden="true" class="h-10 absolute top-16 lg:top-11 left-0 right-3 pointer-events-none">
+        <BlurDivs />
+    </div>
+    <div aria-hidden="true" class="h-10 absolute z-10 bottom-0 left-0 right-3 rotate-180 pointer-events-none">
+        <BlurDivs />
+    </div>
+    <div class="h-[calc(100dvh-10rem)] overflow-y-scroll custom-scrollbar" id="linksParent">
+        <div class="space-y-6 lg:ml-1 pt-6 pb-12 lg:py-6">
+            {
+                Object.entries(sidebarPages[target].reduce((acc, page) => {
+                    const [subdirectory] = page.slug.split('/');
+                    if (!acc[subdirectory]) {
+                        acc[subdirectory] = [];
+                    }
+                    acc[subdirectory].push(page);
+                    return acc;
+                }, {}))
+                .sort(([a], [b]) => reactOrder.indexOf(a) - reactOrder.indexOf(b)) // Sort based on the order array
+                .map(([subdirectory, pages]) => 
+                    <div>
+                        <Title as="span" size="base" className="text-[15px] capitalize">{subdirectory.replace("-", " ")}</Title>
+                        <ul class="space-y-2 mt-4">
+                            {
+                                pages?.sort((a, b) => a.data.priorityOrder - b.data.priorityOrder).map((page) => 
+                                    <li>
+                                        <a href={`/${target}/${page.slug}`} class:list={currentPath === `/${target}/${page.slug}` ? activeLinkClasses : ""}  class="text-[15px] text-gray-600 dark:text-gray-400 hover:text-gray-950 dark:hover:text-white transition duration-200">
+                                            <span class="capitalize">
+                                                { 
+                                                    pages[0].slug.split('/')[0] === page.slug.split('/').pop() ? "Overview" : page.slug.split('/').pop().replace("-", " ")
+                                                }
+                                            </span>
+                                        </a>
+                                    </li>
+                                )
+                            }
+                        </ul>
+                    </div>
+                )
+            }
+        </div>
+    </div>
+</div>

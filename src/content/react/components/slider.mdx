@@ -1,0 +1,110 @@
+---
+title: Slider
+description: An input where the user selects a value from within a given range.
+priorityOrder : 52
+frameworkDocs : 
+    name : Radix UI
+    link : https://www.radix-ui.com/primitives/docs/components/slider#api-reference
+---
+
+import _components from "@content/_components"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import ComponentPreview from "@components/ComponentPreview"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import Table from "@components/Table.astro"
+
+import { Overview } from "@react-ui/slider/Overview"
+import * as reference from "@react-ui/slider/reference"
+import { installation } from "@react-ui/slider/codeSnippets"
+
+export const components = {
+    ..._components
+}
+
+export const usage = [
+    {
+        code:`import Slider from "@react-ui/Slider";`,
+        lang: "tsx",
+    },
+    {
+        code: `const MyComponent = () => (
+    <Slider.Root
+        className="w-72"
+        defaultValue={[50]}
+        max={100}
+        step={1}
+    >
+        <Slider.Track>
+            <Slider.Range />
+        </Slider.Track>
+        <Slider.Thumb aria-label="Volume"/>
+    </Slider.Root>
+)`,
+        lang: "tsx",
+    }
+]
+
+<div className="space-y-20">
+
+    <ComponentPreview>
+        <Overview client:visible/>
+    </ComponentPreview>
+
+    <div>
+        ## Installation
+
+        Install the primitive and Copy-Paste the component code in a `.tsx` file.
+
+        <DocsStackedSnippets snippets={installation} client:visible/>
+    </div>
+
+    <div>
+        ## Usage
+
+        Import all the parts and build your Slider.
+        
+        <DocsStackedSnippets snippets={usage} client:visible/>
+    </div>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 mb-12 space-y-12"> 
+
+            <div>
+                ### Root
+                
+                The Slider `<Root />` has the following additional props.
+
+                <Table data={reference.root}/>
+            </div>
+
+            <div>
+                ### Track
+                
+                The Slider `<Track />` has the following additional props.
+
+                <Table data={reference.track}/>
+            </div>
+
+            <div>
+                ### Thumb
+                
+                The Slider `<Thumb />` has the following additional props.
+
+                <Table data={reference.thumb}/>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        ## Examples
+
+        <div className="space-y-12">
+            <div>
+                
+            </div>
+        </div>
+    </div>
+</div>

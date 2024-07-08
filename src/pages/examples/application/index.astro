@@ -1,0 +1,11 @@
+---
+import Layout from '@layouts/ExamplesLayout.astro';
+import { BlockPreview } from '@components/BlockPreview';
+import { cardPreview, dSidebarPreview, headerPreview, sidebarPreview } from '@components/examples/layouts';
+
+const examples = [cardPreview, dSidebarPreview, sidebarPreview, headerPreview];
+---
+
+<Layout title="App Examples" description="Modern application layouts built with Tailus UI React" image="/ogs/app-og.png">
+    {examples.map(example => <BlockPreview client:visible {...example} />)}
+</Layout>

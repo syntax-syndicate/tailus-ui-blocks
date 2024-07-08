@@ -1,0 +1,93 @@
+---
+title: Bar
+description: Learn how to apply styles to your Bar component in Recharts
+priorityOrder : 67
+frameworkDocs : 
+    name : Recharts
+    link : https://recharts.org/en-US/api/bar
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import {
+    BarChartOverview,
+    areaStyleProps
+} from "@react-ui/visualizations"
+import ComponentPreview from "@components/ComponentPreview"
+import Table from "@components/Table.astro"
+
+export const components = {
+    ..._components
+}
+
+export const componentCode = `import React from 'react';
+import { gradientStop, type AreaProps as AreaVariants } from "@tailus/themer"
+
+export const LinearGradient: React.FC<Omit<AreaVariants, "gradient"> & {id:string}> = ({intent, id}) => {
+    return (
+        <linearGradient x1={0} y1={0} x2={0} y2={1} id={id}>
+            <stop className={gradientStop({intent})} offset="5%" stopColor="currentColor" stopOpacity={0.8} />
+            <stop className="text-white dark:text-gray-950" offset="95%" stopColor="currentColor" stopOpacity={0} />
+        </linearGradient>
+    )
+}`
+export const component = {
+    code : componentCode,
+    lang:"tsx",
+}
+
+export const importation = {
+    code: `import { Bar } from 'recharts';
+import { area } from "@tailus/themer";`,
+    lang : "tsx"
+}
+
+
+export const applyStyles = {
+    code: `<Bar 
+    className={area({ gradient:true, intent: "primary" })}
+    fill="currentColor"
+    radius={[4,4,0,0]}
+    dataKey="Primary"
+/>`,
+        lang: "tsx",
+    }
+
+<div className="space-y-20">
+    <ComponentPreview >
+        <BarChartOverview client:visible />
+    </ComponentPreview>
+    <div>
+        ## Installation
+
+        No installation is required for the Bar component. You can use it directly in your project.
+    </div>
+
+    <div>
+        ## Usage
+        
+        Import the `<Bar />` component from the recharts library and the `area` styles from `@tailus/themer`.
+        
+        <CodeSnippet {...importation} client:visible/>
+
+        To change the color of the `<Bar />` component, set the `fill` prop to `currentColor` and apply the `area` styles to the `className` prop.
+        
+        <CodeSnippet {...applyStyles} client:visible/>
+
+        To maintain the original opacity of the fill color in the `area` styles, set the `gradient` variant to `true`. This prevents the fill color from becoming less opaque.
+    </div>
+
+    <div>
+        ## Reference
+
+        Although we didn't create a custom Bar component, you can change the component's color using the `intent` variant of the `area` styles.
+
+        <Table data={areaStyleProps} />
+    </div>
+
+    <div>
+        ## Examples
+
+        See the BarChart examples on the [Bar Chart](/react/visualizations/bar-chart) page
+    </div>
+</div>

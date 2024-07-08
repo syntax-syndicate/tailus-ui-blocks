@@ -1,0 +1,108 @@
+---
+name: 'astrolus'
+title: 'Modern tech landing page'
+priority: 3
+coverImageLink: /images/templates/astrolus/1.webp
+shortDescription: "Modern landing page"
+price : From $19.99
+rating : 
+    rate : 4
+    count : 2
+previewLink: 'https://preview.tailus.io/astrolus'
+purchaseLink: 'https://tailus.lemonsqueezy.com/buy/ed22873b-956a-4c2a-8762-42703a08293e'
+stack : ["html", "astro", "nuxt", "next"]
+---
+
+import _components from "@content/_components"
+import CustomImage from "@components/utilities/TemplateImage"
+import { Card } from "@components/Card"
+import { NextIcon, HTMLIcon, AstroIcon, NuxtIcon } from "@components/utilities/icons"
+import { RatingComparison } from "@components/Rating"
+
+
+export const components = {
+    ..._components
+}
+
+<div>
+    A modern and beautiful Tailwind CSS landing page template perfect for showcasing your products, services, or campaigns. It's available in 4 different versions including HTML, Astro, Nuxt.js, and Next.js.
+
+    ## Pages
+
+    - Hero 
+    - Login
+    - Register 
+    - Error 404 
+</div>
+
+<div>
+    ## Screenshots
+
+    <CustomImage src="/images/templates/astrolus/2.webp" alt="Tailus UI Astrolus home screenshot" client:visible />
+    <CustomImage src="/images/templates/astrolus/3.webp" alt="Tailus UI Astrolus home screenshot" client:visible />
+    <CustomImage src="/images/templates/astrolus/4.webp" alt="Tailus UI Astrolus home screenshot" client:visible />
+    <CustomImage src="/images/templates/astrolus/5.webp" alt="Tailus UI Astrolus home screenshot" client:visible />
+</div>
+
+<div>
+    ## Dark mode
+
+    <CustomImage src="/images/templates/astrolus/6.webp" alt="Tailus UI Astrolus home dark mode screenshot" client:visible />
+    <CustomImage src="/images/templates/astrolus/7.webp" alt="Tailus UI Astrolus home dark mode screenshot" client:visible />
+    <CustomImage src="/images/templates/astrolus/8.webp" alt="Tailus UI Astrolus home dark mode screenshot" client:visible />
+</div>
+
+<div>
+    ## Pricing
+
+
+    <div className="grid sm:grid-cols-2 gap-3 mt-6">
+        <Card variant="mixed" className="transition p-3.5 flex items-center justify-between shadow-sm text-[--title-text-color] hover:card-shadow dark:hover:bg-[--ui-soft-bg]" href="https://tailus.lemonsqueezy.com/buy/ed22873b-956a-4c2a-8762-42703a08293e?enabled=60719">
+            <div className="gap-2.5 flex items-center">
+                <HTMLIcon />
+                <span className="text-base font-medium">HTML</span>
+            </div>
+
+            <span className="text-[--body-text-color]">$19.99</span>
+        </Card>
+
+        <Card variant="mixed" className="transition p-3.5 flex items-center justify-between shadow-sm text-[--title-text-color] hover:card-shadow dark:hover:bg-[--ui-soft-bg]" href="https://tailus.lemonsqueezy.com/buy/91a22051-38d1-471a-9b15-5b087905b800?enabled=60725">
+            <div className="gap-2.5 flex items-center">
+                <AstroIcon className="w-5 h-5"/>
+                <span className="text-base font-medium">Astro</span>
+            </div>
+
+            <span className="text-[--body-text-color]">$29.99</span>
+        </Card>
+
+        <Card variant="mixed" className="transition p-3.5 flex items-center justify-between shadow-sm text-[--title-text-color] hover:card-shadow dark:hover:bg-[--ui-soft-bg]" href="https://tailus.lemonsqueezy.com/buy/bd8d1149-60c2-4726-ad99-b7d8910f115a?enabled=60728">
+            <div className="gap-2.5 flex items-center">
+                <NextIcon className="w-5 h-5"/>
+                <span className="text-base font-medium">NextJs</span>
+            </div>
+
+            <span className="text-[--body-text-color]">$39.99</span>
+        </Card>
+
+        <Card variant="mixed" className="transition p-3.5 flex items-center justify-between shadow-sm text-[--title-text-color] hover:card-shadow dark:hover:bg-[--ui-soft-bg]" href="https://tailus.lemonsqueezy.com/buy/ea52f0e9-b9fa-42d0-abcb-332350bd18fc?enabled=60726">
+            <div className="gap-2.5 flex items-center">
+                <NuxtIcon className="w-5 h-5"/>
+                <span className="text-base font-medium">NuxtJs</span>
+            </div>
+
+            <span className="text-[--body-text-color]">$39.99</span>
+        </Card>
+    </div>
+</div>
+
+<div>
+    <RatingComparison
+        rating={{
+            one : 0,
+            two: 50,
+            three: 0,
+            four: 0,
+            five: 50
+        }}
+    />
+</div>

@@ -1,0 +1,33 @@
+---
+title: Toolbar
+description: A container for grouping a set of controls, such as buttons, toggle groups or dropdown menus.
+priorityOrder : 59
+frameworkDocs : 
+    name : Radix UI
+    link : https://www.radix-ui.com/primitives/docs/components/toggle-group#api-reference
+---
+
+import _components from "@content/_components"
+import ComponentPreview from "@components/ComponentPreview"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import { Overview } from "@react-ui/toolbar/Toolbar"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    
+    <ComponentPreview>
+        <Overview client:visible/>
+    </ComponentPreview>
+
+
+    <div>
+        ## Installation
+
+        Install the primitive
+
+        <CodeSnippet code="npm install @radix-ui/react-toolbar" lang="bash" client:visible />
+    </div>
+</div>

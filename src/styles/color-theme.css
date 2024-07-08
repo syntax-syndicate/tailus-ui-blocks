@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --display-text-color : theme(colors.gray.950);
+        --body-text-color : theme(colors.gray.700);
+        --caption-text-color : theme(colors.gray.500);
+        --placeholder-text-color : theme(colors.gray.400);
+        --ui-border-color : theme(colors.gray.200);
+
+        --area-primary-stroke: theme(colors.primary.600);
+        --area-secondary-stroke: theme(colors.secondary.600);
+        --area-accent-stroke: theme(colors.accent.600);
+        --area-gray-stroke: theme(colors.gray.600);
+        --area-neutral-stroke: theme(colors.gray.950);
+        --input-radius:var(--btn-radius)
+    }
+    .dark {
+        --display-text-color : theme(colors.white);
+        --body-text-color : theme(colors.gray.300);
+        --placeholder-text-color : theme(colors.gray.600);
+        --feedback-shadow-opacity : '1';
+        --ui-border-color:theme(colors.gray.800/0.75)
+    }
+
+    [data-shade="glassy"] {
+        @apply dark:[--ui-border-color:theme(colors.gray.700)]
+    }
+    [data-shade="800"] {
+        @apply dark:[--ui-border-color:theme(colors.gray.700)]
+    }
+    [data-shade="900"], [data-shade="950"], [data-shade="925"] {
+        @apply dark:[--ui-border-color:theme(colors.gray.800)]
+    }
+
+    [data-tls-shade="glassy"]{
+        @apply dark:[--ui-bg:theme(colors.gray.700/75)] dark:backdrop-blur-2xl dark:[--ui-border-color:theme(colors.gray.700)]
+    }
+
+    [data-tls-shade="800"]{
+        @apply dark:[--ui-bg:theme(colors.gray.800)] dark:backdrop-blur-2xl dark:[--ui-border-color:theme(colors.gray.700)]
+    }
+
+    [data-tls-shade="900"]{
+        @apply dark:[--ui-bg:theme(colors.gray.900)] dark:backdrop-blur-2xl dark:[--ui-border-color:theme(colors.gray.800)]
+    }
+
+    [data-tls-shade="925"]{
+        @apply dark:[--ui-bg:theme(colors.gray.925)] dark:backdrop-blur-2xl dark:[--ui-border-color:theme(colors.gray.800)]
+    }
+
+    [data-tls-shade="950"]{
+        @apply dark:[--ui-bg:theme(colors.gray.950)] dark:backdrop-blur-2xl dark:[--ui-border-color:theme(colors.gray.800)]
+    }
+
+
+    [data-palette="tls"] {
+        --colors-primary-50: var(--colors-blue-50);
+        --colors-primary-100: var(--colors-blue-100);
+        --colors-primary-200: var(--colors-blue-200);
+        --colors-primary-300: var(--colors-blue-300);
+        --colors-primary-400: var(--colors-blue-400);
+        --colors-primary-500: var(--colors-blue-500);
+        --colors-primary-600: var(--colors-blue-600);
+        --colors-primary-700: var(--colors-blue-700);
+        --colors-primary-800: var(--colors-blue-800);
+        --colors-primary-900: var(--colors-blue-900);
+        --colors-primary-950: var(--colors-blue-950);
+
+        --colors-secondary-50: var(--colors-purple-50);
+        --colors-secondary-100: var(--colors-purple-100);
+        --colors-secondary-200: var(--colors-purple-200);
+        --colors-secondary-300: var(--colors-purple-300);
+        --colors-secondary-400: var(--colors-purple-400);
+        --colors-secondary-500: var(--colors-purple-500);
+        --colors-secondary-600: var(--colors-purple-600);
+        --colors-secondary-700: var(--colors-purple-700);
+        --colors-secondary-800: var(--colors-purple-800);
+        --colors-secondary-900: var(--colors-purple-900);
+        --colors-secondary-950: var(--colors-purple-950);
+
+        --colors-accent-50: var(--colors-lime-50);
+        --colors-accent-100: var(--colors-lime-100);
+        --colors-accent-200: var(--colors-lime-200);
+        --colors-accent-300: var(--colors-lime-300);
+        --colors-accent-400: var(--colors-lime-400);
+        --colors-accent-500: var(--colors-lime-500);
+        --colors-accent-600: var(--colors-lime-600);
+        --colors-accent-700: var(--colors-lime-700);
+        --colors-accent-800: var(--colors-lime-800);
+        --colors-accent-900: var(--colors-lime-900);
+        --colors-accent-950: var(--colors-lime-950);
+
+        --colors-gray-50: var(--colors-neutral-50);
+        --colors-gray-100: var(--colors-neutral-100);
+        --colors-gray-200: var(--colors-neutral-200);
+        --colors-gray-300: var(--colors-neutral-300);
+        --colors-gray-400: var(--colors-neutral-400);
+        --colors-gray-500: var(--colors-neutral-500);
+        --colors-gray-600: var(--colors-neutral-600);
+        --colors-gray-700: var(--colors-neutral-700);
+        --colors-gray-800: var(--colors-neutral-800);
+        --colors-gray-900: var(--colors-neutral-900);
+        --colors-gray-925: var(--colors-neutral-925);
+        --colors-gray-950: var(--colors-neutral-950);
+    }
+}

@@ -1,0 +1,100 @@
+---
+title: Input
+description: Allows users to input data into a form.
+priorityOrder : 44
+---
+
+import _components from "@content/_components"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+
+import { Overview, overviewCode } from "@react-ui/input/Overview"
+import { WithLabel, withLabelCode } from "@react-ui/input/WithLabel"
+import { WithCaption, withCaptionCode } from "@react-ui/input/WithCaption"
+import { Disabled, disabledCode } from "@react-ui/input/Disabled"
+import { Sizes, sizesCode } from "@react-ui/input/Sizes"
+import { inputProps } from "@react-ui/input/reference"
+import { installation, usage } from "@react-ui/input/codeSnippets"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+
+    <PreviewBlock
+        codeBlocks={overviewCode}
+    >
+        <Overview client:visible/>
+    </PreviewBlock>
+
+
+    <div>
+        ## Installation
+
+        Copy-Paste the component code in a `.tsx` file.
+
+        <DocsStackedSnippets snippets={installation} client:visible/>
+    </div>
+
+    <div>
+        ## Usage
+
+        Import the `Input` component and build your form.
+        
+        <DocsStackedSnippets snippets={usage} client:visible/>
+    </div>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 space-y-12 mb-12"> 
+            <div>
+                ### Input 
+
+                The input field component
+
+                <Table data={inputProps} />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        ## Examples
+
+        <div className="space-y-12">
+            <div>
+                ### With Label
+
+                <PreviewBlock codeBlocks={withLabelCode}>
+                    <WithLabel />
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### With Caption
+
+                <PreviewBlock codeBlocks={withCaptionCode}>
+                    <WithCaption />
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Disabled
+
+                <PreviewBlock codeBlocks={disabledCode}>
+                    <Disabled />
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Sizes
+
+                <PreviewBlock codeBlocks={sizesCode}>
+                    <Sizes />
+                </PreviewBlock>
+            </div>
+        </div>
+    </div>
+</div>

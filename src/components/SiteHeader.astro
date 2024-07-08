@@ -1,0 +1,67 @@
+---
+import { BrandIcon } from './utilities/BrandIcon';
+import { SITE_SOCIAL_GITHUB } from '../const';
+import { GitHubIcon } from './utilities/icons';
+import ThemeSwitcher from './ThemeSwitcher';
+import Button from '@react-ui/button/Button';
+import Navlinks from './NavLinks.astro';
+---
+
+<script>
+    document.addEventListener('astro:page-load', () => {
+        const navitems = document.querySelector('#mobile-navitems') as HTMLElement;
+        const hamburger = document.querySelector('#mobile-navitems-trigger');
+        let isActive = navitems?.getAttribute('data-state') === 'open';
+
+        function toggleItems() {
+            isActive = !isActive;
+            navitems?.setAttribute('data-state', isActive ? 'open' : 'closed');
+            hamburger?.setAttribute('data-state', isActive ? 'open' : 'closed');
+
+            document.querySelector('body')?.classList.toggle('overflow-hidden', isActive);
+        }
+
+        hamburger?.addEventListener('click', toggleItems);
+    });
+</script>
+
+<header>
+    <div class="relative border-b lg:border-none z-50 max-w-8xl px-6 lg:px-12 xl:px-16 mx-auto flex gap-4 sm:gap-6 justify-between py-3 lg:py-6 items-center">
+        <div class="flex items-center sm:gap-6">
+            <div class="flex items-center gap-3">
+                <a href="/" aria-label="Home page" class="rounded-full">
+                    <BrandIcon className="h-7" />
+                </a>
+            </div>
+
+            <div class="hidden lg:block">
+                <Navlinks />
+            </div>
+
+            <div data-state="closed" id="mobile-navitems" class="absolute z-50 h-0 overflow-hidden transition-[height] duration-300 top-12 bottom-0 inset-x-0 bg-white dark:bg-gray-925/75 dark:backdrop-blur-xl dark:border-white/10 px-3 shadow-lg shadow-gray-950/5 border-gray-950/10 data-[state=open]:h-dvh lg:hidden">
+                <div class="py-8">
+                    <Navlinks />
+                </div>
+            </div>
+        </div>
+
+        <div class="flex gap-3 lg:gap-4 items-center justify-between">
+            <div class="flex items-center gap-1.5">
+                <ThemeSwitcher client:idle transition:persist />
+                <Button.Root variant="ghost" intent="gray" href={SITE_SOCIAL_GITHUB} aria-label="Visit our GitHub" className="size-9 px-0">
+                    <Button.Icon type="only" size="md">
+                        <GitHubIcon />
+                    </Button.Icon>
+                </Button.Root>
+                <Button.Root id="mobile-navitems-trigger" data-state="closed" variant="ghost" intent="gray" size="md" aria-label="Toggle navlinks" className="group relative flex flex-col size-9 lg:hidden -mr-2.5 transition duration-200 hover:bg-transparent dark:hover:bg-transparent">
+                    <Button.Icon type="only">
+                        <div class="absolute inset-0 m-auto duration-300 transition-transform group-data-[state=open]:rotate-45 group-data-[state=open]:translate-y-0.5 group-data-[state=open]:-translate-x-px">
+                            <div aria-hidden="true" class="absolute inset-x-0 mx-auto top-0 translate-y-[13.5px] h-[1.5px] w-[1.125rem] rounded bg-gray-950 transition-transform duration-200 dark:bg-white group-data-[state=open]:translate-y-4"></div>
+                            <div aria-hidden="true" class="absolute inset-x-0 mx-auto top-0 translate-y-[21.5px] h-[1.5px] w-[1.125rem] rounded bg-gray-950 transition-transform duration-200 dark:bg-white group-data-[state=open]:translate-y-4 group-data-[state=open]:rotate-90"></div>
+                        </div>
+                    </Button.Icon>
+                </Button.Root>
+            </div>
+        </div>
+    </div>
+</header>

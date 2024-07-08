@@ -1,0 +1,19 @@
+---
+import ComponentPreview from "@components/ComponentPreview";
+import CodeSnippet, {type CodeSnippetProps} from "@components/utilities/CodeSnippet";
+import DocsStackedSection from "./DocsStackedSnippets";
+const { codeBlocks } = Astro.props as { codeBlocks: CodeSnippetProps[] };
+---
+
+<div class="mt-6">
+    <ComponentPreview className="mb-3" client:visible>
+        <slot />
+    </ComponentPreview>
+    {
+        codeBlocks.length > 1 ? (
+            <DocsStackedSection snippets={codeBlocks} client:visible />
+        ) : (
+            <CodeSnippet className="aspect-auto" {...codeBlocks[0]} client:visible />
+        )   
+    }
+</div>

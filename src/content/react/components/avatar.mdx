@@ -1,0 +1,122 @@
+---
+title: Avatar
+description: An image element with a fallback for representing the user.
+priorityOrder : 30
+frameworkDocs : 
+    name : Radix UI
+    link : https://www.radix-ui.com/primitives/docs/components/avatar#api-reference
+---
+import _components from "@content/_components"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import ComponentPreview from "@components/ComponentPreview"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import { Link, Caption } from "@components/typography"
+import * as AspectRatio from '@radix-ui/react-aspect-ratio';
+import {
+    Overview,
+    installation,
+    usage,
+    reference,
+    Colors,
+    colorsCode,
+    Sizes,
+    sizesCode,
+    AStatus,
+    statusCode,
+    StackedAvatars,
+    stackedCode
+} from "@react-ui/avatar"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <ComponentPreview>
+        <Overview client:visible/>
+    </ComponentPreview>
+
+    <div>
+        ## Installation
+
+        Install the primitive and Copy-Paste the component code in a `.tsx` file.
+
+        <DocsStackedSnippets snippets={installation} client:visible/>
+    </div>
+
+    <div>
+        ## Usage
+
+        Import the `Avatar` parts you need to use in your component and build your Avatar.
+
+        <DocsStackedSnippets snippets={usage} client:visible/>
+    </div>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 mb-12 space-y-12"> 
+            <div>
+                ### Root
+                The parent container of the `Avatar` component
+                <Table data={reference.root}/>
+            </div>
+            <div>
+                ### Fallback 
+
+                An element that renders when the image hasn't loaded.
+
+                <Table data={reference.fallback}/>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        ## Examples
+
+        <div className="space-y-12">
+            <div>
+                ### Colors 
+
+                <PreviewBlock
+                    codeBlocks={colorsCode}
+                >
+                    <Colors client:visible/>
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Sizes 
+
+                <PreviewBlock
+                    codeBlocks={sizesCode}
+                >
+                    <Sizes client:visible/>
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Status 
+
+                <PreviewBlock
+                    codeBlocks={statusCode}
+                >
+                    <AStatus client:visible/>
+                </PreviewBlock>
+            </div>
+
+            <div>
+                ### Stacked Avatars
+
+                A collection of overlaid avatars with a transparent background, ensuring seamless integration with any backdrop, including gradients. 
+
+                <PreviewBlock
+                    codeBlocks={stackedCode}
+                >
+                    <StackedAvatars client:visible/>
+                </PreviewBlock>
+            </div>
+        </div>
+    </div>
+</div>

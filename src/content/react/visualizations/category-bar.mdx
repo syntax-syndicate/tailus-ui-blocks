@@ -1,0 +1,43 @@
+---
+title: Category Bar
+description: An example of a Category Bar Chart built with BarChart component
+priorityOrder : 72
+frameworkDocs : 
+    name : Recharts
+    link : https://recharts.org/en-US/api/bar
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import {
+    CategoryBar,
+    simpleBarChartCode,
+    LabeledCategoryBar,
+    labeledCategoryBarCode
+} from "@react-ui/visualizations"
+import ComponentPreview from "@components/ComponentPreview"
+import Table from "@components/Table.astro"
+import PreviewBlock from "@components/PreviewBlock.astro"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+
+    <div>
+        ## Simple
+
+        <PreviewBlock codeBlocks={simpleBarChartCode}>
+            <CategoryBar client:visible />
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## With Labels
+
+        <PreviewBlock codeBlocks={labeledCategoryBarCode}>
+            <LabeledCategoryBar client:visible />
+        </PreviewBlock>
+    </div>
+</div>

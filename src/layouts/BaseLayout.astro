@@ -1,0 +1,38 @@
+---
+import Footer from '../components/Footer';
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../const';
+import SiteHeader from '../components/SiteHeader.astro';
+import { BlurDivs } from '@components/utilities/DocsProgressiveBlur';
+import '@styles/color-theme.css';
+import PageLoader from '@components/utilities/PageLoader.astro';
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+    title?: string;
+    description?: string;
+    image?: string;
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = '/og-cover.png' } = Astro.props;
+---
+
+<!doctype html>
+<html class="dark" lang="en" data-palette="tls" data-shade="900" data-rounded="large">
+    <head>
+        <BaseHead title={title} description={description} image={image}/>
+        <ViewTransitions />
+    </head>
+    <body class="bg-white dark:[--body-text-color:theme(colors.gray.300)] dark:bg-gray-900 antialiased font-sans before:fixed before:inset-0 before:-z-40 dark:before:[background-image:url('/grainy-bg.svg')] dark:before:opacity-[.015]">
+        <div aria-hidden="true" id="site-bg" class="fixed blur-3xl -z-50 -inset-56 h-[200vh] origin-top-right rounded-bl-full scale-0 bg-gradient-to-b from-gray-100 from-80% to-transparent transition-[transform,borderRadius] ease-[cubic-bezier(0.87,_0,_0.13,_1)] duration-1000 dark:scale-125 dark:from-gray-925"></div>
+        <div aria-hidden="true" class="h-14 inset-x-0 fixed top-0 z-50 -translate-y-px mx-auto w-full pointer-events-none">
+            <BlurDivs />
+        </div>
+        <PageLoader />
+        <SiteHeader />
+        <main class="mb-32">
+            <slot />
+        </main>
+        <Footer />
+    </body>
+</html>

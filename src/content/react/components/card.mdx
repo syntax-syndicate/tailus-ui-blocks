@@ -1,0 +1,101 @@
+---
+title: Card
+description: Cards are used to group and display content in a way that is easily readable.
+priorityOrder : 35
+---
+import _components from "@content/_components"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import ComponentPreview from "@components/ComponentPreview"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import Table from "@components/Table.astro"
+import { installation } from "@react-ui/card/codeSnippets"
+import { cardProps } from "@react-ui/card/reference"
+import { OverviewCards, WithCharts, StackedCards, stackedCardsCode, overviewCardsCode, withChartsCardsCode } from "@components/examples/OverviewCards"
+import { Workspace, workspaceCode } from "@components/examples/Workspace"
+import {JobBoard, jobBoardCode} from "@components/examples/JobBoard"
+
+export const components = {
+    ..._components
+}
+
+export const usage = [
+    {
+        code: `import Card from "@tailus-ui/Card";`,
+        lang: "tsx",
+    },
+    {
+        code: `const MyComponent = () => (
+    <Card>
+        // Card Content
+    </Card>
+)`,
+        lang: "tsx",
+    }
+]
+
+<div className="space-y-20">
+
+    <PreviewBlock codeBlocks={stackedCardsCode}>
+        <StackedCards />
+    </PreviewBlock>
+
+    <div>
+        ## Installation
+
+        Copy-Paste the component code in a `Card.tsx` file.
+
+        <CodeSnippet {...installation} client:visible/>
+    </div>
+
+    <div>
+        ## Usage
+
+        Import the `Card` component and use it in your component.
+
+        <DocsStackedSnippets snippets={usage} client:visible/>
+    </div>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 mb-12"> 
+            ### Props
+            
+            The Card component has the following props.
+
+            <Table data={cardProps}/>
+        </div>
+    </div>
+
+    <div>
+        ## Examples
+
+        <div className="space-y-12">
+            <div>
+                ### Overview Cards
+                <PreviewBlock codeBlocks={overviewCardsCode}>
+                    <OverviewCards />
+                </PreviewBlock>
+            </div>
+            <div>
+                ### Overview Cards With Charts
+                <PreviewBlock codeBlocks={withChartsCardsCode}>
+                    <WithCharts client:visible/>
+                </PreviewBlock>
+            </div>
+            <div>
+                ### Workspace
+                <PreviewBlock codeBlocks={workspaceCode}>
+                    <Workspace client:visible/>
+                </PreviewBlock>
+            </div>
+            <div>
+                ### Job Board
+                <PreviewBlock codeBlocks={jobBoardCode}>
+                    <JobBoard client:visible/>
+                </PreviewBlock>
+            </div>
+        </div>
+    </div>
+</div>

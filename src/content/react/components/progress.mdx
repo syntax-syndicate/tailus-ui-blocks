@@ -1,0 +1,110 @@
+---
+title: Progress
+description: Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+priorityOrder : 47
+frameworkDocs : 
+    name : Radix UI
+    link : https://www.radix-ui.com/primitives/docs/components/progress#api-reference
+---
+
+import _components from "@content/_components"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import ComponentPreview from "@components/ComponentPreview"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import Table from "@components/Table.astro"
+
+import { Overview } from "@react-ui/progress/Overview"
+import * as reference from "@react-ui/progress/reference"
+import { installation } from "@react-ui/progress/codeSnippets"
+
+export const components = {
+    ..._components
+}
+
+export const usage = [
+    {
+        code:`import Progress from "@react-ui/Progress";
+import React from "react";`,
+        lang: "tsx",
+    },
+    {
+        code: `const MyComponent = () => {
+    const [progress, setProgress] = React.useState(0);
+
+    React.useEffect(() => {
+        const timer = setTimeout(() => setProgress(66), 500);
+        return () => clearTimeout(timer);
+    }, []);
+
+    return (
+        <Progress.Root
+            className="w-72"
+            data-orientation="vertical"
+            value={progress}
+            size="md"
+            variant="soft"
+        >
+            <Progress.Indicator intent="primary" loading="primary" complete="success" style={{ transform: \`translateX(-\${100 - progress}%)\` }}/>
+        </Progress.Root>
+    )
+}`,
+        lang: "tsx",
+    }
+]
+
+<div className="space-y-20">
+
+    <ComponentPreview>
+        <Overview client:visible/>
+    </ComponentPreview>
+
+    <div>
+        ## Installation
+
+        Install the primitive and Copy-Paste the component code in a `.tsx` file.
+
+        <DocsStackedSnippets snippets={installation} client:visible/>
+    </div>
+
+    <div>
+        ## Usage
+
+        Import all the parts and build your Progress.
+        
+        <DocsStackedSnippets snippets={usage} client:visible/>
+    </div>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 mb-12 space-y-12"> 
+
+            <div>
+                ### Root
+                
+                The Progress `<Root />` has the following additional props.
+
+                <Table data={reference.rootProps}/>
+            </div>
+
+            <div>
+                ### Indicator
+                
+                The Progress `<Indicator />` has the following additional props.
+
+                <Table data={reference.indicatorProps}/>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        ## Examples
+
+        <div className="space-y-12">
+            <div>
+                
+            </div>
+        </div>
+    </div>
+</div>

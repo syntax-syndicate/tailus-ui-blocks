@@ -1,0 +1,31 @@
+---
+title: Boilerplates
+description: Use our boilerplates to get started quickly.
+priorityOrder : 3
+---
+
+import _components from "@content/_components"
+import BoilerplateCard from "@components/utilities/BoilerplateCard"
+
+export const components = {
+    ..._components
+}
+
+<div>
+    ## Quick Start
+    We provide ready-to-use starter projects pre-configured with necessary dependencies. Choose the one that fits your needs to get started quickly.
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <BoilerplateCard framework="astro" href="https://github.com/Tailus-UI/astro-boilerplate" />
+        <BoilerplateCard framework="react" href="https://github.com/Tailus-UI/react-boilerplate" />
+        <BoilerplateCard framework="svelteKit" href="https://github.com/Tailus-UI/sveltekit-boilerplate" />
+        <BoilerplateCard framework="vue" href="https://github.com/Tailus-UI/vue-boilerplate" />
+    </div>
+    These starter projects come with the following pre-configured:
+
+    - **npm (Node Package Manager)**: The default package manager for Node.js, used for managing and sharing JavaScript packages.
+    - **TypeScript**: A statically typed superset of JavaScript that adds optional types, used for developing large-scale applications.
+    - **TailwindCss** : A utility-first CSS framework for rapidly building custom user interfaces.
+    - **Postcss** : A tool for transforming CSS with JavaScript.
+    - **Eslint** : A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
+    - **Prettier** : An opinionated code formatter.
+</div>

@@ -1,0 +1,92 @@
+---
+title: Radar
+description: Learn how to apply styles to your Radar component in Recharts
+priorityOrder : 69
+frameworkDocs : 
+    name : Recharts
+    link : https://recharts.org/en-US/api/bar
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import {
+    RadarChartOverview,
+    areaStyleProps
+} from "@react-ui/visualizations"
+import ComponentPreview from "@components/ComponentPreview"
+import Table from "@components/Table.astro"
+
+export const components = {
+    ..._components
+}
+
+export const componentCode = `import React from 'react';
+import { gradientStop, type AreaProps as AreaVariants } from "@tailus/themer"
+
+export const LinearGradient: React.FC<Omit<AreaVariants, "gradient"> & {id:string}> = ({intent, id}) => {
+    return (
+        <linearGradient x1={0} y1={0} x2={0} y2={1} id={id}>
+            <stop className={gradientStop({intent})} offset="5%" stopColor="currentColor" stopOpacity={0.8} />
+            <stop className="text-white dark:text-gray-950" offset="95%" stopColor="currentColor" stopOpacity={0} />
+        </linearGradient>
+    )
+}`
+export const component = {
+    code : componentCode,
+    lang:"tsx",
+}
+
+export const importation = {
+    code: `import { Radar } from 'recharts';
+import { area } from "@tailus/themer";`,
+    lang : "tsx"
+}
+
+
+export const applyStyles = {
+    code: `<Radar 
+    className={area({ intent: "primary" })}
+    fill="currentColor"
+    stroke="currentColor"
+    name="Mike"
+    dataKey="A"
+/>`,
+        lang: "tsx",
+    }
+
+<div className="space-y-20">
+    <ComponentPreview >
+        <RadarChartOverview client:visible />
+    </ComponentPreview>
+    <div>
+        ## Installation
+
+        No installation is required for the Radar component. You can use it directly in your project.
+    </div>
+
+    <div>
+        ## Usage
+        
+        Import the `<Radar />` component from the recharts library and the `area` styles from `@tailus/themer`.
+        
+        <CodeSnippet {...importation} client:visible/>
+
+        To change the color of the `<Radar />` component, set the `fill` prop to `currentColor` and apply the `area` styles to the `className` prop.
+        
+        <CodeSnippet {...applyStyles} client:visible/>
+    </div>
+
+    <div>
+        ## Reference
+
+        Although we didn't create a custom Radar component, you can change the component's color using the `intent` variant of the `area` styles.
+
+        <Table data={areaStyleProps} />
+    </div>
+
+    <div>
+        ## Examples
+
+        See more examples on the [RadarChart](/react/visualizations/radar-chart) page
+    </div>
+</div>

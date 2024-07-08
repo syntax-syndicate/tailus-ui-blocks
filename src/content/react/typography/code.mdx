@@ -1,0 +1,113 @@
+---
+title: Code
+description: Code formatted inline highlights specific programming language elements within the surrounding text.
+priorityOrder : 24
+---
+
+import _components from "@content/_components"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import ComponentPreview from "@components/ComponentPreview"
+import { Code } from "@components/typography"
+import DocsStackedSnippets from "@components/DocsStackedSnippets"
+import { codeProps } from "@react-ui/typography/reference"
+import Table from "@components/Table.astro"
+import PreviewBlock from "@components/PreviewBlock.astro"
+
+export const components = {
+    ..._components
+}
+
+export const componentCode = `import React from "react"
+import { codeTheme, type CodeThemeProps } from "@tailus/themer"
+
+export interface CodeProps extends React.HTMLAttributes<HTMLPreElement>, CodeThemeProps {}
+export const Code = React.forwardRef<HTMLPreElement, CodeProps>(({
+    intent = "gray",
+    children,
+    className,
+    ...props
+}, ref) => {
+    return (
+        <code ref={ref} className={codeTheme({ intent, className })} {...props}>
+            {children}
+        </code>
+    )
+})`
+
+export const component = {
+    code : componentCode,
+    lang:"tsx",
+    file:"tsx",
+    filename:"Code.tsx",
+}
+
+export const usage = [
+  {
+    code: `import { Code } from "@tailus-ui/typography";`,
+    lang: "tsx",
+  },
+  {
+    code: `const MyComponent = () => (
+    <Code>variant</Code>
+)`,
+    lang: "tsx",
+  }
+]
+
+export const ordered = [
+  {
+    code: `const MyCodes = () => (
+    <div>
+        <Code intent="primary">primary</Code>
+        <Code intent="secondary">secondary</Code>
+        <Code intent="accent">accent</Code>
+        <Code intent="gray">gray</Code>
+        <Code intent="neutral">neutral</Code>
+    </div>
+)`,
+    lang: "tsx",
+  }
+]
+
+<div className="space-y-20">
+    <ComponentPreview>
+        <Code>variant</Code>
+    </ComponentPreview>
+    <div>
+        ## Installation
+        Copy-Paste the component code in a `.tsx` file.
+
+        <CodeSnippet {...component} client:visible />
+    </div>
+
+    <div>
+        ## Usage
+        Import the `<Code/>` and start building.
+        <DocsStackedSnippets snippets={usage} client:visible />
+    </div>
+
+    <div>
+        ## Reference
+        The Code component has the following props
+        <Table data={codeProps} />
+    </div>
+
+    <div>
+        ## Examples
+        
+        <div> 
+            ### Intents
+            <PreviewBlock
+                codeBlocks={ordered}
+            >
+                <div className="flex flex-wrap gap-1.5">
+                    <Code intent="primary">primary</Code>
+                    <Code intent="secondary">secondary</Code>
+                    <Code intent="accent">accent</Code>
+                    <Code intent="gray">gray</Code>
+                    <Code intent="neutral">neutral</Code>
+                </div>
+            </PreviewBlock>
+        </div>
+    </div>
+</div>
