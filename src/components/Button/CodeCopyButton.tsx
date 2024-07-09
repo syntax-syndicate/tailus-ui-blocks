@@ -1,4 +1,4 @@
-import Button from '@react-ui/button/Button';
+import Button from '@tailus-ui/Button';
 import { type ButtonProps } from '@tailus/themer';
 import { useState } from 'react';
 import CustomCheckIcon from '../utilities/CheckIcon';

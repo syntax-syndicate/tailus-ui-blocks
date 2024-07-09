@@ -3,7 +3,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { $palette } from '@store/switchers';
 import { motion } from 'framer-motion';
 import { container, item } from './animations';
-import Select from '@react-ui/select/Select';
+import Select from '@tailus-ui/Select';
 import { Check } from 'lucide-react';
 
 const palettes = ['trust', 'oz', 'mystery', 'romance', 'passion', 'energy', 'spring', 'nature', 'winter'];

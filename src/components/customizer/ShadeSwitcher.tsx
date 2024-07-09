@@ -3,7 +3,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { $shade } from '@store/switchers';
 import { container, item } from './animations';
 import { motion } from 'framer-motion';
-import Select from '@react-ui/select/Select';
+import Select from '@tailus-ui/Select';
 
 const shades = ['glassy', '800', '900', '925', '950'];
 export type Shade = 'glassy' | '800' | '900' | '925' | '950';

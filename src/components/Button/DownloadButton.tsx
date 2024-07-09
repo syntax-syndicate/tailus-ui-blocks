@@ -1,9 +1,9 @@
-import DropdownMenu from "@react-ui/dropdown/Dropdown";
-import Button from "@react-ui/button/Button";
-import { DownloadIcon, ArchiveIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
+import DropdownMenu from '@tailus-ui/Dropdown';
+import Button from '@tailus-ui/Button';
+import { DownloadIcon, ArchiveIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
 
-export const DownloadButton = ({downloadLink, githubLink, size="md"} : {downloadLink:string, githubLink:string, size?:"sm" | "md" | "lg"}) => {
-    return(
+export const DownloadButton = ({ downloadLink, githubLink, size = 'md' }: { downloadLink: string; githubLink: string; size?: 'sm' | 'md' | 'lg' }) => {
+    return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
                 <Button.Root variant="solid" intent="neutral" size={size}>
@@ -36,5 +36,4 @@ export const DownloadButton = ({downloadLink, githubLink, size="md"} : {download
             </DropdownMenu.Portal>
         </DropdownMenu.Root>
     );
-}
-
+};

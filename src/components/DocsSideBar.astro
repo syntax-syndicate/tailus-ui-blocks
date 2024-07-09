@@ -1,18 +1,14 @@
 ---
 import { getCollection } from 'astro:content';
-import UIKitsSwitcher from './UIKitsSwitcher';
-import { Caption, Title } from './typography';
+import { Caption } from './tailus-ui/typography';
 import { BlurDivs } from './utilities/DocsProgressiveBlur';
-import BrandIcon from './utilities/BrandIcon';
-import Separator from '@react-ui/separator/Separator';
+import Separator from '@tailus-ui/Separator';
 
-const themer = await getCollection('themer');
-const react = await getCollection('react');
+const html = await getCollection('html');
 const currentPath = Astro.url.pathname;
 
 const sidebarPages = {
-    themer: themer,
-    react: react
+    html: html
 };
 
 interface Props {

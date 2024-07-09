@@ -12,7 +12,7 @@ import { DesktopIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
 import * as RadioGroup from '@radix-ui/react-radio-group';
 import Toggle from '@react-ui/toggle/Toggle';
 import Button from '@react-ui/button/Button';
-import { Caption, Link, Title } from './typography';
+import { Caption, Link, Title } from './tailus-ui/typography';
 import Tooltip from '@react-ui/tooltip/Tooltip';
 import { useCopyToClipboard } from './Button/CodeCopyButton';
 

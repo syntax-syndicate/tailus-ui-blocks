@@ -1,25 +1,48 @@
 ---
-import PreviewBlock from "@components/PreviewBlock.astro";
-import {AriaChartGradient, type Palette} from "@components/examples/AreaChart";
-import {Title} from "@components/typography";
-const palettes:Palette[] = ["trust", "romance", "passion", "energy", "nature", "mystery", "oz", "spring", "winter"]
+import PreviewBlock from '@components/PreviewBlock.astro';
+import { type Palette } from '@components/examples/AreaChart';
+import { Title } from '@tailus-ui/typography';
+import Calendar from '@tailus-ui/Calendar';
+import Card from '@tailus-ui/Card';
+
+const palettes: Palette[] = ['trust', 'romance', 'passion', 'energy', 'nature', 'mystery', 'oz', 'spring', 'winter'];
+
+const selectedDates = Array.from({ length: 12 }, (_, i) => {
+    const date = new Date();
+    date.setMonth(i);
+    date.setDate(Math.floor(Math.random() * 28) + 1);
+    return date;
+});
 ---
+
 <>
     {
-        palettes.map((palette) => {
+        palettes.map(palette => {
             return (
                 <div class="space-y-6" data-palette={palette}>
-                    <Title size="base" weight="medium" className="capitalize">{palette}</Title>
-                    <PreviewBlock codeBlocks={[{code:`theme: {
+                    <Title size="base" weight="medium" className="capitalize">
+                        {palette}
+                    </Title>
+                    <PreviewBlock
+                        codeBlocks={[
+                            {
+                                code: `theme: {
     extend: {
         colors: palettes.${palette},
     }
-}`, lang:"ts"}]}>
-                        <AriaChartGradient palette={palette} client:idle />
+}`,
+                                lang: 'ts'
+                            }
+                        ]}>
+                        <div class="w-fit space-y-3">
+                            <span class="text-xl font-medium text-transparent bg-clip-text capitalize bg-gradient-to-r from-primary-600 to-accent-400">{palette}</span>
+                            <Card className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-800">
+                                <Calendar selected={selectedDates} fromYear={2024} toYear={2024} intent="primary" />
+                            </Card>
+                        </div>
                     </PreviewBlock>
                 </div>
-            )
-
+            );
         })
     }
 </>

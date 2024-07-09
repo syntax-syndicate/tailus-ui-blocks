@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Button from '@react-ui/button/Button';
+import Button from '@tailus-ui/Button';
 import { Moon, Sun } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 

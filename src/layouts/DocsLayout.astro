@@ -3,15 +3,14 @@ import { type CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import DocsSideBar from '../components/DocsSideBar.astro';
 import DocsFooter from '../components/DocsFooter.astro';
-import { Link } from '@components/typography';
+import { Link } from '@tailus-ui/typography';
 import '@styles/pagefind.css';
 import '@styles/color-theme.css';
-import Button from '@react-ui/button/Button';
 import DocsPagination from '../components/DocsPagination.astro';
 import DocsHeader2 from '../components/DocsHeader2.astro';
 import { BlurDivs } from '@components/utilities/DocsProgressiveBlur';
-import { Text } from '@components/typography/Text';
-import { Title } from '@components/typography/Title';
+import { Text } from '@tailus-ui/typography/Text';
+import { Title } from '@tailus-ui/typography/Title';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 import Search from '@components/Search';
 import PageLoader from '@components/utilities/PageLoader.astro';
@@ -112,20 +111,6 @@ const repo = collection == 'themer' ? 'themer' : 'tailus-ui-react';
                                             </Link>
                                         )
                                     }
-                                    <!-- 
-                  <Link
-                    className="flex items-center group"
-                    target="_blank"
-                    intent="neutral"
-                    variant="underlined"
-                    href={`https://github.com/Tailus-UI/tailus-ui-react/tree/main/src/${docs.slug}`}
-                  >
-                    Source
-                    <ArrowTopRightIcon
-                      className="size-3 ml-1 opacity-50 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                    />
-                  </Link>
-                  -->
                                 </div>
                             </div>
                             <slot />

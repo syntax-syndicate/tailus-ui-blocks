@@ -3,7 +3,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { $rounded } from '@store/switchers';
 import { motion } from 'framer-motion';
 import { container, item } from './animations';
-import Select from '@react-ui/select/Select';
+import Select from '@tailus-ui/Select';
 
 const roundeds = ['none', 'small', 'default', 'medium', 'large', 'xlarge', '2xlarge', '3xlarge', 'full'];
 export type Rounded = 'none' | 'small' | 'default' | 'medium' | 'large' | 'xlarge' | '2xlarge' | '3xlarge' | 'full';

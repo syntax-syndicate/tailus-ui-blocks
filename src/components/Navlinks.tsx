@@ -1,5 +1,5 @@
 import * as NavMenu from '@radix-ui/react-navigation-menu';
-import { Title, Caption } from './typography';
+import { Title, Caption } from './tailus-ui/typography';
 import { ArrowRight, ChevronDown, LayoutDashboard, Megaphone, RectangleEllipsis, ShoppingBag } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';

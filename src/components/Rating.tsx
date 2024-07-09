@@ -1,6 +1,6 @@
 import { twMerge } from 'tailwind-merge';
 import { Card } from './Card';
-import { Title, Text, Caption } from './typography';
+import { Title, Text, Caption } from './tailus-ui/typography';
 
 export const Rating = ({ rating, ratings }: { rating: number; ratings: number }) => {
     return (

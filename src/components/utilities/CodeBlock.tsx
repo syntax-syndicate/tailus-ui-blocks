@@ -16,9 +16,8 @@ import type { FileType } from './File';
 import File from './File';
 import CodeCopyButton from '../Button/CodeCopyButton';
 import { twMerge } from 'tailwind-merge';
-import ScrollArea from '@react-ui/scroll-area/ScrollArea';
-import { TabsIndicator } from '@react-ui/tabs/Tabs';
-import SeparatorRoot from '@react-ui/separator/Separator';
+import ScrollArea from '@tailus-ui/ScrollArea';
+import SeparatorRoot from '@tailus-ui/Separator';
 
 export type CodeBlock = {
     code: string;
