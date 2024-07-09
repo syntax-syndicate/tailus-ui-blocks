@@ -14,7 +14,7 @@ module.exports = withTV({
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Geist', 'Inter', ...defaultTheme.fontFamily.sans],
+				sans: ['Inter', ...defaultTheme.fontFamily.sans],
 				mono: ['GeistMono', 'fira-code', ...defaultTheme.fontFamily.mono],
 			}
 		}

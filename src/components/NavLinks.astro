@@ -1,56 +1,39 @@
 ---
-import { twMerge } from 'tailwind-merge';
-import { Link } from './typography';
 import Button from '@react-ui/button/Button';
-import { ArrowTopRightIcon } from '@radix-ui/react-icons';
-import { Navlinks } from './Navlinks';
-
 const currentPath = Astro.url.pathname;
 
 const navlinks = [
     {
-        name: 'HTML Blocks',
-        href: 'https://tailus.io/blocks',
-        target: '_blank'
+        name: 'React',
+        href: 'https://ui.tailus.io'
+    },
+    {
+        name: 'Html',
+        href: '/'
+    },
+    {
+        name: 'Themer',
+        href: 'https://themer.tailus.io'
     },
     {
         name: 'Showcase',
-        href: '/showcase'
+        href: 'https://tailus.io/showcase'
     },
     {
         name: 'Templates',
-        href: '/templates'
+        href: 'https://tailus.io/templates'
     }
 ];
 
-const activeLink = 'border bg-[--ui-soft-bg]';
 const { asPill = false } = Astro.props;
 ---
 
 <ul class="flex w-fit lg:items-center gap-6 lg:gap-3 lg:flex-row flex-col" class:list={asPill && 'lg:gap-0'} data-shade="900">
-    <li>
-        <ul class="ml-2 h-8 rounded-full flex p-0.5 border border-gray-950/5 lg:ml-0 dark:border-white/5">
-            <li class="h-full">
-                <Link href="/" variant="plain" intent="gray" size="sm" className={twMerge('h-full flex items-center px-2.5 rounded-full transition-[color]', currentPath === '/' && activeLink)}>React</Link>
-            </li>
-            <li class="h-full">
-                <Link href="/react/get-started/introduction" variant="plain" intent="gray" size="sm" className={twMerge('h-full flex items-center px-2.5 rounded-full transition-[color]', currentPath.includes('react') && activeLink)}>Docs</Link>
-            </li>
-        </ul>
-    </li>
-    <li>
-        <Navlinks isActive={currentPath.includes('/examples')} client:load />
-    </li>
     {
         navlinks.map(link => (
             <li>
-                <Button.Root data-rounded="full" variant={currentPath.includes(link.href) ? 'soft' : 'ghost'} intent="gray" size="xs" href={link.href} className="justify-start" target={link.target}>
+                <Button.Root data-rounded="full" variant={currentPath.includes(link.href) ? 'soft' : 'ghost'} intent="gray" size="xs" href={link.href} className="justify-start">
                     <Button.Label>{link.name}</Button.Label>
-                    {link.target && (
-                        <Button.Icon type="trailing">
-                            <ArrowTopRightIcon className="size-3 opacity-50 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                        </Button.Icon>
-                    )}
                 </Button.Root>
             </li>
         ))
