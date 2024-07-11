@@ -18,6 +18,9 @@
         --badge-border : var(--btn-border);
         --input-border: var(--ui-border-color);
         --ui-disabled-border : theme(colors.gray.100);
+        --ui-error-border : theme(colors.danger.600);
+        --ui-success-border : theme(colors.success.600);
+        --input-outline:theme(colors.primary.600);
 
         --ui-bg: theme(colors.white/var(--ui-bg-opacity));
         --ui-soft-bg: theme(colors.gray.100);
@@ -55,8 +58,26 @@
         pointer-events: none;
     }
 
-    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    a:focus-visible, button:focus-visible {
         @apply outline-2 outline-offset-2 focus-visible:outline outline-primary-600
+    }
+
+    input:user-invalid, textarea:user-invalid, select:user-invalid {
+        --input-border: var(--ui-error-border);
+        --ui-border-color: var(--ui-error-border);
+        --input-outline : var(--ui-error-border);
+        --title-text-color : theme(colors.danger.600);
+
+        @apply dark:[--title-text-color:theme(colors.danger.400)]
+    }
+
+    input:user-valid, textarea:user-valid, select:user-valid {
+        --input-border: var(--ui-success-border);
+        --ui-border-color: var(--ui-success-border);
+        --input-outline : var(--ui-success-border);
+        --title-text-color : theme(colors.success.600);
+
+        @apply dark:[--title-text-color:theme(colors.success.400)]
     }
 }
 
@@ -432,4 +453,80 @@
         @apply bg-gray-200 text-gray-800 dark:bg-gray-500/15 dark:text-gray-300
     }
 
+    /* Input */
+    .field{
+        @apply relative space-y-2.5 *:has-[:disabled]:opacity-50 *:has-[:disabled]:pointer-events-none has-[:user-invalid]:[--caption-text-color:theme(colors.danger.600)] dark:has-[:user-invalid]:[--caption-text-color:theme(colors.danger.400)] has-[:user-valid]:[--caption-text-color:theme(colors.success.600)] dark:has-[:user-valid]:[--caption-text-color:theme(colors.success.400)]
+    }
+
+    .input, .textarea{
+        @apply w-full placeholder-[--placeholder-text-color] text-[--title-text-color] rounded-[--input-radius]
+    }
+
+    .input.outlined, .textarea.outlined{
+        @apply outline-2 bg-transparent focus:outline-[--input-outline] -outline-offset-1 focus:outline border border-[--input-border]
+    }
+
+    .input.mixed, .textarea.mixed{
+        @apply outline-2 bg-[--ui-bg] focus:outline-[--input-outline] -outline-offset-1 focus:outline border border-[--input-border]
+    }
+
+    .input.soft, .textarea.soft {
+        @apply outline-none bg-[--ui-soft-bg] focus:brightness-95 dark:focus:brightness-105
+    }
+
+    .input.plain, .textarea.plain {
+        @apply rounded-none outline-none bg-transparent
+    }
+
+    .input.bottomOutlined, .textarea.bottomOutlined {
+        @apply rounded-none focus:outline-none border-b border-[--input-border] focus:border-[--input-outline] focus:border-b-2
+    }
+
+    .input.sm {
+        @apply text-sm h-8
+    }
+
+    .input.md {
+        @apply text-sm h-9
+    }
+
+    .input.lg {
+        @apply h-10
+    }
+
+    .input.xl {
+        @apply h-12
+    }
+
+    .textarea.sm {
+        @apply text-sm py-1.5
+    }
+
+    .textarea.md {
+        @apply text-sm py-2
+    }
+
+    .textarea.lg {
+        @apply py-3
+    }
+
+    .textarea.xl {
+        @apply py-4
+    }
+
+    .input.mixed.sm, .input.outlined.sm, .input.soft.sm, .textarea.mixed.sm, .textarea.outlined.sm, .textarea.soft.sm {
+        @apply px-2.5
+    }
+
+    .input.mixed.md, .input.outlined.md, .input.soft.md, .textarea.mixed.md, .textarea.outlined.md, .textarea.soft.md {
+        @apply px-3
+    }
+
+    .input.mixed.lg, .input.outlined.lg, .input.soft.lg, .textarea.mixed.lg, .textarea.outlined.lg, .textarea.soft.lg {
+        @apply px-4
+    }
+
+    .input.mixed.xl, .input.outlined.xl, .input.soft.xl, .textarea.mixed.xl, .textarea.outlined.xl, .textarea.soft.xl {
+        @apply px-5
+    }
 }
