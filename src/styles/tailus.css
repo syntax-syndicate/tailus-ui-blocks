@@ -637,7 +637,7 @@
     }
 
     .annonce.mixed{
-        @apply border shadow-sm shadow-gray-950/5 dark:shadow-gray-950/25
+        @apply border bg-[--ui-bg] shadow-sm shadow-gray-950/5 dark:shadow-gray-950/25
     }
 
     .annonce.xs{
