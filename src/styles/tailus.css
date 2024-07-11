@@ -453,7 +453,7 @@
         @apply bg-gray-200 text-gray-800 dark:bg-gray-500/15 dark:text-gray-300
     }
 
-    /* Input */
+    /* Form field, input and textarea */
     .field{
         @apply relative space-y-2.5 *:has-[:disabled]:opacity-50 *:has-[:disabled]:pointer-events-none has-[:user-invalid]:[--caption-text-color:theme(colors.danger.600)] dark:has-[:user-invalid]:[--caption-text-color:theme(colors.danger.400)] has-[:user-valid]:[--caption-text-color:theme(colors.success.600)] dark:has-[:user-valid]:[--caption-text-color:theme(colors.success.400)]
     }
@@ -530,6 +530,8 @@
         @apply px-5
     }
 
+    /* Card */
+
     .card{
         @apply p-[--card-padding] rounded-[--card-radius]
     }
@@ -544,5 +546,37 @@
 
     .card.soft{
         @apply bg-[--ui-soft-bg]
+    }
+
+    /* Kbd */
+
+    .kbd {
+        @apply inline-flex items-center justify-center text-gray-800 dark:text-white h-5 text-[11px] min-w-5 px-1.5 rounded font-sans bg-gray-100 dark:bg-white/10 ring-1 border-b border-t border-t-white border-b-gray-200 dark:border-t-transparent dark:border-b-gray-950 ring-gray-300 dark:ring-white/15
+    }
+
+    /* Code */
+
+    .code {
+        @apply text-sm inline-block border rounded-md py-px px-1
+    }
+
+    .code.primary {
+        @apply bg-primary-50 text-primary-600 dark:text-primary-300 border-primary-200 dark:border-primary-500/20 dark:bg-primary-500/5
+    }
+
+    .code.secondary {
+        @apply bg-secondary-50 text-secondary-600 dark:text-secondary-300 border-secondary-200 dark:border-secondary-500/20 dark:bg-secondary-500/5
+    }
+
+    .code.accent {
+        @apply bg-accent-50 text-accent-600 dark:text-accent-300 border-accent-200 dark:border-accent-500/20 dark:bg-accent-500/5
+    }
+
+    .code.gray {
+        @apply bg-gray-50 text-[--body-text-color] dark:border-gray-500/20 dark:bg-gray-500/5
+    }
+
+    .code.neutral {
+        @apply bg-gray-50 text-gray-950 dark:text-white dark:bg-gray-500/5 dark:border-gray-500/20
     }
 }
