@@ -1,8 +1,8 @@
-import cn from '@lib/utils';
+import { twMerge } from 'tailwind-merge';
 
 export const BrandIcon = (props: { className?: string }) => {
     return (
-        <svg className={cn('size-7 text-gray-950 dark:text-white', props.className)} width={56} height={56} viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className={twMerge('size-7 text-gray-950 dark:text-white', props.className)} width={56} height={56} viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M53.6523 31.5142C53.6523 28.5967 51.2872 26.2316 48.3697 26.2316C45.4522 26.2316 43.0871 28.5967 43.0871 31.5142C43.0871 34.4317 45.4522 36.7968 48.3697 36.7968C51.2872 36.7968 53.6523 34.4317 53.6523 31.5142Z" fill="currentColor" />
             <path d="M42.6502 36.769C42.5195 36.7593 42.3875 36.7543 42.2543 36.7543C39.3572 36.7543 37.0087 39.1029 37.0087 42C37.0087 44.8971 39.3572 47.2457 42.2543 47.2457C45.1514 47.2457 47.5 44.8971 47.5 42C47.5 40.92 47.1736 39.9162 46.6141 39.0819C45.0637 38.7237 43.691 37.9013 42.6502 36.769Z" fill="currentColor" />
             <path d="M34.8047 39.7898C34.5971 40.4904 34.4857 41.2322 34.4857 42C34.4857 42.7679 34.5971 43.5097 34.8047 44.2102C33.969 46.0163 32.1408 47.2693 30.02 47.2693C27.1098 47.2693 24.7507 44.9102 24.7507 42C24.7507 39.0899 27.1098 36.7308 30.02 36.7308C32.1408 36.7308 33.969 37.9837 34.8047 39.7898Z" fill="currentColor" />
