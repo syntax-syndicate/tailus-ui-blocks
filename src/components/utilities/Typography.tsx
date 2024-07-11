@@ -1,4 +1,4 @@
-import cn from '../../lib/utils';
+import { twMerge } from 'tailwind-merge';
 
 export const HeadingOne = ({ children, id }) => {
     return (
@@ -18,7 +18,7 @@ export const HeadingTwo = ({ children, id }) => {
 
 export const HeadingThree = ({ children, id, className = '' }) => {
     return (
-        <h3 id={id} className={cn('mt-4 scroll-my-32 text-base font-medium text-[--title-text-color]', className)}>
+        <h3 id={id} className={twMerge('mt-4 scroll-my-32 text-base font-medium text-[--title-text-color]', className)}>
             {children}
         </h3>
     );
