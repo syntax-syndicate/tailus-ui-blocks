@@ -711,4 +711,61 @@
     .annonce-concern.solid.gray {
         @apply bg-gray-600
     }
+
+    /* Progress */
+    .progress {
+        @apply bg-[--ui-soft-bg] rounded-full overflow-hidden
+    }
+
+    .progress.xs {
+        @apply h-0.5
+    }
+
+    .progress.sm {
+        @apply h-1
+    }
+
+    .progress.md {
+        @apply h-1.5
+    }
+
+    .progress.lg {
+        @apply h-2.5
+    }
+
+    .progress.xl {
+        @apply h-3.5
+    }
+
+    .progress-indicator{
+        @apply h-full ease-[cubic-bezier(0.65,0,0.35,1)] rounded-full transition-transform duration-[660ms]
+    }
+
+    .progress-indicator.primary{
+        @apply bg-primary-600
+    }
+    .progress-indicator.secondary{
+        @apply bg-secondary-600
+    }
+    .progress-indicator.accent{
+        @apply bg-accent-600
+    }
+    .progress-indicator.danger{
+        @apply bg-danger-600
+    }
+    .progress-indicator.info{
+        @apply bg-info-600
+    }
+    .progress-indicator.success{
+        @apply bg-success-600
+    }
+    .progress-indicator.warning{
+        @apply bg-warning-600
+    }
+    .progress-indicator.gray{
+        @apply bg-gray-600
+    }
+    .progress-indicator.neutral{
+        @apply bg-gray-950 dark:bg-white
+    }
 }
