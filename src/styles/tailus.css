@@ -529,4 +529,20 @@
     .input.mixed.xl, .input.outlined.xl, .input.soft.xl, .textarea.mixed.xl, .textarea.outlined.xl, .textarea.soft.xl {
         @apply px-5
     }
+
+    .card{
+        @apply p-[--card-padding] rounded-[--card-radius]
+    }
+
+    .card.outlined {
+        @apply border bg-[--ui-bg]
+    }
+
+    .card.mixed {
+        @apply border bg-[--ui-bg] shadow
+    }
+
+    .card.soft{
+        @apply bg-[--ui-soft-bg]
+    }
 }
