@@ -3,27 +3,8 @@
 @tailwind utilities;
 
 @layer utilities {
-    .bg-stripes{
-        background-color: #a8a8a81a;
-        background-image: linear-gradient(135deg,#c2c2c280 10%,#0000 0,#0000 50%,#c2c2c280 0,#c2c2c280 60%,#0000 0,#0000);
-        background-size: 5px 5px;
-    }
-
-    .dark-bg-stripes{
-        background-color: #00000032;
-        background-image: linear-gradient(135deg,#ffffff17 10%,#0000 0,#0000 50%,#ffffff17 0,#ffffff17 60%,#0000 0,#0000);
-        background-size: 5px 5px;
-    }
-
     div:hover::-webkit-scrollbar{
         width: .25rem;
-    }
-
-    .animate-slide {
-        animation: slide 6s infinite;
-    }
-    .animate-slide-2 {
-        animation: slide2 3s infinite;
     }
 
     .custom-scrollbar{
@@ -60,31 +41,5 @@
         &::-webkit-scrollbar-thumb:hover {
             background: theme('colors.gray.500');
         }
-    }
-}
-
-@keyframes slide {
-    0% {
-        transform: translateX(-100%);
-    }
-    50% {
-        transform: translateX(-25%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
-}
-
-@keyframes slide2 {
-    0% {
-        transform: translateX(-20%);
-    }
-    75% {
-        transform: translateX(20vw);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(60vw);
-        opacity: 0;
     }
 }
