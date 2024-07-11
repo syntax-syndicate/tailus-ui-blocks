@@ -1,6 +1,5 @@
 import { List, Text, Code, Kbd, Link } from '@tailus-ui/typography';
 import * as Typography from '@components/utilities/Typography';
-import CustomImage from '@components/utilities/TemplateImage';
 
 export const components = {
     code: Code,
@@ -13,8 +12,7 @@ export const components = {
     h5: Typography.HeadingFive,
     h6: Typography.HeadingSix,
     p: Text,
-    kbd: Kbd,
-    img: CustomImage
+    kbd: Kbd
 };
 
 export default components;

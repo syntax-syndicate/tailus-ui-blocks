@@ -1,22 +1,14 @@
-import type { ReactNode } from "react";
-import React from "react";
-import cn from "../lib/utils";
+import type { ReactNode } from 'react';
+import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLModElement> {
-    children: ReactNode,
-    className?: string,
+    children: ReactNode;
+    className?: string;
 }
 
-export const ComponentPreview: React.FC<ComponentPreviewProps> = ({
-    children,
-    className,
- }) => {
-
-    return (
-        <div className={cn("relative flex justify-center items-center p-2 sm:p-12 aspect-auto sm:mx-0 min-h-32 sm:min-h-56 rounded-[--card-radius] border bg-white dark:bg-gray-925", className)}>
-            {children}
-        </div>   
-    )
-}
+export const ComponentPreview: React.FC<ComponentPreviewProps> = ({ children, className }) => {
+    return <div className={twMerge('relative flex aspect-auto min-h-32 items-center justify-center rounded-[--card-radius] border bg-white p-2 sm:mx-0 sm:min-h-56 sm:p-12 dark:bg-gray-925', className)}>{children}</div>;
+};
 
 export default ComponentPreview;

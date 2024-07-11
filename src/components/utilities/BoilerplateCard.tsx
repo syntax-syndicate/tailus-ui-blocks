@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactIcon, AstroIcon, SvelteIcon, VueIcon, NuxtIcon, NextIcon } from './icons';
-import cn from '@lib/utils';
 import { Text } from '@tailus-ui/typography';
+import { twMerge } from 'tailwind-merge';
 
 interface BoilerplateCardProps {
     href?: 'string';
@@ -53,12 +53,12 @@ const BoilerplateCard: React.FC<BoilerplateCardProps> = ({ href, isBlank, framew
 
     return (
         <a className="card-shadow rounded-[--card-radius] border bg-[--ui-bg] p-[--card-padding] transition-[box-shadow] duration-300 [--card-shadow-opacity:0] hover:[--card-shadow-opacity:0.05] dark:[--card-shadow-opacity:0.25] dark:hover:[--card-shadow-opacity:0.5]" href={href} target={isBlank && '_blank'}>
-            {framework === 'react' && <ReactIcon className={cn(iconClasses, 'h-12 w-12')} />}
-            {framework === 'astro' && <AstroIcon className={cn(iconClasses, 'h-12 w-12')} />}
-            {framework === 'svelteKit' && <SvelteIcon className={cn(iconClasses, 'h-12 w-12')} />}
-            {framework === 'vue' && <VueIcon className={cn(iconClasses, 'h-12 w-12')} />}
-            {framework === 'next' && <NextIcon className={cn(iconClasses, 'h-12 w-12')} />}
-            {framework === 'nuxt' && <NuxtIcon className={cn(iconClasses, 'h-12 w-12')} />}
+            {framework === 'react' && <ReactIcon className={twMerge(iconClasses, 'h-12 w-12')} />}
+            {framework === 'astro' && <AstroIcon className={twMerge(iconClasses, 'h-12 w-12')} />}
+            {framework === 'svelteKit' && <SvelteIcon className={twMerge(iconClasses, 'h-12 w-12')} />}
+            {framework === 'vue' && <VueIcon className={twMerge(iconClasses, 'h-12 w-12')} />}
+            {framework === 'next' && <NextIcon className={twMerge(iconClasses, 'h-12 w-12')} />}
+            {framework === 'nuxt' && <NuxtIcon className={twMerge(iconClasses, 'h-12 w-12')} />}
             {framework === 'remix' && <RemixIcon />}
             {framework === 'vite' && <ViteIcon />}
             {framework === 'laravel' && <LaravelIcon />}

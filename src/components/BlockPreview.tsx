@@ -7,13 +7,13 @@ import { BlockThemeSwitcher } from './ThemeSwitcher';
 import { BlockPaletteSwitcher } from './customizer/PaletteSwitcher';
 import { BlockRoundedSwitcher } from './customizer/RoundedSwitcher';
 import { BlockShadeSwitcher } from './customizer/ShadeSwitcher';
-import SeparatorRoot from '@react-ui/separator/Separator';
+import Separator from '@tailus-ui/Separator';
 import { DesktopIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
 import * as RadioGroup from '@radix-ui/react-radio-group';
-import Toggle from '@react-ui/toggle/Toggle';
-import Button from '@react-ui/button/Button';
+import Toggle from '@tailus-ui/Toggle';
+import Button from '@tailus-ui/Button';
 import { Caption, Link, Title } from './tailus-ui/typography';
-import Tooltip from '@react-ui/tooltip/Tooltip';
+import Tooltip from '@tailus-ui/Tooltip';
 import { useCopyToClipboard } from './Button/CodeCopyButton';
 
 export interface BlockPreviewProps {
@@ -78,10 +78,10 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, codesandb
                             </div>
                             <BlockShadeSwitcher id={`block-${id}`} />
                         </div>
-                        <SeparatorRoot className="h-4" fancy orientation="vertical" />
+                        <Separator className="h-4" fancy orientation="vertical" />
                         <BlockThemeSwitcher size="sm" id={`block-${id}`} />
 
-                        <SeparatorRoot fancy orientation="vertical" className="hidden h-4 lg:block" />
+                        <Separator fancy orientation="vertical" className="hidden h-4 lg:block" />
 
                         <RadioGroup.Root
                             onValueChange={(value) => {
@@ -98,7 +98,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, codesandb
                                 <DesktopIcon />
                             </RadioGroup.Item>
                         </RadioGroup.Root>
-                        <SeparatorRoot fancy orientation="vertical" className="hidden h-4 lg:block" />
+                        <Separator fancy orientation="vertical" className="hidden h-4 lg:block" />
                         <Tooltip.Provider delayDuration={200} skipDelayDuration={0}>
                             <Tooltip.Root>
                                 <Tooltip.Trigger asChild>
@@ -115,7 +115,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, codesandb
                         </Tooltip.Provider>
                         {code && (
                             <>
-                                <SeparatorRoot fancy orientation="vertical" className="hidden h-4 lg:block" />
+                                <Separator fancy orientation="vertical" className="hidden h-4 lg:block" />
                                 <Toggle.Root onClick={() => setLayout(50)} size="sm" value="code" intent="gray" withLabel disabled={width < 100} className="hidden lg:flex">
                                     <Toggle.Icon>
                                         <Code />
@@ -141,7 +141,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, codesandb
                                 </Tooltip.Content>
                             </Tooltip.Root>
                         </Tooltip.Provider>
-                        <SeparatorRoot className="h-4" fancy orientation="vertical" />
+                        <Separator className="h-4" fancy orientation="vertical" />
                         {downloadLink && (
                             <>
                                 <Tooltip.Provider delayDuration={200} skipDelayDuration={0}>
@@ -158,7 +158,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, codesandb
                                         </Tooltip.Content>
                                     </Tooltip.Root>
                                 </Tooltip.Provider>
-                                <SeparatorRoot className="h-4" fancy orientation="vertical" />
+                                <Separator className="h-4" fancy orientation="vertical" />
                                 <Tooltip.Provider delayDuration={200} skipDelayDuration={0}>
                                     <Tooltip.Root>
                                         <Tooltip.Trigger asChild>
