@@ -1,4 +1,4 @@
-import docs from '../data/docs';
+import docs from './docs';
 
 export const collections = {
     html: docs
