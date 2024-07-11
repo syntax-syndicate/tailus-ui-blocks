@@ -305,5 +305,131 @@
     .btn.ghost.neutral{
         @apply text-gray-950 hover:bg-gray-950 hover:text-white active:text-white active:bg-gray-900 dark:text-white dark:hover:bg-white dark:hover:text-gray-950 dark:active:bg-gray-200 dark:active:text-gray-950
     }
-    
+ 
+    /* Badge */
+
+    .badge{
+        @apply rounded-[--badge-radius] flex items-center gap-1.5 size-fit
+    }
+
+    .badge.solid{
+        @apply text-white
+    }
+
+    .badge.outlined{
+        @apply border
+    }
+
+    .badge.xs {
+        @apply px-1.5 py-0.5 text-xs
+    }
+
+    .badge.sm {
+        @apply px-2 py-0.5 text-sm
+    }
+
+    .badge.md{
+        @apply px-2.5 py-1 text-sm
+    }
+
+    .badge.lg{
+        @apply px-3 py-1 text-base
+    }
+
+    .badge.solid.primary {
+        @apply bg-primary-600 dark:bg-primary-400 dark:text-primary-950
+    }
+
+    .badge.solid.secondary {
+        @apply bg-secondary-600 dark:bg-secondary-400 dark:text-secondary-950
+    }
+
+    .badge.solid.accent {
+        @apply bg-accent-600 dark:bg-accent-400 dark:text-accent-950
+    }
+
+    .badge.solid.info {
+        @apply bg-info-600 dark:bg-info-400 dark:text-info-950
+    }
+
+    .badge.solid.success {
+        @apply bg-success-600 dark:bg-success-400 dark:text-success-950
+    }
+
+    .badge.solid.danger {
+        @apply bg-danger-600 dark:bg-danger-400 dark:text-danger-950
+    }
+
+    .badge.solid.warning {
+        @apply bg-warning-400 text-warning-950
+    }
+
+    .badge.solid.gray {
+        @apply bg-gray-600 dark:bg-gray-400 dark:text-gray-950
+    }
+
+    .badge.outlined.primary{
+        @apply border-primary-200 text-primary-800 dark:border-primary-300/15 dark:text-primary-300
+    }
+
+    .badge.outlined.secondary{
+        @apply border-secondary-200 text-secondary-800 dark:border-secondary-300/15 dark:text-secondary-300
+    }
+
+    .badge.outlined.accent{
+        @apply border-accent-200 text-accent-800 dark:border-accent-300/15 dark:text-accent-300
+    }
+
+    .badge.outlined.info{
+        @apply border-info-200 text-info-800 dark:border-info-300/15 dark:text-info-300
+    }
+
+    .badge.outlined.success{
+        @apply border-success-200 text-success-800 dark:border-success-300/15 dark:text-success-300
+    }
+
+    .badge.outlined.danger{
+        @apply border-danger-200 text-danger-800 dark:border-danger-300/15 dark:text-danger-300
+    }
+
+    .badge.outlined.warning{
+        @apply border-warning-300 text-warning-800 dark:border-warning-300/15 dark:text-warning-300
+    }
+
+    .badge.outlined.gray{
+        @apply border-gray-200 text-gray-800 dark:border-gray-300/15 dark:text-gray-300
+    }
+
+    .badge.soft.primary{
+        @apply bg-primary-200 text-primary-800 dark:bg-primary-500/15 dark:text-primary-300
+    }
+
+    .badge.soft.secondary{
+        @apply bg-secondary-200 text-secondary-800 dark:bg-secondary-500/15 dark:text-secondary-300
+    }
+
+    .badge.soft.accent{
+        @apply bg-accent-200 text-accent-800 dark:bg-accent-500/15 dark:text-accent-300
+    }
+
+    .badge.soft.info{
+        @apply bg-info-200 text-info-800 dark:bg-info-500/15 dark:text-info-300
+    }
+
+    .badge.soft.success{
+        @apply bg-success-200 text-success-800 dark:bg-success-500/15 dark:text-success-300
+    }
+
+    .badge.soft.danger{
+        @apply bg-danger-200 text-danger-800 dark:bg-danger-500/15 dark:text-danger-300
+    }
+
+    .badge.soft.warning{
+        @apply bg-warning-200 text-warning-900 dark:bg-warning-500/15 dark:text-warning-300
+    }
+
+    .badge.soft.gray{
+        @apply bg-gray-200 text-gray-800 dark:bg-gray-500/15 dark:text-gray-300
+    }
+
 }
