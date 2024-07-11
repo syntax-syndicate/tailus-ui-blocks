@@ -158,6 +158,26 @@
         @apply text-lg h-12 px-6
     }
 
+    .btn.icon-only.xs {
+        @apply size-7
+    }
+
+    .btn.icon-only.sm {
+        @apply size-8
+    }
+
+    .btn.icon-only.md{
+        @apply size-9
+    }
+
+    .btn.icon-only.lg{
+        @apply size-10
+    }
+
+    .btn.icon-only.xl{
+        @apply size-12
+    }
+
     .btn.solid.primary {
         @apply from-primary-500 to-primary-600 [--btn-border-color:theme('colors.primary.700')] dark:border-primary-400/75
     }
