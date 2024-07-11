@@ -579,4 +579,38 @@
     .code.neutral {
         @apply bg-gray-50 text-gray-950 dark:text-white dark:bg-gray-500/5 dark:border-gray-500/20
     }
+
+    /* Link */
+
+    .link {
+        @apply transition text-primary-600 dark:text-primary-400
+    }
+
+    .link.ghost{
+        @apply hover:underline
+    }
+
+    .link.underlined{
+        @apply underline
+    }
+
+    .link.animated {
+        @apply relative before:absolute before:inset-x-0 before:bottom-0 before:h-px before:scale-x-0 before:origin-right hover:before:origin-left hover:before:scale-x-100 before:transition before:duration-200
+    }
+
+    .link.info {
+        @apply text-info-600 dark:text-info-400
+    }
+
+    .link.neutral {
+        @apply text-gray-950 dark:text-white
+    }
+
+    .link.animated.neutral{
+        @apply before:bg-gray-950/50 dark:before:bg-white/50
+    }
+
+    .link.underlined.neutral, .link.ghost.neutral{
+        @apply decoration-gray-950/50 dark:decoration-white/50
+    }
 }
