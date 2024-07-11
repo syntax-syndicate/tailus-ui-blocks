@@ -1,17 +1,5 @@
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
 import React from "react";
-
-/**
- * 
- * @param inputs 
- * @returns merged classnames
- */
-export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs));
-}
-
-export default cn;
+import { twMerge } from "tailwind-merge";
 
 /**
  * Clone React element.
@@ -23,6 +11,6 @@ export default cn;
  */
 export function cloneElement(element: React.ReactElement, classNames: string) {
   return React.cloneElement(element, {
-    className: cn(element.props.className, classNames)
+    className: twMerge(element.props.className, classNames)
   });
 }
