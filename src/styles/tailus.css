@@ -613,4 +613,13 @@
     .link.underlined.neutral, .link.ghost.neutral{
         @apply decoration-gray-950/50 dark:decoration-white/50
     }
+
+    /* Separator */
+    .separator {
+        @apply bg-[--ui-border-color] h-px w-full block
+    }
+
+    .separator.vertical{
+        @apply w-px h-full
+    }
 }
