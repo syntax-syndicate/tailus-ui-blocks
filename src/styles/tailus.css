@@ -71,6 +71,7 @@
         @apply dark:[--title-text-color:theme(colors.danger.400)]
     }
 
+    /*
     input:user-valid, textarea:user-valid, select:user-valid {
         --input-border: var(--ui-success-border);
         --ui-border-color: var(--ui-success-border);
@@ -78,7 +79,7 @@
         --title-text-color : theme(colors.success.600);
 
         @apply dark:[--title-text-color:theme(colors.success.400)]
-    }
+    } */
 }
 
 @layer utilities {
@@ -455,7 +456,7 @@
 
     /* Form field, input and textarea */
     .field{
-        @apply relative space-y-2.5 *:has-[:disabled]:opacity-50 *:has-[:disabled]:pointer-events-none has-[:user-invalid]:[--caption-text-color:theme(colors.danger.600)] dark:has-[:user-invalid]:[--caption-text-color:theme(colors.danger.400)] has-[:user-valid]:[--caption-text-color:theme(colors.success.600)] dark:has-[:user-valid]:[--caption-text-color:theme(colors.success.400)]
+        @apply relative space-y-2.5 *:has-[:disabled]:opacity-50 *:has-[:disabled]:pointer-events-none has-[:user-invalid]:[--caption-text-color:theme(colors.danger.600)] dark:has-[:user-invalid]:[--caption-text-color:theme(colors.danger.400)]
     }
 
     .input, .textarea{
@@ -467,7 +468,7 @@
     }
 
     .input.mixed, .textarea.mixed{
-        @apply outline-2 bg-[--ui-bg] focus:outline-[--input-outline] -outline-offset-1 focus:outline border border-[--input-border]
+        @apply shadow-sm shadow-gray-950/5 dark:shadow-gray-950/35 outline-2 bg-[--ui-bg] focus:outline-[--input-outline] -outline-offset-1 focus:outline border border-[--input-border]
     }
 
     .input.soft, .textarea.soft {
