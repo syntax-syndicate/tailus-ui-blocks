@@ -906,4 +906,52 @@
     .avatar.fallback-solid.gray{
         @apply bg-gray-600
     }
+
+    .callout{
+        @apply p-3 rounded-[--card-radius]
+    }
+
+    .callout-title{
+        @apply font-medium text-[--title-text-color]
+    }
+
+    .callout-description{
+        @apply text-[--body-text-color]
+    }
+
+    .callout-link{
+        @apply text-[--title-text-color] underline font-medium
+    }
+
+    .callout.primary{
+        @apply bg-primary-50 [--title-text-color:theme(colors.primary.900)] [--body-text-color:theme(colors.primary.600)] dark:bg-primary-500/10 dark:[--title-text-color:theme(colors.primary.300)] dark:[--body-text-color:theme(colors.primary.400)]
+    }
+
+    .callout.secondary{
+        @apply bg-secondary-50 [--title-text-color:theme(colors.secondary.900)] [--body-text-color:theme(colors.secondary.600)] dark:bg-secondary-500/10 dark:[--title-text-color:theme(colors.secondary.300)] dark:[--body-text-color:theme(colors.secondary.400)]
+    }
+
+    .callout.accent{
+        @apply bg-accent-50 [--title-text-color:theme(colors.accent.900)] [--body-text-color:theme(colors.accent.600)] dark:bg-accent-500/10 dark:[--title-text-color:theme(colors.accent.300)] dark:[--body-text-color:theme(colors.accent.400)]
+    }
+
+    .callout.info{
+        @apply bg-info-50 [--title-text-color:theme(colors.info.900)] [--body-text-color:theme(colors.info.600)] dark:bg-info-500/10 dark:[--title-text-color:theme(colors.info.300)] dark:[--body-text-color:theme(colors.info.400)]
+    }
+
+    .callout.success{
+        @apply bg-success-50 [--title-text-color:theme(colors.success.900)] [--body-text-color:theme(colors.success.600)] dark:bg-success-500/10 dark:[--title-text-color:theme(colors.success.300)] dark:[--body-text-color:theme(colors.success.400)]
+    }
+
+    .callout.danger{
+        @apply bg-danger-50 [--title-text-color:theme(colors.danger.900)] [--body-text-color:theme(colors.danger.600)] dark:bg-danger-500/10 dark:[--title-text-color:theme(colors.danger.300)] dark:[--body-text-color:theme(colors.danger.400)]
+    }
+
+    .callout.warning{
+        @apply bg-warning-50 [--title-text-color:theme(colors.warning.800)] [--body-text-color:theme(colors.warning.700)] dark:bg-warning-500/10 dark:[--title-text-color:theme(colors.warning.300)] dark:[--body-text-color:theme(colors.warning.400)]
+    }
+
+    .callout.gray{
+        @apply bg-gray-100 [--title-text-color:theme(colors.gray.900)] [--body-text-color:theme(colors.gray.600)] dark:bg-gray-500/10 dark:[--title-text-color:theme(colors.gray.300)] dark:[--body-text-color:theme(colors.gray.400)]
+    }
 }
