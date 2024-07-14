@@ -42,7 +42,7 @@ export const ShadeSwitcher = () => {
             }}>
             <RadioGroup.Root aria-label="Theme shades" className="grid w-fit grid-cols-5 gap-3" defaultValue={shade} onValueChange={handleValueChange}>
                 {shades.map((shade, index) => (
-                    <motion.div variants={item} key={index}>
+                    <motion.div key={index}>
                         <RadioGroup.Item value={shade} className="relative flex size-6 overflow-hidden rounded-full border bg-[--ui-soft-bg] outline-2 outline-offset-2 outline-primary-600 dark:feedback-bg focus-visible:outline dark:border-white/15" data-tls-shade={shade}>
                             <RadioGroup.Indicator className="absolute inset-0 z-[1] m-auto size-2 rounded-full bg-white shadow-md shadow-gray-950/50" />
                         </RadioGroup.Item>

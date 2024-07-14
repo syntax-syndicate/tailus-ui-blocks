@@ -35,7 +35,7 @@ export const RoundedSwitcher = () => {
             }}>
             <RadioGroup.Root aria-label="Theme roundeds" className="grid w-fit grid-cols-9 gap-3" defaultValue={rounded} onValueChange={handleValueChange}>
                 {roundeds.map((rounded, index) => (
-                    <motion.div variants={item} key={index}>
+                    <motion.div key={index}>
                         <RadioGroup.Item data-tls-shade="900" value={rounded} className="relative flex size-6 overflow-hidden rounded-[--btn-radius] border border-gray-300 bg-[--ui-soft-bg] outline-2 outline-offset-2 outline-primary-600 dark:feedback-bg focus-visible:outline dark:border-white/15" data-rounded={rounded}>
                             <RadioGroup.Indicator className="absolute inset-0 z-[1] m-auto size-2 rounded-full bg-gray-950 shadow-md shadow-gray-950/25 dark:bg-white dark:shadow-gray-950/50" />
                         </RadioGroup.Item>

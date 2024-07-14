@@ -1,10 +1,9 @@
 import * as RadioGroup from '@radix-ui/react-radio-group';
 import { useEffect, useState, type ReactNode } from 'react';
 import { $palette } from '@store/switchers';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { container, item } from './animations';
 import Select from '@tailus-ui/Select';
-import { Check } from 'lucide-react';
 
 const palettes = ['trust', 'oz', 'mystery', 'romance', 'passion', 'energy', 'spring', 'nature', 'winter'];
 export type Palette = 'trust' | 'oz' | 'passion' | 'energy' | 'romance' | 'nature' | 'spring' | 'winter' | 'mystery' | 'tls';
@@ -26,18 +25,11 @@ export const PaletteSwitcher = () => {
         setPalette(value);
     };
     return (
-        <motion.div
-            variants={container}
-            initial="hidden"
-            transition={{
-                duration: 0.2,
-                staggerChildren: 0.01,
-                bounce: 0.1
-            }}>
+        <motion.div variants={container}>
             <RadioGroup.Root aria-label="Theme palette" className="grid w-fit grid-cols-9 gap-3" defaultValue={palette} onValueChange={handleValueChange}>
                 {palettes.map((palette, index) => (
                     <motion.div variants={item} key={index}>
-                        <RadioGroup.Item value={palette} className="relative flex size-6 overflow-hidden rounded-full bg-primary-600 outline-2 outline-offset-2 outline-primary-600 focus-visible:outline dark:border dark:border-white/25" data-palette={palette}>
+                        <RadioGroup.Item value={palette} className="relative flex size-6 overflow-hidden rounded-full border border-gray-950/5 bg-primary-600 outline-2 outline-offset-2 outline-primary-600 focus-visible:outline dark:border-white/25" data-palette={palette}>
                             <RadioGroup.Indicator className="absolute inset-0 z-[1] m-auto size-2 rounded-full bg-white shadow-md shadow-gray-950/50" />
                             <div className="col-start-2 ml-auto h-full w-1/2 blur-[6px]">
                                 <div className="h-1/2 bg-secondary-500"></div>

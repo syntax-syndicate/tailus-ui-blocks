@@ -4,36 +4,17 @@ import { RoundedSwitcher } from './RoundedSwitcher';
 import { ShadeSwitcher } from './ShadeSwitcher';
 import CodeSnippet from '@components/utilities/CodeSnippet';
 import * as Tabs from '@radix-ui/react-tabs';
-import { Layers2, Palette, Settings2, Square } from 'lucide-react';
+import { Layers2, Minus, Palette, Square, X } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { $palette, $rounded, $shade } from '@store/switchers';
-import { useStore } from '@nanostores/react';
-import { motion } from 'framer-motion';
-import { twMerge } from 'tailwind-merge';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Title, Text } from '@tailus-ui/typography';
-import { Cross1Icon } from '@radix-ui/react-icons';
+import Button from '@tailus-ui/Button';
+import { useStore } from '@nanostores/react';
+import { isOpen, setIsOpen } from '@store/customizer';
+import SeparatorRoot from '@components/tailus-ui/Separator';
 
 export type TabsAppProps = 'palette' | 'shade' | 'rounded';
-
-const item = {
-    hidden: { opacity: 0, transition: { duration: 0 } },
-    show: { opacity: 1, transition: { duration: 0.5 } }
-};
-
-const container = {
-    hidden: {
-        y: 12,
-        height: '44px',
-        width: '156px',
-        borderRadius: '32px'
-    },
-    show: {
-        y: 0,
-        height: '342px',
-        width: '372px',
-        borderRadius: '16px'
-    }
-};
 
 export const CustomizerPill = () => {
     const palette = useStore($palette);
@@ -41,7 +22,7 @@ export const CustomizerPill = () => {
     const shade = useStore($shade);
 
     const [state, setState] = useState<TabsAppProps>('palette');
-    const [isOpen, setIsOpen] = useState(false);
+    const $isOpen = useStore(isOpen);
     const spanRef = useRef<HTMLSpanElement>(null);
 
     const [spanLeft, setSpanLeft] = useState(0);
@@ -56,34 +37,23 @@ export const CustomizerPill = () => {
     }, [state]);
 
     return (
-        <div>
-            <motion.div
-                layout
-                initial="hidden"
-                variants={container}
-                animate={isOpen ? 'show' : 'hidden'}
-                transition={{
-                    type: 'spring',
-                    bounce: 0.2,
-                    duration: 0.5,
-                    delayChildren: 0.5,
-                    staggerChildren: 0.1
-                }}
-                className="fancy-border fixed inset-x-0 bottom-8 z-[51] mx-auto rounded-2xl bg-[--ui-soft-bg] p-1 dark:bg-gray-800/50 dark:shadow-xl dark:shadow-gray-950/40 dark:backdrop-blur-xl">
-                <button onClick={() => setIsOpen(!isOpen)} className={twMerge('-mt-px flex h-9 items-center justify-center gap-2.5 px-4 text-[--title-text-color]', isOpen && 'absolute right-2 top-2 z-10 w-9 px-0')}>
-                    {isOpen ? (
-                        <Cross1Icon className="size-3" />
-                    ) : (
-                        <>
-                            Customize
-                            <span className="flex size-8 max-h-8 max-w-8 translate-x-2 items-center justify-center rounded-full bg-primary-600">
-                                <Settings2 className="size-4 text-white" />
-                            </span>
-                        </>
-                    )}
-                </button>
-                <motion.div initial="hidden" variants={item} animate={isOpen ? 'show' : 'hidden'} className="space-y-1">
-                    <Card className="rounded-b-md rounded-t-xl dark:border-white/5 dark:bg-gray-700/25 dark:shadow-lg dark:shadow-gray-950/35" variant="mixed">
+        <AnimatePresence>
+            {$isOpen && (
+                <motion.div
+                    key="pill"
+                    layout
+                    data-shade="950"
+                    transition={{ type: 'spring', bounce: 0.25, duration: 0.5 }}
+                    animate={{ height: '322px', opacity: 1 }}
+                    initial={{ height: '0px', opacity: 0 }}
+                    exit={{ height: '0px', opacity: 0 }}
+                    className="fixed inset-x-4 bottom-[5.25rem] z-50 mx-auto w-full max-w-[29rem] overflow-hidden rounded-[calc(var(--card-radius)+6px)] border bg-white shadow-lg shadow-gray-950/10 backdrop-blur-2xl dark:border-gray-500/25 dark:bg-gray-900/50 dark:ring-[0.75px] dark:ring-gray-950">
+                    <div className="p-6">
+                        <Button.Root size="xs" variant="soft" intent="gray" className="absolute right-1 top-1 size-5 rounded-full" onClick={setIsOpen}>
+                            <Button.Icon type="only" className="size-3">
+                                <X />
+                            </Button.Icon>
+                        </Button.Root>
                         <Title as="div" size="base" weight="medium">
                             Customize the theme
                         </Title>
@@ -99,7 +69,7 @@ export const CustomizerPill = () => {
                                         width: spanWidth,
                                         transition: { type: 'spring', bounce: 0.2, duration: 0.5 }
                                     }}
-                                    className="absolute inset-y-1 -z-[1] block rounded-full border bg-primary-100 dark:border-white/5 dark:bg-gray-500/25"
+                                    className="absolute inset-y-1 -z-[1] block rounded-full border border-gray-950/5 bg-gray-100 dark:border-white/5 dark:bg-gray-500/25"
                                     ref={spanRef}
                                 />
                                 <Tabs.Trigger value="palette" id="palette" className="flex h-full items-center gap-2 px-2.5 text-sm duration-200 data-[state=inactive]:opacity-50">
@@ -125,20 +95,19 @@ export const CustomizerPill = () => {
                                 <RoundedSwitcher />
                             </Tabs.Content>
                         </Tabs.Root>
-                    </Card>
-                    <Card variant="mixed" className="max-w-full overflow-hidden rounded-b-xl rounded-t-md p-0 dark:border-white/5 dark:bg-gray-700/25 dark:shadow-lg dark:shadow-gray-950/35">
-                        <CodeSnippet
-                            className="w-full rounded-none border-none bg-none dark:bg-transparent"
-                            code={`<html 
+                    </div>
+                    <SeparatorRoot className="dark:bg-gray-500/25" />
+                    <CodeSnippet
+                        className="w-full rounded-none border-none bg-none px-2 dark:bg-transparent dark:backdrop-blur-none"
+                        code={`<html 
     data-palette="${palette}"
     data-shade="${shade}"
     data-rounded="${rounded}"
 >`}
-                            lang="html"
-                        />
-                    </Card>
+                        lang="html"
+                    />
                 </motion.div>
-            </motion.div>
-        </div>
+            )}
+        </AnimatePresence>
     );
 };

@@ -40,6 +40,26 @@
         @apply dark:[--ui-border-color:theme(colors.gray.800)]
     }
 
+    [data-tls-shade="glassy"]{
+        @apply dark:[--ui-bg:theme(colors.gray.700/75)] dark:backdrop-blur-2xl dark:[--ui-border-color:theme(colors.gray.700)]
+    }
+
+    [data-tls-shade="800"]{
+        @apply dark:[--ui-bg:theme(colors.gray.800)] dark:backdrop-blur-2xl dark:[--ui-border-color:theme(colors.gray.700)]
+    }
+
+    [data-tls-shade="900"]{
+        @apply dark:[--ui-bg:theme(colors.gray.900)] dark:backdrop-blur-2xl dark:[--ui-border-color:theme(colors.gray.800)]
+    }
+
+    [data-tls-shade="925"]{
+        @apply dark:[--ui-bg:theme(colors.gray.925)] dark:backdrop-blur-2xl dark:[--ui-border-color:theme(colors.gray.800)]
+    }
+
+    [data-tls-shade="950"]{
+        @apply dark:[--ui-bg:theme(colors.gray.950)] dark:backdrop-blur-2xl dark:[--ui-border-color:theme(colors.gray.800)]
+    }
+
     [data-palette="tls"] {
         --colors-primary-50: var(--colors-blue-50);
         --colors-primary-100: var(--colors-blue-100);

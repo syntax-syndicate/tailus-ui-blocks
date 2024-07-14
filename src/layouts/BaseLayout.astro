@@ -7,6 +7,7 @@ import { BlurDivs } from '@components/utilities/DocsProgressiveBlur';
 import '@styles/color-theme.css';
 import PageLoader from '@components/utilities/PageLoader.astro';
 import { ViewTransitions } from 'astro:transitions';
+import { CustomizerPill } from '@components/customizer/Pill';
 
 interface Props {
     title?: string;
@@ -25,8 +26,9 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = '/og-cover.p
     </head>
     <body class="bg-white dark:[--body-text-color:theme(colors.gray.300)] dark:bg-gray-950 antialiased font-sans">
         <PageLoader />
-        <BlurDivs />
+        <BlurDivs client:visible />
         <SiteHeader client:load />
+        <CustomizerPill client:load />
         <main class="mb-32 will-change-auto">
             <slot />
         </main>

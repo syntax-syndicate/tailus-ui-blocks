@@ -5,6 +5,8 @@ import Tooltip from '@tailus-ui/Tooltip';
 import { HTMLIcon, ReactIcon } from './utilities/icons';
 import Separator from './tailus-ui/Separator';
 import { SITE_SOCIAL_GITHUB, SITE_SOCIAL_TWITTER } from 'src/const';
+import { setIsOpen } from '@store/customizer';
+import { Root as AspectRatio } from '@radix-ui/react-aspect-ratio';
 
 export function SiteHeader() {
     let mouseX = useMotionValue(Infinity);
@@ -29,8 +31,8 @@ export function SiteHeader() {
     };
 
     return (
-        <motion.div onMouseMove={(e) => mouseX.set(e.pageX)} onMouseLeave={() => mouseX.set(Infinity)} className="fixed inset-x-0 bottom-4 z-50 mx-auto flex h-[3.75rem] w-fit items-end gap-3 rounded-[calc(var(--btn-radius)+6px)] border border-white/10 bg-white/10 px-1.5 pb-[0.6rem] shadow-md shadow-gray-950/15 ring-1 ring-gray-200 backdrop-blur-2xl dark:border-gray-500/20 dark:bg-gray-950/25 dark:shadow-gray-950/35 dark:ring-gray-950">
-            <AppIcon mouseX={mouseX} tooltip="Home" href="#home">
+        <motion.div onMouseMove={(e) => mouseX.set(e.pageX)} onMouseLeave={() => mouseX.set(Infinity)} className="fixed inset-x-0 bottom-4 z-[51] mx-auto flex h-[3.75rem] w-fit items-end gap-2.5 rounded-[calc(var(--btn-radius)+6px)] border border-white/10 bg-white px-1.5 pb-[0.6rem] shadow-md shadow-gray-950/15 ring-1 ring-gray-200 backdrop-blur-2xl dark:border-gray-500/25 dark:bg-gray-900/50 dark:shadow-gray-950/35 dark:ring-gray-950">
+            <AppIcon mouseX={mouseX} tooltip="Home" href="/">
                 <svg className="relative size-full text-gray-950 transition group-active:scale-90 dark:text-white" width="32" height="32" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         fillRule="evenodd"
@@ -43,7 +45,7 @@ export function SiteHeader() {
             <AppIcon mouseX={mouseX} tooltip="React UI Kit" href="https://ui.tailus.io">
                 <ReactIcon className="relative size-full" />
             </AppIcon>
-            <AppIcon mouseX={mouseX} tooltip="Html UI Kit" href="/" isActive>
+            <AppIcon mouseX={mouseX} tooltip="Html UI Kit" href="/get-started/introduction" isActive>
                 <HTMLIcon className="relative size-full" />
             </AppIcon>
             <AppIcon mouseX={mouseX} tooltip="Templates" href="https://tailus.io/templates">
@@ -68,7 +70,7 @@ export function SiteHeader() {
                 </svg>
             </AppIcon>
             <Separator className="h-6 -translate-y-2.5" fancy orientation="vertical" />
-            <AppIcon mouseX={mouseX} onClick={handleThemeToggle} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} role="button" tooltip="Customize" className="relative">
+            <AppIcon onClick={setIsOpen} mouseX={mouseX} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} role="button" tooltip="Customize" className="relative">
                 <svg className="relative size-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M5 18.08V19h.92l9.06-9.06l-.92-.92z" opacity="0.3" />
                     <path fill="currentColor" d="M20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29s-.51.1-.7.29l-1.83 1.83l3.75 3.75zM3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM5.92 19H5v-.92l9.06-9.06l.92.92z" />
