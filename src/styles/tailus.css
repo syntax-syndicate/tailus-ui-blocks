@@ -542,7 +542,7 @@
     }
 
     .card.mixed {
-        @apply border bg-[--ui-bg] shadow
+        @apply border bg-[--ui-bg] shadow shadow-gray-950/5
     }
 
     .card.soft{

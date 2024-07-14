@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/BaseLayout.astro'
 import Container from '@components/Container.astro'
-import { BERNARD_AVATAR, THEO_AVATAR } from 'src/const'
+import { BERNARD_AVATAR, MESCHAC_AVATAR, THEO_AVATAR } from 'src/const'
 import BrandLogo from '@components/utilities/BrandLogo'
 import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
 ---
@@ -88,7 +88,7 @@ import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
                 <div class="col-span-3 py-12 px-6 border-l border-b flex items-center justify-center">
                     <div class="field">
                         <label for="country" class="text-title text-sm">Country</label>
-                        <select name="country" id="country" class="input mixed md">
+                        <select name="country" id="country" class="input mixed md appearance-none">
                             <option value="1">Option 1</option>
                             <option value="2">Option 2</option>
                             <option value="3">Option 3</option>
@@ -167,7 +167,7 @@ import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
                 <div data-rounded="2xlarge" class="py-12 overflow-hidden px-6 border-b col-span-full flex items-center justify-center">
                     <div class="card relative mixed max-w-xs">
                         <div class="relative mb-6 mt-6">
-                            <div class="absolute -top-8 z-10 inset-0 h-fit dark:!shadow-xl dark:shadow-gray-950/50 m-auto card mixed p-4 grid items-center gap-2 [grid-template-columns:auto_1fr]">
+                            <div class="absolute top-8 bottom-auto z-10 inset-0 dark:!shadow-xl dark:shadow-gray-950/50 m-auto card mixed p-4 grid items-center gap-2 [grid-template-columns:auto_1fr]">
                                 <div class="avatar sm">
                                     <img src={THEO_AVATAR} alt="" />
                                 </div>
@@ -176,16 +176,16 @@ import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
                                     <div class="text-sm">Closed 'tls-html' PR</div>
                                 </div>
                             </div>
-                            <div class="scale-90 opacity-75 card mixed p-4 grid items-center gap-2 [grid-template-columns:auto_1fr]">
+                            <div class="scale-90 opacity-50 card outlined p-4 grid items-center gap-2 [grid-template-columns:auto_1fr]">
                                 <div class="avatar md">
-                                    <img src={BERNARD_AVATAR} alt="" />
+                                    <img src={MESCHAC_AVATAR} alt="" />
                                 </div>
                                 <div>
-                                    <div class="text-caption text-xs">Bernard Ng</div>
+                                    <div class="text-caption text-xs">Méschac Irung</div>
                                     <div class="text-sm">Closed 'tls-html' PR</div>
                                 </div>
                             </div>
-                            <div class="scale-90 opacity-75 card mixed p-4 grid items-center gap-2 [grid-template-columns:auto_1fr]">
+                            <div class="scale-90 opacity-50 card outlined p-4 grid items-center gap-2 [grid-template-columns:auto_1fr]">
                                 <div class="avatar md">
                                     <img src={BERNARD_AVATAR} alt="" />
                                 </div>
