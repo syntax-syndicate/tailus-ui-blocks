@@ -1,21 +1,22 @@
 ---
-import Footer from '../components/Footer';
-import BaseHead from '../components/BaseHead.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../const';
-import { SiteHeader } from '../components/SiteHeader';
-import { BlurDivs } from '@components/utilities/DocsProgressiveBlur';
-import '@styles/color-theme.css';
-import PageLoader from '@components/utilities/PageLoader.astro';
-import { ViewTransitions } from 'astro:transitions';
-import { CustomizerPill } from '@components/customizer/Pill';
+import Footer from '../components/Footer'
+import BaseHead from '../components/BaseHead.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../const'
+import { SiteHeader } from '../components/SiteHeader'
+import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
+import '@styles/color-theme.css'
+import PageLoader from '@components/utilities/PageLoader.astro'
+import { ViewTransitions } from 'astro:transitions'
+import { CustomizerPill } from '@components/customizer/Pill'
+import Dock from '@components/Dock'
 
 interface Props {
-    title?: string;
-    description?: string;
-    image?: string;
+    title?: string
+    description?: string
+    image?: string
 }
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = '/og-cover.png' } = Astro.props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = '/og-cover.png' } = Astro.props
 ---
 
 <!doctype html>
@@ -27,8 +28,8 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = '/og-cover.p
     <body class="bg-white dark:[--body-text-color:theme(colors.gray.300)] dark:bg-gray-950 antialiased font-sans">
         <PageLoader />
         <BlurDivs client:visible />
-        <SiteHeader client:load />
         <CustomizerPill client:load />
+        <SiteHeader client:load />
         <main class="mb-32 will-change-auto">
             <slot />
         </main>

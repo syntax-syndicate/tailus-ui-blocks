@@ -1,40 +1,40 @@
-import { Card } from '@tailus-ui/Card';
-import { PaletteSwitcher } from './PaletteSwitcher';
-import { RoundedSwitcher } from './RoundedSwitcher';
-import { ShadeSwitcher } from './ShadeSwitcher';
-import CodeSnippet from '@components/utilities/CodeSnippet';
-import * as Tabs from '@radix-ui/react-tabs';
-import { Layers2, Minus, Palette, Square, X } from 'lucide-react';
-import { useState, useRef, useEffect } from 'react';
-import { $palette, $rounded, $shade } from '@store/switchers';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Title, Text } from '@tailus-ui/typography';
-import Button from '@tailus-ui/Button';
-import { useStore } from '@nanostores/react';
-import { isOpen, setIsOpen } from '@store/customizer';
-import SeparatorRoot from '@components/tailus-ui/Separator';
+import { Card } from '@tailus-ui/Card'
+import { PaletteSwitcher } from './PaletteSwitcher'
+import { RoundedSwitcher } from './RoundedSwitcher'
+import { ShadeSwitcher } from './ShadeSwitcher'
+import CodeSnippet from '@components/utilities/CodeSnippet'
+import * as Tabs from '@radix-ui/react-tabs'
+import { Layers2, Minus, Palette, Square, X } from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
+import { $palette, $rounded, $shade } from '@store/switchers'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Title, Text } from '@tailus-ui/typography'
+import Button from '@tailus-ui/Button'
+import { useStore } from '@nanostores/react'
+import { isOpen, setIsOpen } from '@store/customizer'
+import SeparatorRoot from '@components/tailus-ui/Separator'
 
-export type TabsAppProps = 'palette' | 'shade' | 'rounded';
+export type TabsAppProps = 'palette' | 'shade' | 'rounded'
 
 export const CustomizerPill = () => {
-    const palette = useStore($palette);
-    const rounded = useStore($rounded);
-    const shade = useStore($shade);
+    const palette = useStore($palette)
+    const rounded = useStore($rounded)
+    const shade = useStore($shade)
 
-    const [state, setState] = useState<TabsAppProps>('palette');
-    const $isOpen = useStore(isOpen);
-    const spanRef = useRef<HTMLSpanElement>(null);
+    const [state, setState] = useState<TabsAppProps>('palette')
+    const $isOpen = useStore(isOpen)
+    const spanRef = useRef<HTMLSpanElement>(null)
 
-    const [spanLeft, setSpanLeft] = useState(0);
-    const [spanWidth, setSpanWidth] = useState(0);
+    const [spanLeft, setSpanLeft] = useState(0)
+    const [spanWidth, setSpanWidth] = useState(0)
 
     useEffect(() => {
-        const activeTrigger = document.getElementById(state!) as HTMLElement;
+        const activeTrigger = document.getElementById(state!) as HTMLElement
         if (activeTrigger) {
-            setSpanLeft(activeTrigger.offsetLeft);
-            setSpanWidth(activeTrigger.offsetWidth);
+            setSpanLeft(activeTrigger.offsetLeft)
+            setSpanWidth(activeTrigger.offsetWidth)
         }
-    }, [state]);
+    }, [state])
 
     return (
         <AnimatePresence>
@@ -43,11 +43,11 @@ export const CustomizerPill = () => {
                     key="pill"
                     layout
                     data-shade="950"
-                    transition={{ type: 'spring', bounce: 0.25, duration: 0.5 }}
+                    transition={{ type: 'spring', bounce: 0.25, duration: 0.4 }}
                     animate={{ height: '322px', opacity: 1 }}
                     initial={{ height: '0px', opacity: 0 }}
                     exit={{ height: '0px', opacity: 0 }}
-                    className="fixed inset-x-4 bottom-[5.25rem] z-50 mx-auto w-full max-w-[29rem] overflow-hidden rounded-[calc(var(--card-radius)+6px)] border bg-white shadow-lg shadow-gray-950/10 backdrop-blur-2xl dark:border-gray-500/25 dark:bg-gray-900/50 dark:ring-[0.75px] dark:ring-gray-950">
+                    className="fixed inset-x-4 bottom-20 z-50 mx-auto w-full max-w-[29rem] overflow-hidden rounded-[calc(var(--card-radius)+6px)] border bg-white shadow-md shadow-gray-950/5 backdrop-blur-2xl dark:border-gray-500/25 dark:bg-gray-900/50 dark:ring-[0.75px] dark:ring-gray-950">
                     <div className="p-6">
                         <Button.Root size="xs" variant="soft" intent="gray" className="absolute right-1 top-1 size-5 rounded-full" onClick={setIsOpen}>
                             <Button.Icon type="only" className="size-3">
@@ -67,7 +67,7 @@ export const CustomizerPill = () => {
                                     animate={{
                                         left: spanLeft,
                                         width: spanWidth,
-                                        transition: { type: 'spring', bounce: 0.2, duration: 0.5 }
+                                        transition: { type: 'spring', bounce: 0.2, duration: 0.5 },
                                     }}
                                     className="absolute inset-y-1 -z-[1] block rounded-full border border-gray-950/5 bg-gray-100 dark:border-white/5 dark:bg-gray-500/25"
                                     ref={spanRef}
@@ -109,5 +109,5 @@ export const CustomizerPill = () => {
                 </motion.div>
             )}
         </AnimatePresence>
-    );
-};
+    )
+}

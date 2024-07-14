@@ -1,37 +1,20 @@
-import { MotionValue, motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-
-import { useRef, useState, useEffect, type ButtonHTMLAttributes } from 'react';
-import Tooltip from '@tailus-ui/Tooltip';
-import { HTMLIcon, ReactIcon } from './utilities/icons';
-import Separator from './tailus-ui/Separator';
-import { SITE_SOCIAL_GITHUB, SITE_SOCIAL_TWITTER } from 'src/const';
-import { setIsOpen } from '@store/customizer';
-import { Root as AspectRatio } from '@radix-ui/react-aspect-ratio';
+import { MotionValue, motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { useRef, type ButtonHTMLAttributes } from 'react'
+import Tooltip from '@tailus-ui/Tooltip'
+import { HTMLIcon, ReactIcon } from './utilities/icons'
+import Separator from './tailus-ui/Separator'
+import { SITE_SOCIAL_GITHUB, SITE_SOCIAL_TWITTER } from 'src/const'
+import { setIsOpen } from '@store/customizer'
+import useDarkMode from '@hooks/useDarkMode'
+import { useMedia } from 'use-media'
 
 export function SiteHeader() {
-    let mouseX = useMotionValue(Infinity);
-    const [darkMode, setDarkMode] = useState(() => {
-        if (typeof window !== 'undefined') {
-            return document.documentElement.classList.contains('dark');
-        }
-        return false;
-    });
-
-    useEffect(() => {
-        setDarkMode(document.documentElement.classList.contains('dark'));
-    }, []);
-
-    useEffect(() => {
-        document.documentElement.classList.toggle('dark', darkMode);
-        localStorage.setItem('color-theme', darkMode ? 'dark' : 'light');
-    }, [darkMode]);
-
-    const handleThemeToggle = () => {
-        setDarkMode((prevMode) => !prevMode);
-    };
+    let mouseX = useMotionValue(Infinity)
+    const [darkMode, toggleDarkMode] = useDarkMode()
+    const isLarge = useMedia({ minWidth: '640px' })
 
     return (
-        <motion.div onMouseMove={(e) => mouseX.set(e.pageX)} onMouseLeave={() => mouseX.set(Infinity)} className="fixed inset-x-0 bottom-4 z-[51] mx-auto flex h-[3.75rem] w-fit items-end gap-2.5 rounded-[calc(var(--btn-radius)+6px)] border border-white/10 bg-white px-1.5 pb-[0.6rem] shadow-md shadow-gray-950/15 ring-1 ring-gray-200 backdrop-blur-2xl dark:border-gray-500/25 dark:bg-gray-900/50 dark:shadow-gray-950/35 dark:ring-gray-950">
+        <motion.div onMouseMove={(e) => mouseX.set(e.pageX)} onMouseLeave={() => mouseX.set(Infinity)} className="fixed inset-x-0 bottom-4 z-[51] mx-auto flex h-[3.55rem] w-fit items-end gap-2.5 rounded-[calc(var(--btn-radius)+6px)] border border-white/10 bg-white px-1.5 pb-1.5 shadow-md shadow-gray-950/5 ring-1 ring-gray-200 backdrop-blur-2xl dark:border-gray-500/25 dark:bg-gray-900/50 dark:shadow-gray-950/35 dark:ring-gray-950">
             <AppIcon mouseX={mouseX} tooltip="Home" href="/">
                 <svg className="relative size-full text-gray-950 transition group-active:scale-90 dark:text-white" width="32" height="32" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -56,34 +39,39 @@ export function SiteHeader() {
                 </svg>
             </AppIcon>
             <Separator className="h-6 -translate-y-2.5" fancy orientation="vertical" />
-            <AppIcon mouseX={mouseX} tooltip="Code Source" href={SITE_SOCIAL_GITHUB}>
-                <svg className="relative size-full text-gray-950 transition group-active:scale-90 dark:text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
-                    <g fill="currentColor">
-                        <path d="M208 104v8a48 48 0 0 1-48 48h-24a32 32 0 0 1 32 32v40h-64v-40a32 32 0 0 1 32-32h-24a48 48 0 0 1-48-48v-8a49.28 49.28 0 0 1 8.51-27.3A51.92 51.92 0 0 1 76 32a52 52 0 0 1 43.83 24h32.34A52 52 0 0 1 196 32a51.92 51.92 0 0 1 3.49 44.7A49.28 49.28 0 0 1 208 104" opacity={0.2}></path>
-                        <path d="M208.3 75.68A59.74 59.74 0 0 0 202.93 28a8 8 0 0 0-6.93-4a59.75 59.75 0 0 0-48 24h-24a59.75 59.75 0 0 0-48-24a8 8 0 0 0-6.93 4a59.78 59.78 0 0 0-5.38 47.68A58.14 58.14 0 0 0 56 104v8a56.06 56.06 0 0 0 48.44 55.47A39.8 39.8 0 0 0 96 192v8H72a24 24 0 0 1-24-24a40 40 0 0 0-40-40a8 8 0 0 0 0 16a24 24 0 0 1 24 24a40 40 0 0 0 40 40h24v16a8 8 0 0 0 16 0v-40a24 24 0 0 1 48 0v40a8 8 0 0 0 16 0v-40a39.8 39.8 0 0 0-8.44-24.53A56.06 56.06 0 0 0 216 112v-8a58 58 0 0 0-7.7-28.32M200 112a40 40 0 0 1-40 40h-48a40 40 0 0 1-40-40v-8a41.74 41.74 0 0 1 6.9-22.48a8 8 0 0 0 1.1-7.69a43.81 43.81 0 0 1 .79-33.58a43.88 43.88 0 0 1 32.32 20.06a8 8 0 0 0 6.71 3.69h32.35a8 8 0 0 0 6.74-3.69a43.87 43.87 0 0 1 32.32-20.06a43.81 43.81 0 0 1 .77 33.58a8.09 8.09 0 0 0 1 7.65a41.76 41.76 0 0 1 7 22.52Z"></path>
-                    </g>
-                </svg>
-            </AppIcon>
+            {isLarge && (
+                <AppIcon mouseX={mouseX} tooltip="Code Source" href={SITE_SOCIAL_GITHUB}>
+                    <svg className="relative size-full text-gray-950 transition group-active:scale-90 dark:text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
+                        <g fill="currentColor">
+                            <path d="M208 104v8a48 48 0 0 1-48 48h-24a32 32 0 0 1 32 32v40h-64v-40a32 32 0 0 1 32-32h-24a48 48 0 0 1-48-48v-8a49.28 49.28 0 0 1 8.51-27.3A51.92 51.92 0 0 1 76 32a52 52 0 0 1 43.83 24h32.34A52 52 0 0 1 196 32a51.92 51.92 0 0 1 3.49 44.7A49.28 49.28 0 0 1 208 104" opacity={0.2}></path>
+                            <path d="M208.3 75.68A59.74 59.74 0 0 0 202.93 28a8 8 0 0 0-6.93-4a59.75 59.75 0 0 0-48 24h-24a59.75 59.75 0 0 0-48-24a8 8 0 0 0-6.93 4a59.78 59.78 0 0 0-5.38 47.68A58.14 58.14 0 0 0 56 104v8a56.06 56.06 0 0 0 48.44 55.47A39.8 39.8 0 0 0 96 192v8H72a24 24 0 0 1-24-24a40 40 0 0 0-40-40a8 8 0 0 0 0 16a24 24 0 0 1 24 24a40 40 0 0 0 40 40h24v16a8 8 0 0 0 16 0v-40a24 24 0 0 1 48 0v40a8 8 0 0 0 16 0v-40a39.8 39.8 0 0 0-8.44-24.53A56.06 56.06 0 0 0 216 112v-8a58 58 0 0 0-7.7-28.32M200 112a40 40 0 0 1-40 40h-48a40 40 0 0 1-40-40v-8a41.74 41.74 0 0 1 6.9-22.48a8 8 0 0 0 1.1-7.69a43.81 43.81 0 0 1 .79-33.58a43.88 43.88 0 0 1 32.32 20.06a8 8 0 0 0 6.71 3.69h32.35a8 8 0 0 0 6.74-3.69a43.87 43.87 0 0 1 32.32-20.06a43.81 43.81 0 0 1 .77 33.58a8.09 8.09 0 0 0 1 7.65a41.76 41.76 0 0 1 7 22.52Z"></path>
+                        </g>
+                    </svg>
+                </AppIcon>
+            )}
             <AppIcon mouseX={mouseX} tooltip="Follow on X" href={SITE_SOCIAL_TWITTER}>
                 <svg className="relative size-full text-gray-950 transition group-active:scale-90 dark:text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"></path>
                 </svg>
             </AppIcon>
             <Separator className="h-6 -translate-y-2.5" fancy orientation="vertical" />
-            <AppIcon onClick={setIsOpen} mouseX={mouseX} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} role="button" tooltip="Customize" className="relative">
-                <svg className="relative size-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M5 18.08V19h.92l9.06-9.06l-.92-.92z" opacity="0.3" />
-                    <path fill="currentColor" d="M20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29s-.51.1-.7.29l-1.83 1.83l3.75 3.75zM3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM5.92 19H5v-.92l9.06-9.06l.92.92z" />
-                </svg>
-            </AppIcon>
-            <AppIcon mouseX={mouseX} onClick={handleThemeToggle} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} role="button" tooltip="Toggle Theme" className="relative">
-                <svg className="absolute inset-0 m-auto size-full -rotate-180 scale-[2] p-2 text-white opacity-0 transition duration-500 group-active:scale-90 dark:rotate-0 dark:scale-100 dark:opacity-100" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+            {isLarge && (
+                <AppIcon onClick={setIsOpen} mouseX={mouseX} role="button" tooltip="Customize">
+                    <svg className="relative size-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M5 18.08V19h.92l9.06-9.06l-.92-.92z" opacity="0.3" />
+                        <path fill="currentColor" d="M20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29s-.51.1-.7.29l-1.83 1.83l3.75 3.75zM3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM5.92 19H5v-.92l9.06-9.06l.92.92z" />
+                    </svg>
+                </AppIcon>
+            )}
+
+            <AppIcon mouseX={mouseX} onClick={toggleDarkMode} role="button" tooltip="Toggle Theme">
+                <svg className="absolute inset-0 m-auto size-full -rotate-180 scale-[2] p-2 text-white opacity-0 transition duration-500 will-change-transform group-active:scale-90 dark:rotate-0 dark:scale-100 dark:opacity-100" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
                     <g fill="currentColor">
                         <path d="M184 128a56 56 0 1 1-56-56a56 56 0 0 1 56 56" opacity=".2" />
                         <path d="M120 40V16a8 8 0 0 1 16 0v24a8 8 0 0 1-16 0m72 88a64 64 0 1 1-64-64a64.07 64.07 0 0 1 64 64m-16 0a48 48 0 1 0-48 48a48.05 48.05 0 0 0 48-48M58.34 69.66a8 8 0 0 0 11.32-11.32l-16-16a8 8 0 0 0-11.32 11.32Zm0 116.68l-16 16a8 8 0 0 0 11.32 11.32l16-16a8 8 0 0 0-11.32-11.32M192 72a8 8 0 0 0 5.66-2.34l16-16a8 8 0 0 0-11.32-11.32l-16 16A8 8 0 0 0 192 72m5.66 114.34a8 8 0 0 0-11.32 11.32l16 16a8 8 0 0 0 11.32-11.32ZM48 128a8 8 0 0 0-8-8H16a8 8 0 0 0 0 16h24a8 8 0 0 0 8-8m80 80a8 8 0 0 0-8 8v24a8 8 0 0 0 16 0v-24a8 8 0 0 0-8-8m112-88h-24a8 8 0 0 0 0 16h24a8 8 0 0 0 0-16" />
                     </g>
                 </svg>
-                <svg aria-hidden="true" className="relative size-full scale-100 p-0.5 text-gray-950 transition duration-500 group-active:scale-90 dark:rotate-90 dark:scale-0 dark:opacity-0" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                <svg aria-hidden="true" className="relative size-full scale-100 p-0.5 text-gray-950 transition duration-500 will-change-transform group-active:scale-90 dark:rotate-90 dark:scale-0 dark:opacity-0" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
                     <path
                         className="text-gray-500"
@@ -92,52 +80,54 @@ export function SiteHeader() {
                 </svg>
             </AppIcon>
         </motion.div>
-    );
+    )
 }
 
 interface AppIconProps extends ButtonHTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
-    mouseX: MotionValue;
-    children: React.ReactNode;
-    tooltip: string;
-    href?: string;
-    isActive?: boolean;
+    mouseX: MotionValue
+    children: React.ReactNode
+    tooltip: string
+    href?: string
+    isActive?: boolean
 }
 
 const iconClasses =
-    'aspect-square shadow border border-gray-950/10 shadow-gray-950/5 bg-gray-100 rounded-btn group w-8 p-2.5 flex relative dark:bg-gray-800 dark:border-0 dark:border-t dark:border-white/10 hover:brightness-105 dark:hover:brightness-125 data-[state=active]:before:absolute data-[state=active]:before:-bottom-2 data-[state=active]:before:opacity-50 data-[state=active]:before:inset-x-0 data-[state=active]:before:size-1 data-[state=active]:before:rounded-full  data-[state=active]:before:bg-[--title-text-color] data-[state=active]:before:mx-auto';
+    'aspect-square shadow border border-gray-950/10 relative before:rounded-btn before:inset-0 dark:before:opacity-0 before:absolute before:inset-t before:border-t before:border-white shadow-gray-950/5 bg-gray-100 rounded-btn group p-2.5 flex relative dark:bg-gray-800 dark:border-0 dark:border-t dark:border-white/10 hover:brightness-105 dark:hover:brightness-125 data-[state=active]:after:absolute data-[state=active]:after:-bottom-2 data-[state=active]:after:opacity-50 data-[state=active]:after:inset-x-0 data-[state=active]:after:size-1 data-[state=active]:after:rounded-full  data-[state=active]:after:bg-[--title-text-color] data-[state=active]:after:mx-auto'
 
 const AppIcon: React.FC<AppIconProps> = ({ mouseX, tooltip, href, children, isActive, ...props }) => {
-    let ref = useRef<HTMLDivElement>(null);
+    const isLarge = useMedia({ minWidth: '1024px' })
+    const widths = isLarge ? [43, 80, 43] : [43, 43, 43]
+    let ref = useRef<HTMLDivElement>(null)
 
     let distance = useTransform(mouseX, (val) => {
-        let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+        let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 }
 
-        return val - bounds.x - bounds.width / 2;
-    });
+        return val - bounds.x - bounds.width / 2
+    })
 
-    let widthSync = useTransform(distance, [-150, 0, 150], [43, 80, 43]);
-    let width = useSpring(widthSync, { mass: 0.1, stiffness: 80, damping: 5 });
+    let widthSync = useTransform(distance, [-200, 0, 200], widths)
+    let width = useSpring(widthSync, { mass: 0.05, stiffness: 60, damping: 4 })
 
     return (
         <Tooltip.Provider>
-            <Tooltip.Root delayDuration={50}>
+            <Tooltip.Root delayDuration={0}>
                 <Tooltip.Trigger asChild>
                     {href ? (
-                        <motion.a data-state={isActive && 'active'} ref={ref} href={href} style={{ width }} {...props} className={iconClasses}>
+                        <motion.a data-state={isActive && 'active'} ref={ref} href={href} style={{ width, height: width }} {...props} className={iconClasses}>
                             {children}
                         </motion.a>
                     ) : (
-                        <motion.button ref={ref} style={{ width }} {...props} className={iconClasses}>
+                        <motion.button ref={ref} style={{ width, height: width }} {...props} className={iconClasses}>
                             {children}
                         </motion.button>
                     )}
                 </Tooltip.Trigger>
                 <Tooltip.Portal>
-                    <Tooltip.Content sideOffset={6} fancy inverted={false} className="z-50">
+                    <Tooltip.Content sideOffset={8} fancy inverted={false} className="z-50">
                         {tooltip}
                     </Tooltip.Content>
                 </Tooltip.Portal>
             </Tooltip.Root>
         </Tooltip.Provider>
-    );
-};
+    )
+}

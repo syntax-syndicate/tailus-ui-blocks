@@ -1,10 +1,16 @@
 {
     "printWidth": 500,
+    "semi": false,
     "tabWidth": 4,
     "parser": "babel",
     "singleQuote": true,
-    "trailingComma": "none",
+    "trailingComma": "es5",
     "jsxBracketSameLine": true,
+    "quoteProps" : "as-needed",
+    "jsxSingleQuote" : false,
+    "bracketSpacing" : true,
+    "bracketSameLine" : false,
+    "useTabs" : false,
     "plugins": [
         "prettier-plugin-tailwindcss", 
         "prettier-plugin-astro"

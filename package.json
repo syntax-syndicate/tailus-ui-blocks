@@ -51,6 +51,7 @@
     "@tailwindcss/container-queries": "^0.1.1",
     "astro": "^4.7.0",
     "autoprefixer": "^10.4.5",
+    "babel-plugin-import": "^1.13.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
@@ -68,6 +69,7 @@
     "tailwind-merge": "^1.14.0",
     "tailwind-variants": "^0.2.1",
     "tailwindcss": "^3.4.3",
+    "use-media": "^1.5.0",
     "vaul": "^0.9.1"
   },
   "author": {
