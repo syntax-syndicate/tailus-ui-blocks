@@ -1,79 +1,80 @@
 ---
-import { type CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import DocsSideBar from '../components/DocsSideBar.astro';
-import DocsFooter from '../components/DocsFooter.astro';
-import { Link } from '@tailus-ui/typography';
-import '@styles/pagefind.css';
-import '@styles/color-theme.css';
-import DocsPagination from '../components/DocsPagination.astro';
-import DocsHeader2 from '../components/DocsHeader2.astro';
-import { BlurDivs } from '@components/utilities/DocsProgressiveBlur';
-import { Text } from '@tailus-ui/typography/Text';
-import { Title } from '@tailus-ui/typography/Title';
-import { ArrowTopRightIcon } from '@radix-ui/react-icons';
-import Search from '@components/Search';
-import PageLoader from '@components/utilities/PageLoader.astro';
-import { ViewTransitions } from 'astro:transitions';
-import { Bug, Lightbulb, MessageCircle } from 'lucide-react';
+import { type CollectionEntry } from 'astro:content'
+import BaseHead from '../components/BaseHead.astro'
+import DocsSideBar from '../components/DocsSideBar.astro'
+import DocsFooter from '../components/DocsFooter.astro'
+import { Link } from '@tailus-ui/typography'
+import '@styles/pagefind.css'
+import '@styles/color-theme.css'
+import '@styles/tailus.css'
+import DocsPagination from '../components/DocsPagination.astro'
+import DocsHeader2 from '../components/DocsHeader2.astro'
+import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
+import { Text } from '@tailus-ui/typography/Text'
+import { Title } from '@tailus-ui/typography/Title'
+import { ArrowTopRightIcon } from '@radix-ui/react-icons'
+import Search from '@components/Search'
+import PageLoader from '@components/utilities/PageLoader.astro'
+import { ViewTransitions } from 'astro:transitions'
+import { Bug, Lightbulb, MessageCircle } from 'lucide-react'
 
-type Props = CollectionEntry<'themer' | 'react'>;
-const docs = Astro.props;
-const { collection } = docs as Props;
-const documentation = docs.data;
-const { headings } = await docs.render();
+type Props = CollectionEntry<'html'>
+const docs = Astro.props
+const { collection } = docs as Props
+const documentation = docs.data
+const { headings } = await docs.render()
 
-const getGithubIssueUrl = (repo: string, template: string) => `https://github.com/Tailus-UI/${repo}/issues/new?assignees=&labels=&projects=&template=${template}&title=`;
-const getGithubDiscussionUrl = (repo: string) => `https://github.com/Tailus-UI/${repo}/discussions/new/choose`;
+const getGithubIssueUrl = (repo: string, template: string) => `https://github.com/Tailus-UI/${repo}/issues/new?assignees=&labels=&projects=&template=${template}&title=`
+const getGithubDiscussionUrl = (repo: string) => `https://github.com/Tailus-UI/${repo}/discussions/new/choose`
 
-const bugReportTemplate = '%F0%9F%90%9E-bug-report.md';
-const newIdeasTemplate = '%F0%9F%92%A1-ideas-for-new-components--new-variants--examples--features-and-improvements-.md';
-const repo = collection == 'themer' ? 'themer' : 'tailus-ui-react';
+const bugReportTemplate = '%F0%9F%90%9E-bug-report.md'
+const newIdeasTemplate = '%F0%9F%92%A1-ideas-for-new-components--new-variants--examples--features-and-improvements-.md'
+const repo = 'html.tailus.io'
 ---
 
 <script>
     const options = {
         root: null,
         threshold: 0,
-        rootMargin: '0px'
-    };
+        rootMargin: '0px',
+    }
 
     document.addEventListener('astro:page-load', () => {
-        const headings = document.querySelectorAll('h1, h2');
-        const headingLinks = document.querySelectorAll("a[href^='#']");
-        const headingIndicator = document.querySelector('#heading-indicator') as HTMLElement;
+        const headings = document.querySelectorAll('h1, h2')
+        const headingLinks = document.querySelectorAll("a[href^='#']")
+        const headingIndicator = document.querySelector('#heading-indicator') as HTMLElement
 
         const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
-                const { id } = entry.target;
+                const { id } = entry.target
 
                 headingLinks.forEach(link => {
-                    const href = link.getAttribute('href')?.replace('#', '');
+                    const href = link.getAttribute('href')?.replace('#', '')
 
                     if (href === id) {
-                        const { classList } = link;
+                        const { classList } = link
 
                         if (entry.isIntersecting) {
-                            headingIndicator.style.top = `${(link as HTMLElement).offsetTop}px`;
-                            headingIndicator.style.height = `${(link as HTMLElement).offsetHeight}px`;
+                            headingIndicator.style.top = `${(link as HTMLElement).offsetTop}px`
+                            headingIndicator.style.height = `${(link as HTMLElement).offsetHeight}px`
 
-                            classList.add('font-medium');
-                            classList.replace('text-gray-600', 'text-gray-950');
-                            classList.replace('dark:text-gray-400', 'dark:text-white');
+                            classList.add('font-medium')
+                            classList.replace('text-gray-600', 'text-gray-950')
+                            classList.replace('dark:text-gray-400', 'dark:text-white')
                         } else {
-                            classList.remove('font-medium');
-                            classList.replace('text-gray-950', 'text-gray-600');
-                            classList.replace('dark:text-white', 'dark:text-gray-400');
+                            classList.remove('font-medium')
+                            classList.replace('text-gray-950', 'text-gray-600')
+                            classList.replace('dark:text-white', 'dark:text-gray-400')
                         }
                     }
-                });
-            });
-        }, options);
+                })
+            })
+        }, options)
 
         headings.forEach(heading => {
-            observer.observe(heading);
-        });
-    });
+            observer.observe(heading)
+        })
+    })
 </script>
 
 <html class="scroll-smooth dark" lang="en" data-palette="tls" data-rounded="xlarge">
@@ -136,7 +137,7 @@ const repo = collection == 'themer' ? 'themer' : 'tailus-ui-react';
                                                             {heading.text}
                                                         </a>
                                                     </li>
-                                                );
+                                                )
                                             }
                                         })
                                     }

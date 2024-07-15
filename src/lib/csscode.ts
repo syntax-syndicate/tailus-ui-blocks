@@ -1,4 +1,4 @@
-@tailwind base;
+export default `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -1013,4 +1013,4 @@
     .callout.gray{
         @apply bg-gray-100 [--title-text-color:theme(colors.gray.900)] [--body-text-color:theme(colors.gray.600)] dark:bg-gray-500/10 dark:[--title-text-color:theme(colors.gray.300)] dark:[--body-text-color:theme(colors.gray.400)]
     }
-}
+}`

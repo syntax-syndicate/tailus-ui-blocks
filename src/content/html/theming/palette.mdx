@@ -31,7 +31,7 @@ export const newPrimary = {
 
 export const overrideGray = [
     {
-        code: `import { grays } from "@tailus/themer"`,
+        code: `import { grays } from "@tailus/themer-plugins"`,
         lang: "ts",
     },
     {
@@ -51,7 +51,7 @@ export const overrideGray = [
 
 export const palette = [
     {
-        code: `import { palette } from "@tailus/themer"`,
+        code: `import { palette } from "@tailus/themer-plugins"`,
         lang: "ts",
     },
     {
@@ -66,151 +66,6 @@ plugins : [
     lang: "ts",
   }
 ]
-
-export const themeSwitcher = {
-    code: `"use client"
-import * as RadioGroup from "@radix-ui/react-radio-group"
-import { useState, useEffect } from "react";
-import { palettesArray, type Palette } from "@tailus/themer"
-
-export const ThemeSwitcher = () => {
-
-    const [palette, setPalette] = useState<Palette>(() => {
-        return (localStorage.getItem('appTheme') as Palette) || "trust";
-    });
-
-    const setTheme = (root:HTMLElement, palette: Palette) => {
-        root.setAttribute("data-palette", palette)
-        setPalette(palette)
-        localStorage.setItem('appTheme', palette);
-    }
-    
-    useEffect(() => {
-        const root = document.querySelector("[data-palette]") as HTMLElement
-        setTheme(root,palette)
-    }, [palette])
-
-    return (
-        <RadioGroup.Root
-            className="grid grid-cols-6 gap-3"
-            defaultValue={palette}
-            onValueChange={(value) => setPalette(value as Palette)}
-        >
-            {
-                palettesArray.map((palette, index) => (
-                    <RadioGroup.Item
-                        value={palette}
-                        className="relative bg-primary-600 dark:border dark:border-white/25 rounded-full overflow-hidden flex outline-2 outline-offset-2 outline-primary-600 focus-visible:outline"
-                        data-palette={palette}
-                        aria-label={\`Palette $\{palette}\`}
-                        key={index}
-                    >
-                        <RadioGroup.Indicator className="absolute z-[1] size-2 inset-0 m-auto shadow-md shadow-gray-950/50 bg-white rounded-full" />
-                        <div className="col-start-2 blur-[6px] w-1/2 ml-auto h-full">
-                            <div className="h-1/2 bg-secondary-500" />
-                            <div className="h-1/2 bg-accent-400" />
-                        </div>
-                    </RadioGroup.Item>
-                ))
-            }
-        </RadioGroup.Root>
-    )
-}`,
-    lang: "tsx",
-}
-
-export const removingPalette = {
-    code: `"use client"
-import * as RadioGroup from "@radix-ui/react-radio-group"
-import { useState, useEffect } from "react";
-import { palettesArray, type Palette } from "@tailus/themer"
-
-type PaletteWithoutOz = Exclude<Palette, "oz">
-
-export const ThemeSwitcher = () => {
-
-    const [palette, setPalette] = useState<PaletteWithoutOz>(() => {
-        return (localStorage.getItem('appTheme') as PaletteWithoutOz) || "trust";
-    });
-
-    const setTheme = (root:HTMLElement, palette: PaletteWithoutOz) => {
-        root.setAttribute("data-palette", palette)
-        setPalette(palette)
-        localStorage.setItem('appTheme', palette);
-    }
-    
-    useEffect(() => {
-        const root = document.querySelector("[data-palette]") as HTMLElement
-        setTheme(root,palette)
-    }, [palette])
-
-    return (
-        <RadioGroup.Root
-            className="grid grid-cols-6 gap-3"
-            defaultValue={palette}
-            onValueChange={(value) => setPalette(value as PaletteWithoutOz)}
-        >
-            {
-                palettesArray.map((palette, index) => (
-                    <RadioGroup.Item
-                        value={palette}
-                        className="relative bg-primary-600 dark:border dark:border-white/25 rounded-full overflow-hidden flex outline-2 outline-offset-2 outline-primary-600 focus-visible:outline"
-                        data-palette={palette}
-                        aria-label={\`Palette $\{palette}\`}
-                        key={index}
-                    >
-                        <RadioGroup.Indicator className="absolute z-[1] size-2 inset-0 m-auto shadow-md shadow-gray-950/50 bg-white rounded-full" />
-                        <div className="col-start-2 blur-[6px] w-1/2 ml-auto h-full">
-                            <div className="h-1/2 bg-secondary-500" />
-                            <div className="h-1/2 bg-accent-400" />
-                        </div>
-                    </RadioGroup.Item>
-                ))
-            }
-        </RadioGroup.Root>
-    )
-}`,
-    lang: "tsx",
-    highlightedLines:"7"
-}
-
-export const paletteCss = {
-    code: `@layer base {
-    [data-palette="oz"] {
-        --colors-primary-50: var(--colors-purple-50);
-        --colors-primary-100: var(--colors-purple-100);
-        --colors-primary-200: var(--colors-purple-200);
-        --colors-primary-300: var(--colors-purple-300);
-        --colors-primary-400: var(--colors-purple-400);
-        --colors-primary-500: var(--colors-purple-500);
-        --colors-primary-600: var(--colors-purple-600);
-        --colors-primary-700: var(--colors-purple-700);
-        --colors-primary-800: var(--colors-purple-800);
-        --colors-primary-900: var(--colors-purple-900);
-        --colors-primary-950: var(--colors-purple-950);
-    }
-}`,
-    lang: "css",
-}
-
-export const rgbColorCss = {
-    code: `@layer base {
-    [data-palette="oz"] {
-        --colors-primary-50: 250 245 255;
-        --colors-primary-100: 243 232 255;
-        --colors-primary-200: 233 213 255;
-        --colors-primary-300: 216 180 254;
-        --colors-primary-400: 192 132 252;
-        --colors-primary-500: 168 85 247;
-        --colors-primary-600: 147 51 234;
-        --colors-primary-700: 126 34 206;
-        --colors-primary-800: 107 33 168;
-        --colors-primary-900: 88 28 135;
-        --colors-primary-950: 59 7 100;
-    }
-}`,
-    lang: "css",
-}
 
 <div className="space-y-20">
     Tailus UI React is built on top of Tailwind Css, which means that you can customize the colors of your theme by changing the colors in the `tailwind.config.js` file.
@@ -276,7 +131,7 @@ export const rgbColorCss = {
         
         To use these default palettes, you need to import the `palettes` object.
 
-        <CodeSnippet code='import { palettes } from "@tailus/themer"' lang="ts" client:visible />
+        <CodeSnippet code='import { palettes } from "@tailus/themer-plugins"' lang="ts" client:visible />
 
         The available palettes are as follows:
 
@@ -302,81 +157,6 @@ export const rgbColorCss = {
                 ### Using Css variables
                 
                 Please read the [Tailwind Css](https://tailwindcss.com/docs/customizing-colors#using-css-variables) documentation to learn more about how to define your colors as css variables
-            </div>
-        </div>
-    </div>
-
-    <div>
-        ## Multi Theming
-
-        If you aim to offer multiple themes in your application, consider using the `palette` plugin from `@tailus/themer`. This plugin provides nine pre-configured palettes. You can easily switch between these palettes using the `data-palette` attribute, allowing your users to select their preferred theme.
-
-        <DocsStackedSnippets snippets={palette} client:visible />
-
-        <Banner.Root intent="gray" className="border-transparent dark:border-warning-900 mt-6">
-            <Banner.Content>
-                <Banner.Icon>
-                    <svg className="size-6 text-[--title-text-color] opacity-50" xmlns="http://www.w3.org/2000/svg" width="0.75em" height="1em" viewBox="0 0 384 512"><path fill="currentColor" d="m252.879 446.324l-94.223 25.247c-6.713 1.798-13.676-2.222-15.475-8.935c-1.798-6.712 2.222-13.676 8.934-15.474l94.223-25.247c6.713-1.798 13.676 2.221 15.475 8.934c1.8 6.713-2.222 13.676-8.934 15.475m-43.626-289.558c-.844 11.486-7.341 17.96-17.428 17.796c-10.043-.162-17.352-7.045-17.111-17.526c.234-10.198 6.628-16.897 17.505-16.778c10.87.117 16.258 6.54 17.034 16.508m120.795-38.71C292.565 56.148 218.325 26.069 149.354 46.22C88.995 63.856 49.64 103.71 35.33 165.003c-14.164 60.666 3.466 112.846 48.085 156.545c10.464 10.249 20.085 22.663 25.984 35.91c5.914 13.278 7.81 17.43 22.215 13.944c20.006-4.841 39.744-10.787 59.746-15.646c10.254-2.491 14.15-8.216 14.082-18.553c-.274-41.72-.182-83.443-.03-125.164c.033-9.444-2.935-17.22-13.096-17.456c-10.286-.239-13.435 7.277-13.349 16.905c.238 27.049.072 54.1.07 81.15c-.001 43.515 0 43.515-42.787 49.767c-16.266-18.638-31.078-35.392-45.653-52.351c-52.31-60.866-42.744-150.842 22.543-197.443c46.904-33.481 97.29-35.344 147.525-7.075c46.644 26.25 72.02 80.33 65.294 132.645c-4.493 34.948-21.181 62.845-45.933 86.826c-14.938 14.473-28.55 30.055-33.45 50.982c-2.292 9.788-7.78 14.643-17.262 16.98c1.772-1.647-102.202 27.486-102.202 27.486c-6.578 1.762-10.517 8.586-8.754 15.163l.271 1.017c1.763 6.577 8.586 10.517 15.164 8.755c0 0 119.3-32.058 120.864-32.501c11.048-3.05 17.061-10.915 17.313-22.141c.376-16.759 7.658-29.803 19.508-40.938c6.344-5.962 12.66-11.977 18.63-18.306c49.276-52.263 57.408-131.562 19.94-193.449z"/></svg>
-                </Banner.Icon>
-                <div className="space-y-3 -mb-4">
-                    <Title as="h3" size="base" weight="medium">Important</Title>
-                    <Text className="[--body-text-color:theme(colors.gray.700)] dark:[--body-text-color:theme(colors.gray.300)]">
-                        Be aware that any colors defined in the `colors` object within the `extend` property of the `theme` will take precedence over the colors in the palette selected with the `data-palette` attribute. 
-                        
-                        Therefore, to ensure the correct palette colors are applied, you should remove the `colors` object from the `extend` property.
-                    </Text>
-                </div>
-            </Banner.Content>
-        </Banner.Root>
-        <div className="space-y-12 mt-12">
-            <div>
-                ### Theme Switcher
-
-                Build a theme switcher to let your users choose their preferred one
-                <CodeSnippet {...themeSwitcher} client:visible/>
-            </div>
-
-            <div>
-                ### Customize a palette
-                
-                To modify a palette, you'll use CSS variables. We've converted all default Tailwind CSS colors, along with our three unique grays (cyanish, greenish, and indigray), into CSS variables. If you want to customize a palette, such as changing the primary color of the `oz` palette, you'll do this in the `base` layer.
-                
-                <CodeSnippet {...paletteCss} client:visible/>
-                
-                <div className="mt-8">
-
-                    ### With your own color
-
-                    To set your own color, you first need to convert all its shades to the RGB format. However, this format should exclude commas, round brackets, and the alpha value. For example, an RGB color would be represented as `168 85 247`.
-
-                    <CodeSnippet {...rgbColorCss} client:visible/>
-                </div>
-            </div>
-
-            <div>
-                ### Adding a new palette
-                
-                To create a new palette, define a new `[data-palette="your palette name"]` selector. Inside this selector, add your custom colors or use the default colors from Tailwind CSS. Remember, a palette must include eight colors: primary, secondary, accent, info, danger, success, warning, and gray.
-
-                <CodeSnippet
-                    code={`@layer base{
-    [data-palette="lualaba"]{
-        // ...your colors here
-    }
-}`}
-                    lang="css"
-                    client:visible
-                />
-            </div>
-
-            <div>
-                ### Removing a palette
-                
-                Actually, you can't directly remove a palette. However, you can exclude it from the `palettesArray` and the `Palette` type to prevent it from being used in your application.
-                <CodeSnippet
-                   {...removingPalette}
-                    client:visible
-                />
             </div>
         </div>
     </div>

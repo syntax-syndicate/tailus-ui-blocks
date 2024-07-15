@@ -1,16 +1,16 @@
 ---
-import PreviewBlock from '@components/PreviewBlock.astro';
-import { Title } from '@tailus-ui/typography';
-import Calendar from '@tailus-ui/Calendar';
-import Card from '@tailus-ui/Card';
-import { palettesArray as palettes } from '@tailus/themer';
+import PreviewBlock from '@components/PreviewBlock.astro'
+import { Title } from '@tailus-ui/typography'
+import Calendar from '@tailus-ui/Calendar'
+import Card from '@tailus-ui/Card'
+import { palettesArray as palettes } from '@tailus/themer'
 
 const selectedDates = Array.from({ length: 12 }, (_, i) => {
-    const date = new Date();
-    date.setMonth(i);
-    date.setDate(Math.floor(Math.random() * 28) + 1);
-    return date;
-});
+    const date = new Date()
+    date.setMonth(i)
+    date.setDate(Math.floor(Math.random() * 28) + 1)
+    return date
+})
 ---
 
 <>
@@ -29,18 +29,36 @@ const selectedDates = Array.from({ length: 12 }, (_, i) => {
         colors: palettes.${palette},
     }
 }`,
-                                lang: 'ts'
-                            }
+                                lang: 'ts',
+                            },
                         ]}>
-                        <div class="w-fit space-y-3">
-                            <span class="text-xl font-medium text-transparent bg-clip-text capitalize bg-gradient-to-r from-primary-600 to-accent-400">{palette}</span>
-                            <Card className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-800">
-                                <Calendar selected={selectedDates} fromYear={2024} toYear={2024} intent="primary" />
-                            </Card>
+                        <div class="grid grid-cols-6 border rounded-card" data-shade="900">
+                            <div class="p-6 col-span-full border-b flex items-center justify-center">
+                                <span class="annonce mixed gap-2 xs">
+                                    <span class="annonce-concern xs soft secondary">New</span>
+                                    <span class="text-title text-sm">Introduction Tailus UI Html</span>
+                                </span>
+                            </div>
+                            <div class="p-6 col-span-2 border-b flex items-center justify-center">
+                                <button class="btn solid sm primary">Generate</button>
+                            </div>
+                            <div class="p-6 col-span-2 border-l border-b flex items-center justify-center">
+                                <div class="avatar md">
+                                    <img src="https://tailus.io/images/reviews/rodrigo.webp" alt="" />
+                                </div>
+                            </div>
+                            <div class="p-6 col-span-2 border-l border-b flex items-center justify-center">
+                                <span class="badge soft sm primary">Badge</span>
+                            </div>
+                            <div class="p-6 col-span-full flex items-center justify-center">
+                                <div class="progress md w-2/3">
+                                    <div class="progress-indicator accent w-[60%]" />
+                                </div>
+                            </div>
                         </div>
                     </PreviewBlock>
                 </div>
-            );
+            )
         })
     }
 </>
