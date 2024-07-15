@@ -15,7 +15,7 @@ export const components = {
 
 export const palette = [
     {
-        code: `import { palettes } from "@tailus/themer"`,
+        code: `import { palettes } from "@tailus/themer-plugins"`,
         lang: "ts",
     },
     {
@@ -31,69 +31,15 @@ export const palette = [
 
 export const rounded = [
     {
-        code: `import { palettes, rounded } from "@tailus/themer"`,
-        lang: "ts",
-    },
-    {
-    code: `theme: {
-    extend: {
-        colors: palettes.trust,
-    }
-},
-plugins : [
-    rounded
-]`,
-    lang: "ts",
-    highlightedLines : "7"
-    },
-    {
         code: '<html data-rounded="large" >',
         lang : "html"
-  }
+    }
 ]
 
 export const shade = [
     {
-        code: `import { palettes, rounded, shade } from "@tailus/themer"`,
-        lang: "ts",
-    },
-    {
-    code: `theme: {
-    extend: {
-        colors: palettes.trust,
-    }
-},
-plugins : [
-    rounded,
-    shade
-]`,
-    lang: "ts",
-    highlightedLines : "8"
-    },
-    {
         code: '<html data-rounded="large" data-shade="900" >',
         lang : "html"
-  }
-]
-
-export const componentsCode = [
-    {
-        code: `import { palettes, rounded, shade, components } from "@tailus/themer"`,
-        lang: "ts",
-    },
-    {
-    code: `theme: {
-    extend: {
-        colors: palettes.trust,
-    }
-},
-plugins : [
-    rounded,
-    shade,
-    components
-]`,
-    lang: "ts",
-    highlightedLines : "9"
     }
 ]
 
@@ -101,9 +47,6 @@ export const paddingVars = {
     code: `@layer base {
     :root {
         --card-padding: theme("spacing[6]");
-        --accordion-padding: theme("spacing[4]");
-        --feedback-padding: var(--card-padding);
-        --toast-padding: theme("spacing[4]");
     }
 }`,
     lang: "css",
@@ -155,7 +98,7 @@ export const mediaDarkVars = {
 
 export const animations = [
     {
-        code: `import { palettes, rounded, shade, components, animations } from "@tailus/themer"`,
+        code: `import { palettes, rounded, shade, components, animations } from "@tailus/themer-plugins"`,
         lang: "ts",
     },
     {
@@ -196,7 +139,7 @@ export const visualizations = {
     <div>
         ## Palette
 
-        Tailus Themer provides nine color palettes, each with primary, secondary, accent, success, danger, warning, info, gray, white, black, and transparent colors. Import these from the `@tailus/themer` package to use as a foundation for your own palette.
+        Tailus Themer provides nine color palettes, each with primary, secondary, accent, success, danger, warning, info, gray, white, black, and transparent colors. Import these from the `@tailus/themer-plugins` package to use as a foundation for your own palette.
         
         <DocsStackedSnippets snippets={palette} client:visible />
 
@@ -211,12 +154,12 @@ export const visualizations = {
         - `winter`
         - `romance`
 
-        Learn more about customizing the palette on the [Palette](/react/theming/palette) page.
+        Learn more about customizing the palette on the [Palette](/theming/palette) page.
     </div>
     <div>
         ## Border Radius
 
-        To set your theme's border radius, import the `rounded` plugin from `@tailus/themer` and add it to `tailwind.config.ts's` `plugins` array. Apply the border radius using the `data-rounded` attribute, preferably on the `<html>` element.
+        Apply the border radius using the `data-rounded` attribute, preferably on the `<html>` element.
 
         <DocsStackedSnippets snippets={rounded} client:visible />
         
@@ -232,14 +175,13 @@ export const visualizations = {
         - `3xlarge`
         - `full`
 
-        Learn more about customizing the border radius on the [Rounded](/react/theming/rounded) page.
+        Learn more about customizing the border radius on the [Rounded](/theming/rounded) page.
     </div>
 
     <div>
         ## Shade
 
         Adjust the background and border colors of your components using the `data-shade` attribute. This change is more noticeable in dark mode.
-        Start with importing and adding the `shade` plugin your config's `plugins` array
 
         <DocsStackedSnippets snippets={shade} client:visible />
 
@@ -250,19 +192,14 @@ export const visualizations = {
         -   `925`
         -   `950`
         -   `glassy`
-    </div>
 
-    <div>
-        ## Shadow
-        
+        Learn more about customizing the shades on the [Shade](/theming/shade) page.
     </div>
 
     <div>
         ## Padding and Typography
         
-        You can adjust the padding and text colors of your components using CSS variables. Start with the default settings by importing the `components` plugin from `@tailus/themer` and adding it to the `plugins` array in your configuration file.
-
-        <DocsStackedSnippets snippets={componentsCode} client:visible />
+        You can adjust the padding and text colors of your components using CSS variables. 
 
         <div className="space-y-12 mt-12">
             <div>
@@ -292,25 +229,5 @@ export const visualizations = {
 
         If you're using the `media` method, add the CSS variables within the `@media (prefers-color-scheme: dark)` block.
         <CodeSnippet {...mediaDarkVars} client:visible />
-    </div>
-
-    <div>
-        ## Animations
-
-        To add animations to your components, import the `animations` plugin from `@tailus/themer` and add it to the `plugins` array in your configuration file.
-
-        <DocsStackedSnippets snippets={animations} client:visible />
-
-        This is an alternative to copy-pasting the animations for each component.
-    </div>
-
-    <div>
-        ## Other customizations
-
-        You can also customize the colors of the data visualizations components by defining CSS variables in your CSS file.
-
-        <CodeSnippet {...visualizations} client:visible />
-        
-        The default colors are defined in the `components` plugin.
     </div>
 </div>

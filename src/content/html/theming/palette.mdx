@@ -68,7 +68,7 @@ plugins : [
 ]
 
 <div className="space-y-20">
-    Tailus UI React is built on top of Tailwind Css, which means that you can customize the colors of your theme by changing the colors in the `tailwind.config.js` file.
+    Tailus UI Html is built on top of Tailwind Css, which means that you can customize the colors of your theme by changing the colors in the `tailwind.config.js` file.
 
     <div>
         ## Semantic Naming
@@ -127,9 +127,7 @@ plugins : [
 
     <div>
         ## Default Palettes
-        Tailus UI React comes with nine pre-configured color palettes for a quick start.
-        
-        To use these default palettes, you need to import the `palettes` object.
+        Tailus UI HTML comes with nine pre-configured color palettes for a quick start. To use these default palettes, you need to import the `palettes` object.
 
         <CodeSnippet code='import { palettes } from "@tailus/themer-plugins"' lang="ts" client:visible />
 
@@ -149,7 +147,7 @@ plugins : [
                 For instance, in the `oz` palette, `indigo` is the primary color. If you wish to change this primary color to `purple`, you can use the spread operator to merge the existing `oz` palette with your new color. This way, all the original colors are preserved, and the primary color is replaced with `purple`.
                 <CodeSnippet {...newPrimary} client:visible/>
 
-                If you wish to replace a gray color with a default gray color from Tailwind CSS, we recommend using the `grays` from `@tailus/themer` . This is because it includes a 925 shade, providing a wider range of shades.
+                If you wish to replace a gray color with a default gray color from Tailwind CSS, we recommend using the `grays` from `@tailus/themer-plugins` . This is because it includes a 925 shade, providing a wider range of shades.
                 <DocsStackedSnippets snippets={overrideGray} client:visible />
             </div>
 

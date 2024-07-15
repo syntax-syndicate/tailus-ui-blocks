@@ -1,8 +1,9 @@
 ---
-import PreviewBlock from '@components/PreviewBlock.astro';
-const shades = ['800', '900', '925', '950', 'glassy'];
-import { Title, Text } from '@tailus-ui/typography';
-import Button from '@tailus-ui/Button';
+import PreviewBlock from '@components/PreviewBlock.astro'
+import { Title, Text } from '@tailus-ui/typography'
+import Button from '@tailus-ui/Button'
+
+const shades = ['glassy', '800', '900', '925', '950']
 ---
 
 <>
@@ -13,7 +14,7 @@ import Button from '@tailus-ui/Button';
                     <Title as="h3" size="base" weight="medium" id={shade} className="capitalize">
                         {shade}
                     </Title>
-                    <PreviewBlock codeBlocks={[{ code: `<html data-shade="${shade}"" >`, lang: 'html' }]}>
+                    <PreviewBlock codeBlocks={[{ code: `<html data-shade="${shade}" >`, lang: 'html' }]}>
                         <div class="size-20 absolute inset-0 m-auto bg-gradient-to-b from-success-500 to-info-400 rounded-full" />
                         <div data-shade={shade} class="my-6 relative max-w-[18rem] p-[--feedback-padding] border feedback-shadow rounded-[--card-radius] feedback-bg group-last:fancy-border">
                             <Title as="h4" size="base" align="center" weight="medium">
@@ -33,7 +34,7 @@ import Button from '@tailus-ui/Button';
                         </div>
                     </PreviewBlock>
                 </div>
-            );
+            )
         })
     }
 </>

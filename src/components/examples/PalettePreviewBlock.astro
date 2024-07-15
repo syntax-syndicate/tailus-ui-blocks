@@ -1,16 +1,7 @@
 ---
 import PreviewBlock from '@components/PreviewBlock.astro'
 import { Title } from '@tailus-ui/typography'
-import Calendar from '@tailus-ui/Calendar'
-import Card from '@tailus-ui/Card'
 import { palettesArray as palettes } from '@tailus/themer'
-
-const selectedDates = Array.from({ length: 12 }, (_, i) => {
-    const date = new Date()
-    date.setMonth(i)
-    date.setDate(Math.floor(Math.random() * 28) + 1)
-    return date
-})
 ---
 
 <>
