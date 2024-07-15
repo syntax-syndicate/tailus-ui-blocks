@@ -5,11 +5,7 @@ priorityOrder : 2
 ---
 
 import _components from "@content/_components"
-import DocsCodeStep from "@components/DocsCodeStep"
 import CodeSnippet from "@components/utilities/CodeSnippet"
-import DocsStackedSnippets from "@components/DocsStackedSnippets"
-import Banner from "@components/Banner"
-import { Title, Text } from "@tailus-ui/typography"
 import BoilerplateCard from "@components/utilities/BoilerplateCard"
 import csscode from "@lib/csscode"
 
@@ -56,7 +52,7 @@ export const config = {
             <div>
                 ### 2. Set your color palette
 
-                Import `palettes` object and add the default palette
+                In your Tailwind Css config File, import the `palettes` object and add the default palette
 
                 <CodeSnippet {...config} client:visible />
 
@@ -76,7 +72,7 @@ export const config = {
     <div>
         ## What's next?
 
-        Great job! You've successfully installed Tailus UI Html in your project. Next, let's learn how to configure your [theme](/react/theming/theme-config).
+        Great job! You've successfully installed Tailus UI Html in your project. Next, let's learn how to configure your [theme](/theming/theme-config).
     </div>
 
     <div>
