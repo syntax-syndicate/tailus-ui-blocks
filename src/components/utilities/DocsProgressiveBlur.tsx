@@ -1,38 +1,19 @@
-import type { ReactNode } from 'react';
-import { BlurDiv } from './BlurDiv';
-import { useStore } from '@nanostores/react';
-import { isOpen } from '@store/customizer';
-import { twMerge } from 'tailwind-merge';
+import type { ReactNode } from 'react'
+import { BlurDiv } from './BlurDiv'
 
-export const BlurDivs = () => {
-    const $isOpen = useStore(isOpen);
-    return (
-        <>
-            <div aria-hidden className={twMerge('pointer-events-none fixed inset-x-0 bottom-0 z-50 mx-auto h-24 w-full rotate-180', $isOpen && 'h-40')}>
-                <BlurDiv zIndex={1} blurValue={0.25} gradientStops="rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 37.5%" />
-                <BlurDiv zIndex={2} blurValue={0.5} gradientStops="rgba(0, 0, 0, 0) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 0) 50%" />
-                <BlurDiv zIndex={3} blurValue={0.75} gradientStops="rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 62.5%" />
-                <BlurDiv zIndex={4} blurValue={1} gradientStops="rgba(0, 0, 0, 0) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 0) 75%" />
-                <BlurDiv zIndex={5} blurValue={1.25} gradientStops="rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 87.5%" />
-                <BlurDiv zIndex={6} blurValue={1.5} gradientStops="rgba(0, 0, 0, 0) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 0) 100%" />
-                <BlurDiv zIndex={7} blurValue={2} gradientStops="rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 1) 100%" />
-                <BlurDiv zIndex={8} blurValue={2.5} gradientStops="rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%" />
-                <BlurDiv zIndex={9} blurValue={3} gradientStops="rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%" />
-            </div>
-            <div aria-hidden className="pointer-events-none fixed inset-x-0 top-0 z-50 mx-auto h-14 w-full -translate-y-px">
-                <BlurDiv zIndex={1} blurValue={0.25} gradientStops="rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 37.5%" />
-                <BlurDiv zIndex={2} blurValue={0.5} gradientStops="rgba(0, 0, 0, 0) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 0) 50%" />
-                <BlurDiv zIndex={3} blurValue={0.75} gradientStops="rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 62.5%" />
-                <BlurDiv zIndex={4} blurValue={1} gradientStops="rgba(0, 0, 0, 0) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 0) 75%" />
-                <BlurDiv zIndex={5} blurValue={1.25} gradientStops="rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 87.5%" />
-                <BlurDiv zIndex={6} blurValue={1.5} gradientStops="rgba(0, 0, 0, 0) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 0) 100%" />
-                <BlurDiv zIndex={7} blurValue={2} gradientStops="rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 1) 100%" />
-                <BlurDiv zIndex={8} blurValue={2.5} gradientStops="rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%" />
-                <BlurDiv zIndex={9} blurValue={3} gradientStops="rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%" />
-            </div>
-        </>
-    );
-};
+export const BlurDivs = () => (
+    <div className="relative h-full w-full">
+        <BlurDiv zIndex={1} blurValue={0.25} gradientStops="rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 37.5%" />
+        <BlurDiv zIndex={2} blurValue={0.5} gradientStops="rgba(0, 0, 0, 0) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 0) 50%" />
+        <BlurDiv zIndex={3} blurValue={0.75} gradientStops="rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 62.5%" />
+        <BlurDiv zIndex={4} blurValue={1} gradientStops="rgba(0, 0, 0, 0) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 0) 75%" />
+        <BlurDiv zIndex={5} blurValue={1.25} gradientStops="rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 87.5%" />
+        <BlurDiv zIndex={6} blurValue={1.5} gradientStops="rgba(0, 0, 0, 0) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 0) 100%" />
+        <BlurDiv zIndex={7} blurValue={2} gradientStops="rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 1) 100%" />
+        <BlurDiv zIndex={8} blurValue={2.5} gradientStops="rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%" />
+        <BlurDiv zIndex={9} blurValue={3} gradientStops="rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%" />
+    </div>
+)
 
 export const ProgressiveBlur = ({ children }: { children: ReactNode }) => {
     return (
@@ -44,5 +25,5 @@ export const ProgressiveBlur = ({ children }: { children: ReactNode }) => {
                 </div>
             </div>
         </>
-    );
-};
+    )
+}

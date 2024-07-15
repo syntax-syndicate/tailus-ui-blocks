@@ -1,35 +1,33 @@
-import { MotionValue, motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-
-import { useRef, useState, useEffect, type ButtonHTMLAttributes } from 'react';
-import Tooltip from '@tailus-ui/Tooltip';
-import { GitHubIcon, HTMLIcon, ReactIcon } from './utilities/icons';
-import Separator from './tailus-ui/Separator';
-import { SITE_SOCIAL_GITHUB, SITE_SOCIAL_TWITTER } from 'src/const';
-import { setIsOpen } from '@store/customizer';
-import BrandIcon from './utilities/BrandIcon';
-import Button from './tailus-ui/Button';
-import { Moon, Palette, Pen, Sun } from 'lucide-react';
+import { useState, useEffect } from 'react'
+import Tooltip from '@tailus-ui/Tooltip'
+import { GitHubIcon } from './utilities/icons'
+import Separator from './tailus-ui/Separator'
+import { SITE_SOCIAL_GITHUB, SITE_SOCIAL_TWITTER } from 'src/const'
+import { setIsOpen } from '@store/customizer'
+import BrandIcon from './utilities/BrandIcon'
+import Button from './tailus-ui/Button'
+import { Moon, Palette, Sun } from 'lucide-react'
 
 export function SiteHeader() {
     const [darkMode, setDarkMode] = useState(() => {
         if (typeof window !== 'undefined') {
-            return document.documentElement.classList.contains('dark');
+            return document.documentElement.classList.contains('dark')
         }
-        return false;
-    });
+        return false
+    })
 
     useEffect(() => {
-        setDarkMode(document.documentElement.classList.contains('dark'));
-    }, []);
+        setDarkMode(document.documentElement.classList.contains('dark'))
+    }, [])
 
     useEffect(() => {
-        document.documentElement.classList.toggle('dark', darkMode);
-        localStorage.setItem('color-theme', darkMode ? 'dark' : 'light');
-    }, [darkMode]);
+        document.documentElement.classList.toggle('dark', darkMode)
+        localStorage.setItem('color-theme', darkMode ? 'dark' : 'light')
+    }, [darkMode])
 
     const handleThemeToggle = () => {
-        setDarkMode((prevMode) => !prevMode);
-    };
+        setDarkMode((prevMode) => !prevMode)
+    }
     return (
         <header data-rounded="full" className="fixed inset-x-0 bottom-6 z-50 mx-auto max-w-xl px-6 sm:px-14">
             <div className="rounded-btn card-shadow feedback-bg flex items-center gap-1.5 border p-1.5">
@@ -98,5 +96,5 @@ export function SiteHeader() {
                 </div>
             </div>
         </header>
-    );
+    )
 }

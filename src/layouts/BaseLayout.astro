@@ -3,12 +3,11 @@ import Footer from '../components/Footer'
 import BaseHead from '../components/BaseHead.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../const'
 import { SiteHeader } from '../components/SiteHeader'
-import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
+import { BlurDivs } from '@components/utilities/SiteProgressiveBlur'
 import '@styles/color-theme.css'
 import PageLoader from '@components/utilities/PageLoader.astro'
 import { ViewTransitions } from 'astro:transitions'
 import { CustomizerPill } from '@components/customizer/Pill'
-import Dock from '@components/Dock'
 
 interface Props {
     title?: string
