@@ -206,6 +206,17 @@
 }
 
 @layer components {
+    /* Typography */
+    .text-blockquote {
+        color: var(--body-text-color);
+        @apply italic pl-4 border-l-2
+    }
+
+    .text-quote {
+        color: var(--body-text-color);
+        @apply italic pl-4 border-l-2
+    }
+
     /* Button */
 
     .btn{
@@ -671,6 +682,14 @@
 
     .link.animated.neutral{
         @apply before:bg-gray-950/50 dark:before:bg-white/50
+    }
+
+    .link.animated.info{
+        @apply before:bg-info-300 dark:before:bg-info-600
+    }
+
+    .link.animated.primary{
+        @apply before:bg-primary-300 dark:before:bg-primary-600
     }
 
     .link.underlined.neutral, .link.ghost.neutral{
