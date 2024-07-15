@@ -1,8 +1,7 @@
 ---
 title: Typography
 description: All you need for typography elements
-priorityOrder : 17
-slug : typography
+priorityOrder : 8
 ---
 
 import _components from "@content/_components"
@@ -18,131 +17,6 @@ import { MESCHAC_AVATAR } from "src/const"
 export const components = {
     ..._components
 }
-
-export const componentCode = `📂 tailus-ui
-   📂 typography
-       📄 Caption.tsx
-       📄 Code.tsx
-       📄 Display.tsx
-       📄 index.ts
-       📄 Kbd.tsx
-       📄 Link.tsx
-       📄 List.tsx
-       📄 Text.tsx
-       📄 Title.tsx
-
-// ... your other components
-`
-
-export const component = {
-    code : componentCode,
-    lang:"tsx",
-    file:"tsx",
-    filename:"Link.tsx",
-}
-
-export const usage = [
-  {
-    code: `import {
-    Text,
-    Link,
-    List,
-    Display,
-    Title,
-    Caption,
-    Code,
-    Kbd
-} from "@tailus-ui/typography";`,
-    lang: "tsx",
-  },
-  {
-    code: `const MyComponent = () => (
-    <div>
-        <Display>Build Custom Web UIs</Display>
-        <Title className="mt-6" size="3xl">Title for Headings</Title>
-        <Text>
-            Highly <Link variant="underlined" size="base" href="https://tailus.io" target="_blank" rel="noopener noreferrer">customizable components</Link> for building <Text as="strong">modern</Text> websites and <Text as="em">applications</Text> that look and feel the way you want.
-        </Text>
-        <Caption className="mb-6">Caption</Caption>
-        
-        <div className="flex gap-3">
-            <Code className="-mt-px">Code</Code>
-            <Kbd className="-mb-px">Kbd</Kbd>
-        </div>
-        <List neutral>
-            <li>Modern</li>
-            <li>Customizable</li>
-            <li>Responsive</li>
-            <li>Accessible</li>
-        </List>
-    </div>
-)`,
-    lang: "tsx",
-  }
-]
-
-export const intent = [
-  {
-    code: `const MyCodes = () => (
-    <div className="flex flex-wrap gap-3">
-        <Link href="#" intent="primary">primary</Link>
-        <Link href="#" intent="secondary">secondary</Link>
-        <Link href="#" intent="accent">accent</Link>
-        <Link href="#" intent="success">success</Link>
-        <Link href="#" intent="danger">danger</Link>
-        <Link href="#" intent="info">info</Link>
-        <Link href="#" intent="warning">warning</Link>
-        <Link href="#" intent="gray">gray</Link>
-        <Link href="#" intent="neutral">neutral</Link>
-    </div>
-)`,
-    lang: "tsx",
-  }
-]
-
-export const variant = [
-  {
-    code: `const MyCodes = () => (
-    <div className="flex flex-wrap gap-3">
-        <Link href="#" variant="plain">plain</Link>
-        <Link href="#" variant="underlined">underlined</Link>
-        <Link href="#" variant="ghost">ghost</Link>
-        <Link href="#" variant="animated">animated</Link>
-    </div>
-)`,
-    lang: "tsx",
-  }
-]
-
-export const size = [
-  {
-        code: `<Display 
-    as="h1"
-
-    size={{
-        initial: "4xl",
-        sm: "5xl",
-        md: "6xl",
-        lg: "7xl",
-        xl: "8xl",
-        xxl: "9xl"
-    }}
-
-    align={{
-        initial: "left",
-        sm: "center",
-    }}
-
-    weight={{
-        initial: "bold",
-        sm: "black",
-    }}
->
-    Build Custom Web UIs
-</Display>`,
-    lang: "tsx",
-  }
-]
 
 <div className="space-y-20">
     <PreviewBlock codeBlocks={
@@ -295,6 +169,22 @@ export const size = [
             </div>
         </PreviewBlock>
     </div>
+
+    <div>
+        ## Blockquote
+
+        The body text elaborates on the structure outlined by titles, providing depth and explanation.
+    
+        <PreviewBlock codeBlocks={
+            [{
+                code:`<blockquote class="text-blockquote">Tailus is really extraordinary and very practical, no need to break your head. A real gold mine.</blockquote>`,
+                lang: "html"
+            }]}
+        >
+            <blockquote class="text-blockquote max-w-sm">Tailus is really extraordinary and very practical, no need to break your head. A real gold mine.</blockquote>
+        </PreviewBlock>
+    </div>
+
 
     <div>
         ## List
