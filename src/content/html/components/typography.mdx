@@ -6,13 +6,10 @@ priorityOrder : 8
 
 import _components from "@content/_components"
 import CodeSnippet from "@components/utilities/CodeSnippet"
-import Banner from "@components/Banner"
-import ComponentPreview from "@components/ComponentPreview"
-import { Link, Display, Title, Text, List, Caption, Code, Kbd } from "@tailus-ui/typography"
-import DocsStackedSnippets from "@components/DocsStackedSnippets"
 import Table from "@components/Table.astro"
 import PreviewBlock from "@components/PreviewBlock.astro"
 import { MESCHAC_AVATAR } from "src/const"
+import link from "@lib/references/link"
 
 export const components = {
     ..._components
@@ -26,7 +23,7 @@ export const components = {
     <h1 class="text-3xl font-semibold text-title">Title for Headings</h1>
 
     <p class="text-body">
-        Highly <a href="https://tailus.io" class="link underlined primary" target="_blank" rel="noopener noreferrer">customizable components</a> for building <strong class="text-title">modern</strong> websites and <em class="text-title">applications</em> that look and feel the way you want.
+        Highly <a href="https://tailus.io" class="link variant-underlined intent-primary" target="_blank" rel="noopener noreferrer">customizable components</a> for building <strong class="text-title">modern</strong> websites and <em class="text-title">applications</em> that look and feel the way you want.
     </p>
 
     <h2 class="text-2xl font-semibold text-title">Title 2 for Headings</h2>
@@ -57,7 +54,7 @@ export const components = {
     <h6 class="text-base font-medium text-title">Title 6 for Headings</h6>
 
     <div className="flex items-end gap-3">
-        <code className="code primary">Code</code>
+        <code className="code intent-primary">Code</code>
         <kbd className="kbd">Kbd</kbd>
     </div>
 </div>`,
@@ -68,7 +65,7 @@ export const components = {
             <span class="text-4xl text-display font-bold lg:text-5xl">Build Custom Web UIs</span>
             <h1 class="text-3xl font-semibold text-title">Title for Headings</h1>
             <p class="text-body">
-                Highly <a href="https://tailus.io" class="link underlined primary" target="_blank" rel="noopener noreferrer">customizable components</a> for building <strong class="text-title">modern</strong> websites and <em class="text-title">applications</em> that look and feel the way you want.
+                Highly <a href="https://tailus.io" class="link variant-underlined intent-primary" target="_blank" rel="noopener noreferrer">customizable components</a> for building <strong class="text-title">modern</strong> websites and <em class="text-title">applications</em> that look and feel the way you want.
             </p>
             <h2 class="text-2xl font-semibold text-title">Title 2 for Headings</h2>
             <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
@@ -95,7 +92,7 @@ export const components = {
             <h5 class="text-base font-medium text-title">Title 5 for Headings</h5>
             <h6 class="text-base font-medium text-title">Title 6 for Headings</h6>
             <div className="flex items-end gap-3">
-                <code className="code primary">Code</code>
+                <code className="code intent-primary">Code</code>
                 <kbd className="kbd">Kbd</kbd>
             </div>
         </div>
@@ -236,81 +233,26 @@ export const components = {
         <PreviewBlock codeBlocks={
               [{
             code:`<div class="space-y-3 *:block">
-    <a class="link primary" href="#">Tailus UI React</a>
-    <a class="link ghost primary" href="#">Tailus UI React</a>
-    <a class="link animated primary" href="#">Tailus UI React</a>
+    <a class="link intent-primary" href="#">Tailus UI React</a>
+    <a class="link variant-ghost intent-primary" href="#">Tailus UI React</a>
+    <a class="link variant-animated intent-primary" href="#">Tailus UI React</a>
 </div>`,
               lang: "html"
           }]}>
                 <div class="space-y-3 *:block">
-                    <a class="link primary" href="#">Tailus UI React</a>
-                    <a class="link ghost primary" href="#">Tailus UI React</a>
-                    <a class="link animated primary" href="#">Tailus UI React</a>
+                    <a class="link intent-primary" href="#">Tailus UI React</a>
+                    <a class="link variant-ghost intent-primary" href="#">Tailus UI React</a>
+                    <a class="link variant-animated intent-primary" href="#">Tailus UI React</a>
                 </div>
         </PreviewBlock>
 
-        ### Link variants
+        <div class="mt-12"> 
+            ### Link props
 
-        <PreviewBlock codeBlocks={
-              [{
-            code:`<div class="space-y-6 max-w-xs *:block">
-    <a class="link primary" href="#">Tailus UI React</a>
-    <a class="link ghost primary" href="#">Tailus UI React</a>
-    <a class="link underlined primary" href="#">Tailus UI React</a>
-    <a class="link animated primary" href="#">Tailus UI React</a>
-</div>
-<div class="space-y-6 max-w-xs *:block">
-    <a class="link info" href="#">Tailus UI React</a>
-    <a class="link ghost info" href="#">Tailus UI React</a>
-    <a class="link underlined info" href="#">Tailus UI React</a>
-    <a class="link animated info" href="#">Tailus UI React</a>
-</div>
-<div class="space-y-6 max-w-xs *:block">
-    <a class="link neutral" href="#">Tailus UI React</a>
-    <a class="link ghost neutral" href="#">Tailus UI React</a>
-    <a class="link underlined neutral" href="#">Tailus UI React</a>
-    <a class="link animated neutral" href="#">Tailus UI React</a>
-</div>`,
-              lang: "html"
-          }]}>
-            <table class="table-auto border-collapse overflow-auto" data-shade="900">
-                <caption class="mb-6 text-caption text-sm">Link variants table</caption>
-                <thead>
-                    <tr class="*:py-1.5 *:px-3">
-                        <td></td>
-                        <td class="rounded-l bg-ui-soft">Primary</td>
-                        <td class="bg-ui-soft">Info</td>
-                        <td class="rounded-r bg-ui-soft">Neutral</td>
-                    </tr>
-                </thead>
-                <tbody data-palette="nature">
-                    <tr class="border-b *:py-1.5 *:px-3">
-                        <td class="text-caption text-sm">Plain</td>
-                        <td><a class="link primary" href="#">Tailus UI React</a></td>
-                        <td><a class="link info" href="#">Tailus UI React</a></td>
-                        <td><a class="link neutral" href="#">Tailus UI React</a></td>
-                    </tr>
-                    <tr class="border-b *:py-1.5 *:px-3">
-                        <td class="text-caption text-sm">Ghost</td>
-                        <td><a class="link ghost primary" href="#">Tailus UI React</a></td>
-                        <td><a class="link ghost info" href="#">Tailus UI React</a></td>
-                        <td><a class="link ghost neutral" href="#">Tailus UI React</a></td>
-                    </tr>
-                    <tr class="border-b *:py-1.5 *:px-3">
-                        <td class="text-caption text-sm">Underlined</td>
-                        <td><a class="link underlined primary" href="#">Tailus UI React</a></td>
-                        <td><a class="link underlined info" href="#">Tailus UI React</a></td>
-                        <td><a class="link underlined neutral" href="#">Tailus UI React</a></td>
-                    </tr>
-                    <tr class="border-b *:py-1.5 *:px-3">
-                        <td class="text-caption text-sm">Animated</td>
-                        <td><a class="link animated primary" href="#">Tailus UI React</a></td>
-                        <td><a class="link animated info" href="#">Tailus UI React</a></td>
-                        <td><a class="link animated neutral" href="#">Tailus UI React</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </PreviewBlock>
+            Component prop classes of the link element
+
+            <Table data={link} />
+        </div>
     </div>
 
     <div>
@@ -330,20 +272,20 @@ export const components = {
     
         <PreviewBlock codeBlocks={[{
             code: `<div class="space-y-3 *:w-fit *:block">
-    <code class="code primary">primary</code>
-    <code class="code secondary">secondary</code>
-    <code class="code accent">accent</code>
-    <code class="code gray">gray</code>
-    <code class="code neutral">neutral</code>
+    <code class="code intent-primary">primary</code>
+    <code class="code intent-secondary">secondary</code>
+    <code class="code intent-accent">accent</code>
+    <code class="code intent-gray">gray</code>
+    <code class="code intent-neutral">neutral</code>
 </div>`,
             lang: "html"
         }]}>
             <div class="space-y-3 *:w-fit *:block">
-                <code class="code primary">primary</code>
-                <code class="code secondary">secondary</code>
-                <code class="code accent">accent</code>
-                <code class="code gray">gray</code>
-                <code class="code neutral">neutral</code>
+                <code class="code intent-primary">primary</code>
+                <code class="code intent-secondary">secondary</code>
+                <code class="code intent-accent">accent</code>
+                <code class="code intent-gray">gray</code>
+                <code class="code intent-neutral">neutral</code>
             </div>
         </PreviewBlock>
     </div>
