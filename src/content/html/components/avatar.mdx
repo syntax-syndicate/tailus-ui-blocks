@@ -1,0 +1,118 @@
+---
+title: Avatar
+description: An image element with a fallback for representing the user.
+priorityOrder : 10
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/avatar"
+import { MESCHAC_AVATAR } from "src/const"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="flex gap-3">
+    <div class="avatar sz-md">
+        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+    </div>
+    <div class="avatar sz-md fallback-solid intent-primary">MI</div>
+    <div class="avatar sz-md fallback-soft intent-primary">MI</div>
+</div>`,
+              lang: "html"
+          }]}>
+        <div class="flex gap-3">
+            <div class="avatar sz-md">
+                <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+            </div>
+            <div class="avatar sz-md fallback-solid intent-primary">MI</div>
+            <div class="avatar sz-md fallback-soft intent-primary">MI</div>
+        </div>
+    </PreviewBlock>
+
+    <div>
+        ## Reference
+
+        <div className="mt-6 mb-12"> 
+            ### Avatar 
+
+            The avatar component have the following props
+
+            <Table data={reference} />
+        </div>
+    </div>
+
+    <div>
+        ## Status example
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<div class="space-y-3">
+    <div class="flex gap-3" data-shade="900">
+        <div class="avatar sz-md avatar-status status-online">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+        <div class="avatar sz-md avatar-status status-offline">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+        <div class="avatar sz-md avatar-status status-away">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+        <div class="avatar sz-md avatar-status status-busy">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+    </div>
+    <div class="flex gap-3" data-shade="900">
+        <div class="avatar sz-md avatar-status status-online before:bottom-0">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+        <div class="avatar sz-md avatar-status status-offline before:bottom-0">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+        <div class="avatar sz-md avatar-status status-away before:bottom-0">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+        <div class="avatar sz-md avatar-status status-busy before:bottom-0">
+            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+        </div>
+    </div>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="space-y-3">
+                <div class="flex gap-3" data-shade="900">
+                    <div class="avatar sz-md avatar-status status-online">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                    <div class="avatar sz-md avatar-status status-offline">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                    <div class="avatar sz-md avatar-status status-away">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                    <div class="avatar sz-md avatar-status status-busy">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                </div>
+                <div class="flex gap-3" data-shade="900">
+                    <div class="avatar sz-md avatar-status status-online before:bottom-0">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                    <div class="avatar sz-md avatar-status status-offline before:bottom-0">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                    <div class="avatar sz-md avatar-status status-away before:bottom-0">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                    <div class="avatar sz-md avatar-status status-busy before:bottom-0">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                </div>
+            </div>
+        </PreviewBlock>
+    </div>
+</div>
