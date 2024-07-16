@@ -1,0 +1,148 @@
+---
+title: Switch
+description: A control that allows the user to toggle between checked and not checked.
+priorityOrder : 17
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/input"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid [grid-template-columns:1fr_auto]">
+            <label for="sw1" class="text-title">Airplane mode</label>
+            <label for="sw1" class="block relative w-8 h-5 border transition duration-300 rounded-full bg-ui-soft dark:bg-[--ui-bg] has-[:checked]:bg-primary-600 has-[:checked]:border-white/5">
+                <input checked class="peer" type="checkbox" id="sw1" name="switch1" hidden />
+                <span class="absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3"></span>
+            </label>
+        </div>
+        <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+        <form class="space-y-4 max-w-sm w-full" data-shade="900">
+            <div class="field">
+                <div class="grid [grid-template-columns:1fr_auto]">
+                    <label for="sw1" class="text-title">Airplane mode</label>
+                    <label for="sw1" class="block relative w-8 h-5 border transition duration-300 rounded-full bg-ui-soft dark:bg-[--ui-bg] has-[:checked]:bg-primary-600 has-[:checked]:border-white/5">
+                        <input checked class="peer" type="checkbox" id="sw1" name="switch1" hidden />
+                        <span class="absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3"></span>
+                    </label>
+                </div>
+                <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+            </div>
+        </form>
+    </PreviewBlock>
+
+    <div>
+        ## Secondary
+
+            <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid [grid-template-columns:1fr_auto]">
+            <label for="sw1" class="text-title">Airplane mode</label>
+            <label for="sw1" class="block relative w-8 h-5 border transition duration-300 rounded-full bg-ui-soft dark:bg-[--ui-bg] has-[:checked]:bg-secondary-600 has-[:checked]:border-white/5">
+                <input checked class="peer" type="checkbox" id="sw1" name="switch1" hidden />
+                <span class="absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3"></span>
+            </label>
+        </div>
+        <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+            <form class="space-y-4 max-w-sm w-full" data-shade="900">
+                <div class="field">
+                    <div class="grid [grid-template-columns:1fr_auto]">
+                        <label for="sw2" class="text-title">Airplane mode</label>
+                        <label for="sw2" class="block relative w-8 h-5 border transition duration-300 rounded-full bg-ui-soft dark:bg-[--ui-bg] has-[:checked]:bg-secondary-600 has-[:checked]:border-white/5">
+                            <input checked class="peer" type="checkbox" id="sw2" name="switch2" hidden />
+                            <span class="absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3"></span>
+                        </label>
+                    </div>
+                    <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Accent
+
+            <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid [grid-template-columns:1fr_auto]">
+            <label for="sw1" class="text-title">Airplane mode</label>
+            <label for="sw1" class="block relative w-8 h-5 border transition duration-300 rounded-full bg-ui-soft dark:bg-[--ui-bg] has-[:checked]:bg-accent-600 has-[:checked]:border-white/5">
+                <input checked class="peer" type="checkbox" id="sw1" name="switch1" hidden />
+                <span class="absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3"></span>
+            </label>
+        </div>
+        <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+            <form class="space-y-4 max-w-sm w-full" data-shade="900">
+                <div class="field">
+                    <div class="grid [grid-template-columns:1fr_auto]">
+                        <label for="sw3" class="text-title">Airplane mode</label>
+                        <label for="sw3" class="block relative w-8 h-5 border transition duration-300 rounded-full bg-ui-soft dark:bg-[--ui-bg] has-[:checked]:bg-accent-600 has-[:checked]:border-white/5">
+                            <input checked class="peer" type="checkbox" id="sw3" name="switch3" hidden />
+                            <span class="absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3"></span>
+                        </label>
+                    </div>
+                    <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Neutral
+
+            <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid [grid-template-columns:1fr_auto]">
+            <label for="sw4" class="text-title">Airplane mode</label>
+            <label for="sw4" class="block relative w-8 h-5 border transition duration-300 rounded-full bg-ui-soft dark:bg-[--ui-bg] has-[:checked]:bg-gray-950 dark:has-[:checked]:bg-white has-[:checked]:border-white/5">
+                <input checked class="peer" type="checkbox" id="sw4" name="switch4" hidden />
+                <span class="absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3 dark:peer-checked:bg-gray-900"></span>
+            </label>
+        </div>
+        <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+            <form class="space-y-4 max-w-sm w-full" data-shade="900">
+                <div class="field">
+                    <div class="grid [grid-template-columns:1fr_auto]">
+                        <label for="sw4" class="text-title">Airplane mode</label>
+                        <label for="sw4" class="block relative w-8 h-5 border transition duration-300 rounded-full bg-ui-soft dark:bg-[--ui-bg] has-[:checked]:bg-gray-950 dark:has-[:checked]:bg-white has-[:checked]:border-white/5">
+                            <input checked class="peer" type="checkbox" id="sw4" name="switch4" hidden />
+                            <span class="absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3 dark:peer-checked:bg-gray-900"></span>
+                        </label>
+                    </div>
+                    <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
+</div>
