@@ -997,7 +997,7 @@
     }
 
     .callout{
-        @apply p-3 rounded-[--card-radius]
+        @apply p-4 rounded-[--card-radius]
     }
 
     .callout-title{
