@@ -608,6 +608,50 @@
         @apply px-5
     }
 
+    .switch{
+        @apply block relative w-8 h-5 border transition duration-300 rounded-full bg-ui-soft dark:bg-[--ui-bg] has-[:checked]:border-white/5
+    }
+
+    .switch-thumb{
+        @apply absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3
+    }
+
+    .switch-thumb.intent-neutral{
+        @apply absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3 dark:peer-checked:bg-gray-900
+    }
+
+    .switch.intent-primary{
+        @apply has-[:checked]:bg-primary-600
+    }
+
+    .switch.intent-secondary{
+        @apply has-[:checked]:bg-secondary-600
+    }
+
+    .switch.intent-accent{
+        @apply has-[:checked]:bg-accent-600
+    }
+
+    .switch.intent-gray{
+        @apply has-[:checked]:bg-gray-600
+    }
+
+    .switch.intent-neutral{
+        @apply has-[:checked]:bg-gray-950 dark:has-[:checked]:bg-white
+    }
+
+    .checkbox, .radio{
+        @apply block relative size-[1.125rem] border border-gray-300 dark:border-[--ui-border-color] transition duration-300 rounded shadow-sm shadow-gray-950/5 dark:bg-ui has-[:checked]:bg-primary-600 has-[:checked]:border-white/5
+    }
+
+    .checkbox-icon{
+        @apply absolute inset-0 m-auto size-3.5 transition duration-300 text-gray-950 dark:text-white scale-75 opacity-0 group-hover:opacity-25 peer-checked:scale-100 peer-checked:text-white peer-checked:opacity-100
+    }
+
+    .radio-indicator{
+        @apply absolute inset-0 m-auto size-2 rounded-full peer-checked:shadow peer-checked:shadow-gray-950/25 transition duration-300 bg-gray-950 dark:bg-white scale-75 opacity-0 group-hover:opacity-25 peer-checked:scale-100 peer-checked:bg-white peer-checked:opacity-100
+    }
+
     /* Card */
 
     .card{
