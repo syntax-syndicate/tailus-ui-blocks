@@ -145,4 +145,37 @@ export const components = {
             </form>
         </PreviewBlock>
     </div>
+    <div>
+        ## Disabled
+
+        <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-sm w-full" data-shade="900">
+    <div class="field">
+        <div class="grid [grid-template-columns:1fr_auto]">
+            <label for="sw1" class="text-title">Airplane mode</label>
+            <label for="sw1" class="block relative w-8 h-5 border transition duration-300 rounded-full bg-ui-soft dark:bg-[--ui-bg] has-[:checked]:bg-accent-600 has-[:checked]:border-white/5">
+                <input disabled class="peer" type="checkbox" id="sw1" name="switch1" hidden />
+                <span class="absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3"></span>
+            </label>
+        </div>
+        <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+    </div>
+</form>`,
+              lang: "html"
+          }]}>
+            <form class="space-y-4 max-w-sm w-full" data-shade="900">
+                <div class="field">
+                    <div class="grid [grid-template-columns:1fr_auto]">
+                        <label for="sw5" class="text-title">Airplane mode</label>
+                        <label for="sw5" class="block relative w-8 h-5 border transition duration-300 rounded-full bg-ui-soft dark:bg-[--ui-bg] has-[:checked]:bg-accent-600 has-[:checked]:border-white/5">
+                            <input disabled class="peer" type="checkbox" id="sw3" name="switch5" hidden />
+                            <span class="absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3"></span>
+                        </label>
+                    </div>
+                    <span class="block text-caption text-sm">Switch components are used to allow users to toggle between two states, such as on and off.</span>
+                </div>
+            </form>
+        </PreviewBlock>
+    </div>
 </div>
