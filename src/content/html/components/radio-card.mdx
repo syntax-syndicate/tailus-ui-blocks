@@ -1,0 +1,107 @@
+---
+title: Radio Card
+description: A Card with radio input
+priorityOrder : 17
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/input"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
+    <label class="field block card variant-mixed space-y-0.5 px-4 py-3 hover:variant-soft has-[:checked]:outline has-[:checked]:variant-outlined has-[:checked]:outline-2 has-[:checked]:outline-primary-600" for="personal">
+        <input type="radio" id="personal" name="plan" hidden />
+        <div class="flex justify-between">
+            <p class="text-title font-medium">Personal</p>
+            <p class="text-body text-sm">$9.99</p>
+        </div>
+        <p class="mt-0 text-caption text-sm">For personal projects</p>
+    </label>
+
+    <label class="field block card variant-mixed space-y-0.5 px-4 py-3 hover:variant-soft has-[:checked]:outline has-[:checked]:variant-outlined has-[:checked]:outline-2 has-[:checked]:outline-primary-600" for="business">
+        <input type="radio" id="business" name="plan" hidden />
+        <div class="flex justify-between">
+            <p class="text-title font-medium">Business</p>
+            <p class="text-body text-sm">$39.99</p>
+        </div>
+        <p class="mt-0 text-caption text-sm">For startups and small businesses</p>
+    </label>
+
+    <label class="field block card variant-mixed space-y-0.5 px-4 py-3 hover:variant-soft has-[:checked]:outline has-[:checked]:variant-outlined has-[:checked]:outline-2 has-[:checked]:outline-primary-600" for="org">
+        <input type="radio" id="org" name="plan" hidden />
+        <div class="flex justify-between">
+            <p class="text-title font-medium">Organization</p>
+            <p class="text-body text-sm">$99.99</p>
+        </div>
+        <p class="mt-0 text-caption text-sm">For large organizations</p>
+    </label>
+</form>`,
+              lang: "html"
+          }]}>
+        <form class="space-y-4 max-w-xs w-full" data-shade="900">
+            <label class="field block card variant-mixed space-y-0.5 px-4 py-3 hover:variant-soft has-[:checked]:outline has-[:checked]:variant-outlined has-[:checked]:outline-2 has-[:checked]:outline-primary-600" for="personal">
+                <input type="radio" id="personal" name="plan" hidden />
+                <div class="flex justify-between">
+                    <p class="text-title font-medium">Personal</p>
+                    <p class="text-body text-sm">$9.99</p>
+                </div>
+                <p class="mt-0 text-caption text-sm">For personal projects</p>
+            </label>
+
+            <label class="field block card variant-mixed space-y-0.5 px-4 py-3 hover:variant-soft has-[:checked]:outline has-[:checked]:variant-outlined has-[:checked]:outline-2 has-[:checked]:outline-primary-600" for="business">
+                <input type="radio" id="business" name="plan" hidden />
+                <div class="flex justify-between">
+                    <p class="text-title font-medium">Business</p>
+                    <p class="text-body text-sm">$39.99</p>
+                </div>
+                <p class="mt-0 text-caption text-sm">For startups and small businesses</p>
+            </label>
+
+            <label class="field block card variant-mixed space-y-0.5 px-4 py-3 hover:variant-soft has-[:checked]:outline has-[:checked]:variant-outlined has-[:checked]:outline-2 has-[:checked]:outline-primary-600" for="org">
+                <input type="radio" id="org" name="plan" hidden />
+                <div class="flex justify-between">
+                    <p class="text-title font-medium">Organization</p>
+                    <p class="text-body text-sm">$99.99</p>
+                </div>
+                <p class="mt-0 text-caption text-sm">For large organizations</p>
+            </label>
+        </form>
+    </PreviewBlock>
+
+    <div>
+        ## Ecommerce
+
+        <PreviewBlock codeBlocks={
+            [{
+                code:`<form class="flex gap-3">
+    <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:shadow-none has-[:checked]:[background-image:none] has-[:checked]:!bg-primary-600 has-[:checked]:!text-white" for="small">
+        <input type="radio" id="small" name="size" hidden />
+        S
+    </label>
+    <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:shadow-none has-[:checked]:[background-image:none] has-[:checked]:!bg-primary-600 has-[:checked]:!text-white" for="medium">
+        <input type="radio" id="medium" checked name="size" hidden />
+        M
+    </label>
+    <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:shadow-none has-[:checked]:[background-image:none] has-[:checked]:!bg-primary-600 has-[:checked]:!text-white" for="large">
+        <input type="radio" id="large" name="size" hidden />
+        L
+    </label>
+</form>`,
+            lang: "html"
+        }]}>
+        <form class="flex gap-3">
+            <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:shadow-none has-[:checked]:[background-image:none] has-[:checked]:!bg-primary-600 has-[:checked]:!text-white" for="small"><input type="radio" id="small" name="size" hidden />S</label>
+            <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:shadow-none has-[:checked]:[background-image:none] has-[:checked]:!bg-primary-600 has-[:checked]:!text-white" for="medium"><input type="radio" id="medium" checked name="size" hidden />M</label>
+            <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:shadow-none has-[:checked]:[background-image:none] has-[:checked]:!bg-primary-600 has-[:checked]:!text-white" for="large"><input type="radio" id="large" name="size" hidden />L</label>
+        </form>
+        </PreviewBlock>
+    </div>
+</div>
