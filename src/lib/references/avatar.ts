@@ -4,7 +4,7 @@ export default {
     },
     rows: [
         {
-            cells: ['size', `"xxs" | "xs" | "sm" | "base" | "lg" | "xl" | "xxl" | "xxxl"`, 'sz-[size]'],
+            cells: ['size', `"xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl"`, 'sz-[size]'],
         },
         {
             cells: ['status', `"online" | "offline" | "busy" | "away"`, 'status-[status]'],

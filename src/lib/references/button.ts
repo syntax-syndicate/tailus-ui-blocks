@@ -4,7 +4,7 @@ export default {
     },
     rows: [
         {
-            cells: ['size', `"xs" | "sm" | "base" | "lg" | "xl"`, 'sz-[size]'],
+            cells: ['size', `"xs" | "sm" | "md" | "lg" | "xl"`, 'sz-[size]'],
         },
         {
             cells: ['variant', `"solid" | "soft" | "outlined" | "ghost"`, 'variant-[variant]'],

@@ -557,7 +557,7 @@
     }
 
     .input.variant-bottomOutlined, .textarea.variant-bottomOutlined {
-        @apply rounded-none focus:outline-none border-b border-[--input-border] focus:border-[--input-outline] focus:border-b-2
+        @apply rounded-none bg-transparent focus:outline-none border-b border-[--input-border] focus:border-[--input-outline] focus:border-b-2
     }
 
     .input.sz-sm {
