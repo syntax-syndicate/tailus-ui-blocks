@@ -78,6 +78,30 @@ import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
                         <div class="progress-indicator intent-success w-[60%]"></div>
                     </div>
                 </div>
+                <div class="py-12 px-6 col-span-2 border-b flex items-center justify-center">
+                    <form>
+                        <label for="c1" class="checkbox group">
+                            <input class="peer" type="checkbox" id="c1" name="checkbox1" hidden />
+                            <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                        </label>
+                    </from>
+                </div>
+                <div class="py-12 px-6 col-span-2 border-l border-b flex items-center justify-center">
+                    <form>
+                        <label for="sw1" class="switch intent-primary">
+                            <input checked class="peer" type="checkbox" id="sw1" name="switch1" hidden />
+                            <span class="switch-thumb"></span>
+                        </label>
+                    </form>
+                </div>
+                <div class="py-12 px-6 col-span-2 border-l border-b flex items-center justify-center">
+                    <form>
+                        <label for="r1" class="radio rounded-full group">
+                            <input class="peer" type="radio" id="r1" name="radio1" hidden />
+                            <span class="radio-indicator"> </span>
+                        </label>
+                    </from>
+                </div>
                 <div class="col-span-3 py-12 px-6 border-b flex items-center justify-center">
                     <div class="field">
                         <label for="email" class="text-title text-sm">Email</label>
@@ -86,15 +110,20 @@ import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
                     </div>
                 </div>
                 <div class="col-span-3 py-12 px-6 border-l border-b flex items-center justify-center">
-                    <div class="field">
-                        <label for="country" class="text-title text-sm">Country</label>
-                        <select name="country" id="country" class="input variant-mixed sz-md appearance-none">
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                        </select>
-                        <span class="block text-caption text-sm">Description here</span>
-                    </div>
+                    <form class="space-y-4 w-full max-w-xs" data-shade="900">
+                        <div class="field">
+                            <label class="text-tile" for="options">Select Options</label>
+                            <div class="relative">
+                                <svg class="absolute right-1.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+                                <select id="options" class="input variant-mixed sz-sm appearance-none">
+                                    <option value="1">Option 1 </option>
+                                    <option value="2">Option 2 </option>
+                                    <option value="3">Option 3 </option>
+                                </select>
+                            </div>
+                            <span class="inline-block text-sm text-caption">Select description</span>
+                        </div>
+                    </form>
                 </div>
                 <div class="py-12 px-6 col-span-full border-b flex items-center justify-center">
                     <div class="callout intent-gray flex gap-2.5" role="alert">

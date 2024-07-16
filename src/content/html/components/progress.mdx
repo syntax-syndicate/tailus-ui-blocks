@@ -16,161 +16,57 @@ export const components = {
 <div className="space-y-20">
     <PreviewBlock codeBlocks={
               [{
-            code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
-    <div class="field">
-        <input type='email' class="input variant-plain sz-md" placeholder="Your email" />
-    </div>
-    <div class="field">
-        <input type='email' class="input variant-bottomOutlined sz-md" placeholder="Your email" />
-    </div>
-    <div class="field">
-        <input type='email' class="input variant-soft sz-md" placeholder="Your email" />
-    </div>
-    <div class="field">
-        <input type='email' class="input variant-outlined sz-md" placeholder="Your email" />
-    </div>
-    <div class="field">
-        <input type='email' class="input variant-mixed sz-md" placeholder="Your email" />
-    </div>
-</form>`,
+            code:`<div class="progress sz-md max-w-sm w-full" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+    <div class="progress-indicator intent-primary w-[66%]"></div>
+</div>`,
               lang: "html"
           }]}>
-        <form class="space-y-4 max-w-xs w-full" data-shade="900">
-            <div class="field">
-                <input type='email' class="input variant-plain sz-md" placeholder="Your email" />
-            </div>
-            <div class="field">
-                <input type='email' class="input variant-bottomOutlined sz-md" placeholder="Your email" />
-            </div>
-            <div class="field">
-                <input type='email' class="input variant-soft sz-md" placeholder="Your email" />
-            </div>
-            <div class="field">
-                <input type='email' class="input variant-outlined sz-md" placeholder="Your email" />
-            </div>
-            <div class="field">
-                <input type='email' class="input variant-mixed sz-md" placeholder="Your email" />
-            </div>
-        </form>
+        <div class="progress sz-md max-w-sm w-full" data-shade="900" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+            <div class="progress-indicator intent-primary w-[66%]"></div>
+        </div>
     </PreviewBlock>
 
     <div>
         ## Reference
 
         <div className="mt-6 mb-12"> 
-            ### Input 
+            ### Progress 
 
-            The input component have the following props
+            The progress component have the following props
 
             <Table data={reference} />
         </div>
     </div>
 
     <div>
-        ## With label
+        ## Neutral
 
         <PreviewBlock codeBlocks={
-            [{
-                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
-    <div class="field">
-        <label class="text-tile" for="email">Email</label>
-        <input type='email' id="email" class="input variant-mixed sz-md"/>
-    </div>
-</form>`,
-            lang: "html"
-        }]}>
-            <form class="space-y-4 max-w-xs w-full" data-shade="900">
-                <div class="field">
-                    <label class="text-tile" for="email">Email</label>
-                    <input type='email' id="email" class="input variant-mixed sz-md"/>
-                </div>
-            </form>
+              [{
+            code:`<div class="progress sz-md max-w-sm w-full" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+    <div class="progress-indicator intent-neutral w-[66%]"></div>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="progress sz-md max-w-sm w-full" data-shade="900" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+                <div class="progress-indicator intent-neutral w-[66%]"></div>
+            </div>
         </PreviewBlock>
     </div>
 
     <div>
-        ## With Caption
+        ## Size xl
 
         <PreviewBlock codeBlocks={
-            [{
-                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
-    <div class="field">
-        <label class="text-tile" for="email2">Email</label>
-        <input type='email' id="email2" class="input variant-mixed sz-md"/>
-        <span class="inline-block text-sm text-caption">Input description</span>
-    </div>
-</form>`,
-            lang: "html"
-        }]}>
-            <form class="space-y-4 max-w-xs w-full" data-shade="900">
-                <div class="field">
-                    <label class="text-tile" for="email2">Email</label>
-                    <input type='email' id="email2" class="input variant-mixed sz-md"/>
-                    <span class="inline-block text-sm text-caption">Input description</span>
-                </div>
-            </form>
-        </PreviewBlock>
-    </div>
-
-    <div>
-        ## Disabled
-
-        <PreviewBlock codeBlocks={
-            [{
-                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
-    <div class="field">
-        <label class="text-tile" for="email3">Email</label>
-        <input disabled type='email' id="email3" class="input variant-mixed sz-md"/>
-        <span class="inline-block text-sm text-caption">Input description</span>
-    </div>
-</form>`,
-            lang: "html"
-        }]}>
-            <form class="space-y-4 max-w-xs w-full" data-shade="900">
-                <div class="field">
-                    <label class="text-tile" for="email3">Email</label>
-                    <input disabled type='email' id="email3" class="input variant-mixed sz-md"/>
-                    <span class="inline-block text-sm text-caption">Input description</span>
-                </div>
-            </form>
-        </PreviewBlock>
-    </div>
-
-    <div>
-        ## Size
-
-        <PreviewBlock codeBlocks={
-            [{
-                code:`<form class="space-y-4 max-w-xs w-full" data-shade="900">
-    <div class="field">
-        <input type='email' class="input variant-mixed sz-sm" placeholder="Your email"/>
-    </div>
-    <div class="field">
-        <input type='email' class="input variant-mixed sz-md" placeholder="Your email"/>
-    </div>
-    <div class="field">
-        <input type='email' class="input variant-mixed sz-lg" placeholder="Your email"/>
-    </div>
-    <div class="field">
-        <input type='email' class="input variant-mixed sz-xl" placeholder="Your email"/>
-    </div>
-</form>`,
-            lang: "html"
-        }]}>
-            <form class="space-y-4 max-w-xs w-full" data-shade="900">
-                <div class="field">
-                    <input type='email' class="input variant-mixed sz-sm" placeholder="Your email"/>
-                </div>
-                <div class="field">
-                    <input type='email' class="input variant-mixed sz-md" placeholder="Your email"/>
-                </div>
-                <div class="field">
-                    <input type='email' class="input variant-mixed sz-lg" placeholder="Your email"/>
-                </div>
-                <div class="field">
-                    <input type='email' class="input variant-mixed sz-xl" placeholder="Your email"/>
-                </div>
-            </form>
+              [{
+            code:`<div class="progress sz-md max-w-sm w-full" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+    <div class="progress-indicator intent-success w-[66%]"></div>
+</div>`,
+              lang: "html"
+          }]}>
+            <div class="progress sz-xl max-w-sm w-full" data-shade="900" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+                <div class="progress-indicator intent-success w-[66%]"></div>
+            </div>
         </PreviewBlock>
     </div>
 </div>
