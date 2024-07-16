@@ -52,13 +52,13 @@
         border-color: var(--ui-border-color);
     }
 
-    button:disabled {
-        border:none;
-        background: var(--ui-disabled-bg);
-        background-image: none;
-        box-shadow: none;
-        color: var(--placeholder-text-color);
-        pointer-events: none;
+    button:disabled{
+        border:none !important;
+        background: var(--ui-disabled-bg) !important;
+        background-image: none !important;
+        box-shadow: none !important;
+        color: var(--placeholder-text-color) !important;
+        pointer-events: none !important;
     }
 
     a:focus-visible, button:focus-visible {
@@ -251,6 +251,10 @@
 
     .btn.sz-xl{
         @apply text-lg h-12 px-6
+    }
+
+    .btn.icon-only{
+        @apply px-0
     }
 
     .btn.icon-only.sz-xs {
