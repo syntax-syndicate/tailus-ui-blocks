@@ -28,7 +28,7 @@ export function SiteHeader() {
             <AppIcon mouseX={mouseX} tooltip="React UI Kit" href="https://ui.tailus.io">
                 <ReactIcon className="relative size-full" />
             </AppIcon>
-            <AppIcon mouseX={mouseX} tooltip="Html UI Kit" href="/get-started/introduction" isActive>
+            <AppIcon mouseX={mouseX} tooltip="Html UI Kit" href="/get-started/installation" isActive>
                 <HTMLIcon className="relative size-full" />
             </AppIcon>
             <AppIcon mouseX={mouseX} tooltip="Templates" href="https://tailus.io/templates">
