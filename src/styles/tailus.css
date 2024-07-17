@@ -652,6 +652,13 @@
         @apply absolute inset-0 m-auto size-2 rounded-full peer-checked:shadow peer-checked:shadow-gray-950/25 transition duration-300 bg-gray-950 dark:bg-white scale-75 opacity-0 group-hover:opacity-25 peer-checked:scale-100 peer-checked:bg-white peer-checked:opacity-100
     }
 
+    .checkbox, .radio, .switch{
+        @apply overflow-hidden has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-primary-600
+    }
+
+    .checkbox>input, .radio>input, .switch>input{
+        @apply absolute -left-6 size-2
+    }
     /* Card */
 
     .card{
