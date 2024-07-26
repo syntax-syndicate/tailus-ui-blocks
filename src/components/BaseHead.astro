@@ -1,15 +1,15 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from '../const';
-import '@styles/utilities.css';
-import '@styles/tailus.css';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../const'
+import '@styles/utilities.css'
+import '@styles/tailus.css'
 
 export interface Props {
-    title?: string;
-    description?: string;
-    image?: string;
+    title?: string
+    description?: string
+    image?: string
 }
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = '/html-og.png' } = Astro.props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = '/html-og.png' } = Astro.props
 ---
 
 <!-- Global Metadata -->
@@ -43,13 +43,13 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = '/html-og.pn
 <script src="/setTheme.js" is:inline></script>
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-71KZH703QD"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RD8K20SR8G"></script>
 <script is:inline data-astro-rerun>
-    window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || []
     function gtag() {
-        dataLayer.push(arguments);
+        dataLayer.push(arguments)
     }
-    gtag('js', new Date());
+    gtag('js', new Date())
 
-    gtag('config', 'G-71KZH703QD');
+    gtag('config', 'G-RD8K20SR8G')
 </script>
