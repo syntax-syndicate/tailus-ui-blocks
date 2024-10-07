@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content'
+
+const blocks = await getCollection('blocks')
+const currentPath = Astro.url.pathname
+
+const links = blocks.map((page) => ({
+    name: page.data.title,
+    href: page.slug,
+    active: currentPath.includes(page.slug),
+}))
+---
+
+<script>
+    document.addEventListener('astro:page-load', () => {
+        const linksParent = document.querySelector('#linksParent') as HTMLElement
+
+        // Set the indicator position and width
+        const activeLink = document.querySelector('.active-link') as HTMLElement
+        const indicator = document.querySelector('#indicator') as HTMLElement
+
+        if (activeLink && indicator) {
+            const linkRect = activeLink.getBoundingClientRect()
+            const parentRect = linksParent.getBoundingClientRect()
+            indicator.style.width = `${linkRect.width}px`
+            indicator.style.transform = `translateX(${linkRect.left - parentRect.left}px)`
+        }
+    })
+</script>
+
+<div class="sticky top-2 z-50 mx-auto border-y border-gray-950/5 py-0.5 dark:border-white/5">
+    <div class="mx-auto max-w-[calc(80rem-6px)] rounded bg-white/75 backdrop-blur-xl lg:px-4 dark:bg-white/5">
+        <div class="[--body-text-color:theme(colors.gray.600)] dark:[--body-text-color:theme(colors.gray.400)]">
+            <nav class="relative">
+                <span transition:name="nav-indicator" class="absolute bottom-0 block h-0.5 px-3" id="indicator">
+                    <span class="block h-full rounded-t-full bg-primary-500"></span>
+                </span>
+
+                <ul id="linksParent" class="flex gap-3 overflow-x-auto">
+                    {
+                        links.map((link) => (
+                            <li>
+                                <a href={link.href} class={`hover:text-title block w-max text-nowrap px-3 pb-3 pt-2.5 text-sm transition-colors duration-200 ${link.active ? 'active-link text-title' : 'text-body'}`}>
+                                    {link.name}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

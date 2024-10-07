@@ -1,5 +1,6 @@
-import docs from './docs';
+import docs from './docs'
 
 export const collections = {
-    html: docs
-};
+    html: docs,
+    blocks: docs,
+}

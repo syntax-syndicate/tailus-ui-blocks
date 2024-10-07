@@ -1,36 +1,32 @@
 ---
-import Button from '@tailus-ui/Button';
-const currentPath = Astro.url.pathname;
+import Button from '@tailus-ui/Button'
+const currentPath = Astro.url.pathname
 
 const navlinks = [
     {
-        name: 'React',
-        href: 'https://ui.tailus.io'
+        name: 'Documentation',
+        href: '/get-started/installation',
     },
     {
-        name: 'Html',
-        href: '/'
+        name: 'Blocks',
+        href: '/blocks',
     },
     {
         name: 'Themer',
-        href: 'https://themer.tailus.io'
-    },
-    {
-        name: 'Showcase',
-        href: 'https://tailus.io/showcase'
+        href: 'https://themer.tailus.io',
     },
     {
         name: 'Templates',
-        href: 'https://tailus.io/templates'
-    }
-];
+        href: 'https://tailus.io/templates',
+    },
+]
 
-const { asPill = false } = Astro.props;
+const { asPill = false } = Astro.props
 ---
 
-<ul class="flex w-fit lg:items-center gap-6 lg:gap-3 lg:flex-row flex-col" class:list={asPill && 'lg:gap-0'} data-shade="900">
+<ul class="flex w-fit flex-col gap-6 lg:flex-row lg:items-center lg:gap-3" class:list={asPill && 'lg:gap-0'} data-shade="900">
     {
-        navlinks.map(link => (
+        navlinks.map((link) => (
             <li>
                 <Button.Root data-rounded="full" variant={currentPath.includes(link.href) ? 'soft' : 'ghost'} intent="gray" size="xs" href={link.href} className="justify-start">
                     <Button.Label>{link.name}</Button.Label>

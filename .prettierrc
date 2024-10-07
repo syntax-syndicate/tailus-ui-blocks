@@ -12,8 +12,8 @@
     "bracketSameLine" : false,
     "useTabs" : false,
     "plugins": [
-        "prettier-plugin-tailwindcss", 
-        "prettier-plugin-astro"
+        "prettier-plugin-astro",
+        "prettier-plugin-tailwindcss"
     ],
     "overrides": [
         {
