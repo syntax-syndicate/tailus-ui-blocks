@@ -5,8 +5,16 @@ priorityOrder : 0
 ---
 
 import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { hero1Code } from "@components/blocks/hero-section/hero1"
 
 export const components = {
     ..._components
 }
 
+<BlockPreview
+    title="Bento1"
+    src="https://ui.tailus.io/examples/forms/register3/"
+    code={hero1Code}
+    client:visible
+/>

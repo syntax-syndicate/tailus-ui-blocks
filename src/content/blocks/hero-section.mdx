@@ -6,102 +6,22 @@ priorityOrder : 0
 
 import _components from "@content/_components"
 import BlockPreview from "@components/BlockPreview"
+import { hero1Code } from "@components/blocks/hero-section/hero1"
 
 export const components = {
     ..._components
 }
 
-export const code = `<div class="overflow-auto card variant-mixed w-full lg:overflow-clip">
-    <div class="mb-6">
-        <h2 class="text-title font-medium">Customers</h2>
-        <p class="text-sm mt-1">New users by First user primary channel group (Default Channel Group)</p>
-    </div>
-    <table class="border-collapse table-auto w-max dark:[--ui-soft-bg:var(--ui-bg)]" data-rounded="medium">
-        <thead class="text-title sticky top-0 bg-ui-soft dark:bg-gray-925">
-            <tr class="*:font-medium *:text-sm *:p-3 *:text-left">
-                <th class="rounded-l-[--card-radius]">#</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Customer</th>
-                <th>Product</th>
-                <th class="rounded-r-[--card-radius]">Revenue</th>
-            </tr>
-        </thead>
-        <tbody class="text-sm">
-            <tr class="*:p-3 *:border-b">
-                <td>1</td>
-                <td>10/31/2023</td>
-                <td><span class="badge variant-soft sz-xs intent-success">Paid</span></td>
-                <td>
-                    <div class="flex items-center gap-2 text-title">
-                        <div class="avatar sz-xxs">
-                            <img src={BERNARD_AVATAR} alt="Bernard Ng" width="" height=""/>
-                        </div>
-                        <span>Bernard Ng</span>
-                    </div>
-                </td>
-                <td>Ampire Ess</td>
-                <td>$43.99</td>
-            </tr>
-            <tr class="*:p-3 *:border-b">
-                <td>2</td>
-                <td>10/21/2023</td>
-                <td><span class="badge variant-soft sz-xs intent-gray line-clamp-1">Ref</span></td>
-                <td>
-                    <div class="flex items-center gap-2 text-title">
-                        <div class="avatar sz-xxs">
-                            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height=""/>
-                        </div>
-                        <span>Méschac Irung</span>
-                    </div>
-                </td>
-                <td>Astrolus H</td>
-                <td>$19.99</td>
-            </tr>
-            <tr class="*:p-3 *:border-b">
-                <td>3</td>
-                <td>05/21/2023</td>
-                <td><span class="badge variant-soft sz-xs intent-danger line-clamp-1">Can</span></td>
-                <td>
-                    <div class="flex items-center gap-2 text-title">
-                        <div class="avatar sz-xxs">
-                            <img src={THEO_AVATAR} alt="Théo Balick" width="" height=""/>
-                        </div>
-                        <span>Théo Balick</span>
-                    </div>
-                </td>
-                <td>Alt Next</td>
-                <td>$59.99</td>
-            </tr>
-            <tr class="*:p-3 *:border-b">
-                <td>4</td>
-                <td>05/21/2023</td>
-                <td><span class="badge variant-soft sz-xs intent-success line-clamp-1">Paid</span></td>
-                <td>
-                    <div class="flex items-center gap-2 text-title">
-                        <div class="avatar sz-xxs">
-                            <img src={GLODIE_AVATAR} alt="Glodie Lukose" width="" height=""/>
-                        </div>
-                        <span>Glodie Lukose</span>
-                    </div>
-                </td>
-                <td>Radiant</td>
-                <td>$29.99</td>
-            </tr>
-        </tbody>
-    </table>
-</div>`
-
 <BlockPreview
     title="Hero1"
     src="https://ui.tailus.io/examples/ecommerce/store/"
-    code={code}
+    code={hero1Code}
     client:visible
 />
 
 <BlockPreview
     title="Hero2"
     src="https://ui.tailus.io/examples/forms/login2/"
-    code={code}
+    code={hero1Code}
     client:visible
 />

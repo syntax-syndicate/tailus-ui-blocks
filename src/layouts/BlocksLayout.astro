@@ -22,7 +22,7 @@ const { title, description, breadcrumb = true } = Astro.props
         <BaseHead title={`${title} | Tailus UI Blocks`} description={description} />
         <ViewTransitions />
     </head>
-    <body class="bg-white font-sans antialiased dark:bg-gray-950">
+    <body class="bg-gray-50 font-sans antialiased dark:bg-gray-950">
         <PageLoader />
         <DocsHeader2 sticky />
         <BlocksNav />
@@ -30,7 +30,7 @@ const { title, description, breadcrumb = true } = Astro.props
             <BlurDivs />
         </div>
         <main class="will-change-auto">
-            <div class="absolute inset-0 z-[-2] bg-[radial-gradient(ellipse_80%_100%_at_50%_-20%,var(--bg-color),theme(colors.transparent))] [--bg-color:theme(colors.primary.200)] dark:[--bg-color:theme(colors.gray.900)]"></div>
+            <div class="absolute inset-0 z-[-2] bg-[radial-gradient(ellipse_80%_100%_at_50%_-20%,var(--bg-color),theme(colors.transparent))] [--bg-color:theme(colors.primary.200)] dark:[--bg-color:theme(colors.gray.800)]"></div>
             <div class="absolute inset-x-0 top-0 mx-auto max-w-7xl">
                 <div class="absolute left-0 top-0 h-56 w-px bg-gradient-to-b from-gray-950/5 dark:from-white/10"></div>
                 <div class="absolute right-0 top-0 h-56 w-px bg-gradient-to-b from-gray-950/5 dark:from-white/10"></div>
