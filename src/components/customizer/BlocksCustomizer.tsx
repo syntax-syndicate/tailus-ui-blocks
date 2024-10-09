@@ -86,18 +86,18 @@ export default function BlocksCustomizer() {
     return (
         <>
             {/* @ts-ignore */}
-            <Button.Root ref={triggerButtonRef} onClick={() => setIsActive(!isActive)} variant="soft" size="sm" intent="gray" className="border border-gray-950/5 bg-gray-950/5 dark:border-white/5" aria-label="Open customizer">
+            <Button.Root data-rounded="full" ref={triggerButtonRef} onClick={() => setIsActive(!isActive)} variant="soft" size="sm" intent="gray" className="border border-gray-950/5 bg-gray-950/5 dark:border-white/5" aria-label="Open customizer">
                 <Button.Icon type="leading" size="xs">
                     <Brush />
                 </Button.Icon>
                 <Button.Label className="-mr-2 -mt-px ml-1">
-                    <Kbd>T</Kbd>
+                    <Kbd className="rounded-full">T</Kbd>
                 </Button.Label>
             </Button.Root>
 
             <AnimatePresence>
                 {isActive && (
-                    <motion.div ref={customizerRef} initial={{ x: 560 }} transition={{ type: 'spring', bounce: 0.1, duration: 0.4 }} animate={{ x: 0 }} exit={{ x: 560, opacity: 0, scale: 0.95 }} data-shade="glassy" className="rounded-card fixed right-[5.2rem] top-16 z-50 max-w-sm border bg-white p-8 shadow-md shadow-gray-950/5 outline outline-1 outline-transparent dark:feedback-bg dark:border-white/5 dark:shadow-gray-950/25 dark:outline-gray-950/50">
+                    <motion.div data-rounded="large" ref={customizerRef} initial={{ x: 560 }} transition={{ type: 'spring', bounce: 0.1, duration: 0.4 }} animate={{ x: 0 }} exit={{ x: 560, opacity: 0, scale: 0.95 }} data-shade="glassy" className="rounded-card fixed right-[5.2rem] top-16 z-50 max-w-sm border bg-white p-8 shadow-md shadow-gray-950/5 outline outline-1 outline-transparent dark:feedback-bg dark:border-white/5 dark:shadow-gray-950/25 dark:outline-gray-950/50">
                         <div>
                             <Title size="base" weight="medium" as="div">
                                 Personalize Your Theme
