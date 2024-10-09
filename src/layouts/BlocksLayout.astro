@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge'
 import { ChevronRight } from 'lucide-react'
 import BaseHead from '@components/BaseHead.astro'
 import { ViewTransitions } from 'astro:transitions'
-import Footer from '@components/Footer'
+import BlocksFooter from '@components/BlocksFooter'
 import DocsHeader2 from '@components/DocsHeader2.astro'
 import '@styles/pagefind.css'
 import '@styles/color-theme.css'
@@ -62,7 +62,6 @@ const { title, description, breadcrumb = true } = Astro.props
                 </div>
             </div>
         </main>
-
-        <Footer />
+        <BlocksFooter />
     </body>
 </html>
