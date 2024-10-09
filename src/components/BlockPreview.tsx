@@ -47,11 +47,11 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title }) 
     const encodedTweetText = encodeURI(tweetText)
 
     return (
-        <div className="group mb-32 border-b dark:border-white/5">
-            <div className="relative border-y border-gray-950/5  dark:border-white/5">
-                <div className="absolute inset-x-0 -top-16 bottom-0 mx-auto max-w-7xl">
-                    <div className="absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-transparent to-gray-950/5 to-75% dark:to-white/5"></div>
-                    <div className="absolute bottom-0 right-0 top-0 w-px bg-gradient-to-b from-transparent to-gray-950/5 to-75% dark:to-white/5"></div>
+        <div className="group mb-32 border-b [--ui-border-color:theme(colors.gray.200/0.75)] dark:[--ui-border-color:theme(colors.gray.800/0.6)]">
+            <div className="relative border-y">
+                <div className="absolute inset-x-0 -top-14 bottom-0 mx-auto max-w-7xl ">
+                    <div className="absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-transparent to-[--ui-border-color] to-75% dark:to-[--ui-border-color]"></div>
+                    <div className="absolute bottom-0 right-0 top-0 w-px bg-gradient-to-b from-transparent to-[--ui-border-color] to-75% dark:to-[--ui-border-color]"></div>
                 </div>
                 <div className="relative z-10 mx-auto flex max-w-7xl justify-between py-2 lg:px-8">
                     <div className="flex items-center gap-3">
@@ -152,10 +152,10 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title }) 
             </div>
             <div className="relative">
                 <div className="absolute inset-x-0 -bottom-14 mx-auto h-14 max-w-7xl">
-                    <div className="absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-gray-950/5 dark:from-white/5"></div>
-                    <div className="absolute bottom-0 right-0 top-0 w-px bg-gradient-to-b from-gray-950/5 dark:from-white/5"></div>
+                    <div className="absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-[--ui-border-color] dark:from-[--ui-border-color]"></div>
+                    <div className="absolute bottom-0 right-0 top-0 w-px bg-gradient-to-b from-[--ui-border-color] dark:from-[--ui-border-color]"></div>
                 </div>
-                <div className="relative z-10 mx-auto max-w-7xl border-r dark:border-white/5">
+                <div className="relative z-10 mx-auto max-w-7xl border-r">
                     <div className={twMerge('bg-white dark:bg-transparent', mode == 'code' && 'hidden')}>
                         <PanelGroup direction="horizontal" tagName="div" ref={ref}>
                             <Panel
@@ -164,14 +164,14 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title }) 
                                 }}
                                 defaultSize={DEFAULTSIZE}
                                 minSize={SMSIZE}
-                                className="h-fit border-x border-gray-950/5 dark:border-white/5">
+                                className="h-fit border-x ">
                                 <iframe loading="lazy" title={title} className="block h-full min-h-[45rem] w-full" src={src} id={`block-${title}`} />
                             </Panel>
                             <PanelResizeHandle className="relative w-2 before:absolute before:inset-0 before:m-auto before:h-12 before:w-1 before:rounded-full before:bg-gray-300 before:transition-[height,background] hover:before:h-16 hover:before:bg-gray-400 focus:before:bg-gray-400 dark:before:bg-gray-600 dark:hover:before:bg-gray-500 dark:focus:before:bg-gray-400" />
                             <Panel defaultSize={100 - DEFAULTSIZE} className="-mr-[0.5px] ml-px"></Panel>
                         </PanelGroup>
                     </div>
-                    {mode == 'code' && <CodeSnippet asUIBlock className="rounded-none border-y-0 border-r-0 border-gray-950/5 bg-white px-4 dark:border-white/5" code={code[stack]} lang="tsx" />}
+                    {mode == 'code' && <CodeSnippet asUIBlock className="rounded-none border-y-0 border-r-0 bg-white px-4 dark:bg-gray-925" code={code[stack]} lang="tsx" />}
                 </div>
             </div>
         </div>

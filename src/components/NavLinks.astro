@@ -1,5 +1,6 @@
 ---
 import Button from '@tailus-ui/Button'
+import { twMerge } from 'tailwind-merge'
 const currentPath = Astro.url.pathname
 
 const navlinks = [
@@ -28,7 +29,7 @@ const { asPill = false } = Astro.props
     {
         navlinks.map((link) => (
             <li>
-                <Button.Root data-rounded="full" variant={currentPath.includes(link.href) ? 'soft' : 'ghost'} intent="gray" size="xs" href={link.href} className="justify-start">
+                <Button.Root data-rounded="full" variant="ghost" intent="gray" size="xs" href={link.href} className={twMerge('justify-start hover:bg-gray-950/5', currentPath.includes(link.href) && 'bg-gray-950/5 dark:bg-white/5')}>
                     <Button.Label>{link.name}</Button.Label>
                 </Button.Root>
             </li>

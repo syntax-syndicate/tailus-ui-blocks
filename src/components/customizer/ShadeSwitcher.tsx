@@ -1,36 +1,33 @@
-import * as RadioGroup from '@radix-ui/react-radio-group';
-import { useEffect, useState, type ReactNode } from 'react';
-import { $shade } from '@store/switchers';
-import { container, item } from './animations';
-import { motion } from 'framer-motion';
-import Select from '@tailus-ui/Select';
+import * as RadioGroup from '@radix-ui/react-radio-group'
+import { useEffect, useState, type ReactNode } from 'react'
+import { $shade, setShade } from '@store/switchers'
+import { useStore } from '@nanostores/react'
+import { container, item } from './animations'
+import { motion } from 'framer-motion'
+import Select from '@tailus-ui/Select'
+import setTheme from './set-theme'
+import type { Shade } from './../../types'
 
-const shades = ['glassy', '800', '900', '925', '950'];
-export type Shade = 'glassy' | '800' | '900' | '925' | '950';
+const shades = ['glassy', '800', '900', '925', '950']
 
-export const ShadeSwitcher = () => {
-    const [shade, setShade] = useState<Shade>('900');
-
-    const setTheme = (root: HTMLElement, shade: Shade) => {
-        root.setAttribute('data-shade', shade);
-    };
+export const ShadeSwitcher = ({ global }: { global?: boolean }) => {
+    const shade = useStore($shade) || '900'
 
     useEffect(() => {
-        const elements = Array.from(document.querySelectorAll('[data-shade]')) as HTMLElement[];
+        const elements = Array.from(document.querySelectorAll('[data-shade]')) as HTMLElement[]
 
-        elements.forEach((element) => setTheme(element, shade));
+        elements.forEach((element) => setTheme(element, 'shade', shade, global))
 
         if (shade == '950' || shade == '925') {
-            document.querySelector('#site-bg')?.classList.replace('dark:from-gray-925', 'dark:from-gray-950');
+            document.querySelector('#site-bg')?.classList.replace('dark:from-gray-925', 'dark:from-gray-950')
         } else {
-            document.querySelector('#site-bg')?.classList.replace('dark:from-gray-950', 'dark:from-gray-925');
+            document.querySelector('#site-bg')?.classList.replace('dark:from-gray-950', 'dark:from-gray-925')
         }
-    }, [shade]);
+    }, [shade])
 
     const handleValueChange = (value: Shade) => {
-        $shade.set(value);
-        setShade(value);
-    };
+        setShade(value)
+    }
     return (
         <motion.div
             variants={container}
@@ -38,7 +35,7 @@ export const ShadeSwitcher = () => {
             transition={{
                 duration: 0.2,
                 staggerChildren: 0.01,
-                bounce: 0.1
+                bounce: 0.1,
             }}>
             <RadioGroup.Root aria-label="Theme shades" className="grid w-fit grid-cols-5 gap-3" defaultValue={shade} onValueChange={handleValueChange}>
                 {shades.map((shade, index) => (
@@ -50,36 +47,36 @@ export const ShadeSwitcher = () => {
                 ))}
             </RadioGroup.Root>
         </motion.div>
-    );
-};
+    )
+}
 
 export const BlockShadeSwitcher = ({ id }) => {
-    const [shade, setShade] = useState<Shade>('900');
+    const [shade, setShade] = useState<Shade>('900')
 
     const setTheme = (shade: Shade) => {
-        const iframe = document.querySelector(`#${id}`) as HTMLIFrameElement;
+        const iframe = document.querySelector(`#${id}`) as HTMLIFrameElement
         try {
-            const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
-            const components = iframeDoc?.querySelectorAll('[data-shade]');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document
+            const components = iframeDoc?.querySelectorAll('[data-shade]')
             if (iframeDoc) {
-                iframeDoc.documentElement.setAttribute('data-shade', shade);
+                iframeDoc.documentElement.setAttribute('data-shade', shade)
                 components?.forEach((component) => {
-                    component.setAttribute('data-shade', shade);
-                });
+                    component.setAttribute('data-shade', shade)
+                })
             }
         } catch (e) {
-            console.error('Could not change theme in iframe:', e);
+            console.error('Could not change theme in iframe:', e)
         }
-    };
+    }
 
     useEffect(() => {
-        setTheme(shade);
-    }, [shade]);
+        setTheme(shade)
+    }, [shade])
 
     const handleValueChange = (value: Shade) => {
-        $shade.set(value);
-        setShade(value);
-    };
+        $shade.set(value)
+        setShade(value)
+    }
     return (
         <Select.Root defaultValue="900" onValueChange={handleValueChange}>
             <Select.Trigger variant="plain" className="w-fit" size="sm" aria-label="Change theme shade">
@@ -101,8 +98,8 @@ export const BlockShadeSwitcher = ({ id }) => {
                 </Select.Content>
             </Select.Portal>
         </Select.Root>
-    );
-};
+    )
+}
 
 export const SelectItem = ({ value, children }: { value: string; children: ReactNode }) => {
     return (
@@ -115,5 +112,5 @@ export const SelectItem = ({ value, children }: { value: string; children: React
             </Select.ItemText>
             <Select.ItemIndicator />
         </Select.Item>
-    );
-};
+    )
+}

@@ -1,5 +1,4 @@
 ---
-import { BrandIcon } from './utilities/BrandIcon'
 import { SITE_SOCIAL_GITHUB } from '../const'
 import { GitHubIcon } from './utilities/icons/'
 import ThemeSwitcher from './ThemeSwitcher'
@@ -10,6 +9,7 @@ import NavLinks from './NavLinks.astro'
 import SearchButton from './Button/SearchButton'
 import { twMerge } from 'tailwind-merge'
 import BrandLogo from './utilities/BrandLogo'
+import BlocksCustomizer from './customizer/BlocksCustomizer'
 
 const { asThemer = false, sticky = false } = Astro.props
 ---
@@ -73,6 +73,7 @@ const { asThemer = false, sticky = false } = Astro.props
             {!sticky && <SearchButton client:idle />}
 
             <div class="flex items-center gap-1.5">
+                {sticky && <BlocksCustomizer client:load transition:name="customizer" />}
                 <ThemeSwitcher client:load />
                 <Button.Root variant="ghost" intent="gray" href={SITE_SOCIAL_GITHUB} aria-label="Visit our GitHub" size="md" className="size-9 px-0">
                     <Button.Icon type="only" size="md">

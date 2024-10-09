@@ -1,29 +1,27 @@
-import * as RadioGroup from '@radix-ui/react-radio-group';
-import { useEffect, useState, type ReactNode } from 'react';
-import { $palette } from '@store/switchers';
-import { motion, AnimatePresence } from 'framer-motion';
-import { container, item } from './animations';
-import Select from '@tailus-ui/Select';
+import * as RadioGroup from '@radix-ui/react-radio-group'
+import { useEffect, useState, type ReactNode } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { container, item } from './animations'
+import Select from '@tailus-ui/Select'
+import setTheme from './set-theme'
+import type { Palette } from './../../types'
+import { useStore } from '@nanostores/react'
+import { $palette, setPalette } from '@store/switchers'
 
-const palettes = ['trust', 'oz', 'mystery', 'romance', 'passion', 'energy', 'spring', 'nature', 'winter'];
-export type Palette = 'trust' | 'oz' | 'passion' | 'energy' | 'romance' | 'nature' | 'spring' | 'winter' | 'mystery' | 'tls';
+const palettes = ['trust', 'oz', 'mystery', 'romance', 'passion', 'energy', 'spring', 'nature', 'winter']
 
-export const PaletteSwitcher = () => {
-    const [palette, setPalette] = useState<Palette>('tls');
-
-    const setTheme = (root: HTMLElement, palette: Palette) => {
-        root.setAttribute('data-palette', palette);
-    };
+export const PaletteSwitcher = ({global=true}:{global?:boolean}) => {
+    const palette = useStore($palette)
 
     useEffect(() => {
-        const root = document.querySelector('[data-palette]') as HTMLElement;
-        setTheme(root, palette);
-    }, [palette]);
+        const root = document.querySelector('[data-palette]') as HTMLElement
+        setTheme(root, 'palette', palette, global)
+    }, [palette])
 
     const handleValueChange = (value: Palette) => {
-        $palette.set(value);
-        setPalette(value);
-    };
+        setPalette(value)
+    }
+
     return (
         <motion.div variants={container}>
             <RadioGroup.Root aria-label="Theme palette" className="grid w-fit grid-cols-9 gap-3" defaultValue={palette} onValueChange={handleValueChange}>
@@ -40,32 +38,32 @@ export const PaletteSwitcher = () => {
                 ))}
             </RadioGroup.Root>
         </motion.div>
-    );
-};
+    )
+}
 
 export const BlockPaletteSwitcher = ({ id }) => {
-    const [palette, setPalette] = useState<Palette>('tls');
+    const [palette, setPalette] = useState<Palette>('tls')
 
     const setTheme = (palette: Palette) => {
-        const iframe = document.querySelector(`#${id}`) as HTMLIFrameElement;
+        const iframe = document.querySelector(`#${id}`) as HTMLIFrameElement
         try {
-            const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document
             if (iframeDoc) {
-                iframeDoc.documentElement.setAttribute('data-palette', palette);
+                iframeDoc.documentElement.setAttribute('data-palette', palette)
             }
         } catch (e) {
-            console.error('Could not change theme in iframe:', e);
+            console.error('Could not change theme in iframe:', e)
         }
-    };
+    }
 
     useEffect(() => {
-        setTheme(palette);
-    }, [palette]);
+        setTheme(palette)
+    }, [palette])
 
     const handleValueChange = (value: Palette) => {
-        $palette.set(value);
-        setPalette(value);
-    };
+        $palette.set(value)
+        setPalette(value)
+    }
     return (
         <Select.Root defaultValue="trust" onValueChange={handleValueChange}>
             <Select.Trigger variant="plain" size="sm" className="w-fit" aria-label="Change palette">
@@ -87,8 +85,8 @@ export const BlockPaletteSwitcher = ({ id }) => {
                 </Select.Content>
             </Select.Portal>
         </Select.Root>
-    );
-};
+    )
+}
 
 export const SelectItem = ({ value, children }: { value: string; children: ReactNode }) => {
     return (
@@ -106,5 +104,5 @@ export const SelectItem = ({ value, children }: { value: string; children: React
             </Select.ItemText>
             <Select.ItemIndicator />
         </Select.Item>
-    );
-};
+    )
+}

@@ -1,0 +1,163 @@
+import Button from '@tailus-ui/Button'
+import { Kbd, Text, Title } from '@tailus-ui/typography'
+import { Brush, Layers2, Moon, Palette, Square, Sun } from 'lucide-react'
+import * as RadioGroup from '@radix-ui/react-radio-group'
+import { PaletteSwitcher } from './PaletteSwitcher'
+import { ShadeSwitcher } from './ShadeSwitcher'
+import { RoundedSwitcher } from './RoundedSwitcher'
+import { useState, useEffect, useRef } from 'react'
+import { twMerge } from 'tailwind-merge'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useStore } from '@nanostores/react'
+import { $palette, $rounded, $shade } from '@store/switchers'
+import CodeSnippet from '@components/utilities/CodeSnippet'
+
+const radioItem = 'relative rounded-[calc(var(--btn-radius)-3px)] delay-75 duration-300 flex items-center justify-center h-8 px-2.5 gap-2 text-[--caption-text-color] transition-[color] hover:text-[--body-text-color] data-[state=checked]:scale-95 transition-transform will-change data-[state=checked]:text-[--title-text-color]'
+
+export default function BlocksCustomizer() {
+    const [theme, setTheme] = useState<'light' | 'dark'>('dark')
+    const [isActive, setIsActive] = useState(false)
+    const customizerRef = useRef<HTMLDivElement>(null)
+    const triggerButtonRef = useRef<HTMLButtonElement>(null)
+
+    const palette = useStore($palette)
+    const rounded = useStore($rounded)
+    const shade = useStore($shade)
+
+    const handleValueChange = (value: string) => {
+        const newTheme = value === '100' ? 'light' : 'dark'
+        setTheme(newTheme)
+
+        const iframes = document.querySelectorAll('iframe') as NodeListOf<HTMLIFrameElement>
+        iframes.forEach((iframe) => {
+            try {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document
+                if (iframeDoc && iframeDoc.location.origin === window.location.origin) {
+                    if (newTheme === 'dark') {
+                        iframeDoc.documentElement.classList.add('dark')
+                    } else {
+                        iframeDoc.documentElement.classList.remove('dark')
+                    }
+                }
+            } catch (e) {
+                console.error('Could not change theme in iframe:', e)
+            }
+        })
+    }
+
+    useEffect(() => {
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    }, [theme])
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (customizerRef.current && !customizerRef.current.contains(event.target as Node) && triggerButtonRef.current && !triggerButtonRef.current.contains(event.target as Node)) {
+                setIsActive(false)
+            }
+        }
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 't') {
+                setIsActive(!isActive)
+            }
+            if (isActive && event.key === 'Escape') {
+                setIsActive(false)
+            }
+        }
+
+        window.addEventListener('keydown', handleKeyDown)
+
+        if (isActive) {
+            document.addEventListener('mousedown', handleClickOutside)
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+            window.removeEventListener('keydown', handleKeyDown)
+        }
+    }, [isActive])
+
+    return (
+        <>
+            {/* @ts-ignore */}
+            <Button.Root ref={triggerButtonRef} onClick={() => setIsActive(!isActive)} variant="soft" size="sm" intent="gray" className="border border-gray-950/5 bg-gray-950/5 dark:border-white/5" aria-label="Open customizer">
+                <Button.Icon type="leading" size="xs">
+                    <Brush />
+                </Button.Icon>
+                <Button.Label className="-mr-2 -mt-px ml-1">
+                    <Kbd>T</Kbd>
+                </Button.Label>
+            </Button.Root>
+
+            <AnimatePresence>
+                {isActive && (
+                    <motion.div ref={customizerRef} initial={{ x: 560 }} transition={{ type: 'spring', bounce: 0.1, duration: 0.4 }} animate={{ x: 0 }} exit={{ x: 560, opacity: 0, scale: 0.95 }} data-shade="glassy" className="rounded-card fixed right-[5.2rem] top-16 z-50 max-w-sm border bg-white p-8 shadow-md shadow-gray-950/5 outline outline-1 outline-transparent dark:feedback-bg dark:border-white/5 dark:shadow-gray-950/25 dark:outline-gray-950/50">
+                        <div>
+                            <Title size="base" weight="medium" as="div">
+                                Personalize Your Theme
+                            </Title>
+                            <Text size="sm" className="mb-0 mt-0.5">
+                                Tailor the theme to match your unique style
+                            </Text>
+                        </div>
+
+                        <div className="mb-8 mt-6 space-y-6">
+                            <div className="relative">
+                                <div className={twMerge('absolute inset-[3px] w-1/2 rounded-[calc(var(--btn-radius)-3px)] border border-transparent bg-white shadow transition-transform duration-300 ease-in-out dark:border-white/5 dark:bg-[--ui-soft-bg]', theme == 'dark' && 'translate-x-[calc(100%-6px)]')}></div>
+                                <RadioGroup.Root className="grid grid-cols-2 gap-0.5 rounded-[--btn-radius] border border-gray-950/5 bg-gray-950/5 p-0.5 dark:border-white/5 dark:bg-gray-950/50" defaultValue="0" onValueChange={handleValueChange}>
+                                    <RadioGroup.Item aria-label="Light theme" value="100" className={radioItem}>
+                                        <Sun className="size-4" />
+                                        <span className="text-sm">Light</span>
+                                    </RadioGroup.Item>
+                                    <RadioGroup.Item aria-label="Dark theme" value="0" className={radioItem}>
+                                        <Moon className="size-4" />
+                                        <span className="text-sm">Dark</span>
+                                    </RadioGroup.Item>
+                                </RadioGroup.Root>
+                            </div>
+                            <div className="space-y-4">
+                                <Title size="base" weight="normal" as="div" className="flex items-center gap-2.5 text-sm">
+                                    <Palette className="size-4 opacity-50" />
+                                    Palette
+                                </Title>
+                                <PaletteSwitcher global={false} />
+                            </div>
+                            <div className="space-y-4">
+                                <Title size="base" weight="normal" as="div" className="flex items-center gap-2.5 text-sm">
+                                    <Layers2 className="size-4 opacity-50" />
+                                    Shade
+                                </Title>
+                                <ShadeSwitcher global={false} />
+                            </div>
+                            <div className="space-y-4">
+                                <Title size="base" weight="normal" as="div" className="flex items-center gap-2.5 text-sm">
+                                    <Square className="size-4 opacity-50" />
+                                    Border Radius
+                                </Title>
+                                <RoundedSwitcher global={false} />
+                            </div>
+                        </div>
+
+                        <div>
+                            <CodeSnippet
+                                className=" bg-gray-100/50 px-2 dark:border-white/5"
+                                code={`<html 
+    data-palette="${palette}"
+    data-rounded="${rounded}"
+    data-shade="${shade}"
+>`}
+                                lang="html"
+                            />
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
+    )
+}
