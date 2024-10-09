@@ -52,7 +52,7 @@ const { asThemer = false, sticky = false } = Astro.props
     })
 </script>
 
-<header data-rounded="full" class={twMerge('fixed inset-x-0 z-40 flex flex-col bg-white dark:bg-gray-925 lg:bg-transparent dark:lg:bg-transparent ', sticky ? 'relative lg:h-[4.5rem]' : 'lg:h-16 border-b dark:border-white/[0.07] dark:[box-shadow:0_1px_1px_0_rgb(var(--colors-gray-925))]')}>
+<header data-rounded="full" class={twMerge('fixed inset-x-0 z-40 flex flex-col bg-white dark:bg-gray-925 lg:bg-transparent dark:lg:bg-transparent ', sticky ? 'relative lg:h-[4.5rem] bg-transparent dark:bg-transparent' : 'lg:h-16 border-b dark:border-white/[0.07] dark:[box-shadow:0_1px_1px_0_rgb(var(--colors-gray-925))]')}>
     <div class="mx-auto my-auto flex h-fit w-full items-center justify-between gap-4 px-8 py-2 sm:gap-6 xl:px-0" class:list={asThemer ? 'max-w-5xl' : 'max-w-[76rem]'}>
         <div class="flex items-center sm:gap-6">
             <a href="/" aria-label="Home page" class="rounded-full">

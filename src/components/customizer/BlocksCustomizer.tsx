@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useStore } from '@nanostores/react'
 import { $palette, $rounded, $shade } from '@store/switchers'
 import CodeSnippet from '@components/utilities/CodeSnippet'
+import { useMedia } from 'use-media'
 
 const radioItem = 'relative rounded-[calc(var(--btn-radius)-3px)] delay-75 duration-300 flex items-center justify-center h-8 px-2.5 gap-2 text-[--caption-text-color] transition-[color] hover:text-[--body-text-color] data-[state=checked]:scale-95 transition-transform will-change data-[state=checked]:text-[--title-text-color]'
 
@@ -19,10 +20,15 @@ export default function BlocksCustomizer() {
     const [isActive, setIsActive] = useState(false)
     const customizerRef = useRef<HTMLDivElement>(null)
     const triggerButtonRef = useRef<HTMLButtonElement>(null)
+    const isMedium = useMedia('(min-width: 768px)')
 
     const palette = useStore($palette)
     const rounded = useStore($rounded)
     const shade = useStore($shade)
+
+    const initialAnimation = isMedium ? { x: 560 } : { y: 720 }
+    const animate = isMedium ? { x: 0 } : { y: 0 }
+    const exitAnimation = isMedium ? { x: 560, opacity: 0, scale: 0.95 } : { y: 720, opacity: 0, scale: 0.95 }
 
     const handleValueChange = (value: string) => {
         const newTheme = value === '100' ? 'light' : 'dark'
@@ -97,7 +103,15 @@ export default function BlocksCustomizer() {
 
             <AnimatePresence>
                 {isActive && (
-                    <motion.div data-rounded="large" ref={customizerRef} initial={{ x: 560 }} transition={{ type: 'spring', bounce: 0.1, duration: 0.4 }} animate={{ x: 0 }} exit={{ x: 560, opacity: 0, scale: 0.95 }} data-shade="glassy" className="rounded-card fixed right-[5.2rem] top-16 z-50 max-w-sm border bg-white p-8 shadow-md shadow-gray-950/5 outline outline-1 outline-transparent dark:feedback-bg dark:border-white/5 dark:shadow-gray-950/25 dark:outline-gray-950/50">
+                    <motion.div
+                        data-rounded="large"
+                        ref={customizerRef}
+                        initial={initialAnimation}
+                        transition={{ type: 'spring', bounce: 0.1, duration: 0.4 }}
+                        animate={animate}
+                        exit={exitAnimation}
+                        data-shade="glassy"
+                        className="md:rounded-card fixed inset-x-0 -bottom-px z-50 h-fit rounded-t-2xl border bg-white p-8 shadow-2xl shadow-gray-950/5 outline outline-1 outline-transparent dark:feedback-bg md:right-[5.2rem] md:top-16 md:max-w-sm md:shadow-md lg:bottom-auto lg:left-auto dark:border-white/5 dark:shadow-gray-950/25 dark:outline-gray-950/50">
                         <div>
                             <Title size="base" weight="medium" as="div">
                                 Personalize Your Theme

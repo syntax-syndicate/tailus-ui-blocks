@@ -16,6 +16,7 @@ import { AstroIcon, HTMLIcon, NextIcon, NuxtIcon } from './utilities/icons'
 import { $stack, setStack } from '@store/stack'
 import { useStore } from '@nanostores/react'
 import type { Stack, Code } from './../types'
+import { useMedia } from 'use-media'
 
 export interface BlockPreviewProps {
     code: Code
@@ -36,6 +37,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title }) 
     const stack = useStore($stack) || 'html'
     const { copied, copy } = useCopyToClipboard(code[stack])
     const ref = useRef<ImperativePanelGroupHandle>(null)
+    const isLarge = useMedia('(min-width: 1024px)')
 
     const tweetText = `Check out these stunning ${title} blocks built with Tailus UI React!
 
@@ -49,26 +51,26 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title }) 
     return (
         <div className="group mb-32 border-b [--ui-border-color:theme(colors.gray.200/0.75)] dark:[--ui-border-color:theme(colors.gray.800/0.6)]">
             <div className="relative border-y">
-                <div className="absolute inset-x-0 -top-14 bottom-0 mx-auto max-w-7xl ">
+                <div className="absolute inset-x-4 -top-14 bottom-0 mx-auto max-w-7xl lg:inset-x-0">
                     <div className="absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-transparent to-[--ui-border-color] to-75% dark:to-[--ui-border-color]"></div>
                     <div className="absolute bottom-0 right-0 top-0 w-px bg-gradient-to-b from-transparent to-[--ui-border-color] to-75% dark:to-[--ui-border-color]"></div>
                 </div>
-                <div className="relative z-10 mx-auto flex max-w-7xl justify-between py-2 lg:px-8">
+                <div className="relative z-10 mx-auto flex max-w-7xl justify-between px-8 py-2">
                     <div className="flex items-center gap-3">
-                        <Title as="h2" weight="normal" className="w-20 text-sm">
+                        <Title as="h2" weight="normal" className="text-sm lg:w-20">
                             {title}
                         </Title>
                         {code && (
                             <>
                                 <Separator fancy orientation="vertical" className="hidden h-4 lg:block" />
-                                <RadioGroup.Root className="hidden gap-0.5 rounded-[--btn-radius] border border-gray-950/5 bg-gray-950/5 p-0.5 lg:flex dark:border-white/5 dark:bg-gray-950/50">
+                                <RadioGroup.Root className="flex gap-0.5 rounded-[--btn-radius] border border-gray-950/5 bg-gray-950/5 p-0.5 dark:border-white/5 dark:bg-gray-950/50">
                                     <RadioGroup.Item onClick={() => setMode('preview')} aria-label="Block preview" value="100" checked={mode == 'preview'} className={radioItem}>
                                         <Eye className="size-4" />
-                                        <span className="text-sm">Preview</span>
+                                        <span className="hidden text-sm md:block">Preview</span>
                                     </RadioGroup.Item>
                                     <RadioGroup.Item onClick={() => setMode('code')} aria-label="Code" value="0" checked={mode == 'code'} className={radioItem}>
                                         <Code2 className="size-4" />
-                                        <span className="text-sm">Code</span>
+                                        <span className="hidden text-sm md:block">Code</span>
                                     </RadioGroup.Item>
                                 </RadioGroup.Root>
                             </>
@@ -77,26 +79,28 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title }) 
                         {mode == 'preview' && (
                             <>
                                 <Separator fancy orientation="vertical" className="hidden h-4 lg:block" />
-                                <Caption>{width < MDSIZE ? 'Mobile' : width < LGSIZE ? 'Tablet' : 'Desktop'}</Caption>{' '}
+                                <Caption className="hidden lg:block">{width < MDSIZE ? 'Mobile' : width < LGSIZE ? 'Tablet' : 'Desktop'}</Caption>{' '}
                             </>
                         )}
                     </div>
-                    <div className="hidden items-center gap-2 lg:flex">
-                        <Tooltip.Provider delayDuration={200} skipDelayDuration={0}>
-                            <Tooltip.Root>
-                                <Tooltip.Trigger asChild>
-                                    {/* @ts-ignore */}
-                                    <Button.Root href={`https://twitter.com/intent/tweet?text=${encodedTweetText}`} target="_blank" rel="noopener noreferrer" size="sm" variant="ghost" intent="gray" aria-label="share on x">
-                                        <Button.Icon size="xs" type="only">
-                                            <TwitterLogoIcon />
-                                        </Button.Icon>
-                                    </Button.Root>
-                                </Tooltip.Trigger>
-                                <Tooltip.Content fancy className="z-10" inverted={false}>
-                                    Share on 𝕏
-                                </Tooltip.Content>
-                            </Tooltip.Root>
-                        </Tooltip.Provider>
+                    <div className="flex items-center gap-2">
+                        <div className="hidden md:block">
+                            <Tooltip.Provider delayDuration={200} skipDelayDuration={0}>
+                                <Tooltip.Root>
+                                    <Tooltip.Trigger asChild>
+                                        {/* @ts-ignore */}
+                                        <Button.Root href={`https://twitter.com/intent/tweet?text=${encodedTweetText}`} target="_blank" rel="noopener noreferrer" size="sm" variant="ghost" intent="gray" aria-label="share on x">
+                                            <Button.Icon size="xs" type="only">
+                                                <TwitterLogoIcon />
+                                            </Button.Icon>
+                                        </Button.Root>
+                                    </Tooltip.Trigger>
+                                    <Tooltip.Content fancy className="z-10" inverted={false}>
+                                        Share on 𝕏
+                                    </Tooltip.Content>
+                                </Tooltip.Root>
+                            </Tooltip.Provider>
+                        </div>
                         <Separator className="h-4" fancy orientation="vertical" />
                         <Select.Root defaultValue={stack} value={stack} onValueChange={(value: Stack) => setStack(value)}>
                             <Select.Trigger variant="plain" size="sm" className="w-fit gap-2 data-[state=open]:bg-gray-950/5" aria-label="Change palette">
@@ -108,21 +112,17 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title }) 
                             <Select.Portal>
                                 <Select.Content className="z-50" sideOffset={4} position="popper" mixed intent="gray" variant="soft">
                                     <Select.Viewport>
-                                        <SelectItem value="html">
+                                        <SelectItem value="html" label="Html">
                                             <HTMLIcon className="h-4" />
-                                            Html
                                         </SelectItem>
-                                        <SelectItem value="astro">
+                                        <SelectItem value="astro" label="Astro">
                                             <AstroIcon className="h-4" />
-                                            Astro
                                         </SelectItem>
-                                        <SelectItem value="nextjs">
+                                        <SelectItem value="nextjs" label="NextJs">
                                             <NextIcon className="h-4" />
-                                            NextJs
                                         </SelectItem>
-                                        <SelectItem value="nuxtjs">
+                                        <SelectItem value="nuxtjs" label="NuxtJs">
                                             <NuxtIcon className="h-4" />
-                                            NuxtJs
                                         </SelectItem>
                                     </Select.Viewport>
                                 </Select.Content>
@@ -155,7 +155,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title }) 
                     <div className="absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-[--ui-border-color] dark:from-[--ui-border-color]"></div>
                     <div className="absolute bottom-0 right-0 top-0 w-px bg-gradient-to-b from-[--ui-border-color] dark:from-[--ui-border-color]"></div>
                 </div>
-                <div className="relative z-10 mx-auto max-w-7xl border-r">
+                <div className="relative z-10 mx-auto max-w-7xl px-4 lg:border-r lg:px-0">
                     <div className={twMerge('bg-white dark:bg-transparent', mode == 'code' && 'hidden')}>
                         <PanelGroup direction="horizontal" tagName="div" ref={ref}>
                             <Panel
@@ -167,8 +167,12 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title }) 
                                 className="h-fit border-x ">
                                 <iframe loading="lazy" title={title} className="block h-full min-h-[45rem] w-full" src={src} id={`block-${title}`} />
                             </Panel>
-                            <PanelResizeHandle className="relative w-2 before:absolute before:inset-0 before:m-auto before:h-12 before:w-1 before:rounded-full before:bg-gray-300 before:transition-[height,background] hover:before:h-16 hover:before:bg-gray-400 focus:before:bg-gray-400 dark:before:bg-gray-600 dark:hover:before:bg-gray-500 dark:focus:before:bg-gray-400" />
-                            <Panel defaultSize={100 - DEFAULTSIZE} className="-mr-[0.5px] ml-px"></Panel>
+                            {isLarge && (
+                                <>
+                                    <PanelResizeHandle className="relative w-2 before:absolute before:inset-0 before:m-auto before:h-12 before:w-1 before:rounded-full before:bg-gray-300 before:transition-[height,background] hover:before:h-16 hover:before:bg-gray-400 focus:before:bg-gray-400 dark:before:bg-gray-600 dark:hover:before:bg-gray-500 dark:focus:before:bg-gray-400" />
+                                    <Panel defaultSize={100 - DEFAULTSIZE} className="-mr-[0.5px] ml-px"></Panel>
+                                </>
+                            )}
                         </PanelGroup>
                     </div>
                     {mode == 'code' && <CodeSnippet asUIBlock className="rounded-none border-y-0 border-r-0 bg-white px-4 dark:bg-gray-925" code={code[stack]} lang="tsx" />}
@@ -178,11 +182,14 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title }) 
     )
 }
 
-export const SelectItem = ({ value, children }: { value: string; children: ReactNode }) => {
+export const SelectItem = ({ value, children, label }: { value: string; children: ReactNode; label: string }) => {
     return (
         <Select.Item value={value}>
             <Select.ItemText>
-                <div className="flex items-center gap-2">{children}</div>
+                <div className="flex items-center gap-2">
+                    {children}
+                    <span className="hidden md:block">{label}</span>
+                </div>
             </Select.ItemText>
             <Select.ItemIndicator>
                 <Check className="size-3" />
