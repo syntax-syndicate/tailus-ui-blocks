@@ -1,4 +1,6 @@
 import Prism from 'prismjs'
+import '@styles/code-line-numbers.css'
+import 'prismjs/plugins/line-numbers/prism-line-numbers'
 import { useEffect, useRef, useState } from 'react'
 import ScrollArea from '@tailus-ui/ScrollArea'
 import '@styles/code-theme.css'
@@ -8,7 +10,8 @@ import { motion, useSpring, useTransform } from 'framer-motion'
 type Current = 'tailus' | 'tailwind'
 
 const codes = {
-    tailus: `<form action="" class="card variant-mixed w-max max-w-lg p-1">
+    tailus: `
+<form action="" class="card variant-mixed w-max max-w-lg p-1">
     <div class="p-8">
       <div class="text-center">
         <img class="mx-auto size-8" src="/logo.svg" />
@@ -51,7 +54,8 @@ const codes = {
       <p class="text-center text-sm">Don't have an account ?<a href="#" class="link intent-neutral variant-underlined">Create account</a></p>
     </div>
 </form>`,
-    tailwind: `<form action="" class="relative mx-auto w-max max-w-xl rounded-3xl border border-gray-200 bg-white p-1 dark:border-gray-800 dark:bg-gray-900">
+    tailwind: `
+<form action="" class="relative mx-auto w-max max-w-xl rounded-3xl border border-gray-200 bg-white p-1 dark:border-gray-800 dark:bg-gray-900">
     <div class="p-8">
       <div class="text-center">
         <img class="mx-auto size-8" src="/logo.svg" />
@@ -135,73 +139,22 @@ export default function CodeComparason() {
     }, [activeCode])
 
     return (
-        <div className="grid grid-cols-5">
-            <form data-shade="925" action="" className="card variant-mixed col-span-2 -mt-9 h-fit overflow-hidden p-1 !shadow-xl !shadow-gray-950/5">
-                <div className="-mx-1 -mt-[5px] flex h-9 items-center border-b pl-4 dark:bg-gray-800/50">
-                    <div data-shade="glassy" className="flex gap-2">
-                        <div className="bg-ui-soft size-2.5 rounded-full border"></div>
-                        <div className="bg-ui-soft size-2.5 rounded-full border"></div>
-                        <div className="bg-ui-soft size-2.5 rounded-full border"></div>
-                    </div>
-                </div>
-                <div data-palette={activeCode == 'tailus' ? 'tls' : 'winter'} className="p-8 lg:p-12">
-                    <div className="text-center">
-                        <img className="mx-auto size-9 dark:invert" src="/favicon.svg" />
-                        <h3 className="text-title mb-1 mt-6 text-xl font-semibold">Sign In to Tailus UI</h3>
-                        <p className="text-sm">Welcome back! Sign in to continue</p>
-                    </div>
-
-                    <div className="mt-6">
-                        <button className="btn sz-md variant-outlined intent-gray w-full gap-3.5 !text-sm font-medium">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="0.98em" height="1em" viewBox="0 0 256 262">
-                                <path fill="#4285f4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622l38.755 30.023l2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"></path>
-                                <path fill="#34a853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055c-34.523 0-63.824-22.773-74.269-54.25l-1.531.13l-40.298 31.187l-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"></path>
-                                <path fill="#fbbc05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82c0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602z"></path>
-                                <path fill="#eb4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"></path>
-                            </svg>
-                            Continue With Google
-                        </button>
-                    </div>
-
-                    <hr className="my-6 border-dashed" />
-                    <div className="space-y-6">
-                        <div className="field">
-                            <label htmlFor="email2" className="text-title text-sm">
-                                Username
-                            </label>
-                            <input type="email" required name="email2" id="email2" className="input sz-md variant-mixed !outline-primary-600" />
-                        </div>
-
-                        <button className="btn variant-solid intent-primary sz-md w-full">Continue</button>
-                    </div>
-                </div>
-
-                <div className="card variant-soft rounded-[calc(var(--card-radius)-4px)] dark:!bg-gray-950/50">
-                    <p className="text-center text-sm">
-                        Don't have an account ?{' '}
-                        <a href="#" className="link intent-neutral variant-underlined">
-                            Create account
-                        </a>
-                    </p>
-                </div>
-            </form>
-            <div className="col-span-3">
-                <div className="bg-ui flex h-12 items-center justify-between overflow-hidden border-b pr-4 dark:bg-transparent">
-                    <div className="relative ml-3 h-full">
+        <div className="grid border-r [grid-template-columns:auto_1fr]">
+            <div className="-mr-2 max-w-2xl border">
+                <div className="bg-ui flex h-10 items-center justify-between overflow-hidden border-b pr-8 dark:bg-transparent">
+                    <div data-shade="950" className="relative h-full">
                         <div
-                            className={twMerge('absolute bottom-0 h-1 duration-300', activeCode == 'tailus' ? '[--active-bg:theme(colors.primary.500)]' : '[--active-bg:theme(colors.cyan.500)]')}
+                            className={twMerge('bg-ui-soft absolute inset-y-0 border border-[--ui-bg] duration-300', activeCode == 'tailus' ? '[--active-bg:theme(colors.primary.500)]' : '[--active-bg:theme(colors.cyan.500)]')}
                             style={{
                                 width: `${indicatorWidth}px`,
                                 left: indicatorLeft,
-                            }}>
-                            <div className="absolute inset-0 bottom-0 mt-0.5 h-0.5 rounded-t-full bg-[--active-bg]"></div>
-                            <div className="h-2 bg-[--active-bg] blur-lg"></div>
-                        </div>
-                        <div className="relative flex h-full items-center gap-4 *:px-2">
-                            <button ref={tailwind} data-state={activeCode == 'tailwind' && 'active'} className="text-caption data-[state=active]:text-title" onClick={() => handleTabClick('tailwind', TAILWINDCOUNT)}>
+                            }}></div>
+                        <div className="relative flex h-full items-center border-r *:h-full *:px-5">
+                            <button ref={tailwind} data-state={activeCode == 'tailwind' && 'active'} className="text-body data-[state=active]:text-title text-sm" onClick={() => handleTabClick('tailwind', TAILWINDCOUNT)}>
                                 TailwindCss
                             </button>
-                            <button ref={tailus} data-state={activeCode == 'tailus' && 'active'} onClick={() => handleTabClick('tailus', TAILUSCOUNT)} className="text-caption data-[state=active]:text-title">
+                            <span className="relative z-[1] block h-full w-px bg-[--ui-border-color] !px-0"></span>
+                            <button ref={tailus} data-state={activeCode == 'tailus' && 'active'} onClick={() => handleTabClick('tailus', TAILUSCOUNT)} className="text-body  data-[state=active]:text-title text-sm">
                                 Tailus UI Html
                             </button>
                         </div>
@@ -211,12 +164,9 @@ export default function CodeComparason() {
                     </span>
                 </div>
                 <div data-pagefind-ignore className="relative w-full">
-                    <div className="absolute -right-16 -top-px left-0 z-[2] h-px bg-gradient-to-r from-[--ui-border-color] from-90% to-transparent"></div>
-                    <div className="absolute -bottom-px -right-16 left-0 z-[2] h-px bg-gradient-to-r from-[--ui-border-color] from-90% to-transparent"></div>
-                    <div className="absolute -top-12 bottom-0 right-0 z-[2] w-px bg-gradient-to-b from-[--ui-border-color] from-60% to-transparent"></div>
-                    <ScrollArea.Root className="max-h-[28rem]" type="scroll">
+                    <ScrollArea.Root className="max-h-[32rem] bg-gradient-to-b from-[--ui-bg]" type="scroll">
                         <ScrollArea.Viewport className="w-full">
-                            <pre className="h-max w-full p-4 text-sm">
+                            <pre className="line-numbers h-max w-full px-4 text-sm">
                                 <code className="language-html font-mono text-sm">{codes[activeCode]}</code>
                             </pre>
                         </ScrollArea.Viewport>
@@ -224,6 +174,56 @@ export default function CodeComparason() {
                         <ScrollArea.Scrollbar orientation="vertical" />
                     </ScrollArea.Root>
                 </div>
+            </div>
+            <div className="relative border-t">
+                <div className="relative ml-2 h-4 bg-[repeating-linear-gradient(-45deg,var(--stripes-color),var(--stripes-color)_0.5px,theme(colors.transparent)_0.5px,theme(colors.transparent)_6px)] [--stripes-color:theme(colors.gray.300)] before:absolute before:inset-0 before:bg-gradient-to-t before:from-gray-50 dark:[--stripes-color:theme(colors.white/0.2)] dark:before:from-gray-950"></div>
+                <form action="" className="bg-ui relative -mb-4 -mr-2 overflow-hidden rounded-[--card-radius] border p-1 shadow-lg">
+                    <div className="-mx-1 flex h-9 items-center gap-1.5 px-4">
+                        <div className="size-2 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+                        <div className="size-2 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+                        <div className="size-2 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+                    </div>
+                    <div className="p-8 lg:p-12">
+                        <div className="text-center">
+                            <img className="mx-auto size-9 dark:invert" src="/favicon.svg" />
+                            <h3 className="text-title mb-1 mt-6 text-xl font-semibold">Sign In to Tailus UI</h3>
+                            <p className="text-sm">Welcome back! Sign in to continue</p>
+                        </div>
+
+                        <div className="mt-6">
+                            <button className="btn sz-sm variant-outlined intent-gray w-full gap-3.5 !text-sm font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="0.98em" height="1em" viewBox="0 0 256 262">
+                                    <path fill="#4285f4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622l38.755 30.023l2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"></path>
+                                    <path fill="#34a853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055c-34.523 0-63.824-22.773-74.269-54.25l-1.531.13l-40.298 31.187l-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"></path>
+                                    <path fill="#fbbc05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82c0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602z"></path>
+                                    <path fill="#eb4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"></path>
+                                </svg>
+                                Continue With Google
+                            </button>
+                        </div>
+
+                        <hr className="my-6 border-dashed" />
+                        <div className="space-y-6">
+                            <div className="field">
+                                <label htmlFor="email2" className="text-title text-sm">
+                                    Username
+                                </label>
+                                <input type="email" required name="email2" id="email2" className="input sz-md variant-mixed !outline-primary-600" />
+                            </div>
+
+                            <button className="btn variant-solid intent-primary sz-sm w-full">Continue</button>
+                        </div>
+                    </div>
+
+                    <div className="card variant-soft rounded-[calc(var(--card-radius)-4px)] dark:!bg-gray-950/50">
+                        <p className="text-center text-sm">
+                            Don't have an account ?{' '}
+                            <a href="#" className="link intent-neutral variant-underlined">
+                                Create account
+                            </a>
+                        </p>
+                    </div>
+                </form>
             </div>
         </div>
     )
