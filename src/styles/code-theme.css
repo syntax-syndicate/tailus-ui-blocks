@@ -54,11 +54,11 @@ pre[class*="language-"] {
 .token.attr-name,
 .token.namespace,
 .token.deleted {
-	@apply dark:text-[#d3dae2] text-[#70B3BF];
+	@apply dark:text-[#d3dae2] text-[#ae4040];
 }
 
 .token.function-name {
-	@apply text-[#539481]
+	@apply text-[#945379]
 }
 
 .token.boolean,
@@ -82,7 +82,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-	@apply text-[#45946f] dark:text-[#945353];
+	@apply text-[#944545] dark:text-[#945353];
 }
 
 .token.string,

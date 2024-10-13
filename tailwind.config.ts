@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss'
 import defaultTheme from "tailwindcss/defaultTheme";
-import { animations, components, palette, rounded, shade } from "@tailus/themer";
+import { animations, components, palette, shade } from "@tailus/themer";
 import containerQueries from '@tailwindcss/container-queries'
 import { withTV } from 'tailwind-variants/transformer';
 
@@ -21,7 +21,6 @@ module.exports = withTV({
 	},
 	plugins: [
 		components,
-		rounded,
 		shade,
 		animations,
 		palette,

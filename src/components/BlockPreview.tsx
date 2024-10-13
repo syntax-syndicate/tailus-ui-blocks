@@ -22,6 +22,7 @@ export interface BlockPreviewProps {
     code: Code
     src: string
     title: string
+    forHome?: boolean
 }
 
 const radioItem = 'rounded-[calc(var(--btn-radius)-2px)] duration-300 flex border border-transparent items-center justify-center h-7 px-2.5 gap-2 text-[--caption-text-color] transition-[color] hover:text-[--body-text-color] data-[state=checked]:text-[--title-text-color] data-[state=checked]:bg-white data-[state=checked]:shadow dark:data-[disabled]:bg-transparent dark:data-[state=checked]:shadow-gray-950/50 dark:data-[state=checked]:border-white/5 dark:data-[state=checked]:bg-[--ui-soft-bg]'
@@ -31,7 +32,7 @@ const SMSIZE = 30
 const MDSIZE = 62
 const LGSIZE = 82
 
-export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title }) => {
+export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title, forHome }) => {
     const [width, setWidth] = useState(DEFAULTSIZE)
     const [mode, setMode] = useState<'preview' | 'code'>('preview')
     const stack = useStore($stack) || 'html'
@@ -55,7 +56,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title }) 
                     <div className="absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-transparent to-[--ui-border-color] to-75% dark:to-[--ui-border-color]"></div>
                     <div className="absolute bottom-0 right-0 top-0 w-px bg-gradient-to-b from-transparent to-[--ui-border-color] to-75% dark:to-[--ui-border-color]"></div>
                 </div>
-                <div className="relative z-10 mx-auto flex max-w-7xl justify-between px-8 py-2">
+                <div className={twMerge('relative z-10 mx-auto flex max-w-7xl justify-between px-8 py-2', forHome && 'max-w-5xl border-x px-6')}>
                     <div className="flex items-center gap-3">
                         <Title as="h2" weight="normal" className="text-sm lg:w-20">
                             {title}
@@ -175,7 +176,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title }) 
                             )}
                         </PanelGroup>
                     </div>
-                    {mode == 'code' && <CodeSnippet asUIBlock className="rounded-none border-y-0 border-r-0 bg-white px-4 dark:bg-gray-925" code={code[stack]} lang="tsx" />}
+                    <div className={twMerge('bg-white  dark:bg-transparent', forHome && 'mx-auto border-x')}>{mode == 'code' && <CodeSnippet asUIBlock className={twMerge('rounded-none border-y-0 border-r-0 bg-white px-4 dark:bg-gray-925', forHome && 'mx-auto max-w-5xl border-r')} code={code[stack]} lang="tsx" />}</div>
                 </div>
             </div>
         </div>

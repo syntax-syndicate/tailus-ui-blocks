@@ -1,315 +1,963 @@
 ---
 import Layout from '@layouts/BaseLayout.astro'
 import Container from '@components/Container.astro'
-import { BERNARD_AVATAR, MESCHAC_AVATAR, THEO_AVATAR } from 'src/const'
-import BrandLogo from '@components/utilities/BrandLogo'
-import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
+import { BERNARD_AVATAR, MESCHAC_AVATAR, GLODIE_AVATAR, THEO_AVATAR } from 'src/const'
+import { CloudUpload, FastForward, Play } from 'lucide-react'
+import SeparatorRoot from '@components/tailus-ui/Separator'
+import { Image } from 'astro:assets'
+import podcastCover from './../images/yv.jpg'
+import { AstroIcon, HTMLIcon, NextIcon, NuxtIcon } from '@components/utilities/icons'
+import BlockPreview from '@components/BlockPreview'
+import { hero1Code } from '@components/blocks/hero-section/hero1'
+import CodeComparason from '@components/CodeComparason'
 ---
 
-<script>
-    let timeoutId
-    const herosection = document.querySelector('[data-herosection]') as HTMLElement
-    const footer = document.querySelector('[data-footer]') as HTMLElement
-
-    const handleScroll = event => {
-        if (timeoutId !== null) {
-            clearTimeout(timeoutId)
-        }
-
-        const scrollPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight)
-
-        herosection.style.transform = `scale(${1 - scrollPercentage})`
-        herosection.style.opacity = `${1 - scrollPercentage * 12.5}`
-
-        if (scrollPercentage > 0.8) {
-            footer.style.opacity = `${scrollPercentage}`
-            footer.style.transform = `scale(${scrollPercentage})`
-            footer.style.display = 'grid'
-        } else {
-            footer.style.opacity = '0'
-            footer.style.transform = `scale(0)`
-            footer.style.display = 'none'
-        }
-    }
-
-    document.addEventListener('scroll', event => {
-        handleScroll(event)
-    })
-</script>
-
 <Layout title="Tailus UI Html">
-    <section data-herosection class="sticky will-change-transform top-0 pt-12 z-[1] space-y-12">
-        <Container>
-            <div class="px-2">
-                <h1 class="sm:mt-20 text-display font-medium text-3xl lg:mt-40">Build faster your next website, with less tailwind utilities</h1>
-                <p class="max-w-xl my-6">A comprehensive suite of tailwindcss component classes for building visually stunning websites, with HTML.</p>
+    <div class="absolute inset-0 hidden h-16 bg-[repeating-linear-gradient(-45deg,var(--stripes-color),var(--stripes-color)_0.5px,theme(colors.transparent)_0.5px,theme(colors.transparent)_12px)] [--stripes-color:theme(colors.primary.300)] before:absolute before:inset-0 before:bg-gradient-to-t before:from-gray-50 before:via-transparent before:to-gray-50 dark:[--stripes-color:theme(colors.white/0.2)] dark:before:from-gray-950 dark:before:via-transparent dark:before:to-gray-950"></div>
 
-                <a href="/get-started/installation" class="btn variant-soft sz-sm gap-2.5 w-fit intent-gray">
-                    <svg class="size-3.5 opacity-50 -mx-px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+    <section class="relative z-10 space-y-12 pt-36 will-change-transform">
+        <Container>
+            <h1 class="text-title text-balance bg-gradient-to-b text-4xl font-bold sm:text-5xl lg:text-6xl">Next generation <br /> tailwind components</h1>
+            <p class="mb-12 mt-6 max-w-xl text-xl">A comprehensive suite of tailwindcss component classes for building visually stunning websites faster.</p>
+
+            <div class="rounded-btn w-fit shadow-md shadow-neutral-950/15">
+                <a href="/get-started/installation" class="btn variant-solid sz-md relative w-fit gap-2.5 border-0 bg-gradient-to-b from-gray-800 to-gray-950 !transition-all !duration-300 before:absolute before:inset-px before:rounded-[calc(var(--btn-radius)-1px)] before:border before:border-white/15 hover:before:border-white/20 dark:bg-white dark:from-transparent dark:to-transparent dark:!text-gray-950 dark:hover:bg-gray-400">
+                    <svg class="-mx-px size-3.5 opacity-75" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                     Get Started
                 </a>
             </div>
         </Container>
     </section>
 
-    <section data-main class="mt-12 md:mt-20 space-y-12 bg-white dark:bg-gray-950 relative z-[2]">
+    <section data-palette="oz" class="relative border-b">
+        <svg class="absolute inset-0 mx-auto w-full text-secondary-100 blur-3xl dark:text-white/5" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
+        </svg>
+        <svg class="absolute inset-0 m-auto w-full text-primary-200 blur-3xl dark:text-primary-500/5" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
+        </svg>
         <Container>
-            <div class="grid grid-cols-6 border rounded-card">
-                <div class="py-12 px-6 col-span-full border-b flex items-center justify-center">
-                    <span class="annonce variant-mixed gap-2 sz-xs">
-                        <span class="annonce-concern sz-xs variant-soft intent-success">New</span>
-                        <span class="text-title text-sm line-clamp-1">Introduction Tailus UI Html</span>
-                    </span>
-                </div>
-                <div class="py-12 px-6 col-span-2 border-b flex items-center justify-center">
-                    <button class="btn variant-solid sz-sm intent-primary">Generate</button>
-                </div>
-                <div class="py-12 px-6 col-span-2 border-l border-b flex items-center justify-center">
-                    <div class="avatar sz-md">
-                        <img src="https://tailus.io/images/reviews/rodrigo.webp" alt="" />
+            <div data-shade="900" class="relative -mx-4 -mt-64">
+                <div class="relative grid grid-cols-6 divide-x divide-y divide-dashed border-r border-dashed [--ui-border-color:theme(colors.gray.950/0.15)] *:relative *:flex *:h-32 *:items-center *:justify-center *:border-dashed dark:bg-gray-950/25 dark:[--ui-bg:theme(colors.white/0.05)] dark:[--ui-border-color:theme(colors.white/0.1)]">
+                    <div class="col-start-6 border-l border-t">
+                        <form class="flex gap-3">
+                            <label class="field btn variant-outlined icon-only intent-gray sz-sm has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="small2">
+                                <input type="radio" id="small2" name="size2" hidden />
+                                S
+                            </label>
+                            <label class="field btn variant-outlined icon-only intent-gray sz-sm has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="medium2">
+                                <input type="radio" id="medium2" checked name="size2" hidden />
+                                M
+                            </label>
+                            <label class="field btn variant-outlined icon-only intent-gray sz-sm has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="large2">
+                                <input type="radio" id="large2" name="size2" hidden />
+                                L
+                            </label>
+                        </form>
                     </div>
-                </div>
-                <div class="py-12 px-6 col-span-2 border-l border-b flex items-center justify-center">
-                    <span class="badge variant-soft sz-sm intent-primary">Badge</span>
-                </div>
-                <div class="py-12 px-6 col-span-full border-b flex items-center justify-center">
-                    <div class="progress sz-md w-2/3">
-                        <div class="progress-indicator intent-success w-[60%]"></div>
-                    </div>
-                </div>
-                <div class="py-12 px-6 col-span-2 border-b flex items-center justify-center">
-                    <form>
-                        <label for="c1" class="checkbox group">
-                            <input class="peer" type="checkbox" id="c1" name="checkbox1" />
-                            <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
-                        </label>
-                    </form>
-                </div>
-                <div class="py-12 px-6 col-span-2 border-l border-b flex items-center justify-center">
-                    <form>
-                        <label for="sw1" class="switch intent-primary">
-                            <input checked class="peer" type="checkbox" id="sw1" name="switch1" />
-                            <span class="switch-thumb"></span>
-                        </label>
-                    </form>
-                </div>
-                <div class="py-12 px-6 col-span-2 border-l border-b flex items-center justify-center">
-                    <form>
-                        <label for="r1" class="radio rounded-full group">
-                            <input class="peer" type="radio" id="r1" name="radio1" />
+                    <div class="col-start-5">
+                        <label for="r2" class="radio bg-ui group rounded-full">
+                            <input class="peer" type="radio" id="r2" name="radio2" />
                             <span class="radio-indicator"> </span>
                         </label>
-                    </form>
-                </div>
-                <div class="col-span-3 py-12 px-6 border-b flex items-center justify-center">
-                    <div class="field">
-                        <label for="email" class="text-title text-sm">Email</label>
-                        <input type="email" name="email" id="email" class="input sz-sm variant-mixed" />
-                        <span class="block text-caption text-sm">Description here</span>
                     </div>
-                </div>
-                <div class="col-span-3 py-12 px-6 border-l border-b flex items-center justify-center">
-                    <form class="space-y-4 w-full max-w-xs" data-shade="900">
+                    <div>
+                        <button class="btn variant-solid intent-primary sz-sm">Button</button>
+                    </div>
+                    <div class="col-start-3">
+                        <label for="sw2" class="switch intent-primary">
+                            <input checked class="peer" type="checkbox" id="sw2" name="switch2" />
+                            <span class="switch-thumb"></span>
+                        </label>
+                    </div>
+                    <div>
                         <div class="field">
-                            <label class="text-title text-sm" for="options">Select Options</label>
-                            <div class="relative">
-                                <svg class="absolute right-1.5 inset-y-0 my-auto text-body opacity-75 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="0.75rem" height="0.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"></path><path d="m7 9 5-5 5 5"></path></svg>
-                                <select id="options" class="input variant-mixed sz-sm appearance-none">
-                                    <option value="1">Option 1</option>
-                                    <option value="2">Option 2</option>
-                                    <option value="3">Option 3</option>
-                                </select>
-                            </div>
-                            <span class="inline-block text-sm text-caption">Select description</span>
-                        </div>
-                    </form>
-                </div>
-                <div class="py-12 px-6 col-span-full border-b flex items-center justify-center">
-                    <div class="callout intent-gray flex gap-2.5" role="alert">
-                        <svg class="text-title" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
-                        <div>
-                            <div class="callout-title text-sm">An error occured!</div>
-                            <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-                            <a href="" class="callout-link text-sm">Details</a>
+                            <label for="c2" class="checkbox bg-ui group">
+                                <input class="peer" type="checkbox" id="c2" name="checkbox1" />
+                                <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                            </label>
                         </div>
                     </div>
-                </div>
-                <div class="py-12 px-6 col-span-2 border-b flex items-center justify-center">
-                    <a href="#" class="link variant-underlined intent-neutral text-sm">Tailus UI</a>
-                </div>
-                <div class="py-12 px-6 col-span-2 border-l border-b flex items-center justify-center">
-                    <kbd class="kbd">⌘ K</kbd>
-                </div>
-                <div class="py-12 px-6 col-span-2 border-l border-b flex items-center justify-center">
-                    <code class="code intent-primary">variant</code>
-                </div>
-                <div data-rounded="2xlarge" class="py-12 overflow-hidden relative px-6 border-b col-span-full flex items-center justify-center">
-                    <div class="card relative variant-mixed w-min">
-                        <div class="select-none">
-                            <div class="card w-56 mx-auto variant-mixed backdrop-blur-xl p-1 space-y-1">
-                                <div class="flex items-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-500/10 px-2 py-1 rounded-[calc(var(--card-radius)-4px)]">
-                                    <img src="https://avatars.githubusercontent.com/u/47919550?v=4" alt="" class="rounded-full size-5" />
-                                    <span class="text-sm text-primary-600 dark:text-primary-400">Méschac Irung</span>
-                                    <svg class="ml-auto size-4 text-primary-600 dark:text-primary-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                                </div>
-                                <div class="flex items-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-500/10 px-2 py-1 rounded-[calc(var(--card-radius)-4px)]">
-                                    <img src="https://avatars.githubusercontent.com/u/31113941?v=4" alt=" " class="rounded-full size-5" />
-                                    <span class="text-sm">Bernard Ng</span>
-                                </div>
-                                <div class="flex items-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-500/10 px-2 py-1 rounded-[calc(var(--card-radius)-4px)]">
-                                    <img src="https://avatars.githubusercontent.com/u/68236786?v=4" alt=" " class="rounded-full size-5" />
-                                    <span class="text-sm">Théo Balick</span>
-                                </div>
-                                <div class="flex items-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-500/10 px-2 py-1 rounded-[calc(var(--card-radius)-4px)]">
-                                    <span class="size-5 flex">
-                                        <svg class="m-auto size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
-                                    </span>
-                                    <span class="text-sm">Add account</span>
-                                </div>
-                            </div>
-                        </div>
-                        <span class="mt-6 text-caption text-xs flex gap-2 items-center">
-                            <svg class="size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                            Team
-                        </span>
-                        <h3 class="mt-2 text-title text-sm font-medium">Realtime insights</h3>
-                        <p class="text-sm mt-3">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
-                    </div>
-                </div>
-                <div data-rounded="2xlarge" class="py-12 overflow-hidden px-6 border-b col-span-full flex items-center justify-center">
-                    <div class="card relative variant-mixed max-w-xs">
-                        <span class="text-caption text-xs">Great UX</span>
-                        <h3 class="mt-2 text-title text-sm font-medium">Realtime insights</h3>
-                        <p class="text-sm mt-3">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
-
-                        <div class="mt-16">
-                            <div class="text-caption text-xs">Loading 60%</div>
-                            <div class="mt-3 progress sz-sm relative">
-                                <div class="progress-indicator bg-gradient-to-r from-primary-600 to-accent-500 w-[60%]"></div>
-                            </div>
-                            <div class="w-[60%] blur-sm h-6 bg-gradient-to-b from-accent-500/10 to-transparent"></div>
+                    <div class="col-span-2">
+                        <div class="field w-full max-w-56">
+                            <input type="email" class="input variant-mixed sz-md !border !outline-primary-600" placeholder="Your email" />
                         </div>
                     </div>
-                </div>
-
-                <div data-rounded="2xlarge" class="py-12 overflow-hidden px-6 border-b col-span-full flex items-center justify-center">
-                    <div class="card relative variant-mixed max-w-xs">
-                        <div class="relative mb-6 mt-6">
-                            <div class="absolute top-8 bottom-auto z-10 inset-0 dark:!shadow-xl dark:shadow-gray-950/50 m-auto card variant-mixed p-4 grid items-center gap-2 [grid-template-columns:auto_1fr]">
-                                <div class="avatar sz-sm">
-                                    <img src={THEO_AVATAR} alt="" />
-                                </div>
-                                <div>
-                                    <div class="text-caption text-xs">Théo Balick</div>
-                                    <div class="text-sm">Closed 'tls-html' PR</div>
-                                </div>
-                            </div>
-                            <div class="scale-90 opacity-50 card variant-outlined p-4 grid items-center gap-2 [grid-template-columns:auto_1fr]">
-                                <div class="avatar sz-md">
-                                    <img src={MESCHAC_AVATAR} alt="" />
-                                </div>
-                                <div>
-                                    <div class="text-caption text-xs">Méschac Irung</div>
-                                    <div class="text-sm">Closed 'tls-html' PR</div>
-                                </div>
-                            </div>
-                            <div class="scale-90 opacity-50 card variant-outlined p-4 grid items-center gap-2 [grid-template-columns:auto_1fr]">
-                                <div class="avatar sz-md">
-                                    <img src={BERNARD_AVATAR} alt="" />
-                                </div>
-                                <div>
-                                    <div class="text-caption text-xs">Bernard Ng</div>
-                                    <div class="text-sm">Opened 'tls-react' branch</div>
-                                </div>
-                            </div>
-                        </div>
-                        <span class="text-caption text-xs">Great UX</span>
-                        <h3 class="mt-2 text-title text-sm font-medium">Realtime insights</h3>
-                        <p class="text-sm mt-3">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
-                    </div>
-                </div>
-
-                <div data-rounded="2xlarge" class="py-12 overflow-hidden px-6 border-b col-span-full flex items-center justify-center">
-                    <div class="card relative variant-mixed max-w-xs">
-                        <div class="relative my-6 border-l divide-y">
-                            <div class="py-2">
-                                <div class="h-6 pl-2 w-2/3 bg-gray-400 dark:bg-gray-600 rounded-r-md text-xs flex items-center">Jan 2022</div>
-                            </div>
-                            <div class="py-2">
-                                <div class="h-6 pl-2 w-4/5 bg-gray-200 rounded-r-md text-xs flex items-center text-gray-600">Jun 2022</div>
-                            </div>
-                            <div class="py-2">
-                                <div class="h-6 pl-2 w-1/2 bg-gray-100 dark:bg-gray-800 rounded-r-md text-xs flex items-center">Aug 2022</div>
-                            </div>
-                        </div>
-                        <span class="text-primary-600 dark:text-primary-400 text-xs">Great UX</span>
-                        <h3 class="mt-2 text-title text-sm font-medium">Realtime insights</h3>
-                        <p class="text-sm mt-3">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
-                    </div>
-                </div>
-
-                <div data-rounded="2xlarge" class="py-12 px-6 col-span-full flex items-center justify-center">
-                    <form action="" class="card variant-mixed p-1 w-full max-w-sm">
-                        <div class="p-8">
-                            <div>
-                                <h2 class="mb-1 font-semibold text-title text-xl">Sign In to Tailus UI</h2>
-                                <p class="text-sm">Welcome back! Sign in to continue</p>
-                            </div>
-
-                            <div class="mt-6 grid grid-cols-2 gap-3">
-                                <button class="btn sz-sm variant-outlined intent-gray">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="0.98em" height="1em" viewBox="0 0 256 262">
-                                        <path fill="#4285f4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622l38.755 30.023l2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"></path>
-                                        <path fill="#34a853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055c-34.523 0-63.824-22.773-74.269-54.25l-1.531.13l-40.298 31.187l-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"></path>
-                                        <path fill="#fbbc05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82c0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602z"></path>
-                                        <path fill="#eb4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"></path>
-                                    </svg>
-                                    Google
-                                </button>
-                                <button class="btn sz-sm variant-outlined intent-gray">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
-                                        <path fill="#f1511b" d="M121.666 121.666H0V0h121.666z"></path>
-                                        <path fill="#80cc28" d="M256 121.666H134.335V0H256z"></path>
-                                        <path fill="#00adef" d="M121.663 256.002H0V134.336h121.663z"></path>
-                                        <path fill="#fbbc09" d="M256 256.002H134.335V134.336H256z"></path>
-                                    </svg>
-                                    Microsoft
-                                </button>
-                            </div>
-
-                            <div class="my-8 grid gap-3 items-center [grid-template-columns:1fr_auto_1fr]">
-                                <span class="separator"></span>
-                                <span class="text-sm text-caption">Or</span>
-                                <span class="separator"></span>
-                            </div>
-
-                            <div class="space-y-6">
-                                <div class="field">
-                                    <label for="email2" class="text-title text-sm">Username</label>
-                                    <input type="email" required name="email2" id="email2" class="input sz-md variant-mixed" />
-                                </div>
-
-                                <div class="field">
-                                    <div class="flex justify-between">
-                                        <label for="pwd" class="text-title text-sm">Password</label>
-                                        <a href="" class="link intent-info text-sm variant-ghost">Forgot your Password ?</a>
-                                    </div>
-                                    <input type="password" required name="pwd" id="pwd" class="input sz-md variant-mixed" />
-                                </div>
-
-                                <button class="btn variant-solid intent-primary sz-md w-full">Sign In</button>
-                            </div>
-                        </div>
-
-                        <div data-shade="925" class="card variant-soft dark:!bg-[--ui-bg] rounded-[calc(var(--card-radius)-4px)]">
-                            <p class="text-sm text-center">
-                                Don't have an account ?
-                                <a href="#" class="link intent-neutral variant-underlined">Create account</a>
-                            </p>
-                        </div>
-                    </form>
                 </div>
             </div>
         </Container>
+
+        <div class="border-y border-dashed [--ui-border-color:theme(colors.gray.950/0.15)]">
+            <Container>
+                <div class="relative -mx-4 grid grid-cols-3 divide-x divide-dashed border-x border-dashed [--ui-bg:theme(colors.white/0.5)] dark:-z-10 dark:bg-gray-950/50 dark:[--ui-bg:theme(colors.gray.900)]">
+                    <div class="p-3">
+                        <div class="card variant-mixed ml-auto flex h-full flex-col justify-between !shadow-lg !shadow-gray-950/5">
+                            <div class="mb-6 divide-y divide-dashed border-l">
+                                <div class="py-2">
+                                    <div class="flex h-8 w-2/3 items-center rounded-r-[--btn-radius] border border-l-0 bg-[--ui-bg] pl-2 text-xs">Jan 2022</div>
+                                </div>
+                                <div class="py-2">
+                                    <div class="flex h-8 w-4/5 items-center rounded-r-[--btn-radius] border border-l-0 border-white/5 bg-primary-600 bg-gradient-to-l from-white/15 to-transparent pl-2 text-xs text-white dark:bg-gray-800">Jun 2022</div>
+                                </div>
+                                <div class="py-2">
+                                    <div class="flex h-8 w-1/2 items-center rounded-r-[--btn-radius] border border-l-0 bg-[--ui-bg] pl-2 text-xs">Aug 2022</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-title text-sm font-medium">Realtime insights</h3>
+                                <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="card variant-mixed h-full !shadow-xl !shadow-gray-950/5">
+                            <span class="text-caption text-xs">Great UX</span>
+                            <h3 class="text-title mt-2 text-sm font-medium">Realtime insights</h3>
+                            <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
+
+                            <div class="card variant-outlined mt-12 space-y-3 p-4">
+                                <div class="flex justify-between">
+                                    <div class="text-title flex items-center gap-1.5">
+                                        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2 19v-6q0-.675.275-1.225T3 10.8V8q0-1.25.875-2.125T6 5h4q.575 0 1.075.213T12 5.8q.425-.375.925-.587T14 5h4q1.25 0 2.125.875T21 8v2.8q.45.425.725.975T22 13v6h-2v-2H4v2zm11-9h6V8q0-.425-.288-.712T18 7h-4q-.425 0-.712.288T13 8zm-8 0h6V8q0-.425-.288-.712T10 7H6q-.425 0-.712.288T5 8z"></path></svg>
+                                        <div class="text-sm font-medium">Sleep</div>
+                                    </div>
+                                    <div class="text-caption text-xs">5:45 AM</div>
+                                </div>
+                                <div class="flex items-end justify-between">
+                                    <div class="space-y-1">
+                                        <div class="text-title text-sm font-medium">Time in Bed</div>
+                                        <div class="flex gap-3">
+                                            <div class="-space-x-0.5">
+                                                <span class="text-title align-baseline text-xl font-medium">5</span>
+                                                <span class="text-placeholder text-xs">hr</span>
+                                            </div>
+                                            <div class="-space-x-0.5">
+                                                <span class="text-title align-baseline text-xl font-medium">59</span>
+                                                <span class="text-placeholder text-xs">min</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-end gap-1">
+                                        <div aria-hidden="true" class="h-3 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-5 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-10 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-4 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-6 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-5 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-9 w-1.5 rounded bg-gradient-to-b from-primary-300 to-primary-500"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="card variant-mixed ml-auto h-full !shadow-lg !shadow-gray-950/5">
+                            <div class="relative mb-6 mt-6">
+                                <div class="card variant-mixed absolute inset-0 bottom-auto top-8 z-10 m-auto grid items-center gap-2 p-4 [grid-template-columns:auto_1fr] dark:!shadow-xl dark:shadow-gray-950/50">
+                                    <div class="avatar sz-sm">
+                                        <img src="https://avatars.githubusercontent.com/u/68236786?v=4" alt="" />
+                                    </div>
+                                    <div>
+                                        <div class="text-caption text-xs">Théo Balick</div>
+                                        <div class="text-sm">Closed 'tls-html' PR</div>
+                                    </div>
+                                </div>
+                                <div class="card variant-outlined grid scale-90 items-center gap-2 p-4 opacity-50 [grid-template-columns:auto_1fr]">
+                                    <div class="avatar sz-md">
+                                        <img src="https://avatars.githubusercontent.com/u/47919550?v=4" alt="" />
+                                    </div>
+                                    <div>
+                                        <div class="text-caption text-xs">Méschac Irung</div>
+                                        <div class="text-sm">Closed 'tls-html' PR</div>
+                                    </div>
+                                </div>
+                                <div class="card variant-outlined grid scale-90 items-center gap-2 p-4 opacity-50 [grid-template-columns:auto_1fr]">
+                                    <div class="avatar sz-md">
+                                        <img src="https://avatars.githubusercontent.com/u/31113941?v=4" alt="" />
+                                    </div>
+                                    <div>
+                                        <div class="text-caption text-xs">Bernard Ng</div>
+                                        <div class="text-sm">Opened 'tls-react' branch</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="text-title text-sm font-medium">Realtime insights</h3>
+                            <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
+                        </div>
+                    </div>
+                </div>
+            </Container>
+        </div>
+        <div class="relative [--ui-border-color:theme(colors.gray.950/0.15)]">
+            <Container>
+                <div class="-mx-4 grid grid-cols-5 divide-x divide-dashed border-x border-dashed [--ui-bg:theme(colors.white/0.5)]">
+                    <div class="h-fit border-b border-dashed px-3">
+                        <div class="ml-auto flex h-12 w-fit items-center gap-4">
+                            <div class="avatar sz-xs fallback-soft intent-primary">G</div>
+                            <SeparatorRoot orientation="vertical" className="h-full" />
+                            <div class="avatar sz-xs fallback-solid intent-primary">N</div>
+                            <SeparatorRoot orientation="vertical" className="h-full" />
+                            <div class="avatar sz-xs z-10">
+                                <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-4 p-3">
+                        <div class="card variant-mixed w-full overflow-auto !shadow-xl !shadow-gray-950/5 lg:overflow-clip">
+                            <div class="mb-6">
+                                <h2 class="text-title font-medium">Customers</h2>
+                                <p class="mt-1 text-sm">New users by First user primary channel group (Default Channel Group)</p>
+                            </div>
+                            <table class="-mb-4 w-max table-auto border-collapse [--ui-border-color:theme(colors.gray.950/0.05)] lg:w-full dark:[--ui-border-color:theme(colors.gray.700/0.25)] dark:[--ui-soft-bg:var(--ui-bg)]" data-rounded="medium">
+                                <thead class="text-title sticky top-0 bg-gray-950/5 dark:bg-gray-925">
+                                    <tr class="*:p-3 *:text-left *:text-sm *:font-medium">
+                                        <th class="rounded-l-[--card-radius]">#</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Customer</th>
+                                        <th class="rounded-r-[--card-radius]">Revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm">
+                                    <tr class="*:border-b *:p-3">
+                                        <td>1</td>
+                                        <td>10/31/2023</td>
+                                        <td><span class="badge variant-soft sz-xs intent-success">Paid</span></td>
+                                        <td>
+                                            <div class="text-title flex items-center gap-2">
+                                                <div class="avatar sz-xxs">
+                                                    <img src={BERNARD_AVATAR} alt="Bernard Ng" width="" height="" />
+                                                </div>
+                                                <span>Bernard Ng</span>
+                                            </div>
+                                        </td>
+                                        <td>$43.99</td>
+                                    </tr>
+                                    <tr class="*:border-b *:p-3">
+                                        <td>2</td>
+                                        <td>10/21/2023</td>
+                                        <td><span class="badge variant-soft sz-xs intent-gray line-clamp-1">Ref</span></td>
+                                        <td>
+                                            <div class="text-title flex items-center gap-2">
+                                                <div class="avatar sz-xxs">
+                                                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                                                </div>
+                                                <span>Méschac Irung</span>
+                                            </div>
+                                        </td>
+                                        <td>$19.99</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </Container>
+        </div>
+    </section>
+    <section class="relative bg-white py-16 dark:bg-gray-950">
+        <Container>
+            <div class="grid grid-cols-2 gap-x-4 gap-y-6 lg:grid-cols-3 lg:gap-x-12">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5"> <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"></path></svg>
+                        <h3 class="text-title text-sm">Personalized Workouts</h3>
+                    </div>
+                    <p class="mt-4 text-sm">Get customized workout plans tailored to your fitness goals and preferences.</p>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5"> <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"></path></svg>
+                        <h3 class="text-title text-sm">Nutrition Plans</h3>
+                    </div>
+                    <p class="mt-4 text-sm">Access meal plans and nutrition advice to complement your fitness routine.</p>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5"> <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-2.25-1.313M21 7.5v2.25m0-2.25-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3 2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75 2.25-1.313M12 21.75V19.5m0 2.25-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"></path></svg>
+                        <h3 class="text-title text-sm">Progress Tracking</h3>
+                    </div>
+                    <p class="mt-4 text-sm">Monitor your fitness journey with detailed progress tracking and analytics.</p>
+                </div>
+            </div>
+        </Container>
+    </section>
+    <section class="relative z-[9] mx-auto -mt-24 hidden overflow-hidden bg-gray-50 pb-16 dark:bg-gray-950 dark:bg-gradient-to-t dark:from-gray-925 dark:to-transparent">
+        <div class="absolute inset-x-0 -bottom-1 z-[4] hidden h-1/4 bg-gradient-to-t from-white dark:from-gray-950"></div>
+        <svg class="absolute inset-0 z-[2] mx-auto w-full border text-secondary-200 blur-3xl dark:hidden dark:text-white/10" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
+        </svg>
+        <svg class="absolute inset-0 z-[2] m-auto w-1/2 border text-yellow-400 blur-3xl dark:hidden dark:text-white/5" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
+        </svg>
+        <div class="absolute inset-x-0 bottom-20 z-[4] mx-auto w-fit">
+            <div class="*:bg-ui flex divide-x border *:p-4 dark:*:bg-gray-950">
+                <div>
+                    <HTMLIcon />
+                </div>
+                <div>
+                    <AstroIcon />
+                </div>
+                <div>
+                    <NextIcon />
+                </div>
+                <div>
+                    <NuxtIcon />
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 z-[3] h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:hidden dark:opacity-5"></div>
+        <div class="absolute inset-0 z-[4] max-h-96 bg-[radial-gradient(ellipse_80%_90%_at_20%_-5%,var(--bg-color),theme(colors.transparent))] duration-300 [--bg-color:theme(colors.gray.50)] dark:hidden dark:[--bg-color:theme(colors.gray.950)]"></div>
+        <div class="relative z-10 mx-auto flex max-w-[84rem] translate-x-12 items-end gap-4 px-6 [--ui-bg:theme(colors.white/0.75)] [--ui-border-color:theme(colors.gray.950/0.10)] dark:[--ui-bg:theme(colors.gray.900)] dark:dark:[--ui-border-color:theme(colors.gray.800)]">
+            <div class="h-max w-[20%] space-y-4">
+                <div class="ml-auto flex h-12 w-fit items-center gap-2 rounded-[calc(var(--avatar-radius)+8px)] border px-2">
+                    <div class="avatar sz-xs fallback-soft intent-gray">G</div>
+                    <SeparatorRoot orientation="vertical" className="h-full" />
+                    <div class="avatar sz-xs fallback-solid intent-gray">N</div>
+                    <SeparatorRoot orientation="vertical" className="h-full" />
+                    <div class="avatar sz-xs z-10">
+                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                    </div>
+                </div>
+
+                <div class="rounded-card relative z-10 ml-auto flex h-12 w-fit items-center gap-4 rounded-l-[calc(var(--btn-radius)+8px)] border pl-2 pr-4">
+                    <button class="btn variant-solid sz-xs intent-primary">Button</button>
+                    <SeparatorRoot orientation="vertical" className="h-full" />
+                    <label for="r1" class="radio group rounded-full">
+                        <input class="peer" type="radio" id="r1" name="radio1" />
+                        <span class="radio-indicator"> </span>
+                    </label>
+                    <SeparatorRoot orientation="vertical" className="h-full" />
+                    <label for="c1" class="checkbox group">
+                        <input class="peer" type="checkbox" id="c1" name="checkbox1" />
+                        <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </label>
+                    <SeparatorRoot orientation="vertical" className="h-full" />
+                    <label for="sw1" class="switch intent-primary">
+                        <input checked class="peer" type="checkbox" id="sw1" name="switch1" />
+                        <span class="switch-thumb"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="w-[28%] space-y-4">
+                <div class="relative ml-auto hidden w-1/2">
+                    <label title="Click to upload" for="button2" class="before:bg-ui-soft dark:before:bg-ui before:rounded-card group flex cursor-pointer items-center justify-center gap-4 px-6 py-4 before:absolute before:inset-0 before:border before:border-dashed before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
+                        <div class="relative w-max">
+                            <CloudUpload />
+                        </div>
+                        <div class="relative">
+                            <span class="text-title relative block text-sm font-medium group-hover:text-primary-500 dark:text-white"> Upload a file</span>
+                            <span class="text-caption mt-0.5 block text-xs">Max 2 MB</span>
+                        </div>
+                    </label>
+                    <input hidden type="file" name="button2" id="button2" />
+                </div>
+                <form data-rounded="medium" class="flex justify-end gap-3">
+                    <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="x">
+                        <input type="radio" id="x" name="size" hidden />
+                        X
+                    </label>
+                    <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="small">
+                        <input type="radio" id="small" name="size" hidden />
+                        S
+                    </label>
+                    <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="medium">
+                        <input type="radio" id="medium" checked name="size" hidden />
+                        M
+                    </label>
+                    <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="large">
+                        <input type="radio" id="large" name="size" hidden />
+                        L
+                    </label>
+                    <label class="field btn variant-outlined icon-only intent-gray sz-md has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="xlarge">
+                        <input type="radio" id="xlarge" name="size" hidden />
+                        XL
+                    </label>
+                </form>
+                <div class="card variant-mixed group relative p-2 !shadow-xl !shadow-gray-950/5">
+                    <div class="grid gap-2 [grid-template-columns:auto_1fr]">
+                        <div class="relative h-40 w-32 overflow-hidden rounded-[calc(var(--card-radius)-8px)] border before:absolute before:inset-0 before:z-[1] before:bg-gray-100 before:mix-blend-darken">
+                            <Image class="size-full object-cover" src="https://ui.tailus.io/images/store/dress.webp" alt="Dress Product" width="500" height="500" />
+                        </div>
+                        <div class="p-3">
+                            <div class="text-title font-medium">Clein Black Dress</div>
+                            <p class="mt-1.5 line-clamp-1 text-sm">Amet consectetur adipisicing In odit</p>
+                            <div class="item-center mt-6 flex">
+                                <svg class="h-5 w-5 fill-current text-gray-700 dark:text-gray-300" viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"></path>
+                                </svg>
+                                <svg class="h-5 w-5 fill-current text-gray-700 dark:text-gray-300" viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"></path>
+                                </svg>
+                                <svg class="h-5 w-5 fill-current text-gray-700 dark:text-gray-300" viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"></path>
+                                </svg>
+                                <svg class="h-5 w-5 fill-current text-gray-500" viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"></path>
+                                </svg>
+                                <svg class="h-5 w-5 fill-current text-gray-500" viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"></path>
+                                </svg>
+                            </div>
+                            <div class="item-center mt-2 flex justify-between">
+                                <span class="text-title text-lg font-medium">$220</span>
+                                <button class="btn variant-soft sz-sm intent-gray">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[20%]">
+                <form class="w-full max-w-xs space-y-4">
+                    <label class="field card variant-mixed hover:variant-soft has-[:checked]:variant-outlined block px-4 py-3 !shadow-xl !shadow-gray-950/5 [--icon-display:none] has-[:checked]:outline has-[:checked]:outline-2 has-[:checked]:outline-primary-600 has-[:checked]:[--icon-display:block]" for="personal2">
+                        <input type="radio" id="personal2" name="plan" hidden />
+                        <div class="flex justify-between">
+                            <p class="text-title text-sm font-medium">4-Core CPU</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-primary-600 [display:var(--icon-display)]">
+                                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <p class="text-caption mt-1 text-sm">For personal projects</p>
+                        <p class="text-body mt-4 text-sm">$9.99</p>
+                    </label>
+
+                    <label class="field card variant-mixed hover:variant-soft has-[:checked]:variant-outlined block px-4 py-3 !shadow-xl !shadow-gray-950/5 [--icon-display:none] has-[:checked]:outline has-[:checked]:outline-2 has-[:checked]:outline-primary-600 has-[:checked]:[--icon-display:block]" for="business2">
+                        <input type="radio" id="business2" checked name="plan" hidden />
+                        <div class="flex justify-between">
+                            <p class="text-title text-sm font-medium">6-Core CPU</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-primary-600 [display:var(--icon-display)]">
+                                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <p class="text-caption mt-1 text-sm">For startups and businesses</p>
+                        <p class="text-body mt-4 text-sm">$39.99</p>
+                    </label>
+
+                    <label class="field card variant-mixed hover:variant-soft has-[:checked]:variant-outlined block px-4 py-3 !shadow-xl !shadow-gray-950/5 [--icon-display:none] has-[:checked]:outline has-[:checked]:outline-2 has-[:checked]:outline-primary-600 has-[:checked]:[--icon-display:block]" for="org2">
+                        <input type="radio" id="org2" name="plan" hidden />
+                        <div class="flex justify-between">
+                            <p class="text-title text-sm font-medium">8-Core CPU</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-primary-600 [display:var(--icon-display)]">
+                                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <p class="text-caption mt-1 text-sm">For large organizations</p>
+                        <p class="text-body mt-4 text-sm">$99.99</p>
+                    </label>
+                </form>
+            </div>
+            <div class="w-[22%] space-y-4">
+                <div class="card variant-mixed !shadow-xl !shadow-gray-950/5">
+                    <span class="text-caption text-xs">Great UX</span>
+                    <h3 class="text-title mt-2 text-sm font-medium">Realtime insights</h3>
+                    <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
+
+                    <div class="card variant-outlined mt-12 space-y-3 p-4">
+                        <div class="flex justify-between">
+                            <div class="text-title flex items-center gap-1.5">
+                                <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2 19v-6q0-.675.275-1.225T3 10.8V8q0-1.25.875-2.125T6 5h4q.575 0 1.075.213T12 5.8q.425-.375.925-.587T14 5h4q1.25 0 2.125.875T21 8v2.8q.45.425.725.975T22 13v6h-2v-2H4v2zm11-9h6V8q0-.425-.288-.712T18 7h-4q-.425 0-.712.288T13 8zm-8 0h6V8q0-.425-.288-.712T10 7H6q-.425 0-.712.288T5 8z"></path></svg>
+                                <div class="text-sm font-medium">Sleep</div>
+                            </div>
+                            <div class="text-caption text-xs">5:45 AM</div>
+                        </div>
+                        <div class="flex items-end justify-between">
+                            <div class="space-y-1">
+                                <div class="text-title text-sm font-medium">Time in Bed</div>
+                                <div class="flex gap-3">
+                                    <div class="-space-x-0.5">
+                                        <span class="text-title align-baseline text-xl font-medium">5</span>
+                                        <span class="text-placeholder text-xs">hr</span>
+                                    </div>
+                                    <div class="-space-x-0.5">
+                                        <span class="text-title align-baseline text-xl font-medium">59</span>
+                                        <span class="text-placeholder text-xs">min</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-end gap-1">
+                                <div aria-hidden="true" class="h-3 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                <div aria-hidden="true" class="h-5 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                <div aria-hidden="true" class="h-10 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                <div aria-hidden="true" class="h-4 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                <div aria-hidden="true" class="h-6 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                <div aria-hidden="true" class="h-5 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                <div aria-hidden="true" class="h-9 w-1.5 rounded bg-gradient-to-b from-primary-300 to-primary-500"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card variant-mixed group relative p-2 !shadow-xl !shadow-gray-950/5">
+                    <div class="grid gap-2 [grid-template-columns:auto_1fr]">
+                        <div class="relative w-24 overflow-hidden rounded-[calc(var(--card-radius)-8px)] before:absolute before:inset-0 before:bg-gray-500/50 before:mix-blend-overlay dark:before:bg-gray-500">
+                            <Image class="size-full object-cover" src={podcastCover} alt="Yves Kalume" />
+                        </div>
+                        <div class="p-3">
+                            <div class="title font-medium">Devcast podcast</div>
+                            <p class="mt-px line-clamp-1 text-sm">Freelancer in DR Congo</p>
+                            <div data-rounded="full" class="mt-4 flex gap-2">
+                                <button aria-label="prev" class="btn icon-only variant-soft sz-sm intent-gray border">
+                                    <FastForward className="size-4 rotate-180" />
+                                </button>
+                                <button aria-label="play" class="btn icon-only variant-soft sz-sm intent-gray border">
+                                    <Play className="size-4" />
+                                </button>
+                                <button aria-label="forward" class="btn icon-only variant-soft sz-sm intent-gray border">
+                                    <FastForward className="size-4" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative z-[3] mx-auto mt-4 flex max-w-[84rem] -translate-x-20 justify-end gap-4 px-6 [--ui-bg:theme(colors.white/0.8)] [--ui-border-color:theme(colors.gray.950/0.10)] dark:[--ui-bg:theme(colors.gray.900)] dark:dark:[--ui-border-color:theme(colors.gray.800)]">
+            <div class="w-[22%]">
+                <div class="card variant-mixed relative ml-auto !shadow-lg !shadow-gray-950/5">
+                    <div class="relative mb-6 divide-y divide-dashed border-l">
+                        <div class="py-2">
+                            <div class="flex h-8 w-2/3 items-center rounded-r-[--btn-radius] border border-l-0 bg-[--ui-bg] pl-2 text-xs">Jan 2022</div>
+                        </div>
+                        <div class="py-2">
+                            <div class="flex h-8 w-4/5 items-center rounded-r-[--btn-radius] border border-l-0 border-white/5 bg-primary-600 bg-gradient-to-l from-white/15 to-transparent pl-2 text-xs text-white dark:bg-gray-800">Jun 2022</div>
+                        </div>
+                        <div class="py-2">
+                            <div class="flex h-8 w-1/2 items-center rounded-r-[--btn-radius] border border-l-0 bg-[--ui-bg] pl-2 text-xs">Aug 2022</div>
+                        </div>
+                    </div>
+                    <h3 class="text-title text-sm font-medium">Realtime insights</h3>
+                    <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
+                </div>
+            </div>
+            <div class="w-[42%]">
+                <div class="card variant-mixed w-full overflow-auto !shadow-xl !shadow-gray-950/5 lg:overflow-clip">
+                    <div class="mb-6">
+                        <h2 class="text-title font-medium">Customers</h2>
+                        <p class="mt-1 text-sm">New users by First user primary channel group (Default Channel Group)</p>
+                    </div>
+                    <table class="w-max table-auto border-collapse [--ui-border-color:theme(colors.gray.950/0.05)] lg:w-full dark:[--ui-border-color:theme(colors.gray.700/0.25)] dark:[--ui-soft-bg:var(--ui-bg)]" data-rounded="medium">
+                        <thead class="text-title sticky top-0 bg-gray-950/5 dark:bg-gray-925">
+                            <tr class="*:p-3 *:text-left *:text-sm *:font-medium">
+                                <th class="rounded-l-[--card-radius]">#</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Customer</th>
+                                <th class="rounded-r-[--card-radius]">Revenue</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="*:border-b *:p-3">
+                                <td>1</td>
+                                <td>10/31/2023</td>
+                                <td><span class="badge variant-soft sz-xs intent-success">Paid</span></td>
+                                <td>
+                                    <div class="text-title flex items-center gap-2">
+                                        <div class="avatar sz-xxs">
+                                            <img src={BERNARD_AVATAR} alt="Bernard Ng" width="" height="" />
+                                        </div>
+                                        <span>Bernard Ng</span>
+                                    </div>
+                                </td>
+                                <td>$43.99</td>
+                            </tr>
+                            <tr class="*:border-b *:p-3">
+                                <td>2</td>
+                                <td>10/21/2023</td>
+                                <td><span class="badge variant-soft sz-xs intent-gray line-clamp-1">Ref</span></td>
+                                <td>
+                                    <div class="text-title flex items-center gap-2">
+                                        <div class="avatar sz-xxs">
+                                            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                                        </div>
+                                        <span>Méschac Irung</span>
+                                    </div>
+                                </td>
+                                <td>$19.99</td>
+                            </tr>
+                            <tr class="*:border-b *:p-3">
+                                <td>3</td>
+                                <td>05/21/2023</td>
+                                <td><span class="badge variant-soft sz-xs intent-danger line-clamp-1">Can</span></td>
+                                <td>
+                                    <div class="text-title flex items-center gap-2">
+                                        <div class="avatar sz-xxs">
+                                            <img src={THEO_AVATAR} alt="Théo Balick" width="" height="" />
+                                        </div>
+                                        <span>Théo Balick</span>
+                                    </div>
+                                </td>
+                                <td>$59.99</td>
+                            </tr>
+                            <tr class="*:border-b *:p-3">
+                                <td>4</td>
+                                <td>09/21/2024</td>
+                                <td><span class="badge variant-soft sz-xs intent-success line-clamp-1">Paid</span></td>
+                                <td>
+                                    <div class="text-title flex items-center gap-2">
+                                        <div class="avatar sz-xxs">
+                                            <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                                        </div>
+                                        <span>Méschac Irung</span>
+                                    </div>
+                                </td>
+                                <td>$39.99</td>
+                            </tr>
+                            <tr class="*:p-3">
+                                <td>5</td>
+                                <td>05/21/2023</td>
+                                <td><span class="badge variant-soft sz-xs intent-gray line-clamp-1">Ref</span></td>
+                                <td>
+                                    <div class="text-title flex items-center gap-2">
+                                        <div class="avatar sz-xxs">
+                                            <img src={GLODIE_AVATAR} alt="Glodie Lukose" width="" height="" />
+                                        </div>
+                                        <span>Glodie Lukose</span>
+                                    </div>
+                                </td>
+
+                                <td>$29.99</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="-mr-12 h-max w-[28%]">
+                <div class="card variant-mixed hidden space-y-4 !shadow-xl !shadow-gray-950/5">
+                    <div class="flex items-end justify-between">
+                        <span class="text-title">Setup Assistant</span>
+                        <span class="text-caption text-sm">66% Completed</span>
+                    </div>
+                    <div class="progress sz-md w-full" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+                        <div class="progress-indicator intent-primary w-[66%]"></div>
+                    </div>
+                </div>
+                <form action="" class="card variant-mixed p-1 !shadow-xl !shadow-gray-950/5">
+                    <div class="p-8">
+                        <div>
+                            <h2 class="text-title mb-1 text-xl font-semibold">Sign In to Tailus UI</h2>
+                            <p class="text-sm">Welcome back! Sign in to continue</p>
+                        </div>
+
+                        <div class="mt-6">
+                            <button class="btn sz-md variant-outlined intent-gray w-full gap-3.5 !text-sm font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="0.98em" height="1em" viewBox="0 0 256 262">
+                                    <path fill="#4285f4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622l38.755 30.023l2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"></path>
+                                    <path fill="#34a853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055c-34.523 0-63.824-22.773-74.269-54.25l-1.531.13l-40.298 31.187l-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"></path>
+                                    <path fill="#fbbc05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82c0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602z"></path>
+                                    <path fill="#eb4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"></path>
+                                </svg>
+                                Continue With Google
+                            </button>
+                        </div>
+
+                        <div class="mb-4 mt-6 grid items-center gap-3 [grid-template-columns:1fr_auto_1fr]">
+                            <span class="separator"></span>
+                            <span class="text-caption text-sm">Or</span>
+                            <span class="separator"></span>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="field">
+                                <label for="email2" class="text-title text-sm">Username</label>
+                                <input type="email" required name="email2" id="email2" class="input sz-md variant-mixed" />
+                            </div>
+
+                            <div class="field">
+                                <div class="flex justify-between">
+                                    <label for="pwd" class="text-title text-sm">Password</label>
+                                    <a href="#" class="link intent-info variant-ghost text-sm">Forgot your Password ?</a>
+                                </div>
+                                <input type="password" required name="pwd" id="pwd" class="input sz-md variant-mixed" />
+                            </div>
+
+                            <button class="btn variant-solid intent-primary sz-md w-full">Sign In</button>
+                        </div>
+                    </div>
+
+                    <div data-shade="925" class="card variant-soft rounded-[calc(var(--card-radius)-4px)] dark:!bg-[--ui-bg]">
+                        <p class="text-center text-sm">Don't have an account ?<a href="#" class="link intent-neutral variant-underlined">Create account</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="semantic" class="relative scroll-my-20 bg-white pt-32 dark:bg-gray-950">
+        <Container>
+            <div class="grid max-w-3xl space-y-8">
+                <h2 class="text-title text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">Less repetition, <br /> Faster Development</h2>
+                <div class="mt-2 max-w-xl space-y-6">
+                    <p class="text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis repetition, Faster Development voluptatem accusantium nemo perspiciatis</span> delectus atque autem!</p>
+                </div>
+            </div>
+        </Container>
+        <div class="relative mt-16">
+            <div class="h-12 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:8px_8px] dark:opacity-5"></div>
+            <div class="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-white dark:from-gray-950"></div>
+
+            <div class="relative border-t bg-gray-50 pb-56 dark:bg-gray-950">
+                <Container>
+                    <div class="-mx-4">
+                        <CodeComparason client:idle />
+                    </div>
+                </Container>
+            </div>
+        </div>
+    </section>
+    <section id="customization" class="relative scroll-my-32">
+        <Container>
+            <div class="grid grid-cols-2">
+                <h2 class="text-title text-balance pr-12 text-3xl font-semibold md:text-4xl lg:text-5xl"><span class="opacity-50">Built with</span> Customization <span class="opacity-50">In Mind</span></h2>
+                <div class="mt-2 space-y-6">
+                    <p class="text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis voluptatem accusantium nemo perspiciatis</span> delectus atque autem! repellat expedita consequatur! atque doloremque!</p>
+                    <a href="" class="btn variant-soft intent-gray sz-sm !text-title w-fit !bg-gray-200/50 dark:!bg-gray-800">Browse Blocks</a>
+                </div>
+            </div>
+        </Container>
+
+        <Container>
+            <div data-shade="950" class="relative -mx-4 mt-16">
+                <svg class="absolute inset-0 mx-auto w-full border text-secondary-100 blur-3xl dark:text-white/5" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
+                </svg>
+                <svg class="absolute inset-0 m-auto w-2/3 border text-primary-200 blur-3xl dark:text-primary-500/15" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
+                </svg>
+                <div class="relative grid grid-cols-6 divide-x divide-y divide-dashed border-b border-r border-dashed *:relative *:flex *:h-40 *:items-center *:justify-center *:border-dashed dark:bg-gray-950/25">
+                    <div class="border-l border-t">
+                        <div class="flex gap-3">
+                            <span class="badge sz-sm variant-soft intent-primary">Badge</span>
+                            <span class="badge sz-sm variant-outlined intent-primary">Badge</span>
+                        </div>
+                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Badge</span>
+                    </div>
+                    <div>
+                        <button class="btn variant-solid intent-primary sz-sm">Button</button>
+                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Button</span>
+                    </div>
+                    <div class="col-span-2">
+                        <a href="#" class="annonce variant-mixed sz-sm mx-auto w-fit gap-2">
+                            <span class="annonce-concern sz-xs variant-solid intent-primary">New</span>
+                            <span class="text-title text-sm">Introduction Tailus UI Html</span>
+                        </a>
+                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Annonce</span>
+                    </div>
+                    <div>
+                        <div class="field">
+                            <label for="c2" class="checkbox group">
+                                <input class="peer" type="checkbox" id="c2" name="checkbox1" />
+                                <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                            </label>
+                        </div>
+                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Checkbox</span>
+                    </div>
+                    <div>
+                        <label for="r2" class="radio group rounded-full">
+                            <input class="peer" type="radio" id="r2" name="radio2" />
+                            <span class="radio-indicator"> </span>
+                        </label>
+                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Radio Group</span>
+                    </div>
+                    <div>
+                        <form class="flex gap-3">
+                            <label class="field btn variant-outlined icon-only intent-gray sz-sm has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="small2">
+                                <input type="radio" id="small2" name="size2" hidden />
+                                S
+                            </label>
+                            <label class="field btn variant-outlined icon-only intent-gray sz-sm has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="medium2">
+                                <input type="radio" id="medium2" checked name="size2" hidden />
+                                M
+                            </label>
+                            <label class="field btn variant-outlined icon-only intent-gray sz-sm has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="large2">
+                                <input type="radio" id="large2" name="size2" hidden />
+                                L
+                            </label>
+                        </form>
+                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Radio Card</span>
+                    </div>
+                    <div class="col-span-2">
+                        <div class="field w-full max-w-56">
+                            <input type="email" class="input variant-mixed sz-md !border !outline-primary-600" placeholder="Your email" />
+                        </div>
+                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Input</span>
+                    </div>
+                    <div class="col-span-2">
+                        <div class="progress sz-md w-56" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
+                            <div class="progress-indicator intent-primary w-[66%]"></div>
+                        </div>
+                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Progress</span>
+                    </div>
+                    <div>
+                        <label for="sw2" class="switch intent-primary">
+                            <input checked class="peer" type="checkbox" id="sw2" name="switch2" />
+                            <span class="switch-thumb"></span>
+                        </label>
+                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Switch</span>
+                    </div>
+                </div>
+                <div class="relative grid grid-cols-3 divide-x divide-dashed border-x border-b border-dashed [--ui-bg:theme(colors.white/0.75)] dark:-z-10 dark:bg-gray-950/50 dark:[--ui-bg:theme(colors.gray.950)]">
+                    <div class="p-6">
+                        <div class="card variant-mixed ml-auto flex h-full flex-col justify-between !shadow-lg !shadow-gray-950/5">
+                            <div class="mb-6 divide-y divide-dashed border-l">
+                                <div class="py-2">
+                                    <div class="flex h-8 w-2/3 items-center rounded-r-[--btn-radius] border border-l-0 bg-[--ui-bg] pl-2 text-xs">Jan 2022</div>
+                                </div>
+                                <div class="py-2">
+                                    <div class="flex h-8 w-4/5 items-center rounded-r-[--btn-radius] border border-l-0 border-white/5 bg-primary-600 bg-gradient-to-l from-white/15 to-transparent pl-2 text-xs text-white dark:bg-gray-800">Jun 2022</div>
+                                </div>
+                                <div class="py-2">
+                                    <div class="flex h-8 w-1/2 items-center rounded-r-[--btn-radius] border border-l-0 bg-[--ui-bg] pl-2 text-xs">Aug 2022</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-title text-sm font-medium">Realtime insights</h3>
+                                <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="card variant-mixed h-full !shadow-xl !shadow-gray-950/5">
+                            <span class="text-caption text-xs">Great UX</span>
+                            <h3 class="text-title mt-2 text-sm font-medium">Realtime insights</h3>
+                            <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
+
+                            <div class="card variant-outlined mt-12 space-y-3 p-4">
+                                <div class="flex justify-between">
+                                    <div class="text-title flex items-center gap-1.5">
+                                        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2 19v-6q0-.675.275-1.225T3 10.8V8q0-1.25.875-2.125T6 5h4q.575 0 1.075.213T12 5.8q.425-.375.925-.587T14 5h4q1.25 0 2.125.875T21 8v2.8q.45.425.725.975T22 13v6h-2v-2H4v2zm11-9h6V8q0-.425-.288-.712T18 7h-4q-.425 0-.712.288T13 8zm-8 0h6V8q0-.425-.288-.712T10 7H6q-.425 0-.712.288T5 8z"></path></svg>
+                                        <div class="text-sm font-medium">Sleep</div>
+                                    </div>
+                                    <div class="text-caption text-xs">5:45 AM</div>
+                                </div>
+                                <div class="flex items-end justify-between">
+                                    <div class="space-y-1">
+                                        <div class="text-title text-sm font-medium">Time in Bed</div>
+                                        <div class="flex gap-3">
+                                            <div class="-space-x-0.5">
+                                                <span class="text-title align-baseline text-xl font-medium">5</span>
+                                                <span class="text-placeholder text-xs">hr</span>
+                                            </div>
+                                            <div class="-space-x-0.5">
+                                                <span class="text-title align-baseline text-xl font-medium">59</span>
+                                                <span class="text-placeholder text-xs">min</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-end gap-1">
+                                        <div aria-hidden="true" class="h-3 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-5 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-10 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-4 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-6 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-5 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
+                                        <div aria-hidden="true" class="h-9 w-1.5 rounded bg-gradient-to-b from-primary-300 to-primary-500"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="card variant-mixed ml-auto h-full !shadow-lg !shadow-gray-950/5">
+                            <div class="relative mb-6 mt-6">
+                                <div class="card variant-mixed absolute inset-0 bottom-auto top-8 z-10 m-auto grid items-center gap-2 p-4 [grid-template-columns:auto_1fr] dark:!shadow-xl dark:shadow-gray-950/50">
+                                    <div class="avatar sz-sm">
+                                        <img src="https://avatars.githubusercontent.com/u/68236786?v=4" alt="" />
+                                    </div>
+                                    <div>
+                                        <div class="text-caption text-xs">Théo Balick</div>
+                                        <div class="text-sm">Closed 'tls-html' PR</div>
+                                    </div>
+                                </div>
+                                <div class="card variant-outlined grid scale-90 items-center gap-2 p-4 opacity-50 [grid-template-columns:auto_1fr]">
+                                    <div class="avatar sz-md">
+                                        <img src="https://avatars.githubusercontent.com/u/47919550?v=4" alt="" />
+                                    </div>
+                                    <div>
+                                        <div class="text-caption text-xs">Méschac Irung</div>
+                                        <div class="text-sm">Closed 'tls-html' PR</div>
+                                    </div>
+                                </div>
+                                <div class="card variant-outlined grid scale-90 items-center gap-2 p-4 opacity-50 [grid-template-columns:auto_1fr]">
+                                    <div class="avatar sz-md">
+                                        <img src="https://avatars.githubusercontent.com/u/31113941?v=4" alt="" />
+                                    </div>
+                                    <div>
+                                        <div class="text-caption text-xs">Bernard Ng</div>
+                                        <div class="text-sm">Opened 'tls-react' branch</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="text-title text-sm font-medium">Realtime insights</h3>
+                            <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Container>
+    </section>
+    <section class="relative bg-white pt-32 dark:bg-transparent">
+        <Container>
+            <div class="mb-20 grid grid-cols-2 gap-12">
+                <h2 class="text-title text-balance text-3xl font-semibold md:text-4xl lg:text-5xl"><span class="opacity-50">Modern, Responsive and accessible</span> UI Blocks.</h2>
+                <div class="mt-2 space-y-6">
+                    <p class="text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis voluptatem accusantium nemo perspiciatis</span> delectus atque autem! repellat expedita consequatur! atque doloremque!</p>
+                    <div class="space-y-6">
+                        <p class="text-lg">Adipisicing elit. <span class="text-title font-medium">Accusantium nemo perspiciatis</span></p>
+                        <a href="" class="btn variant-soft intent-gray sz-sm !text-title w-fit !bg-gray-200/50 dark:!bg-gray-800">Browse Blocks</a>
+                    </div>
+                </div>
+            </div>
+        </Container>
+
+        <BlockPreview forHome title="Hero1" src="https://framer.university/" code={hero1Code} client:visible />
+    </section>
+
+    <section class="relative bg-white pb-32 dark:bg-transparent">
+        <Container>
+            <div class="mb-20">
+                <h2 class="text-title max-w-3xl text-balance text-3xl font-bold md:text-4xl lg:text-5xl"><span class="opacity-50">Build even faster with</span> premium<span class="opacity-50">,</span> conversion-oriented <span class="opacity-50">TailwindCSS templates</span></h2>
+                <div class="mt-12 max-w-3xl space-y-6">
+                    <p class="text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis voluptatem accusantium nemo perspiciatis</span> delectus atque autem! repellat expedita consequatur! atque doloremque!</p>
+                    <a href="" class="btn variant-soft intent-gray sz-sm !text-title w-fit !bg-gray-200/50 dark:!bg-gray-800">Browse Templates</a>
+                </div>
+            </div>
+        </Container>
+        <div class="border-t border-dashed">
+            <Container>
+                <div class="-ml-4 grid grid-cols-4 gap-8 border-x pl-4">
+                    <div class="flex flex-col justify-between pb-16 pt-8">
+                        <div>
+                            <h3 class="text-title font-medium">Oxymor ST</h3>
+                            <p class="mt-4 text-sm">Customizable landing page template for showcasing products, apps, or services. It features a modern and polished design.</p>
+                        </div>
+                        <h4 class="text-title font-medium">$39.99</h4>
+                        <div>
+                            <h4 class="text-title font-medium">What's Included</h4>
+                            <div class="mt-4 space-y-3">
+                                <div class="flex items-center gap-2.5">
+                                    <HTMLIcon className="h-4" />
+                                    <span class="text-title text-sm">HTML Template</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <AstroIcon className="h-4" />
+                                    <span class="text-title text-sm">Astro Template</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative col-span-3 pb-12 pt-4">
+                        <div class="absolute inset-0 w-1/3 border-x border-dashed opacity-50"></div>
+                        <div class="absolute inset-y-0 right-0 ml-auto w-1/3 border-l border-dashed opacity-50"></div>
+                        <div class="rounded-card relative -mx-0.5 grid aspect-video overflow-hidden border shadow-lg shadow-gray-950/5">
+                            <img class="size-full object-cover object-top" src="https://lemonsqueezy.imgix.net/media/10852/25b0784a-443c-4f04-909b-56fdc9ad4e19.png?ixlib=php-3.3.1&s=da7b864049ee235330eb4d410e8dfee4" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </Container>
+        </div>
+        <div class="border-t border-dashed">
+            <Container>
+                <div class="grid grid-cols-4"></div>
+            </Container>
+        </div>
     </section>
 </Layout>

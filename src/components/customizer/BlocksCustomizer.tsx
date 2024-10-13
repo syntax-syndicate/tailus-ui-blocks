@@ -15,7 +15,7 @@ import { useMedia } from 'use-media'
 
 const radioItem = 'relative rounded-[calc(var(--btn-radius)-3px)] delay-75 duration-300 flex items-center justify-center h-8 px-2.5 gap-2 text-[--caption-text-color] transition-[color] hover:text-[--body-text-color] data-[state=checked]:scale-95 transition-transform will-change data-[state=checked]:text-[--title-text-color]'
 
-export default function BlocksCustomizer() {
+export default function BlocksCustomizer({ global = false }: { global?: boolean }) {
     const [theme, setTheme] = useState<'light' | 'dark'>('dark')
     const [isActive, setIsActive] = useState(false)
     const customizerRef = useRef<HTMLDivElement>(null)
@@ -140,21 +140,21 @@ export default function BlocksCustomizer() {
                                     <Palette className="size-4 opacity-50" />
                                     Palette
                                 </Title>
-                                <PaletteSwitcher global={false} />
+                                <PaletteSwitcher global={global} />
                             </div>
                             <div className="space-y-4">
                                 <Title size="base" weight="normal" as="div" className="flex items-center gap-2.5 text-sm">
                                     <Layers2 className="size-4 opacity-50" />
                                     Shade
                                 </Title>
-                                <ShadeSwitcher global={false} />
+                                <ShadeSwitcher global={global} />
                             </div>
                             <div className="space-y-4">
                                 <Title size="base" weight="normal" as="div" className="flex items-center gap-2.5 text-sm">
                                     <Square className="size-4 opacity-50" />
                                     Border Radius
                                 </Title>
-                                <RoundedSwitcher global={false} />
+                                <RoundedSwitcher global={global} />
                             </div>
                         </div>
 

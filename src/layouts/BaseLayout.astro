@@ -1,13 +1,12 @@
 ---
-import Footer from '../components/Footer'
+import Footer from '../components/BlocksFooter'
 import BaseHead from '../components/BaseHead.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../const'
-import { SiteHeader } from '../components/SiteHeader'
-import { BlurDivs } from '@components/utilities/SiteProgressiveBlur'
+import { BlurDivs } from '@components/utilities/DocsProgressiveBlur'
 import '@styles/color-theme.css'
 import PageLoader from '@components/utilities/PageLoader.astro'
-import { ViewTransitions } from 'astro:transitions'
-import { CustomizerPill } from '@components/customizer/Pill'
+import MainHeader from '@components/MainHeader.astro'
+import KitHeader from '@components/KitHeader.astro'
 
 interface Props {
     title?: string
@@ -18,17 +17,29 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props
 ---
 
 <!doctype html>
-<html class="dark" lang="en" data-palette="tls" data-shade="900" data-rounded="large">
+<html class="" lang="en" data-palette="tls" data-shade="900" data-rounded="large">
     <head>
         <BaseHead title={title} description={description} />
-        <ViewTransitions />
     </head>
-    <body class="bg-white dark:[--body-text-color:theme(colors.gray.300)] dark:bg-gray-950 antialiased font-sans">
+    <body class="bg-gray-50 font-sans antialiased dark:bg-gray-950 dark:[--body-text-color:theme(colors.gray.300)]">
         <PageLoader />
-        <BlurDivs client:visible />
-        <CustomizerPill client:load />
-        <SiteHeader client:load />
-        <main class="mb-32 will-change-auto">
+
+        <MainHeader />
+        <KitHeader />
+        <div aria-hidden="true" class="pointer-events-none fixed inset-x-0 top-0 z-20 mx-auto hidden h-0 w-full -translate-y-px lg:h-28">
+            <BlurDivs />
+        </div>
+        <div class="absolute inset-x-0 top-0 mx-auto hidden max-w-5xl lg:block">
+            <div class="absolute left-0 top-0 h-56 w-px bg-gradient-to-b from-gray-950/[0.07] dark:from-white/[0.07]"></div>
+            <div class="absolute right-0 top-0 h-56 w-px bg-gradient-to-b from-gray-950/[0.07] dark:from-white/[0.07]"></div>
+            <div class="absolute -left-20 top-[4.1rem] h-12 w-20 p-2">
+                <div class="-z-10 h-full w-full bg-[radial-gradient(var(--bg-color)_1px,transparent_1px)] [--bg-color:theme(colors.gray.950/0.1)] [background-size:6px_6px] dark:[--bg-color:theme(colors.white/0.05)]"></div>
+            </div>
+            <div class="absolute -right-20 top-[4.1rem] h-12 w-20 p-2">
+                <div class="-z-10 h-full w-full bg-[radial-gradient(var(--bg-color)_1px,transparent_1px)] [--bg-color:theme(colors.gray.950/0.1)] [background-size:6px_6px] dark:[--bg-color:theme(colors.white/0.05)]"></div>
+            </div>
+        </div>
+        <main class="will-change-auto [--card-radius:theme(borderRadius.2xl)]">
             <slot />
         </main>
         <Footer />
