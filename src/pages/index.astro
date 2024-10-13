@@ -10,6 +10,7 @@ import { AstroIcon, HTMLIcon, NextIcon, NuxtIcon } from '@components/utilities/i
 import BlockPreview from '@components/BlockPreview'
 import { hero1Code } from '@components/blocks/hero-section/hero1'
 import CodeComparason from '@components/CodeComparason'
+import FeaturesBento from '@components/FeaturesBento'
 ---
 
 <Layout title="Tailus UI Html">
@@ -699,9 +700,9 @@ import CodeComparason from '@components/CodeComparason'
             </Container>
         </div>
     </section>
-    <section id="customization" class="relative scroll-my-32">
+    <section id="customization" class="relative scroll-my-32 bg-gradient-to-t from-gray-50 to-white pb-16 dark:bg-transparent dark:from-transparent dark:to-transparent">
         <Container>
-            <div class="grid grid-cols-2">
+            <div class="grid grid-cols-2 gap-4">
                 <h2 class="text-title text-balance pr-12 text-3xl font-semibold md:text-4xl lg:text-5xl"><span class="opacity-50">Built with</span> Customization <span class="opacity-50">In Mind</span></h2>
                 <div class="mt-2 space-y-6">
                     <p class="text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis voluptatem accusantium nemo perspiciatis</span> delectus atque autem! repellat expedita consequatur! atque doloremque!</p>
@@ -711,182 +712,8 @@ import CodeComparason from '@components/CodeComparason'
         </Container>
 
         <Container>
-            <div data-shade="950" class="relative -mx-4 mt-16">
-                <svg class="absolute inset-0 mx-auto w-full border text-secondary-100 blur-3xl dark:text-white/5" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
-                </svg>
-                <svg class="absolute inset-0 m-auto w-2/3 border text-primary-200 blur-3xl dark:text-primary-500/15" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
-                </svg>
-                <div class="relative grid grid-cols-6 divide-x divide-y divide-dashed border-b border-r border-dashed *:relative *:flex *:h-40 *:items-center *:justify-center *:border-dashed dark:bg-gray-950/25">
-                    <div class="border-l border-t">
-                        <div class="flex gap-3">
-                            <span class="badge sz-sm variant-soft intent-primary">Badge</span>
-                            <span class="badge sz-sm variant-outlined intent-primary">Badge</span>
-                        </div>
-                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Badge</span>
-                    </div>
-                    <div>
-                        <button class="btn variant-solid intent-primary sz-sm">Button</button>
-                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Button</span>
-                    </div>
-                    <div class="col-span-2">
-                        <a href="#" class="annonce variant-mixed sz-sm mx-auto w-fit gap-2">
-                            <span class="annonce-concern sz-xs variant-solid intent-primary">New</span>
-                            <span class="text-title text-sm">Introduction Tailus UI Html</span>
-                        </a>
-                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Annonce</span>
-                    </div>
-                    <div>
-                        <div class="field">
-                            <label for="c2" class="checkbox group">
-                                <input class="peer" type="checkbox" id="c2" name="checkbox1" />
-                                <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
-                            </label>
-                        </div>
-                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Checkbox</span>
-                    </div>
-                    <div>
-                        <label for="r2" class="radio group rounded-full">
-                            <input class="peer" type="radio" id="r2" name="radio2" />
-                            <span class="radio-indicator"> </span>
-                        </label>
-                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Radio Group</span>
-                    </div>
-                    <div>
-                        <form class="flex gap-3">
-                            <label class="field btn variant-outlined icon-only intent-gray sz-sm has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="small2">
-                                <input type="radio" id="small2" name="size2" hidden />
-                                S
-                            </label>
-                            <label class="field btn variant-outlined icon-only intent-gray sz-sm has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="medium2">
-                                <input type="radio" id="medium2" checked name="size2" hidden />
-                                M
-                            </label>
-                            <label class="field btn variant-outlined icon-only intent-gray sz-sm has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="large2">
-                                <input type="radio" id="large2" name="size2" hidden />
-                                L
-                            </label>
-                        </form>
-                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Radio Card</span>
-                    </div>
-                    <div class="col-span-2">
-                        <div class="field w-full max-w-56">
-                            <input type="email" class="input variant-mixed sz-md !border !outline-primary-600" placeholder="Your email" />
-                        </div>
-                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Input</span>
-                    </div>
-                    <div class="col-span-2">
-                        <div class="progress sz-md w-56" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" aria-valuetext="66%" role="progressbar" style="transform:translateZ(0)">
-                            <div class="progress-indicator intent-primary w-[66%]"></div>
-                        </div>
-                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Progress</span>
-                    </div>
-                    <div>
-                        <label for="sw2" class="switch intent-primary">
-                            <input checked class="peer" type="checkbox" id="sw2" name="switch2" />
-                            <span class="switch-thumb"></span>
-                        </label>
-                        <span class="text-title absolute inset-x-0 bottom-4 mx-auto w-fit text-sm">Switch</span>
-                    </div>
-                </div>
-                <div class="relative grid grid-cols-3 divide-x divide-dashed border-x border-b border-dashed [--ui-bg:theme(colors.white/0.75)] dark:-z-10 dark:bg-gray-950/50 dark:[--ui-bg:theme(colors.gray.950)]">
-                    <div class="p-6">
-                        <div class="card variant-mixed ml-auto flex h-full flex-col justify-between !shadow-lg !shadow-gray-950/5">
-                            <div class="mb-6 divide-y divide-dashed border-l">
-                                <div class="py-2">
-                                    <div class="flex h-8 w-2/3 items-center rounded-r-[--btn-radius] border border-l-0 bg-[--ui-bg] pl-2 text-xs">Jan 2022</div>
-                                </div>
-                                <div class="py-2">
-                                    <div class="flex h-8 w-4/5 items-center rounded-r-[--btn-radius] border border-l-0 border-white/5 bg-primary-600 bg-gradient-to-l from-white/15 to-transparent pl-2 text-xs text-white dark:bg-gray-800">Jun 2022</div>
-                                </div>
-                                <div class="py-2">
-                                    <div class="flex h-8 w-1/2 items-center rounded-r-[--btn-radius] border border-l-0 bg-[--ui-bg] pl-2 text-xs">Aug 2022</div>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-title text-sm font-medium">Realtime insights</h3>
-                                <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="card variant-mixed h-full !shadow-xl !shadow-gray-950/5">
-                            <span class="text-caption text-xs">Great UX</span>
-                            <h3 class="text-title mt-2 text-sm font-medium">Realtime insights</h3>
-                            <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
-
-                            <div class="card variant-outlined mt-12 space-y-3 p-4">
-                                <div class="flex justify-between">
-                                    <div class="text-title flex items-center gap-1.5">
-                                        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2 19v-6q0-.675.275-1.225T3 10.8V8q0-1.25.875-2.125T6 5h4q.575 0 1.075.213T12 5.8q.425-.375.925-.587T14 5h4q1.25 0 2.125.875T21 8v2.8q.45.425.725.975T22 13v6h-2v-2H4v2zm11-9h6V8q0-.425-.288-.712T18 7h-4q-.425 0-.712.288T13 8zm-8 0h6V8q0-.425-.288-.712T10 7H6q-.425 0-.712.288T5 8z"></path></svg>
-                                        <div class="text-sm font-medium">Sleep</div>
-                                    </div>
-                                    <div class="text-caption text-xs">5:45 AM</div>
-                                </div>
-                                <div class="flex items-end justify-between">
-                                    <div class="space-y-1">
-                                        <div class="text-title text-sm font-medium">Time in Bed</div>
-                                        <div class="flex gap-3">
-                                            <div class="-space-x-0.5">
-                                                <span class="text-title align-baseline text-xl font-medium">5</span>
-                                                <span class="text-placeholder text-xs">hr</span>
-                                            </div>
-                                            <div class="-space-x-0.5">
-                                                <span class="text-title align-baseline text-xl font-medium">59</span>
-                                                <span class="text-placeholder text-xs">min</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-end gap-1">
-                                        <div aria-hidden="true" class="h-3 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
-                                        <div aria-hidden="true" class="h-5 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
-                                        <div aria-hidden="true" class="h-10 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
-                                        <div aria-hidden="true" class="h-4 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
-                                        <div aria-hidden="true" class="h-6 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
-                                        <div aria-hidden="true" class="h-5 w-1.5 rounded bg-gray-950/10 dark:bg-white/10"></div>
-                                        <div aria-hidden="true" class="h-9 w-1.5 rounded bg-gradient-to-b from-primary-300 to-primary-500"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="card variant-mixed ml-auto h-full !shadow-lg !shadow-gray-950/5">
-                            <div class="relative mb-6 mt-6">
-                                <div class="card variant-mixed absolute inset-0 bottom-auto top-8 z-10 m-auto grid items-center gap-2 p-4 [grid-template-columns:auto_1fr] dark:!shadow-xl dark:shadow-gray-950/50">
-                                    <div class="avatar sz-sm">
-                                        <img src="https://avatars.githubusercontent.com/u/68236786?v=4" alt="" />
-                                    </div>
-                                    <div>
-                                        <div class="text-caption text-xs">Théo Balick</div>
-                                        <div class="text-sm">Closed 'tls-html' PR</div>
-                                    </div>
-                                </div>
-                                <div class="card variant-outlined grid scale-90 items-center gap-2 p-4 opacity-50 [grid-template-columns:auto_1fr]">
-                                    <div class="avatar sz-md">
-                                        <img src="https://avatars.githubusercontent.com/u/47919550?v=4" alt="" />
-                                    </div>
-                                    <div>
-                                        <div class="text-caption text-xs">Méschac Irung</div>
-                                        <div class="text-sm">Closed 'tls-html' PR</div>
-                                    </div>
-                                </div>
-                                <div class="card variant-outlined grid scale-90 items-center gap-2 p-4 opacity-50 [grid-template-columns:auto_1fr]">
-                                    <div class="avatar sz-md">
-                                        <img src="https://avatars.githubusercontent.com/u/31113941?v=4" alt="" />
-                                    </div>
-                                    <div>
-                                        <div class="text-caption text-xs">Bernard Ng</div>
-                                        <div class="text-sm">Opened 'tls-react' branch</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3 class="text-title text-sm font-medium">Realtime insights</h3>
-                            <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="relative -mx-4 mt-16">
+                <FeaturesBento client:visible />
             </div>
         </Container>
     </section>

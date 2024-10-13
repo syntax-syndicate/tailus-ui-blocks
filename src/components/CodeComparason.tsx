@@ -20,7 +20,7 @@ const codes = {
       </div>
 
       <div class="mt-6">
-        <button class="btn sz-md variant-outlined intent-gray w-full gap-3.5 !text-sm font-medium">
+        <button class="btn sz-md variant-outlined intent-gray w-full">
           <GoogleIcon />
           Continue With Google
         </button>
@@ -35,7 +35,7 @@ const codes = {
       <div class="space-y-6">
         <div class="field">
           <label for="email2" class="text-title text-sm">Username</label>
-          <input type="email" required name="email2" id="email2" class="input sz-md variant-mixed" />
+          <input class="input sz-md variant-mixed" type="email" required name="email2" id="email2" />
         </div>
 
         <div class="field">
@@ -43,7 +43,7 @@ const codes = {
             <label for="pwd" class="text-title text-sm">Password</label>
             <a href="#" class="link intent-info variant-ghost text-sm">Forgot your Password ?</a>
           </div>
-          <input type="password" required name="pwd" id="pwd" class="input sz-md variant-mixed" />
+          <input class="input sz-md variant-mixed" type="password" required name="pwd" id="pwd" />
         </div>
 
         <button class="btn variant-solid intent-primary sz-md w-full">Sign In</button>
@@ -79,7 +79,7 @@ const codes = {
       <div class="space-y-6">
         <div class="space-y-3 has-[:disabled]:opacity-50">
           <label for="email2" class="text-sm text-gray-950 dark:text-white">Username</label>
-          <input type="email" required name="email2" id="email2" class="h-9 w-full rounded-md border bg-white px-3 text-gray-950 placeholder-gray-400 shadow outline-2 outline-blue-600 invalid:border-red-600 focus:outline focus:invalid:outline-red-600 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-600" />
+          <input class="h-9 w-full rounded-md border bg-white px-3 text-gray-950 placeholder-gray-400 shadow outline-2 outline-blue-600 invalid:border-red-600 focus:outline focus:invalid:outline-red-600 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-600" type="email" required name="email2" id="email2" />
         </div>
 
         <div class="space-y-3 has-[:disabled]:opacity-50">
@@ -87,10 +87,10 @@ const codes = {
             <label for="pwd" class="text-sm text-gray-950 dark:text-white">Password</label>
             <a href="#" class="text-sm text-blue-600 underline dark:text-blue-400">Forgot your Password ?</a>
           </div>
-          <input type="password" required name="pwd" id="pwd" class="h-9 w-full rounded-md border bg-white px-3 text-gray-950 placeholder-gray-400 shadow outline-2 outline-blue-600 invalid:border-red-600 focus:outline focus:invalid:outline-red-600 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-600" />
+          <input class="h-9 w-full rounded-md border bg-white px-3 text-gray-950 placeholder-gray-400 shadow outline-2 outline-blue-600 invalid:border-red-600 focus:outline focus:invalid:outline-red-600 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-600" type="password" required name="pwd" id="pwd" />
         </div>
 
-        <button class="group flex justify-center gap-1.5 items-center rounded-md outline-2 outline-offset-2 focus-visible:outline outline-blue-600 disabled:bg-gray-200 disabled:text-gray-400 disabled:shadow-none disabled:hover:brightness-100 dark:disabled:bg-gray-500/10 dark:disabled:[background-image:none] dark:disabled:text-gray-700 dark:disabled:shadow-none dark:disabled:border-none bg-gradient-to-b [box-shadow:rgba(255,255,255,0.25)_0px_1px_0px_0px_inset,var(--btn-border-color)_0px_0px_0px_1px] text-white hover:brightness-[1.1] transition-[filter] duration-150 ease-in-out active:brightness-95 dark:shadow-inner dark:to-0% dark:border-t dark:shadow-white/10 disabled:from-gray-100 disabled:to-gray-100 from-blue-500 to-blue-600 [--btn-border-color:theme(colors.blue.700)] dark:border-blue-400/75 text-base h-9 px-4 w-full">Sign In</button>
+        <button class="flex justify-center gap-1.5 items-center rounded-md outline-2 outline-offset-2 focus-visible:outline outline-blue-600 disabled:bg-gray-200 disabled:text-gray-400 disabled:shadow-none disabled:hover:brightness-100 dark:disabled:bg-gray-500/10 dark:disabled:[background-image:none] dark:disabled:text-gray-700 dark:disabled:shadow-none dark:disabled:border-none bg-gradient-to-b [box-shadow:rgba(255,255,255,0.25)_0px_1px_0px_0px_inset,var(--btn-border-color)_0px_0px_0px_1px] text-white hover:brightness-[1.1] transition-[filter] duration-150 ease-in-out active:brightness-95 dark:shadow-inner dark:to-0% dark:border-t dark:shadow-white/10 disabled:from-gray-100 disabled:to-gray-100 from-blue-500 to-blue-600 [--btn-border-color:theme(colors.blue.700)] dark:border-blue-400/75 text-base h-9 px-4 w-full">Sign In</button>
       </div>
     </div>
 
