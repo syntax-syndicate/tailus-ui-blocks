@@ -3,16 +3,10 @@ import { SITE_SOCIAL_GITHUB } from '../const'
 import { GitHubIcon } from './utilities/icons/'
 import ThemeSwitcher from './ThemeSwitcher'
 import Button from '@tailus-ui/Button'
-import { MenuListIcon } from '@components/utilities/icons'
-import { ChevronDownIcon } from '@radix-ui/react-icons'
 import NavLinks from './NavLinks.astro'
 import SearchButton from './Button/SearchButton'
-import { twMerge } from 'tailwind-merge'
 import BrandLogo from './utilities/BrandLogo'
-import BlocksCustomizer from './customizer/BlocksCustomizer'
 import SeparatorRoot from './tailus-ui/Separator'
-
-const { asThemer = false, sticky = false } = Astro.props
 ---
 
 <script>
@@ -53,7 +47,7 @@ const { asThemer = false, sticky = false } = Astro.props
 </script>
 
 <header data-rounded="full" class="absolute inset-x-0 top-0 z-40 flex flex-col lg:h-16">
-    <div class="mx-auto my-auto flex h-fit w-full max-w-5xl items-center justify-between gap-4 px-4 py-2 sm:gap-6">
+    <div class="mx-auto my-auto flex h-fit w-full max-w-5xl items-center justify-between gap-4 px-4 py-3.5 sm:gap-6 lg:py-2">
         <div class="flex items-center sm:gap-6">
             <a href="/" aria-label="Home page" class="rounded-full">
                 <BrandLogo className="h-7" />
@@ -71,16 +65,9 @@ const { asThemer = false, sticky = false } = Astro.props
         </div>
 
         <div class="flex items-center justify-between lg:gap-1.5">
-            {!sticky && <SearchButton client:idle />}
+            <SearchButton client:idle />
 
             <div class="flex items-center gap-1.5">
-                {
-                    sticky && (
-                        <>
-                            <BlocksCustomizer client:load transition:name="customizer" />
-                        </>
-                    )
-                }
                 <SeparatorRoot orientation="vertical" className="mx-3 h-4" />
                 <ThemeSwitcher client:load />
                 <Button.Root variant="ghost" intent="gray" href={SITE_SOCIAL_GITHUB} aria-label="Visit our GitHub" size="md" className="size-9 px-0">
@@ -99,21 +86,6 @@ const { asThemer = false, sticky = false } = Astro.props
             </div>
         </div>
     </div>
-
-    {
-        !sticky && (
-            <div class="relative z-[55] flex h-10 w-full justify-between border-t px-4 sm:px-2 lg:hidden dark:border-gray-500/20">
-                <button id="menu-list-trigger" class="group flex h-full items-center gap-1.5 px-4 text-sm text-gray-700 sm:px-6 dark:text-gray-300">
-                    <MenuListIcon />
-                    Menu
-                </button>
-                <button id="table-of-content-trigger" class="group -mr-1 flex h-full items-center gap-1.5 px-4 text-sm text-gray-700 sm:px-6 dark:text-gray-300">
-                    On this page
-                    <ChevronDownIcon />
-                </button>
-            </div>
-        )
-    }
 </header>
 
 <script>

@@ -139,38 +139,40 @@ export default function CodeComparason() {
     }, [activeCode])
 
     return (
-        <div className="relative grid border-r [grid-template-columns:auto_1fr]">
-            <div className="absolute -left-2 bottom-8 right-0 z-10 h-1/3 max-w-2xl bg-gradient-to-t from-gray-100 dark:from-gray-950"></div>
-            <div className="-mr-2 h-fit max-w-2xl border">
-                <div className="bg-ui flex h-10 items-center justify-between overflow-hidden border-b pr-8 dark:bg-transparent">
-                    <div data-shade="950" className="relative h-full">
-                        <div
-                            className={twMerge('bg-ui-soft absolute inset-y-0 border border-[--ui-bg] duration-300', activeCode == 'tailus' ? '[--active-bg:theme(colors.primary.500)]' : '[--active-bg:theme(colors.cyan.500)]')}
-                            style={{
-                                width: `${indicatorWidth}px`,
-                                left: indicatorLeft,
-                            }}></div>
-                        <div className="relative flex h-full items-center border-r *:h-full *:px-5">
-                            <button ref={tailwind} data-state={activeCode == 'tailwind' && 'active'} className="text-body data-[state=active]:text-title text-sm" onClick={() => handleTabClick('tailwind', TAILWINDCOUNT)}>
-                                TailwindCss
-                            </button>
-                            <span className="relative z-[1] block h-full w-px bg-[--ui-border-color] !px-0"></span>
-                            <button ref={tailus} data-state={activeCode == 'tailus' && 'active'} onClick={() => handleTabClick('tailus', TAILUSCOUNT)} className="text-body  data-[state=active]:text-title text-sm">
-                                Tailus UI Html
-                            </button>
+        <div className="relative border-r [grid-template-columns:auto_1fr] md:grid">
+            <div className="relative -mr-2 md:max-w-md lg:max-w-2xl">
+                <div className="absolute inset-x-0 bottom-0 right-0 z-10 h-1/3 bg-gradient-to-t from-gray-100 dark:from-gray-950"></div>
+                <div className=" h-fit border ">
+                    <div className="bg-ui flex h-10 items-center justify-between overflow-hidden border-b pr-8 dark:bg-transparent">
+                        <div data-shade="950" className="relative h-full">
+                            <div
+                                className={twMerge('bg-ui-soft absolute inset-y-0 border border-[--ui-bg] duration-300', activeCode == 'tailus' ? '[--active-bg:theme(colors.primary.500)]' : '[--active-bg:theme(colors.cyan.500)]')}
+                                style={{
+                                    width: `${indicatorWidth}px`,
+                                    left: indicatorLeft,
+                                }}></div>
+                            <div className="relative flex h-full items-center border-r *:h-full *:px-5">
+                                <button ref={tailwind} data-state={activeCode == 'tailwind' && 'active'} className="text-body data-[state=active]:text-title text-sm" onClick={() => handleTabClick('tailwind', TAILWINDCOUNT)}>
+                                    TailwindCss
+                                </button>
+                                <span className="relative z-[1] block h-full w-px bg-[--ui-border-color] !px-0"></span>
+                                <button ref={tailus} data-state={activeCode == 'tailus' && 'active'} onClick={() => handleTabClick('tailus', TAILUSCOUNT)} className="text-body  data-[state=active]:text-title text-sm">
+                                    Tailus UI Html
+                                </button>
+                            </div>
                         </div>
+                        <span className="text-caption text-sm">
+                            <motion.span className="text-title">{display}</motion.span> Classes
+                        </span>
                     </div>
-                    <span className="text-caption text-sm">
-                        <motion.span className="text-title">{display}</motion.span> Classes
-                    </span>
-                </div>
-                <div data-pagefind-ignore className="relative w-full bg-gray-50 dark:bg-transparent">
-                    <pre className="line-numbers max-h-[32rem] w-full px-4 text-sm">
-                        <code className="language-html font-mono text-sm">{codes[activeCode]}</code>
-                    </pre>
+                    <div data-pagefind-ignore className="relative w-full overflow-hidden bg-gray-50 dark:bg-transparent">
+                        <pre className="line-numbers max-h-[32rem] w-full px-4 text-sm">
+                            <code className="language-html font-mono text-sm">{codes[activeCode]}</code>
+                        </pre>
+                    </div>
                 </div>
             </div>
-            <div className="relative border-t">
+            <div className="relative z-10 -mt-16 border-t md:mt-0">
                 <div className="relative ml-2 h-4 bg-[repeating-linear-gradient(-45deg,var(--stripes-color),var(--stripes-color)_0.5px,theme(colors.transparent)_0.5px,theme(colors.transparent)_6px)] [--stripes-color:theme(colors.gray.300)] before:absolute before:inset-0 before:bg-gradient-to-t before:from-gray-50 dark:[--stripes-color:theme(colors.white/0.2)] dark:before:from-gray-950"></div>
                 <form action="" className="bg-ui relative -mb-4 -mr-2 overflow-hidden rounded-[--card-radius] border p-1 shadow-lg">
                     <div className="-mx-1 flex h-9 items-center gap-1.5 px-4">

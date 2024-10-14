@@ -16,10 +16,10 @@ import FeaturesBento from '@components/FeaturesBento'
 <Layout title="Tailus UI Html">
     <div class="absolute inset-0 hidden h-16 bg-[repeating-linear-gradient(-45deg,var(--stripes-color),var(--stripes-color)_0.5px,theme(colors.transparent)_0.5px,theme(colors.transparent)_12px)] [--stripes-color:theme(colors.primary.300)] before:absolute before:inset-0 before:bg-gradient-to-t before:from-gray-50 before:via-transparent before:to-gray-50 dark:[--stripes-color:theme(colors.white/0.2)] dark:before:from-gray-950 dark:before:via-transparent dark:before:to-gray-950"></div>
 
-    <section class="relative z-10 space-y-12 pt-28 will-change-transform">
+    <section class="relative z-10 space-y-12 pt-20 will-change-transform sm:pt-28">
         <Container>
             <h1 class="text-title text-balance bg-gradient-to-b text-4xl font-bold sm:text-5xl lg:text-6xl">Next generation <br /> tailwind components</h1>
-            <p class="mb-12 mt-6 max-w-xl text-xl">A comprehensive suite of tailwindcss component classes for building visually stunning websites faster.</p>
+            <p class="mb-12 mt-6 text-xl md:max-w-lg lg:max-w-xl">A comprehensive suite of tailwindcss component classes for building visually stunning websites faster.</p>
 
             <div class="rounded-btn w-fit shadow-md shadow-neutral-950/15">
                 <a href="/get-started/installation" class="btn variant-solid sz-md relative w-fit gap-2.5 border-0 bg-gradient-to-b from-gray-800 to-gray-950 !transition-all !duration-300 before:absolute before:inset-px before:rounded-[calc(var(--btn-radius)-1px)] before:border before:border-white/15 hover:before:border-white/20 dark:bg-white dark:from-transparent dark:to-transparent dark:!text-gray-950 dark:hover:bg-gray-400">
@@ -30,7 +30,7 @@ import FeaturesBento from '@components/FeaturesBento'
         </Container>
     </section>
 
-    <section class="relative border-b [--ui-bg:theme(colors.white/0.75)] [--ui-border-color:theme(colors.gray.950/0.15)] dark:[--ui-bg:theme(colors.gray.900)] dark:[--ui-border-color:theme(colors.gray.800)]">
+    <section class="relative border-b border-gray-200 [--ui-bg:theme(colors.white/0.75)] [--ui-border-color:theme(colors.gray.950/0.15)] dark:border-gray-800 dark:[--ui-bg:theme(colors.gray.900)] dark:[--ui-border-color:theme(colors.gray.800)]">
         <svg class="absolute inset-0 mx-auto w-full text-secondary-100 blur-3xl dark:hidden dark:text-white/5" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
         </svg>
@@ -38,11 +38,11 @@ import FeaturesBento from '@components/FeaturesBento'
             <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
         </svg>
         <Container>
-            <div data-shade="900" class="relative -mx-4 -mt-64">
-                <div class="relative grid grid-cols-6 divide-x divide-y divide-dashed border-r border-dashed *:relative *:flex *:h-32 *:items-center *:justify-center *:border-dashed dark:bg-gray-950/25">
-                    <div class="col-start-6 border-l border-t">
+            <div data-shade="900" class="relative -mt-12 sm:-mt-64 lg:-mx-4">
+                <div class="relative grid grid-cols-3 divide-x divide-y divide-dashed border-r border-dashed *:relative *:flex *:h-32 *:items-center *:justify-center *:border-dashed sm:grid-cols-6 dark:bg-gray-950/25">
+                    <div class="col-span-2 col-start-2 border-l border-t sm:col-span-1 sm:col-start-6">
                         <form class="flex gap-3">
-                            <label class="field btn variant-outlined icon-only intent-gray sz-sm has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="small2">
+                            <label class="field btn variant-outlined icon-only intent-gray sz-sm has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none] md:hidden lg:flex" for="small2">
                                 <input type="radio" id="small2" name="size2" hidden />
                                 S
                             </label>
@@ -56,7 +56,7 @@ import FeaturesBento from '@components/FeaturesBento'
                             </label>
                         </form>
                     </div>
-                    <div class="col-start-5">
+                    <div class="sm:col-start-5">
                         <label for="r2" class="radio bg-ui group rounded-full">
                             <input class="peer" type="radio" id="r2" name="radio2" />
                             <span class="radio-indicator"> </span>
@@ -90,7 +90,7 @@ import FeaturesBento from '@components/FeaturesBento'
 
         <div class="border-y border-dashed">
             <Container>
-                <div class="relative -mx-4 grid grid-cols-3 divide-x divide-dashed border-x border-dashed dark:-z-10">
+                <div class="relative grid divide-x divide-dashed border-x border-dashed sm:grid-cols-2 lg:-mx-4 lg:grid-cols-3 dark:-z-10">
                     <div class="p-3">
                         <div class="card variant-mixed ml-auto flex h-full flex-col justify-between !shadow-lg !shadow-gray-950/5">
                             <div class="mb-6 divide-y divide-dashed border-l">
@@ -110,7 +110,7 @@ import FeaturesBento from '@components/FeaturesBento'
                             </div>
                         </div>
                     </div>
-                    <div class="p-3">
+                    <div class="hidden p-3 sm:block">
                         <div class="card variant-mixed h-full !shadow-xl !shadow-gray-950/5">
                             <span class="text-caption text-xs">Great UX</span>
                             <h3 class="text-title mt-2 text-sm font-medium">Realtime insights</h3>
@@ -151,7 +151,7 @@ import FeaturesBento from '@components/FeaturesBento'
                             </div>
                         </div>
                     </div>
-                    <div class="p-3">
+                    <div class="hidden p-3 lg:block">
                         <div class="card variant-mixed ml-auto h-full !shadow-lg !shadow-gray-950/5">
                             <div class="relative mb-6 mt-6">
                                 <div class="card variant-mixed absolute inset-0 bottom-auto top-8 z-10 m-auto grid items-center gap-2 p-4 [grid-template-columns:auto_1fr] dark:!shadow-xl dark:shadow-gray-950/50">
@@ -189,10 +189,10 @@ import FeaturesBento from '@components/FeaturesBento'
                 </div>
             </Container>
         </div>
-        <div class="relative">
+        <div class="relative overflow-hidden">
             <Container>
-                <div class="-mx-4 grid grid-cols-5 divide-x divide-dashed border-x border-dashed">
-                    <div class="h-fit border-b border-dashed px-3">
+                <div class="grid divide-x divide-dashed border-x border-dashed sm:grid-cols-3 lg:-mx-4 lg:grid-cols-5">
+                    <div class="hidden h-fit border-b border-dashed px-3 sm:block">
                         <div class="ml-auto flex h-12 w-fit items-center gap-4">
                             <div class="avatar sz-xs fallback-soft intent-primary">G</div>
                             <SeparatorRoot orientation="vertical" className="h-full" />
@@ -203,7 +203,7 @@ import FeaturesBento from '@components/FeaturesBento'
                             </div>
                         </div>
                     </div>
-                    <div class="col-span-4 p-3">
+                    <div class="p-3 sm:col-span-2 lg:col-span-4">
                         <div class="card variant-mixed w-full overflow-auto !shadow-xl !shadow-gray-950/5 lg:overflow-clip">
                             <div class="mb-6">
                                 <h2 class="text-title font-medium">Customers</h2>
@@ -258,7 +258,7 @@ import FeaturesBento from '@components/FeaturesBento'
     </section>
     <section class="relative bg-white pt-16 dark:bg-gray-950">
         <Container>
-            <div class="grid grid-cols-2 gap-x-4 gap-y-6 lg:grid-cols-3 lg:gap-x-12">
+            <div class="grid gap-x-4 gap-y-6 px-3 sm:grid-cols-2 md:mx-0 md:grid-cols-3 lg:gap-x-12">
                 <div>
                     <div class="flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5"> <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"></path></svg>
@@ -682,47 +682,47 @@ import FeaturesBento from '@components/FeaturesBento'
         </div>
     </section>
 
-    <section id="semantic" class="relative scroll-my-12 bg-white pt-32 dark:bg-transparent">
+    <section id="semantic" class="relative scroll-my-12 bg-white pt-24 md:pt-32 dark:bg-transparent">
         <Container>
             <div class="grid max-w-3xl space-y-8">
                 <h2 class="text-title text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">Less repetition, <br /> Faster Development</h2>
                 <div class="mt-2 max-w-xl space-y-6">
-                    <p class="text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis repetition, Faster Development voluptatem accusantium nemo perspiciatis</span> delectus atque autem!</p>
+                    <p class="sm:text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis repetition, Faster Development voluptatem accusantium nemo perspiciatis</span> delectus atque autem!</p>
                 </div>
             </div>
         </Container>
-        <div class="relative mt-16 pb-20">
+        <div class="relative mt-12 pb-16 md:mt-16 md:pb-20">
             <div class="absolute inset-x-0 bottom-0 top-10 border-t bg-gradient-to-b from-gray-50 to-gray-100 shadow-inner shadow-gray-500/5 dark:from-gray-950 dark:to-gray-950"></div>
             <Container>
-                <div class="-mx-4">
+                <div class="lg:-mx-4">
                     <CodeComparason client:idle />
                 </div>
             </Container>
         </div>
     </section>
-    <section id="customization" class="scroll-my-12 bg-gray-100 py-20 dark:bg-transparent">
+    <section id="customization" class="scroll-my-12 bg-gray-100 pt-16 md:py-20 dark:bg-transparent">
         <Container>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid max-w-xl gap-4 md:px-4 lg:max-w-full lg:grid-cols-2 lg:px-0">
                 <h2 class="text-title text-balance pr-12 text-3xl font-semibold md:text-4xl lg:text-5xl">Built with Customization In Mind</h2>
                 <div class="mt-2 space-y-6">
-                    <p class="text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis voluptatem accusantium nemo perspiciatis</span> delectus atque autem! repellat expedita consequatur! atque doloremque!</p>
+                    <p class="sm:text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis voluptatem accusantium nemo perspiciatis</span> delectus atque autem! repellat expedita consequatur! atque doloremque!</p>
                     <a href="" class="btn variant-soft intent-gray sz-sm !text-title w-fit !bg-gray-200/75 hover:!bg-gray-200 dark:!bg-gray-800 dark:hover:!bg-gray-700">Learn More</a>
                 </div>
             </div>
         </Container>
 
         <Container>
-            <div class="relative -mx-4 mt-16">
+            <div class="relative mt-12 md:mt-16 lg:-mx-4">
                 <FeaturesBento client:visible />
             </div>
         </Container>
     </section>
     <section id="blocks" class="relative bg-white pt-20 dark:bg-transparent">
         <Container>
-            <div class="mb-20 grid grid-cols-2 gap-6">
+            <div class="mb-12 grid gap-4 md:mb-16 md:max-w-xl md:px-4 lg:max-w-full lg:grid-cols-2 lg:px-0">
                 <h2 class="text-title text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">Build faster with modern UI Blocks</h2>
                 <div class="mt-2 space-y-6">
-                    <p class="text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis voluptatem accusantium nemo perspiciatis</span> delectus atque autem! repellat expedita consequatur! atque doloremque!</p>
+                    <p class="sm:text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis voluptatem accusantium nemo perspiciatis</span> delectus atque autem! repellat expedita consequatur! atque doloremque!</p>
                     <a href="" class="btn variant-soft intent-gray sz-sm !text-title w-fit !bg-gray-200/75 hover:!bg-gray-200 dark:!bg-gray-800 dark:hover:!bg-gray-700">Browse Blocks</a>
                 </div>
             </div>

@@ -17,20 +17,24 @@ export default function FeaturesBento() {
     })
 
     useEffect(() => {
-        const handleMouseMove = (e) => {
+        const setClipPercentage = (percentage: number) => {
+            cardLeftRef.current && cardLeftRef.current.style.setProperty('--clip-percentage', `${100 - percentage}%`)
+            cardRightRef.current && cardRightRef.current.style.setProperty('--clip-percentage', `${percentage}%`)
+            if (indicatorRef.current) {
+                indicatorRef.current.style.left = `${percentage}%`
+            }
+        }
+
+        setClipPercentage(50)
+
+        const handleMouseMove = (e: MouseEvent) => {
             if (containerRef.current) {
                 const rect = containerRef.current.getBoundingClientRect()
                 const mouseX = e.clientX - rect.left
                 const containerWidth = rect.width
 
                 const clipPercentage = (mouseX / containerWidth) * 100
-
-                cardLeftRef.current && cardLeftRef.current.style.setProperty('--clip-percentage', `${100 % -clipPercentage}%`)
-                cardRightRef.current && cardRightRef.current.style.setProperty('--clip-percentage', `${clipPercentage}%`)
-
-                if (indicatorRef.current) {
-                    indicatorRef.current.style.left = `${clipPercentage}%`
-                }
+                setClipPercentage(clipPercentage)
             }
         }
 
@@ -42,8 +46,8 @@ export default function FeaturesBento() {
         }
     }, [])
     return (
-        <div className="relative grid grid-cols-2 grid-rows-2 gap-4 pb-6">
-            <div className="row-span-2 space-y-4">
+        <div className="relative grid gap-4 pb-6 lg:grid-cols-2 lg:grid-rows-2">
+            <div className="space-y-4 lg:row-span-2">
                 <div className="card variant-mixed row-span-2 space-y-6 ">
                     <div className="relative mt-[--card-padding]">
                         <div className="absolute inset-0 z-[1] mt-auto h-1/4 bg-gradient-to-t from-[--ui-bg]"></div>
@@ -51,7 +55,7 @@ export default function FeaturesBento() {
                         <div className="absolute inset-y-0 left-5 my-auto h-3/5 w-px bg-gradient-to-b from-transparent via-[--ui-border-color] to-transparent"></div>
                         <div className="absolute inset-y-0 right-1 my-auto h-2/5 w-px bg-gradient-to-b from-transparent via-[--ui-border-color] to-transparent"></div>
                         <div className="absolute inset-y-0 right-5 my-auto h-3/5 w-px bg-gradient-to-b from-transparent via-[--ui-border-color] to-transparent"></div>
-                        <div className="mx-auto max-w-sm rounded-t-[--btn-radius] border-x border-t">
+                        <div className="mx-auto w-64 rounded-t-[--btn-radius] border-x border-t sm:w-full sm:max-w-sm">
                             <div className="border-b px-5 py-2">
                                 <div className="flex items-center gap-2.5">
                                     <CssIcon className="h-4" />
@@ -84,7 +88,7 @@ export default function FeaturesBento() {
                         <p className="mt-4 max-w-sm text-sm">Tailus UI HTML is a simple css code that you copy and paste in your project, you're free to make any change.</p>
                     </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid gap-4 sm:grid-cols-2">
                     <div className="card variant-mixed flex flex-col justify-between overflow-hidden !border-b-0 ">
                         <div className="p-4">
                             <p className="text-center text-lg">
@@ -173,7 +177,7 @@ export default function FeaturesBento() {
                     <div className="relative">
                         <div ref={indicatorRef} className="absolute -inset-y-4 left-[--clip-percentage] z-10 w-0.5 rounded-full bg-gradient-to-b from-transparent via-white to-transparent">
                             <div className="absolute inset-y-4 -left-6 w-12 rounded-[100%] bg-gradient-to-r from-transparent via-primary-600/75 to-transparent blur-md"></div>
-                            <div className="absolute -inset-x-14 inset-y-4 z-10 opacity-0 duration-300 group-hover:opacity-100">
+                            <div className="absolute -inset-x-14 inset-y-4 z-10">
                                 <LightDarkParticles id="light-dark" />
                             </div>
                         </div>
