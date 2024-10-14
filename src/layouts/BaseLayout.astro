@@ -17,7 +17,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props
 ---
 
 <!doctype html>
-<html class="" lang="en" data-palette="tls" data-shade="900" data-rounded="large">
+<html class="scroll-smooth" lang="en" data-palette="tls" data-shade="900" data-rounded="large">
     <head>
         <BaseHead title={title} description={description} />
     </head>
@@ -26,7 +26,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props
 
         <MainHeader />
         <KitHeader />
-        <div aria-hidden="true" class="pointer-events-none fixed inset-x-0 top-0 z-20 mx-auto hidden h-0 w-full -translate-y-px lg:h-28">
+        <div aria-hidden="true" class="pointer-events-none fixed inset-x-0 top-0 z-20 mx-auto h-0 w-full -translate-y-px lg:h-28">
             <BlurDivs />
         </div>
         <div class="absolute inset-x-0 top-0 mx-auto hidden max-w-5xl lg:block">
@@ -42,6 +42,6 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props
         <main class="will-change-auto [--card-radius:theme(borderRadius.2xl)]">
             <slot />
         </main>
-        <Footer />
+        <Footer className="max-w-6xl" />
     </body>
 </html>

@@ -1,6 +1,7 @@
 import { SITE_SOCIAL_GITHUB, SITE_SOCIAL_LINKEDIN, SITE_SOCIAL_THREADS, SITE_SOCIAL_TWITTER, SITE_SOCIAL_FACEBOOK, SITE_SOCIAL_YOUTUBE, SITE_BLOG, SITE_STORE } from '../const'
 import { Link, Title } from '@tailus-ui/typography'
 import BrandLogo from './utilities/BrandLogo'
+import { twMerge } from 'tailwind-merge'
 const links: { url: string; label: string }[] = [
     { url: SITE_BLOG, label: 'Blog' },
     { url: SITE_STORE, label: 'Store' },
@@ -62,10 +63,10 @@ const footer = [
     },
 ]
 
-export default function Footer() {
+export default function Footer({ className }: { className?: string }) {
     return (
         <footer>
-            <div className="mx-auto max-w-7xl space-y-16 px-8 py-8 lg:py-16">
+            <div className={twMerge('mx-auto max-w-7xl space-y-16 px-8 py-8 lg:py-16', className)}>
                 <div className="space-y-6 lg:grid lg:grid-cols-3 lg:space-y-0">
                     <div>
                         <a href="/" aria-label="go home">

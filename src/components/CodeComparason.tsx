@@ -140,8 +140,8 @@ export default function CodeComparason() {
 
     return (
         <div className="relative grid border-r [grid-template-columns:auto_1fr]">
-            <div className="absolute -left-2 bottom-0 right-0 z-10 h-1/3 max-w-2xl bg-gradient-to-t from-white dark:from-gray-950"></div>
-            <div className=" -mr-2 max-w-2xl border">
+            <div className="absolute -left-2 bottom-8 right-0 z-10 h-1/3 max-w-2xl bg-gradient-to-t from-gray-100 dark:from-gray-950"></div>
+            <div className="-mr-2 h-fit max-w-2xl border">
                 <div className="bg-ui flex h-10 items-center justify-between overflow-hidden border-b pr-8 dark:bg-transparent">
                     <div data-shade="950" className="relative h-full">
                         <div
@@ -164,7 +164,7 @@ export default function CodeComparason() {
                         <motion.span className="text-title">{display}</motion.span> Classes
                     </span>
                 </div>
-                <div data-pagefind-ignore className="relative w-full">
+                <div data-pagefind-ignore className="relative w-full bg-gray-50 dark:bg-transparent">
                     <pre className="line-numbers max-h-[32rem] w-full px-4 text-sm">
                         <code className="language-html font-mono text-sm">{codes[activeCode]}</code>
                     </pre>
@@ -179,13 +179,13 @@ export default function CodeComparason() {
                         <div className="size-2 rounded-full bg-gray-300 dark:bg-gray-700"></div>
                     </div>
                     <div className="p-8 lg:p-12">
-                        <div className="text-center">
+                        <div className="-mt-6 text-center">
                             <img className="mx-auto size-9 dark:invert" src="/favicon.svg" />
                             <h3 className="text-title mb-1 mt-6 text-xl font-semibold">Sign In to Tailus UI</h3>
                             <p className="text-sm">Welcome back! Sign in to continue</p>
                         </div>
 
-                        <div className="mt-6">
+                        <div className="mt-4">
                             <button className="btn sz-sm variant-outlined intent-gray w-full gap-3.5 !text-sm font-medium">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="0.98em" height="1em" viewBox="0 0 256 262">
                                     <path fill="#4285f4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622l38.755 30.023l2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"></path>
@@ -197,8 +197,8 @@ export default function CodeComparason() {
                             </button>
                         </div>
 
-                        <hr className="my-6 border-dashed" />
-                        <div className="space-y-6">
+                        <hr className="my-4 border-dashed" />
+                        <div className="mb-6 space-y-4">
                             <div className="field">
                                 <label htmlFor="email2" className="text-title text-sm">
                                     Username
@@ -206,8 +206,14 @@ export default function CodeComparason() {
                                 <input type="email" required name="email2" id="email2" className="input sz-md variant-mixed !outline-primary-600" />
                             </div>
 
-                            <button className="btn variant-solid intent-primary sz-sm w-full">Continue</button>
+                            <div className="field">
+                                <label htmlFor="pwd" className="text-title text-sm">
+                                    Password
+                                </label>
+                                <input type="password" required name="pwd" id="pwd" className="input sz-md variant-mixed !outline-primary-600" />
+                            </div>
                         </div>
+                        <button className="btn variant-solid intent-primary sz-sm w-full">Continue</button>
                     </div>
 
                     <div className="card variant-soft rounded-[calc(var(--card-radius)-4px)] dark:!bg-gray-950/50">

@@ -42,9 +42,9 @@ export default function FeaturesBento() {
         }
     }, [])
     return (
-        <div className="grid grid-cols-2 grid-rows-2 gap-4 pb-6">
+        <div className="relative grid grid-cols-2 grid-rows-2 gap-4 pb-6">
             <div className="row-span-2 space-y-4">
-                <div className="card variant-mixed row-span-2 space-y-6 !shadow-lg !shadow-gray-950/5">
+                <div className="card variant-mixed row-span-2 space-y-6 ">
                     <div className="relative mt-[--card-padding]">
                         <div className="absolute inset-0 z-[1] mt-auto h-1/4 bg-gradient-to-t from-[--ui-bg]"></div>
                         <div className="absolute inset-y-0 left-1 my-auto h-2/5 w-px bg-gradient-to-b from-transparent via-[--ui-border-color] to-transparent"></div>
@@ -80,12 +80,12 @@ export default function FeaturesBento() {
                         </div>
                     </div>
                     <div className="p-4">
-                        <h3 className="text-title font-medium">You're in control</h3>
+                        <h3 className="text-title text-lg font-medium">You're in control</h3>
                         <p className="mt-4 max-w-sm text-sm">Tailus UI HTML is a simple css code that you copy and paste in your project, you're free to make any change.</p>
                     </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
-                    <div className="card variant-mixed flex flex-col justify-between overflow-hidden !border-b-0 !shadow-lg !shadow-gray-950/5">
+                    <div className="card variant-mixed flex flex-col justify-between overflow-hidden !border-b-0 ">
                         <div className="p-4">
                             <p className="text-center text-lg">
                                 Perfectly works with <span className="text-title font-semibold">TailwindCss</span> Utilities.
@@ -106,7 +106,7 @@ export default function FeaturesBento() {
                             </div>
                         </div>
                     </div>
-                    <div className="card variant-mixed group relative grid overflow-hidden !shadow-lg !shadow-gray-950/5 [grid-template-rows:1fr_auto]">
+                    <div className="card variant-mixed group relative grid overflow-hidden  [grid-template-rows:1fr_auto]">
                         <div className=" p-4">
                             <div className="relative flex items-center justify-center overflow-x-auto border bg-white py-2 lg:overflow-visible dark:border-info-400/20 dark:bg-gray-950/25">
                                 <div className="absolute -inset-1 flex justify-between">
@@ -168,7 +168,7 @@ export default function FeaturesBento() {
                 </div>
             </div>
 
-            <div className="card variant-mixed group !shadow-lg !shadow-gray-950/5">
+            <div className="card variant-mixed group ">
                 <div ref={containerRef} className="overflow-hidden border border-dashed p-4">
                     <div className="relative">
                         <div ref={indicatorRef} className="absolute -inset-y-4 left-[--clip-percentage] z-10 w-0.5 rounded-full bg-gradient-to-b from-transparent via-white to-transparent">
@@ -178,7 +178,7 @@ export default function FeaturesBento() {
                             </div>
                         </div>
 
-                        <div ref={cardLeftRef} className="card  variant-mixed ml-auto flex h-full flex-col justify-between !border-gray-200 !bg-white !shadow-lg !shadow-gray-950/5 [clip-path:inset(0px_var(--clip-percentage)_0px_0px)]">
+                        <div ref={cardLeftRef} className="card  variant-mixed ml-auto flex h-full flex-col justify-between !border-gray-200 !bg-white  [clip-path:inset(0px_var(--clip-percentage)_0px_0px)]">
                             <div className="divide-y divide-dashed divide-gray-200 border-l border-gray-200">
                                 <div className="py-2">
                                     <div className="flex h-8 w-2/3 items-center rounded-r-[--btn-radius] border border-l-0 border-gray-200 bg-white pl-2 text-xs text-gray-600">Jan 2022</div>
@@ -191,7 +191,7 @@ export default function FeaturesBento() {
                                 </div>
                             </div>
                         </div>
-                        <div ref={cardRightRef} className="card variant-mixed absolute inset-0 ml-auto flex h-full flex-col justify-between !border-gray-800 !bg-gray-950 !shadow-lg !shadow-gray-950/5 [clip-path:inset(0px_0px_0px_var(--clip-percentage))]">
+                        <div ref={cardRightRef} className="card variant-mixed absolute inset-0 ml-auto flex h-full flex-col justify-between !border-gray-800 !bg-gray-950 !shadow-lg  [clip-path:inset(0px_0px_0px_var(--clip-percentage))]">
                             <div className="divide-y divide-dashed divide-gray-800 border-l border-gray-800">
                                 <div className="py-2">
                                     <div className="flex h-8 w-2/3 items-center rounded-r-[--btn-radius] border border-l-0 border-gray-700 bg-gray-800 pl-2 text-xs text-gray-400">Jan 2022</div>
@@ -207,11 +207,11 @@ export default function FeaturesBento() {
                     </div>
                 </div>
                 <div className="p-4">
-                    <h3 className="text-title font-medium">You're in control</h3>
+                    <h3 className="text-title text-lg font-medium">You're in control</h3>
                     <p className="mt-4 max-w-sm text-sm">Tailus UI HTML is a simple css code that you copy and paste in your project, you're free to make any change.</p>
                 </div>
             </div>
-            <div className="card variant-mixed grid !shadow-lg !shadow-gray-950/5 [grid-template-rows:1fr_auto]">
+            <div className="card variant-mixed grid  [grid-template-rows:1fr_auto]">
                 <div className="relative p-4">
                     <div className="absolute inset-4 z-[1] mt-auto h-1/2 bg-gradient-to-t from-[--ui-bg]"></div>
                     <div data-shade="800" className="grid h-full rounded-t-md border [grid-template-rows:auto_1fr]">
@@ -233,7 +233,7 @@ export default function FeaturesBento() {
                     </div>
                 </div>
                 <div className="h-fit p-4">
-                    <h3 className="text-title font-medium">Data Attributes</h3>
+                    <h3 className="text-title text-lg font-medium">Data Attributes</h3>
                     <p className="mt-4 max-w-sm text-sm">Tailus UI HTML is a simple css code that you copy and paste in your project, you're free to make any change.</p>
                 </div>
             </div>
