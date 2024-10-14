@@ -107,27 +107,61 @@ export default function FeaturesBento() {
                         </div>
                     </div>
                     <div className="card variant-mixed group relative grid overflow-hidden !shadow-lg !shadow-gray-950/5 [grid-template-rows:1fr_auto]">
-                        <div className="relative -mx-[--card-padding] -mt-[--card-padding] grid [grid-template-rows:auto_1fr] ">
-                            <div className="absolute inset-0 z-[1] mt-auto h-1/2 bg-gradient-to-t from-[--ui-bg] "></div>
-                            <div className="flex h-7 items-center gap-1.5 border-b px-3">
-                                <div className="size-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></div>
-                                <div className="size-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></div>
-                                <div className="size-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></div>
-
-                                <span className="text-placeholder ml-2 block text-xs">Trust</span>
-                            </div>
-                            <div className="flex border-b">
-                                <div className="w-1/5 border-r"></div>
-                                <div className="flex w-4/5">
-                                    <div className="mx-auto mt-auto h-3/4 w-2/3 rounded-t border-x border-t bg-primary-600/10 pl-2.5 pt-1 duration-300 group-hover:bg-primary-600/30">
-                                        <span className="text-xs text-primary-800 dark:text-primary-100">Oz</span>
+                        <div className=" p-4">
+                            <div className="relative flex items-center justify-center overflow-x-auto border bg-white py-2 lg:overflow-visible dark:border-info-400/20 dark:bg-gray-950/25">
+                                <div className="absolute -inset-1 flex justify-between">
+                                    <div className="flex flex-col justify-between">
+                                        <div className="size-2 rounded-full border border-info-500 bg-white"></div>
+                                        <div className="size-2 rounded-full border border-info-500 bg-white"></div>
+                                    </div>
+                                    <div className="flex flex-col justify-between">
+                                        <div className="size-2 rounded-full border border-info-500 bg-white"></div>
+                                        <div className="size-2 rounded-full border border-info-500 bg-white"></div>
+                                    </div>
+                                </div>
+                                <div className="relative mx-auto grid size-full max-w-xs grid-cols-4 gap-3 px-4 py-2 *:aspect-square *:overflow-hidden *:rounded-full *:border *:border-gray-950/5 dark:*:border-white/5">
+                                    <div data-palette="trust" className="row-span-2  hidden grid-cols-2 bg-primary-600">
+                                        <div className="col-start-2 bg-secondary-500 blur"></div>
+                                        <div className="col-start-2 bg-accent-400 blur"></div>
+                                    </div>
+                                    <div data-palette="oz" className="row-span-2 grid grid-cols-2 bg-primary-600">
+                                        <div className="col-start-2 bg-secondary-500 blur"></div>
+                                        <div className="col-start-2 bg-accent-400 blur"></div>
+                                    </div>
+                                    <div data-palette="mystery" className="row-span-2 grid grid-cols-2 bg-primary-600">
+                                        <div className="col-start-2 bg-secondary-500 blur"></div>
+                                        <div className="col-start-2 bg-accent-400 blur"></div>
+                                    </div>
+                                    <div data-palette="romance" className="row-span-2 grid grid-cols-2 bg-primary-600">
+                                        <div className="col-start-2 bg-secondary-500 blur"></div>
+                                        <div className="col-start-2 bg-accent-400 blur"></div>
+                                    </div>
+                                    <div data-palette="passion" className="row-span-2 grid grid-cols-2 bg-primary-600">
+                                        <div className="col-start-2 bg-secondary-500 blur"></div>
+                                        <div className="col-start-2 bg-accent-400 blur"></div>
+                                    </div>
+                                    <div data-palette="energy" className="row-span-2 grid grid-cols-2 bg-primary-600">
+                                        <div className="col-start-2 bg-secondary-500 blur"></div>
+                                        <div className="col-start-2 bg-accent-400 blur"></div>
+                                    </div>
+                                    <div data-palette="spring" className="row-span-2 grid grid-cols-2 bg-primary-600">
+                                        <div className="col-start-2 bg-secondary-500 blur"></div>
+                                        <div className="col-start-2 bg-accent-400 blur"></div>
+                                    </div>
+                                    <div data-palette="nature" className="row-span-2 grid grid-cols-2 bg-primary-600">
+                                        <div className="col-start-2 bg-secondary-500 blur"></div>
+                                        <div className="col-start-2 bg-accent-400 blur"></div>
+                                    </div>
+                                    <div data-palette="winter" className="row-span-2 grid grid-cols-2 bg-primary-600">
+                                        <div className="col-start-2 bg-secondary-500 blur"></div>
+                                        <div className="col-start-2 bg-accent-400 blur"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="p-4">
                             <p className="mt-4 text-lg">
-                                Theming via <span className="text-title font-medium">Data Attributes</span>
+                                Start with ready <span className="text-title font-medium">Palettes</span>
                             </p>
                         </div>
                     </div>
@@ -177,62 +211,29 @@ export default function FeaturesBento() {
                     <p className="mt-4 max-w-sm text-sm">Tailus UI HTML is a simple css code that you copy and paste in your project, you're free to make any change.</p>
                 </div>
             </div>
-            <div className="card variant-mixed !shadow-lg !shadow-gray-950/5">
-                <div className="-m-4">
-                    <img src="https://webcontainers.io//img/features/features-03-frameworks-dark.png" alt="" />
-                    <div className="relative hidden items-center justify-center overflow-x-auto border bg-white py-6 lg:overflow-visible dark:border-info-400/20 dark:bg-gray-950/25">
-                        <div className="absolute -inset-1 flex justify-between">
-                            <div className="flex flex-col justify-between">
-                                <div className="size-2 rounded-full border border-info-500 bg-white"></div>
-                                <div className="size-2 rounded-full border border-info-500 bg-white"></div>
-                            </div>
-                            <div className="flex flex-col justify-between">
-                                <div className="size-2 rounded-full border border-info-500 bg-white"></div>
-                                <div className="size-2 rounded-full border border-info-500 bg-white"></div>
-                            </div>
+            <div className="card variant-mixed grid !shadow-lg !shadow-gray-950/5 [grid-template-rows:1fr_auto]">
+                <div className="relative p-4">
+                    <div className="absolute inset-4 z-[1] mt-auto h-1/2 bg-gradient-to-t from-[--ui-bg]"></div>
+                    <div data-shade="800" className="grid h-full rounded-t-md border [grid-template-rows:auto_1fr]">
+                        <div className="flex h-7 items-center gap-1.5 border-b px-3">
+                            <div className="size-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+                            <div className="size-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+                            <div className="size-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+
+                            <span className="text-placeholder ml-2 block text-xs">Trust</span>
                         </div>
-                        <div className="relative flex gap-2 *:size-8 *:overflow-hidden *:rounded-full *:border *:border-gray-950/5 dark:*:border-white/5">
-                            <div data-palette="trust" className="row-span-2 grid grid-cols-2 bg-primary-600">
-                                <div className="col-start-2 bg-secondary-500 blur"></div>
-                                <div className="col-start-2 bg-accent-400 blur"></div>
-                            </div>
-                            <div data-palette="oz" className="row-span-2 grid grid-cols-2 bg-primary-600">
-                                <div className="col-start-2 bg-secondary-500 blur"></div>
-                                <div className="col-start-2 bg-accent-400 blur"></div>
-                            </div>
-                            <div data-palette="mystery" className="row-span-2 grid grid-cols-2 bg-primary-600">
-                                <div className="col-start-2 bg-secondary-500 blur"></div>
-                                <div className="col-start-2 bg-accent-400 blur"></div>
-                            </div>
-                            <div data-palette="romance" className="row-span-2 grid grid-cols-2 bg-primary-600">
-                                <div className="col-start-2 bg-secondary-500 blur"></div>
-                                <div className="col-start-2 bg-accent-400 blur"></div>
-                            </div>
-                            <div data-palette="passion" className="row-span-2 grid grid-cols-2 bg-primary-600">
-                                <div className="col-start-2 bg-secondary-500 blur"></div>
-                                <div className="col-start-2 bg-accent-400 blur"></div>
-                            </div>
-                            <div data-palette="energy" className="row-span-2 grid grid-cols-2 bg-primary-600">
-                                <div className="col-start-2 bg-secondary-500 blur"></div>
-                                <div className="col-start-2 bg-accent-400 blur"></div>
-                            </div>
-                            <div data-palette="spring" className="row-span-2 grid grid-cols-2 bg-primary-600">
-                                <div className="col-start-2 bg-secondary-500 blur"></div>
-                                <div className="col-start-2 bg-accent-400 blur"></div>
-                            </div>
-                            <div data-palette="nature" className="row-span-2 grid grid-cols-2 bg-primary-600">
-                                <div className="col-start-2 bg-secondary-500 blur"></div>
-                                <div className="col-start-2 bg-accent-400 blur"></div>
-                            </div>
-                            <div data-palette="winter" className="row-span-2 grid grid-cols-2 bg-primary-600">
-                                <div className="col-start-2 bg-secondary-500 blur"></div>
-                                <div className="col-start-2 bg-accent-400 blur"></div>
+                        <div className="flex border-b">
+                            <div className="w-1/5 border-r"></div>
+                            <div className="flex w-4/5">
+                                <div className="mx-auto mt-auto h-3/4 w-2/3 rounded-t border-x border-t bg-primary-600/10 pl-2.5 pt-1 duration-300 group-hover:bg-primary-600/30">
+                                    <span className="text-xs text-primary-800 dark:text-primary-100">Oz</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="-mt-6 p-4">
-                    <h3 className="text-title font-medium">You're in control</h3>
+                <div className="h-fit p-4">
+                    <h3 className="text-title font-medium">Data Attributes</h3>
                     <p className="mt-4 max-w-sm text-sm">Tailus UI HTML is a simple css code that you copy and paste in your project, you're free to make any change.</p>
                 </div>
             </div>

@@ -30,16 +30,16 @@ import FeaturesBento from '@components/FeaturesBento'
         </Container>
     </section>
 
-    <section class="relative border-b">
-        <svg class="absolute inset-0 mx-auto w-full text-secondary-100 blur-3xl dark:text-white/5" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <section class="relative border-b [--ui-bg:theme(colors.white/0.75)] [--ui-border-color:theme(colors.gray.950/0.15)] dark:[--ui-bg:theme(colors.gray.900)] dark:[--ui-border-color:theme(colors.gray.800)]">
+        <svg class="absolute inset-0 mx-auto w-full text-secondary-100 blur-3xl dark:hidden dark:text-white/5" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
         </svg>
-        <svg class="absolute inset-0 m-auto w-full text-primary-200 blur-3xl dark:text-primary-500/5" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="absolute inset-0 m-auto w-full text-primary-200 blur-3xl dark:hidden dark:text-primary-500/5" viewBox="0 0 807 355" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M496.5 210C632.9 186.8 760.33 60.333 807 0C764.17 84 654.8 263.1 560 307.5C465.2 351.9 147.167 356.667 0 353.5C108.667 315.333 360.1 233.2 496.5 210Z" fill="currentColor"></path>
         </svg>
         <Container>
             <div data-shade="900" class="relative -mx-4 -mt-64">
-                <div class="relative grid grid-cols-6 divide-x divide-y divide-dashed border-r border-dashed [--ui-border-color:theme(colors.gray.950/0.15)] *:relative *:flex *:h-32 *:items-center *:justify-center *:border-dashed dark:bg-gray-950/25 dark:[--ui-bg:theme(colors.gray.800/0.5)] dark:[--ui-border-color:theme(colors.white/0.1)]">
+                <div class="relative grid grid-cols-6 divide-x divide-y divide-dashed border-r border-dashed *:relative *:flex *:h-32 *:items-center *:justify-center *:border-dashed dark:bg-gray-950/25">
                     <div class="col-start-6 border-l border-t">
                         <form class="flex gap-3">
                             <label class="field btn variant-outlined icon-only intent-gray sz-sm has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:shadow-none has-[:checked]:[background-image:none]" for="small2">
@@ -88,9 +88,9 @@ import FeaturesBento from '@components/FeaturesBento'
             </div>
         </Container>
 
-        <div class="border-y border-dashed [--ui-border-color:theme(colors.gray.950/0.15)]">
+        <div class="border-y border-dashed">
             <Container>
-                <div class="relative -mx-4 grid grid-cols-3 divide-x divide-dashed border-x border-dashed [--ui-bg:theme(colors.white/0.75)] dark:-z-10 dark:bg-gray-950/50 dark:[--ui-bg:theme(colors.gray.900)]">
+                <div class="relative -mx-4 grid grid-cols-3 divide-x divide-dashed border-x border-dashed dark:-z-10">
                     <div class="p-3">
                         <div class="card variant-mixed ml-auto flex h-full flex-col justify-between !shadow-lg !shadow-gray-950/5">
                             <div class="mb-6 divide-y divide-dashed border-l">
@@ -189,9 +189,9 @@ import FeaturesBento from '@components/FeaturesBento'
                 </div>
             </Container>
         </div>
-        <div class="relative [--ui-border-color:theme(colors.gray.950/0.15)]">
+        <div class="relative">
             <Container>
-                <div class="-mx-4 grid grid-cols-5 divide-x divide-dashed border-x border-dashed [--ui-bg:theme(colors.white/0.75)]">
+                <div class="-mx-4 grid grid-cols-5 divide-x divide-dashed border-x border-dashed">
                     <div class="h-fit border-b border-dashed px-3">
                         <div class="ml-auto flex h-12 w-fit items-center gap-4">
                             <div class="avatar sz-xs fallback-soft intent-primary">G</div>
@@ -692,7 +692,6 @@ import FeaturesBento from '@components/FeaturesBento'
             </div>
         </Container>
         <div class="relative mt-16">
-            <div class="absolute inset-x-0 inset-y-10 border-t border-dashed bg-gradient-to-b from-gray-50 dark:from-gray-925"></div>
             <Container>
                 <div class="-mx-4">
                     <CodeComparason client:idle />

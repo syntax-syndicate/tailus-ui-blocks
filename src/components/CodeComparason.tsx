@@ -139,8 +139,9 @@ export default function CodeComparason() {
     }, [activeCode])
 
     return (
-        <div className="grid border-r [grid-template-columns:auto_1fr]">
-            <div className="-mr-2 max-w-2xl border">
+        <div className="relative grid border-r [grid-template-columns:auto_1fr]">
+            <div className="absolute -left-2 bottom-0 right-0 z-10 h-1/3 max-w-2xl bg-gradient-to-t from-white dark:from-gray-950"></div>
+            <div className=" -mr-2 max-w-2xl border">
                 <div className="bg-ui flex h-10 items-center justify-between overflow-hidden border-b pr-8 dark:bg-transparent">
                     <div data-shade="950" className="relative h-full">
                         <div
@@ -164,15 +165,9 @@ export default function CodeComparason() {
                     </span>
                 </div>
                 <div data-pagefind-ignore className="relative w-full">
-                    <ScrollArea.Root className="max-h-[32rem] bg-gradient-to-b from-[--ui-bg]" type="scroll">
-                        <ScrollArea.Viewport className="w-full">
-                            <pre className="line-numbers h-max w-full px-4 text-sm">
-                                <code className="language-html font-mono text-sm">{codes[activeCode]}</code>
-                            </pre>
-                        </ScrollArea.Viewport>
-                        <ScrollArea.Scrollbar orientation="horizontal" />
-                        <ScrollArea.Scrollbar orientation="vertical" />
-                    </ScrollArea.Root>
+                    <pre className="line-numbers max-h-[32rem] w-full px-4 text-sm">
+                        <code className="language-html font-mono text-sm">{codes[activeCode]}</code>
+                    </pre>
                 </div>
             </div>
             <div className="relative border-t">
