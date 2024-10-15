@@ -257,7 +257,7 @@
     }
 
     .btn.variant-outlined{
-        @apply text-gray-950 from-gray-300 from-85% to-gray-400 shadow-gray-950/15 before:inset-px before:border-t before:border-white before:bg-white before:transition-[background,border-color] before:duration-300 hover:before:bg-gray-100 active:before:bg-gray-200 dark:from-transparent dark:to-transparent dark:before:inset-0 dark:before:border dark:before:border-white/10 dark:before:bg-white/5 dark:hover:before:bg-white/10 dark:active:before:bg-white/15 dark:text-white
+        @apply text-gray-950 from-gray-300/75 from-85% to-gray-400/50 before:inset-px before:border-t before:border-white before:bg-white before:transition-[background,border-color] before:duration-300 hover:before:bg-gray-100 active:before:bg-gray-200 dark:from-transparent dark:to-transparent dark:before:inset-0 dark:before:border dark:before:border-white/10 dark:before:bg-white/5 dark:hover:before:bg-white/10 dark:active:before:bg-white/15 dark:text-white
     }
 
     .btn.variant-soft{
