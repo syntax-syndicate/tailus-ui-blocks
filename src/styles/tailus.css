@@ -609,11 +609,7 @@
     }
 
     .annonce-concern{
-        @apply block text-white px-2 py-0.5
-    }
-
-    .annonce-concern.variant-outlined{
-        @apply border
+        @apply block px-2 py-0.5
     }
 
     .annonce-concern.sz-xs{
@@ -632,40 +628,12 @@
         @apply text-base px-3 py-1
     }
 
-    .annonce-concern.variant-solid.intent-primary {
-        @apply bg-primary-600
+    .annonce-concern.variant-primary {
+        @apply bg-primary-600 text-white
     }
 
-    .annonce-concern.variant-solid.intent-secondary {
-        @apply bg-secondary-600
-    }
-
-    .annonce-concern.variant-solid.intent-accent {
-        @apply bg-accent-600
-    }
-
-    .annonce-concern.variant-solid.intent-info {
-        @apply bg-info-600
-    }
-
-    .annonce-concern.variant-solid.intent-success {
-        @apply bg-success-600
-    }
-
-    .annonce-concern.variant-solid.intent-danger {
-        @apply bg-danger-600
-    }
-
-    .annonce-concern.variant-solid.intent-warning {
-        @apply bg-warning-400 text-warning-950
-    }
-
-    .annonce-concern.variant-solid.intent-gray {
-        @apply bg-gray-600
-    }
-
-    .annonce-concern.variant-solid.intent-neutral {
-        @apply bg-gray-950 dark:bg-white dark:text-gray-950
+    .annonce-concern.variant-neutral {
+        @apply border bg-gray-500/15 border-gray-500/15 text-gray-950 dark:text-white
     }
 
     /* Progress */
