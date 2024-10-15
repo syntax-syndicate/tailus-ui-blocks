@@ -174,7 +174,7 @@ export default function CodeComparason() {
             </div>
             <div className="relative z-10 -mt-16 border-t md:mt-0">
                 <div className="relative ml-2 h-4 bg-[repeating-linear-gradient(-45deg,var(--stripes-color),var(--stripes-color)_0.5px,theme(colors.transparent)_0.5px,theme(colors.transparent)_6px)] [--stripes-color:theme(colors.gray.300)] before:absolute before:inset-0 before:bg-gradient-to-t before:from-gray-50 dark:[--stripes-color:theme(colors.white/0.2)] dark:before:from-gray-950"></div>
-                <form action="" className="bg-ui relative -mb-4 -mr-2 overflow-hidden rounded-[--card-radius] border p-1 shadow-lg">
+                <form action="" className="bg-ui tls-shadow-lg relative -mb-4 -mr-2 overflow-hidden rounded-[--card-radius] p-1 shadow-gray-950/5">
                     <div className="-mx-1 flex h-9 items-center gap-1.5 px-4">
                         <div className="size-2 rounded-full bg-gray-300 dark:bg-gray-700"></div>
                         <div className="size-2 rounded-full bg-gray-300 dark:bg-gray-700"></div>

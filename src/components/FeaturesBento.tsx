@@ -48,7 +48,7 @@ export default function FeaturesBento() {
     return (
         <div className="relative grid gap-4 pb-6 lg:grid-cols-2 lg:grid-rows-2">
             <div className="space-y-4 lg:row-span-2">
-                <div className="card variant-mixed row-span-2 space-y-6 ">
+                <div className="card bg-ui tls-shadow row-span-2 space-y-6 shadow-gray-950/5 ">
                     <div className="relative mt-[--card-padding]">
                         <div className="absolute inset-0 z-[1] mt-auto h-1/4 bg-gradient-to-t from-[--ui-bg]"></div>
                         <div className="absolute inset-y-0 left-1 my-auto h-2/5 w-px bg-gradient-to-b from-transparent via-[--ui-border-color] to-transparent"></div>
@@ -89,7 +89,7 @@ export default function FeaturesBento() {
                     </div>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="card variant-mixed flex flex-col justify-between overflow-hidden !border-b-0 ">
+                    <div className="card bg-ui tls-shadow flex flex-col justify-between overflow-hidden shadow-gray-950/5 ">
                         <div className="p-4">
                             <p className="text-center text-lg">
                                 Perfectly works with <span className="text-title font-semibold">TailwindCss</span> Utilities.
@@ -110,7 +110,7 @@ export default function FeaturesBento() {
                             </div>
                         </div>
                     </div>
-                    <div className="card variant-mixed group relative grid overflow-hidden  [grid-template-rows:1fr_auto]">
+                    <div className="card bg-ui tls-shadow group relative grid overflow-hidden shadow-gray-950/5  [grid-template-rows:1fr_auto]">
                         <div className=" p-4">
                             <div className="relative flex items-center justify-center overflow-x-auto border bg-white py-2 lg:overflow-visible dark:border-info-400/20 dark:bg-gray-950/25">
                                 <div className="absolute -inset-1 flex justify-between">
@@ -172,7 +172,7 @@ export default function FeaturesBento() {
                 </div>
             </div>
 
-            <div className="card variant-mixed group ">
+            <div className="card bg-ui tls-shadow group shadow-gray-950/5 ">
                 <div ref={containerRef} className="overflow-hidden border border-dashed p-4">
                     <div className="relative">
                         <div ref={indicatorRef} className="absolute -inset-y-4 left-[--clip-percentage] z-10 w-0.5 rounded-full bg-gradient-to-b from-transparent via-white to-transparent">
@@ -215,7 +215,7 @@ export default function FeaturesBento() {
                     <p className="mt-4 max-w-sm text-sm">Tailus UI HTML is a simple css code that you copy and paste in your project, you're free to make any change.</p>
                 </div>
             </div>
-            <div className="card variant-mixed grid  [grid-template-rows:1fr_auto]">
+            <div className="card bg-ui tls-shadow grid shadow-gray-950/5  [grid-template-rows:1fr_auto]">
                 <div className="relative p-4">
                     <div className="absolute inset-4 z-[1] mt-auto h-1/2 bg-gradient-to-t from-[--ui-bg]"></div>
                     <div data-shade="800" className="grid h-full rounded-t-md border [grid-template-rows:auto_1fr]">
