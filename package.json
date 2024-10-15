@@ -1,10 +1,10 @@
 {
-  "name": "v2.tailus.io",
-  "version": "0.1.0",
+  "name": "tailus_ui_html",
+  "version": "0.2.0",
   "description": "Easy to customize UI components, blocks and templates built on top of modern frontend tools to make ideas stand out.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Tailus-UI/v2.tailus.io"
+    "url": "https://github.com/Tailus-UI/tailus ui html"
   },
   "scripts": {
     "dev": "astro dev",
