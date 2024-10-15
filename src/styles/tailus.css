@@ -443,27 +443,15 @@
         @apply absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3
     }
 
-    .switch-thumb.intent-neutral{
+    .switch-thumb.variant-neutral{
         @apply absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3 dark:peer-checked:bg-gray-900
     }
 
-    .switch.intent-primary{
+    .switch.variant-primary{
         @apply has-[:checked]:bg-primary-600
     }
 
-    .switch.intent-secondary{
-        @apply has-[:checked]:bg-secondary-600
-    }
-
-    .switch.intent-accent{
-        @apply has-[:checked]:bg-accent-600
-    }
-
-    .switch.intent-gray{
-        @apply has-[:checked]:bg-gray-600
-    }
-
-    .switch.intent-neutral{
+    .switch.variant-neutral{
         @apply has-[:checked]:bg-gray-950 dark:has-[:checked]:bg-white
     }
 
