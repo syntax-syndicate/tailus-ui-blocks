@@ -536,27 +536,19 @@
     /* Code */
 
     .code {
-        @apply text-sm inline-block border rounded-md py-px px-1
+        @apply text-sm inline-block  rounded-md py-px px-1
     }
 
-    .code.intent-primary {
-        @apply bg-primary-50 text-primary-600 dark:text-primary-300 border-primary-200 dark:border-primary-500/20 dark:bg-primary-500/5
+    .code.variant-primary {
+        @apply border bg-primary-50 text-primary-600 dark:text-primary-300 border-primary-200 dark:border-primary-500/20 dark:bg-primary-500/5
     }
 
-    .code.intent-secondary {
-        @apply bg-secondary-50 text-secondary-600 dark:text-secondary-300 border-secondary-200 dark:border-secondary-500/20 dark:bg-secondary-500/5
+    .code.variant-gray {
+        @apply bg-[--ui-soft-bg] text-[--body-text-color]
     }
 
-    .code.intent-accent {
-        @apply bg-accent-50 text-accent-600 dark:text-accent-300 border-accent-200 dark:border-accent-500/20 dark:bg-accent-500/5
-    }
-
-    .code.intent-gray {
-        @apply bg-gray-50 text-[--body-text-color] dark:border-gray-500/20 dark:bg-gray-500/5
-    }
-
-    .code.intent-neutral {
-        @apply bg-gray-50 text-gray-950 dark:text-white dark:bg-gray-500/5 dark:border-gray-500/20
+    .code.variant-neutral {
+        @apply border bg-gray-50 text-gray-950 dark:text-white dark:bg-gray-500/5 dark:border-gray-500/20
     }
 
     /* Link */
