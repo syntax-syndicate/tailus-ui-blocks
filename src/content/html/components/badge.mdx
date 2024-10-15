@@ -17,16 +17,22 @@ export const components = {
     <PreviewBlock codeBlocks={
               [{
             code:`<div class="flex gap-3">
-    <span class="badge sz-md variant-solid intent-primary">Badge</span>
-    <span class="badge sz-sm variant-soft intent-primary">Badge</span>
-    <span class="badge sz-sm variant-outlined intent-primary">Badge</span>
+    <span class="badge sz-sm variant-neutral">Badge</span>
+    <span class="badge sz-sm variant-info">Badge</span>
+    <span class="badge sz-sm variant-success">Badge</span>
+    <span class="badge sz-sm variant-warning">Badge</span>
+    <span class="badge sz-sm variant-danger">Badge</span>
+    <span class="badge sz-sm variant-urgent">Badge</span>
 </div>`,
               lang: "html"
           }]}>
         <div class="flex gap-3">
-            <span class="badge sz-sm variant-solid intent-primary">Badge</span>
-            <span class="badge sz-sm variant-soft intent-primary">Badge</span>
-            <span class="badge sz-sm variant-outlined intent-primary">Badge</span>
+            <span class="badge sz-sm variant-neutral">Badge</span>
+            <span class="badge sz-sm variant-info">Badge</span>
+            <span class="badge sz-sm variant-success">Badge</span>
+            <span class="badge sz-sm variant-warning">Badge</span>
+            <span class="badge sz-sm variant-danger">Badge</span>
+            <span class="badge sz-sm variant-urgent">Badge</span>
         </div>
     </PreviewBlock>
 
@@ -43,108 +49,34 @@ export const components = {
     </div>
 
     <div>
-        ## Sizes example
+        ## Sizes
         <PreviewBlock codeBlocks={
               [{
             code:`<div class="flex items-end gap-3">
-    <span class="badge sz-xs variant-solid intent-primary">Badge</span>
-    <span class="badge sz-sm variant-solid intent-primary">Badge</span>
-    <span class="badge sz-md variant-solid intent-primary">Badge</span>
-    <span class="badge sz-lg variant-solid intent-primary">Badge</span>
+    <span class="badge sz-xs variant-success">Badge</span>
+    <span class="badge sz-sm variant-success">Badge</span>
+    <span class="badge sz-md variant-success">Badge</span>
+    <span class="badge sz-lg variant-success">Badge</span>
 </div>`,
               lang: "html"
           }]}>
             <div class="flex items-end gap-3">
-                <span class="badge sz-xs variant-solid intent-primary">Badge</span>
-                <span class="badge sz-sm variant-solid intent-primary">Badge</span>
-                <span class="badge sz-md variant-solid intent-primary">Badge</span>
-                <span class="badge sz-lg variant-solid intent-primary">Badge</span>
+                <span class="badge sz-xs variant-success">Badge</span>
+                <span class="badge sz-sm variant-success">Badge</span>
+                <span class="badge sz-md variant-success">Badge</span>
+                <span class="badge sz-lg variant-success">Badge</span>
             </div>
         </PreviewBlock>
     </div>
 
     <div>
-        ## Intents example
+        ## Number
         <PreviewBlock codeBlocks={
               [{
-            code:`<div class="w-fit grid grid-cols-3 gap-6">
-    <div class="space-y-4">
-        <span class="text-caption text-sm">Solid</span>
-        <span class="badge sz-sm variant-solid intent-primary">Badge</span>
-        <span class="badge sz-sm variant-solid intent-secondary">Badge</span>
-        <span class="badge sz-sm variant-solid intent-accent">Badge</span>
-        <span class="badge sz-sm variant-solid intent-info">Badge</span>
-        <span class="badge sz-sm variant-solid intent-danger">Badge</span>
-        <span class="badge sz-sm variant-solid intent-success">Badge</span>
-        <span class="badge sz-sm variant-solid intent-info">Badge</span>
-        <span class="badge sz-sm variant-solid intent-warning">Badge</span>
-        <span class="badge sz-sm variant-solid intent-gray">Badge</span>
-    </div>
-    <div class="space-y-4">
-        <span class="text-caption text-sm">Soft</span>
-        <span class="badge sz-sm variant-soft intent-primary">Badge</span>
-        <span class="badge sz-sm variant-soft intent-secondary">Badge</span>
-        <span class="badge sz-sm variant-soft intent-accent">Badge</span>
-        <span class="badge sz-sm variant-soft intent-info">Badge</span>
-        <span class="badge sz-sm variant-soft intent-danger">Badge</span>
-        <span class="badge sz-sm variant-soft intent-success">Badge</span>
-        <span class="badge sz-sm variant-soft intent-info">Badge</span>
-        <span class="badge sz-sm variant-soft intent-warning">Badge</span>
-        <span class="badge sz-sm variant-soft intent-gray">Badge</span>
-    </div>
-    <div class="space-y-4">
-        <span class="text-caption text-sm">Outlined</span>
-        <span class="badge sz-sm variant-outlined intent-primary">Badge</span>
-        <span class="badge sz-sm variant-outlined intent-secondary">Badge</span>
-        <span class="badge sz-sm variant-outlined intent-accent">Badge</span>
-        <span class="badge sz-sm variant-outlined intent-info">Badge</span>
-        <span class="badge sz-sm variant-outlined intent-danger">Badge</span>
-        <span class="badge sz-sm variant-outlined intent-success">Badge</span>
-        <span class="badge sz-sm variant-outlined intent-info">Badge</span>
-        <span class="badge sz-sm variant-outlined intent-warning">Badge</span>
-        <span class="badge sz-sm variant-outlined intent-gray">Badge</span>
-    </div>
-</div>`,
+            code:`<span class="badge sz-sm variant-urgent !px-1">32</span>`,
               lang: "html"
           }]}>
-            <div class="w-fit grid grid-cols-3 gap-6">
-                <div class="space-y-4">
-                    <span class="text-caption text-sm">Solid</span>
-                    <span class="badge sz-sm variant-solid intent-primary">Badge</span>
-                    <span class="badge sz-sm variant-solid intent-secondary">Badge</span>
-                    <span class="badge sz-sm variant-solid intent-accent">Badge</span>
-                    <span class="badge sz-sm variant-solid intent-info">Badge</span>
-                    <span class="badge sz-sm variant-solid intent-danger">Badge</span>
-                    <span class="badge sz-sm variant-solid intent-success">Badge</span>
-                    <span class="badge sz-sm variant-solid intent-info">Badge</span>
-                    <span class="badge sz-sm variant-solid intent-warning">Badge</span>
-                    <span class="badge sz-sm variant-solid intent-gray">Badge</span>
-                </div>
-                <div class="space-y-4">
-                    <span class="text-caption text-sm">Soft</span>
-                    <span class="badge sz-sm variant-soft intent-primary">Badge</span>
-                    <span class="badge sz-sm variant-soft intent-secondary">Badge</span>
-                    <span class="badge sz-sm variant-soft intent-accent">Badge</span>
-                    <span class="badge sz-sm variant-soft intent-info">Badge</span>
-                    <span class="badge sz-sm variant-soft intent-danger">Badge</span>
-                    <span class="badge sz-sm variant-soft intent-success">Badge</span>
-                    <span class="badge sz-sm variant-soft intent-info">Badge</span>
-                    <span class="badge sz-sm variant-soft intent-warning">Badge</span>
-                    <span class="badge sz-sm variant-soft intent-gray">Badge</span>
-                </div>
-                <div class="space-y-4">
-                    <span class="text-caption text-sm">Outlined</span>
-                    <span class="badge sz-sm variant-outlined intent-primary">Badge</span>
-                    <span class="badge sz-sm variant-outlined intent-secondary">Badge</span>
-                    <span class="badge sz-sm variant-outlined intent-accent">Badge</span>
-                    <span class="badge sz-sm variant-outlined intent-info">Badge</span>
-                    <span class="badge sz-sm variant-outlined intent-danger">Badge</span>
-                    <span class="badge sz-sm variant-outlined intent-success">Badge</span>
-                    <span class="badge sz-sm variant-outlined intent-info">Badge</span>
-                    <span class="badge sz-sm variant-outlined intent-warning">Badge</span>
-                    <span class="badge sz-sm variant-outlined intent-gray">Badge</span>
-                </div>
-            </div>
+            <span class="badge sz-sm variant-urgent !px-1">32</span>
         </PreviewBlock>
     </div>
 </div>

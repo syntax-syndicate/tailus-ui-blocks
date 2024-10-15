@@ -315,15 +315,31 @@
     /* Badge */
 
     .badge{
-        @apply rounded-[--badge-radius] flex items-center gap-1.5 size-fit
+        @apply rounded-[--badge-radius] flex items-center gap-1.5 size-fit border
     }
 
-    .badge.variant-solid{
-        @apply text-white
+    .badge.variant-neutral{
+        @apply bg-gray-500/10 border-gray-500/15 text-[--body-text-color] dark:bg-gray-500/15 dark:border-gray-500/20
     }
 
-    .badge.variant-outlined{
-        @apply border
+    .badge.variant-info{
+        @apply bg-info-500/15 border-info-500/15 text-info-700 dark:text-info-300 dark:border-info-500/20
+    }
+
+    .badge.variant-success{
+        @apply bg-success-500/15 border-success-500/25 text-success-800 dark:text-success-300 dark:border-success-500/15
+    }
+
+    .badge.variant-warning{
+        @apply bg-warning-500/15 border-warning-500/25 text-warning-800 dark:text-warning-200 dark:border-warning-500/15
+    }
+
+    .badge.variant-danger{
+        @apply bg-danger-500/15 border-danger-500/15 text-danger-700 dark:text-danger-300
+    }
+
+    .badge.variant-urgent{
+        @apply bg-danger-600 border-danger-600 text-white
     }
 
     .badge.sz-xs {
@@ -335,107 +351,11 @@
     }
 
     .badge.sz-md{
-        @apply px-2.5 py-1 text-sm
+        @apply px-2.5 py-0.5 text-sm
     }
 
     .badge.sz-lg{
-        @apply px-3 py-1 text-base
-    }
-
-    .badge.variant-solid.intent-primary {
-        @apply bg-primary-600 dark:bg-primary-400 dark:text-primary-950
-    }
-
-    .badge.variant-solid.intent-secondary {
-        @apply bg-secondary-600 dark:bg-secondary-400 dark:text-secondary-950
-    }
-
-    .badge.variant-solid.intent-accent {
-        @apply bg-accent-600 dark:bg-accent-400 dark:text-accent-950
-    }
-
-    .badge.variant-solid.intent-info {
-        @apply bg-info-600 dark:bg-info-400 dark:text-info-950
-    }
-
-    .badge.variant-solid.intent-success {
-        @apply bg-success-600 dark:bg-success-400 dark:text-success-950
-    }
-
-    .badge.variant-solid.intent-danger {
-        @apply bg-danger-600 dark:bg-danger-400 dark:text-danger-950
-    }
-
-    .badge.variant-solid.intent-warning {
-        @apply bg-warning-400 text-warning-950
-    }
-
-    .badge.variant-solid.intent-gray {
-        @apply bg-gray-600 dark:bg-gray-400 dark:text-gray-950
-    }
-
-    .badge.variant-outlined.intent-primary, .annonce-concern.variant-outlined.intent-primary{
-        @apply border-primary-200 text-primary-800 dark:border-primary-300/15 dark:text-primary-300
-    }
-
-    .badge.variant-outlined.intent-secondary, .annonce-concern.variant-outlined.intent-secondary{
-        @apply border-secondary-200 text-secondary-800 dark:border-secondary-300/15 dark:text-secondary-300
-    }
-
-    .badge.variant-outlined.intent-accent, .annonce-concern.variant-outlined.intent-accent{
-        @apply border-accent-200 text-accent-800 dark:border-accent-300/15 dark:text-accent-300
-    }
-
-    .badge.variant-outlined.intent-info, .annonce-concern.variant-outlined.intent-info{
-        @apply border-info-200 text-info-800 dark:border-info-300/15 dark:text-info-300
-    }
-
-    .badge.variant-outlined.intent-success, .annonce-concern.variant-outlined.intent-success{
-        @apply border-success-200 text-success-800 dark:border-success-300/15 dark:text-success-300
-    }
-
-    .badge.variant-outlined.intent-danger, .annonce-concern.variant-outlined.intent-danger{
-        @apply border-danger-200 text-danger-800 dark:border-danger-300/15 dark:text-danger-300
-    }
-
-    .badge.variant-outlined.intent-warning, .annonce-concern.variant-outlined.intent-warning{
-        @apply border-warning-300 text-warning-800 dark:border-warning-300/15 dark:text-warning-300
-    }
-
-    .badge.variant-outlined.intent-gray, .annonce-concern.variant-outlined.intent-gray{
-        @apply border-gray-200 text-gray-800 dark:border-gray-300/15 dark:text-gray-300
-    }
-
-    .badge.variant-soft.intent-primary, .annonce-concern.variant-soft.intent-primary{
-        @apply bg-primary-200 text-primary-800 dark:bg-primary-500/15 dark:text-primary-300
-    }
-
-    .badge.variant-soft.intent-secondary, .annonce-concern.variant-soft.intent-secondary{
-        @apply bg-secondary-200 text-secondary-800 dark:bg-secondary-500/15 dark:text-secondary-300
-    }
-
-    .badge.variant-soft.intent-accent, .annonce-concern.variant-soft.intent-accent{
-        @apply bg-accent-200 text-accent-800 dark:bg-accent-500/15 dark:text-accent-300
-    }
-
-    .badge.variant-soft.intent-info, .annonce-concern.variant-soft.intent-info{
-        @apply bg-info-200 text-info-800 dark:bg-info-500/15 dark:text-info-300
-    }
-
-    .badge.variant-soft.intent-success, .annonce-concern.variant-soft.intent-success{
-        @apply bg-success-200 text-success-800 dark:bg-success-500/15 dark:text-success-300
-    }
-
-    .badge.variant-soft.intent-danger, .annonce-concern.variant-soft.intent-danger{
-        @apply bg-danger-200 text-danger-800 dark:bg-danger-500/15 dark:text-danger-300
-    }
-
-    .badge.variant-soft.intent-warning, .annonce-concern.variant-soft.intent-warning{
-        @apply bg-warning-200 text-warning-900 dark:bg-warning-500/15 dark:text-warning-300
-    }
-
-    .badge.variant-soft.intent-gray, .annonce-concern.variant-soft.intent-gray{
-        @apply bg-gray-200 text-gray-800 dark:bg-gray-500/15 dark:text-gray-300
+        @apply px-2.5 py-0.5 text-base
     }
 
     /* Form field, input and textarea */
