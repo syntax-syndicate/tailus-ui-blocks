@@ -709,31 +709,22 @@
         @apply h-full ease-[cubic-bezier(0.65,0,0.35,1)] rounded-full transition-transform duration-[660ms]
     }
 
-    .progress-indicator.intent-primary{
+    .progress-indicator.variant-primary{
         @apply bg-primary-600
     }
-    .progress-indicator.intent-secondary{
-        @apply bg-secondary-600
-    }
-    .progress-indicator.intent-accent{
-        @apply bg-accent-600
-    }
-    .progress-indicator.intent-danger{
+    .progress-indicator.variant-danger{
         @apply bg-danger-600
     }
-    .progress-indicator.intent-info{
-        @apply bg-info-600
-    }
-    .progress-indicator.intent-success{
+    .progress-indicator.variant-success{
         @apply bg-success-600
     }
-    .progress-indicator.intent-warning{
+    .progress-indicator.variant-warning{
         @apply bg-warning-600
     }
-    .progress-indicator.intent-gray{
+    .progress-indicator.variant-gray{
         @apply bg-gray-600
     }
-    .progress-indicator.intent-neutral{
+    .progress-indicator.variant-neutral{
         @apply bg-gray-950 dark:bg-white
     }
 
