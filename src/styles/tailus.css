@@ -204,6 +204,41 @@
     .bg-overlay{
         background: var(--overlay-bg);
     }
+
+    .tls-shadow, .tls-shadow-md, .tls-shadow-lg{
+        --tw-shadow-color:theme(colors.gray.950/0.05)
+    }
+
+    /* Shadow */
+    .tls-shadow {
+        box-shadow:
+        0 0 0 1px var(--ui-border-color),
+        0 0.5px 0.5px -0.125px var(--tw-shadow-color),
+        0 1px 1px -0.5px var(--tw-shadow-color),
+        0 2px 2px -1px var(--tw-shadow-color),
+        0 4px 4px -2px var(--tw-shadow-color),
+        0 8px 8px -4px var(--tw-shadow-color);
+    }
+
+    .tls-shadow-md {
+        box-shadow:
+        0 0 0 1px var(--ui-border-color),
+        0 1px 1px -0.25px var(--tw-shadow-color),
+        0 2px 2px -0.5px var(--tw-shadow-color),
+        0 4px 4px -1px var(--tw-shadow-color),
+        0 8px 8px -2px var(--tw-shadow-color),
+        0 16px 16px -4px var(--tw-shadow-color);
+    }
+
+    .tls-shadow-lg {
+        box-shadow:
+        0 0 0 1px var(--ui-border-color),
+        0 2px 2px -0.5px var(--tw-shadow-color),
+        0 4px 4px -1px var(--tw-shadow-color),
+        0 8px 8px -2px var(--tw-shadow-color),
+        0 16px 16px -4px var(--tw-shadow-color),
+        0 32px 32px -8px var(--tw-shadow-color);
+    }
 }
 
 @layer components {
