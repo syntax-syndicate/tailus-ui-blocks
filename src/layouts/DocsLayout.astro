@@ -45,10 +45,10 @@ const repo = 'html.tailus.io'
         const headingIndicator = document.querySelector('#heading-indicator') as HTMLElement
 
         const observer = new IntersectionObserver(function (entries) {
-            entries.forEach(entry => {
+            entries.forEach((entry) => {
                 const { id } = entry.target
 
-                headingLinks.forEach(link => {
+                headingLinks.forEach((link) => {
                     const href = link.getAttribute('href')?.replace('#', '')
 
                     if (href === id) {
@@ -69,13 +69,13 @@ const repo = 'html.tailus.io'
             })
         }, options)
 
-        headings.forEach(heading => {
+        headings.forEach((heading) => {
             observer.observe(heading)
         })
     })
 </script>
 
-<html class="scroll-smooth dark" lang="en" data-palette="tls" data-rounded="xlarge" data-shade="900">
+<html class="scroll-smooth dark" lang="en" data-palette="oz" data-rounded="xlarge" data-shade="900">
     <head>
         <BaseHead title={`${documentation.title} - Tailus UI ${collection.charAt(0).toUpperCase() + collection.slice(1)}`} description={documentation.description} />
         <ViewTransitions />
@@ -127,7 +127,7 @@ const repo = 'html.tailus.io'
                                         <a href="#overview" class="text-xs flex items-center font-medium px-3.5 py-0.5 text-gray-600 dark:text-gray-400 hover:text-info-600 dark:hover:text-info-400 transition duration-300 rounded-2xl"> Overview</a>
                                     </li>
                                     {
-                                        headings.map(heading => {
+                                        headings.map((heading) => {
                                             if (heading.depth === 1 || heading.depth === 2) {
                                                 return (
                                                     <li>

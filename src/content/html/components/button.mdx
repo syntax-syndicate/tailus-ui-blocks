@@ -17,18 +17,22 @@ export const components = {
     <PreviewBlock codeBlocks={
               [{
             code:`<div class="flex flex-wrap gap-3">
-    <button class="btn variant-solid sz-sm intent-primary">Generate</button>
-    <button class="btn variant-outlined sz-sm intent-primary">Generate</button>
-    <button class="btn variant-soft sz-sm intent-primary">Generate</button>
-    <button class="btn variant-ghost sz-sm intent-primary">Generate</button>
+    <button class="btn variant-neutral sz-md">
+        <span class="btn-label">Button</span>
+    </button>
+    <button class="btn variant-primary sz-md">
+        <span class="btn-label">Button</span>
+    </button>
 </div>`,
               lang: "html"
           }]}>
-        <div class="flex flex-wrap gap-3">
-            <button class="btn variant-solid sz-sm intent-primary">Generate</button>
-            <button class="btn variant-outlined sz-sm intent-primary">Generate</button>
-            <button class="btn variant-soft sz-sm intent-primary">Generate</button>
-            <button class="btn variant-ghost sz-sm intent-primary">Generate</button>
+        <div  class="flex flex-wrap gap-3">
+            <button class="btn variant-neutral sz-md">
+                <span class="btn-label">Button</span>
+            </button>
+            <button class="btn variant-primary sz-md">
+                <span class="btn-label">Button</span>
+            </button>
         </div>
     </PreviewBlock>
 
@@ -45,34 +49,86 @@ export const components = {
     </div>
 
     <div>
-        ## Icons example
+        ## Outlined
+        <PreviewBlock codeBlocks={
+            [{
+            code:`<button class="btn variant-outlined sz-md">
+    <span>Button</span>
+</button>`,
+            lang: "html"
+        }]}>
+            <button class="btn variant-outlined sz-md">
+                <span>Button</span>
+            </button>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Destructive
+        <PreviewBlock codeBlocks={
+            [{
+            code:`<button class="btn variant-destructive sz-md">
+    <span>Delete</span>
+</button>`,
+            lang: "html"
+        }]}>
+            <button class="btn variant-destructive sz-md">
+                <span>Delete</span>
+            </button>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Soft
+        <PreviewBlock codeBlocks={
+            [{
+            code:`<button class="btn variant-soft sz-md">Button</button>`,
+            lang: "html"
+        }]}>
+            <button class="btn variant-soft sz-md">Button</button>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## Ghost
+        <PreviewBlock codeBlocks={
+            [{
+            code:`<button class="btn variant-ghost sz-md">Button</button>`,
+            lang: "html"
+        }]}>
+            <button class="btn variant-ghost sz-md">Button</button>
+        </PreviewBlock>
+    </div>
+
+    <div>
+        ## With Icon
         <PreviewBlock codeBlocks={
               [{
             code:`<div class="flex items-end gap-3">
-    <button class="btn variant-solid sz-sm intent-primary">
+    <button class="btn variant-primary sz-md">
         <svg class="-ml-0.5" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
-        Generate
+        <span class="btn-label">Generate</span>
     </button>
-    <button class="btn variant-solid icon-only sz-sm intent-primary" aria-label="Generate">
+    <button class="btn variant-primary icon-only sz-md" aria-label="Generate">
         <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
     </button>
-    <button class="btn variant-solid sz-sm intent-primary">
-        Generate
+    <button class="btn variant-primary sz-md">
+        <span class="btn-label">Generate</span>
         <svg class="-mr-0.5" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
     </button>
 </div>`,
               lang: "html"
           }]}>
             <div class="flex items-end gap-3">
-                <button class="btn variant-solid sz-sm intent-primary">
+                <button class="btn variant-primary sz-md">
                     <svg class="-ml-0.5" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
-                    <span>Generate</span>
+                    <span class="btn-label">Generate</span>
                 </button>
-                <button class="btn variant-solid icon-only sz-sm intent-primary" aria-label="Generate">
+                <button class="btn variant-primary icon-only sz-md" aria-label="Generate">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
                 </button>
-                <button class="btn variant-solid sz-sm intent-primary">
-                    <span>Generate</span>
+                <button class="btn variant-primary sz-md">
+                    <span class="btn-label">Generate</span>
                     <svg class="-mr-0.5" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
                 </button>
             </div>
@@ -80,100 +136,54 @@ export const components = {
     </div>
 
     <div>
-        ## Loading example
+        ## Loading
         <PreviewBlock codeBlocks={
               [{
-            code:`<button class="btn variant-solid sz-sm intent-primary pointer-events-none">
+            code:`<button class="btn variant-primary sz-md pointer-events-none">
     <svg class="-ml-0.5 animate-spin" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>
-    Loading...
+    <span class="btn-label">Loading...</span>
 </button>`,
               lang: "html"
           }]}>
-            <button class="btn variant-solid sz-sm intent-primary pointer-events-none">
+            <button class="btn variant-primary sz-md pointer-events-none">
                 <svg class="-ml-0.5 animate-spin" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>
-                <span>Loading...</span>
+                <span class="btn-label">Loading...</span>
             </button>
         </PreviewBlock>
     </div>
 
     <div>
-        ## Disabled example
+        ## Disabled
         <PreviewBlock codeBlocks={
               [{
-            code:`<button disabled class="btn variant-solid sz-sm intent-primary">
+            code:`<button disabled class="btn variant-primary sz-md">
     Submit
 </button>`,
               lang: "html"
           }]}>
-            <button disabled class="btn variant-solid sz-sm intent-primary">Submit</button>
+            <button disabled class="btn variant-primary sz-md">Submit</button>
         </PreviewBlock>
     </div>
 
     <div>
-        ## Sizes example
+        ## Sizes
         <PreviewBlock codeBlocks={
               [{
-            code:`<div class="space-y-3">
-    <div class="flex items-end flex-wrap gap-3">
-        <button class="btn variant-solid sz-xs intent-primary">Xs</button>
-        <button class="btn variant-solid sz-sm intent-primary">Sm</button>
-        <button class="btn variant-solid sz-md intent-primary">Md</button>
-        <button class="btn variant-solid sz-lg intent-primary">Lg</button>
-        <button class="btn variant-solid sz-xl intent-primary">Xl</button>
-    </div>
-    <div class="flex items-end flex-wrap gap-3">
-        <button class="btn variant-outlined sz-xs intent-primary">Xs</button>
-        <button class="btn variant-outlined sz-sm intent-primary">Sm</button>
-        <button class="btn variant-outlined sz-md intent-primary">Md</button>
-        <button class="btn variant-outlined sz-lg intent-primary">Lg</button>
-        <button class="btn variant-outlined sz-xl intent-primary">Xl</button>
-    </div>
-    <div class="flex items-end flex-wrap gap-3">
-        <button class="btn variant-soft sz-xs intent-primary">Xs</button>
-        <button class="btn variant-soft sz-sm intent-primary">Sm</button>
-        <button class="btn variant-soft sz-md intent-primary">Md</button>
-        <button class="btn variant-soft sz-lg intent-primary">Lg</button>
-        <button class="btn variant-soft sz-xl intent-primary">Xl</button>
-    </div>
-    <div class="flex items-end flex-wrap gap-3">
-        <button class="btn variant-ghost sz-xs intent-primary">Xs</button>
-        <button class="btn variant-ghost sz-sm intent-primary">Sm</button>
-        <button class="btn variant-ghost sz-md intent-primary">Md</button>
-        <button class="btn variant-ghost sz-lg intent-primary">Lg</button>
-        <button class="btn variant-ghost sz-xl intent-primary">Xl</button>
-    </div>
+            code:`<div class="flex items-end flex-wrap gap-3">
+    <button class="btn variant-primary sz-xs">Xs</button>
+    <button class="btn variant-primary sz-sm">Sm</button>
+    <button class="btn variant-primary sz-md">Md</button>
+    <button class="btn variant-primary sz-lg">Lg</button>
+    <button class="btn variant-primary sz-xl">Xl</button>
 </div>`,
               lang: "html"
           }]}>
-            <div class="space-y-3">
-                <div class="flex items-end flex-wrap gap-3">
-                    <button class="btn variant-solid sz-xs intent-primary">Xs</button>
-                    <button class="btn variant-solid sz-sm intent-primary">Sm</button>
-                    <button class="btn variant-solid sz-md intent-primary">Md</button>
-                    <button class="btn variant-solid sz-lg intent-primary">Lg</button>
-                    <button class="btn variant-solid sz-xl intent-primary">Xl</button>
-                </div>
-                <div class="flex items-end flex-wrap gap-3">
-                    <button class="btn variant-outlined sz-xs intent-primary">Xs</button>
-                    <button class="btn variant-outlined sz-sm intent-primary">Sm</button>
-                    <button class="btn variant-outlined sz-md intent-primary">Md</button>
-                    <button class="btn variant-outlined sz-lg intent-primary">Lg</button>
-                    <button class="btn variant-outlined sz-xl intent-primary">Xl</button>
-                </div>
-                <div class="flex items-end flex-wrap gap-3">
-                    <button class="btn variant-soft sz-xs intent-primary">Xs</button>
-                    <button class="btn variant-soft sz-sm intent-primary">Sm</button>
-                    <button class="btn variant-soft sz-md intent-primary">Md</button>
-                    <button class="btn variant-soft sz-lg intent-primary">Lg</button>
-                    <button class="btn variant-soft sz-xl intent-primary">Xl</button>
-                </div>
-                <div class="flex items-end flex-wrap gap-3">
-                <button class="btn variant-ghost sz-xs intent-primary">Xs</button>
-                <button class="btn variant-ghost sz-sm intent-primary">Sm</button>
-                <button class="btn variant-ghost sz-md intent-primary">Md</button>
-                <button class="btn variant-ghost sz-lg intent-primary">Lg</button>
-                <button class="btn variant-ghost sz-xl intent-primary">Xl</button>
-            </div>
+            <div class="flex items-end flex-wrap gap-3">
+                <button class="btn variant-primary sz-xs">Xs</button>
+                <button class="btn variant-primary sz-sm">Sm</button>
+                <button class="btn variant-primary sz-md">Md</button>
+                <button class="btn variant-primary sz-lg">Lg</button>
+                <button class="btn variant-primary sz-xl">Xl</button>
             </div>
         </PreviewBlock>
     </div>
