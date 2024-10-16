@@ -4,7 +4,7 @@ export default {
     },
     rows: [
         {
-            cells: ['intent', `"primary" | "secondary" | "accent" | "info" | "danger" | "warning" | "success" | "gray"`, 'intent-[intent]'],
+            cells: ['variant', `"warning" | "danger" | "neutral"`, 'intent-[intent]'],
         },
     ],
 }
