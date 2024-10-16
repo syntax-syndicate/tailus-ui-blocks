@@ -16,22 +16,26 @@ export const components = {
 <div className="space-y-20">
     <PreviewBlock codeBlocks={
               [{
-            code:`<div class="callout intent-gray flex gap-2.5">
-    <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            code:`<div class="callout variant-warning flex gap-2.5">
+    <svg className="text-body size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+    </svg>
     <div>
-        <div class="callout-title text-sm">An error occured!</div>
-        <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-        <a href="" class="callout-link text-sm">Details</a>
+        <div class="callout-title">Storage almost full!</div>
+        <div class="callout-description text-sm mb-5">New sales from the last subscribers - 20K USD in revenue.</div>
+        <a href="" class="btn variant-outlined sz-xs w-fit"><span class="btn-label">Details</span></a>
     </div>
 </div>`,
               lang: "html"
           }]}>
-        <div class="callout intent-gray flex gap-2.5">
-            <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <div class="callout variant-neutral flex gap-2.5">
+            <svg className="text-body size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+            </svg>
             <div>
-                <div class="callout-title text-sm">An error occured!</div>
-                <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-                <a href="" class="callout-link text-sm">Details</a>
+                <div class="callout-title">Storage almost full!</div>
+                <div class="callout-description text-sm mb-5">New sales from the last subscribers - 20K USD in revenue.</div>
+                <a href="" class="btn variant-outlined sz-xs w-fit"><span class="btn-label">Details</span></a>
             </div>
         </div>
     </PreviewBlock>
@@ -49,154 +53,76 @@ export const components = {
     </div>
 
     <div>
-        ## Intents example
+        ## Variants
         <PreviewBlock codeBlocks={
               [{
             code:`<div class="space-y-4">
-    <div class="callout intent-primary flex gap-2.5">
-        <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+    <div class="callout variant-warning flex gap-2.5">
+        <svg className="text-warning-700 dark:text-warning-300 size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+        </svg>
         <div>
-            <div class="callout-title text-sm">An error occured!</div>
-            <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-            <a href="" class="callout-link text-sm">Details</a>
+            <div class="callout-title">Storage almost full!</div>
+            <div class="callout-description text-sm mb-5">New sales from the last subscribers - 20K USD in revenue.</div>
+            <a href="" class="btn variant-outlined sz-xs w-fit"><span class="btn-label">Details</span></a>
         </div>
     </div>
 
-    <div class="callout intent-secondary flex gap-2.5">
-        <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+    <div class="callout variant-danger flex gap-2.5">
+        <svg className="text-danger-700 dark:text-danger-300 size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+        </svg>
         <div>
-            <div class="callout-title text-sm">An error occured!</div>
-            <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-            <a href="" class="callout-link text-sm">Details</a>
+            <div class="callout-title">Storage almost full!</div>
+            <div class="callout-description text-sm mb-5">New sales from the last subscribers - 20K USD in revenue.</div>
+            <a href="" class="btn variant-outlined sz-xs w-fit"><span class="btn-label">Details</span></a>
         </div>
     </div>
 
-    <div class="callout intent-accent flex gap-2.5">
-        <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+    <div class="callout variant-neutral flex gap-2.5">
+        <svg className="text-body size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+        </svg>
         <div>
-            <div class="callout-title text-sm">An error occured!</div>
-            <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-            <a href="" class="callout-link text-sm">Details</a>
-        </div>
-    </div>
-
-    <div class="callout intent-danger flex gap-2.5">
-        <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-        <div>
-            <div class="callout-title text-sm">An error occured!</div>
-            <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-            <a href="" class="callout-link text-sm">Details</a>
-        </div>
-    </div>
-
-    <div class="callout intent-warning flex gap-2.5">
-        <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-        <div>
-            <div class="callout-title text-sm">An error occured!</div>
-            <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-            <a href="" class="callout-link text-sm">Details</a>
-        </div>
-    </div>
-
-    <div class="callout intent-success flex gap-2.5">
-        <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-        <div>
-            <div class="callout-title text-sm">An error occured!</div>
-            <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-            <a href="" class="callout-link text-sm">Details</a>
-        </div>
-    </div>
-
-    <div class="callout intent-info flex gap-2.5">
-        <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-        <div>
-            <div class="callout-title text-sm">An error occured!</div>
-            <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-            <a href="" class="callout-link text-sm">Details</a>
-        </div>
-    </div>
-
-    <div class="callout intent-gray flex gap-2.5">
-        <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-        <div>
-            <div class="callout-title text-sm">An error occured!</div>
-            <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-            <a href="" class="callout-link text-sm">Details</a>
+            <div class="callout-title">Storage almost full!</div>
+            <div class="callout-description text-sm mb-5">New sales from the last subscribers - 20K USD in revenue.</div>
+            <a href="" class="btn variant-outlined sz-xs w-fit"><span class="btn-label">Details</span></a>
         </div>
     </div>
 </div>`,
               lang: "html"
           }]}>
             <div class="space-y-4">
-                <div class="callout intent-primary flex gap-2.5">
-                    <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                <div class="callout variant-warning flex gap-2.5">
+                    <svg className="text-warning-700 dark:text-warning-300 size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+                    </svg>
                     <div>
-                        <div class="callout-title text-sm">An error occured!</div>
-                        <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-                        <a href="" class="callout-link text-sm">Details</a>
+                        <div class="callout-title">Storage almost full!</div>
+                        <div class="callout-description text-sm mb-5">New sales from the last subscribers - 20K USD in revenue.</div>
+                        <a href="" class="btn variant-outlined sz-xs w-fit"><span class="btn-label">View Details</span></a>
                     </div>
                 </div>
 
-                <div class="callout intent-secondary flex gap-2.5">
-                    <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                <div class="callout variant-danger flex gap-2.5">
+                    <svg className="text-danger-700 dark:text-danger-300 size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+                    </svg>
                     <div>
-                        <div class="callout-title text-sm">An error occured!</div>
-                        <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-                        <a href="" class="callout-link text-sm">Details</a>
+                        <div class="callout-title">Storage almost full!</div>
+                        <div class="callout-description text-sm mb-5">New sales from the last subscribers - 20K USD in revenue.</div>
+                        <a href="" class="btn variant-outlined sz-xs w-fit"><span class="btn-label">Update Plan</span></a>
                     </div>
                 </div>
 
-                <div class="callout intent-accent flex gap-2.5">
-                    <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                <div class="callout variant-neutral flex gap-2.5">
+                    <svg className="text-body size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+                    </svg>
                     <div>
-                        <div class="callout-title text-sm">An error occured!</div>
-                        <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-                        <a href="" class="callout-link text-sm">Details</a>
-                    </div>
-                </div>
-
-                <div class="callout intent-danger flex gap-2.5">
-                    <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-                    <div>
-                        <div class="callout-title text-sm">An error occured!</div>
-                        <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-                        <a href="" class="callout-link text-sm">Details</a>
-                    </div>
-                </div>
-
-                <div class="callout intent-warning flex gap-2.5">
-                    <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-                    <div>
-                        <div class="callout-title text-sm">An error occured!</div>
-                        <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-                        <a href="" class="callout-link text-sm">Details</a>
-                    </div>
-                </div>
-
-                <div class="callout intent-success flex gap-2.5">
-                    <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-                    <div>
-                        <div class="callout-title text-sm">An error occured!</div>
-                        <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-                        <a href="" class="callout-link text-sm">Details</a>
-                    </div>
-                </div>
-
-                <div class="callout intent-info flex gap-2.5">
-                    <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-                    <div>
-                        <div class="callout-title text-sm">An error occured!</div>
-                        <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-                        <a href="" class="callout-link text-sm">Details</a>
-                    </div>
-                </div>
-
-                <div class="callout intent-gray flex gap-2.5">
-                    <svg class="callout-title" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-                    <div>
-                        <div class="callout-title text-sm">An error occured!</div>
-                        <div class="callout-description text-sm">New sales from the last subscribers - 20K USD in revenue.</div>
-                        <a href="" class="callout-link text-sm">Details</a>
+                        <div class="callout-title">Storage almost full!</div>
+                        <div class="callout-description text-sm mb-5">New sales from the last subscribers - 20K USD in revenue.</div>
+                        <a href="" class="btn variant-outlined sz-xs w-fit"><span class="btn-label">Learn More</span></a>
                     </div>
                 </div>
             </div>

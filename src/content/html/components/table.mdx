@@ -220,7 +220,7 @@ export const components = {
                             </th>
                             <th class="space-y-2 px-4 bg-ui-soft rounded-t-[--card-radius]">
                                 <span>Pro</span>
-                                <a href="#" class="btn variant-solid intent-primary sz-xs w-fit">Get Started </a>
+                                <a href="#" class="btn variant-primary sz-xs w-fit">Get Started </a>
                             </th>
                             <th class="space-y-2">
                                 <span>Startup</span>
@@ -358,7 +358,7 @@ export const components = {
             <tr class="*:p-3 *:border-b">
                 <td>1</td>
                 <td>10/31/2023</td>
-                <td><span class="badge variant-soft sz-xs intent-success">Paid</span></td>
+                <td><span class="badge variant-success sz-xs">Paid</span></td>
                 <td>
                     <div class="flex items-center gap-2 text-title">
                         <div class="avatar sz-xxs">
@@ -373,7 +373,7 @@ export const components = {
             <tr class="*:p-3 *:border-b">
                 <td>2</td>
                 <td>10/21/2023</td>
-                <td><span class="badge variant-soft sz-xs intent-gray line-clamp-1">Ref</span></td>
+                <td><span class="badge variant-neutral sz-xs">Ref</span></td>
                 <td>
                     <div class="flex items-center gap-2 text-title">
                         <div class="avatar sz-xxs">
@@ -388,7 +388,7 @@ export const components = {
             <tr class="*:p-3 *:border-b">
                 <td>3</td>
                 <td>05/21/2023</td>
-                <td><span class="badge variant-soft sz-xs intent-danger line-clamp-1">Can</span></td>
+                <td><span class="badge variant-danger sz-xs">Can</span></td>
                 <td>
                     <div class="flex items-center gap-2 text-title">
                         <div class="avatar sz-xxs">
@@ -403,7 +403,7 @@ export const components = {
             <tr class="*:p-3 *:border-b">
                 <td>4</td>
                 <td>05/21/2023</td>
-                <td><span class="badge variant-soft sz-xs intent-success line-clamp-1">Paid</span></td>
+                <td><span class="badge variant-success sz-xs">Paid</span></td>
                 <td>
                     <div class="flex items-center gap-2 text-title">
                         <div class="avatar sz-xxs">
@@ -440,7 +440,7 @@ export const components = {
                         <tr class="*:p-3 *:border-b">
                             <td>1</td>
                             <td>10/31/2023</td>
-                            <td><span class="badge variant-soft sz-xs intent-success">Paid</span></td>
+                            <td><span class="badge variant-success sz-xs">Paid</span></td>
                             <td>
                                 <div class="flex items-center gap-2 text-title">
                                     <div class="avatar sz-xxs">
@@ -455,7 +455,7 @@ export const components = {
                         <tr class="*:p-3 *:border-b">
                             <td>2</td>
                             <td>10/21/2023</td>
-                            <td><span class="badge variant-soft sz-xs intent-gray line-clamp-1">Ref</span></td>
+                            <td><span class="badge variant-neutral sz-xs">Ref</span></td>
                             <td>
                                 <div class="flex items-center gap-2 text-title">
                                     <div class="avatar sz-xxs">
@@ -470,7 +470,7 @@ export const components = {
                         <tr class="*:p-3 *:border-b">
                             <td>3</td>
                             <td>05/21/2023</td>
-                            <td><span class="badge variant-soft sz-xs intent-danger line-clamp-1">Can</span></td>
+                            <td><span class="badge variant-danger sz-xs">Can</span></td>
                             <td>
                                 <div class="flex items-center gap-2 text-title">
                                     <div class="avatar sz-xxs">
@@ -485,7 +485,7 @@ export const components = {
                         <tr class="*:p-3 *:border-b">
                             <td>4</td>
                             <td>05/21/2023</td>
-                            <td><span class="badge variant-soft sz-xs intent-success line-clamp-1">Paid</span></td>
+                            <td><span class="badge variant-success sz-xs">Paid</span></td>
                             <td>
                                 <div class="flex items-center gap-2 text-title">
                                     <div class="avatar sz-xxs">
@@ -524,11 +524,16 @@ export const components = {
                 <th class="rounded-r-[--card-radius]">Revenue</th>
             </tr>
         </thead>
-        <tbody class="text-sm">
-            <tr class="*:p-3 *:border-b">
-                <td>1</td>
+        <tbody class="text-sm pt-1 [--ui-soft-bg:theme(colors.gray.50)] dark:[--ui-soft-bg:theme(colors.gray.925)]">
+            <tr class="*:p-3 *:border-b hover:bg-ui-soft has-[:checked]:bg-ui-soft border-l-2 border-transparent has-[:checked]:border-primary-600">
+                <td>
+                    <label for="c11" class="checkbox group size-4">
+                        <input class="peer" type="checkbox" id="c11" name="checkbox1" />
+                        <svg class="checkbox-icon size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </label>
+                </td>
                 <td>10/31/2023</td>
-                <td><span class="badge variant-soft sz-xs intent-success">Paid</span></td>
+                <td><span class="badge variant-success sz-xs">Paid</span></td>
                 <td>
                     <div class="flex items-center gap-2 text-title">
                         <div class="avatar sz-xxs">
@@ -540,10 +545,15 @@ export const components = {
                 <td>Ampire Ess</td>
                 <td>$43.99</td>
             </tr>
-            <tr class="*:p-3 *:border-b">
-                <td>2</td>
+            <tr class="*:p-3 *:border-b hover:bg-ui-soft has-[:checked]:bg-ui-soft border-l-2 border-transparent has-[:checked]:border-primary-600">
+                <td>
+                    <label for="c12" class="checkbox group size-4">
+                        <input class="peer" type="checkbox" id="c12" name="checkbox1" />
+                        <svg class="checkbox-icon size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </label>
+                </td>
                 <td>10/21/2023</td>
-                <td><span class="badge variant-soft sz-xs intent-gray line-clamp-1">Ref</span></td>
+                <td><span class="badge variant-neutral sz-xs">Ref</span></td>
                 <td>
                     <div class="flex items-center gap-2 text-title">
                         <div class="avatar sz-xxs">
@@ -555,10 +565,15 @@ export const components = {
                 <td>Astrolus H</td>
                 <td>$19.99</td>
             </tr>
-            <tr class="*:p-3 *:border-b">
-                <td>3</td>
+            <tr class="*:p-3 *:border-b hover:bg-ui-soft has-[:checked]:bg-ui-soft border-l-2 border-transparent has-[:checked]:border-primary-600">
+                <td>
+                    <label for="c13" class="checkbox group size-4">
+                        <input class="peer" type="checkbox" id="c13" name="checkbox1" />
+                        <svg class="checkbox-icon size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </label>
+                </td>
                 <td>05/21/2023</td>
-                <td><span class="badge variant-soft sz-xs intent-danger line-clamp-1">Can</span></td>
+                <td><span class="badge variant-danger sz-xs">Can</span></td>
                 <td>
                     <div class="flex items-center gap-2 text-title">
                         <div class="avatar sz-xxs">
@@ -570,10 +585,15 @@ export const components = {
                 <td>Alt Next</td>
                 <td>$59.99</td>
             </tr>
-            <tr class="*:p-3 *:border-b">
-                <td>4</td>
+            <tr class="rounded-card *:p-3 *:border-b hover:bg-ui-soft has-[:checked]:bg-ui-soft border-l-2 border-transparent has-[:checked]:border-primary-600">
+                <td>
+                    <label for="c14" class="checkbox group size-4">
+                        <input class="peer" type="checkbox" id="c14" name="checkbox1" />
+                        <svg class="checkbox-icon size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </label>
+                </td>
                 <td>05/21/2023</td>
-                <td><span class="badge variant-soft sz-xs intent-success line-clamp-1">Paid</span></td>
+                <td><span class="badge variant-success sz-xs">Paid</span></td>
                 <td>
                     <div class="flex items-center gap-2 text-title">
                         <div class="avatar sz-xxs">
@@ -620,7 +640,7 @@ export const components = {
                                 </label>
                             </td>
                             <td>10/31/2023</td>
-                            <td><span class="badge variant-soft sz-xs intent-success">Paid</span></td>
+                            <td><span class="badge variant-success sz-xs">Paid</span></td>
                             <td>
                                 <div class="flex items-center gap-2 text-title">
                                     <div class="avatar sz-xxs">
@@ -640,7 +660,7 @@ export const components = {
                                 </label>
                             </td>
                             <td>10/21/2023</td>
-                            <td><span class="badge variant-soft sz-xs intent-gray line-clamp-1">Ref</span></td>
+                            <td><span class="badge variant-neutral sz-xs">Ref</span></td>
                             <td>
                                 <div class="flex items-center gap-2 text-title">
                                     <div class="avatar sz-xxs">
@@ -660,7 +680,7 @@ export const components = {
                                 </label>
                             </td>
                             <td>05/21/2023</td>
-                            <td><span class="badge variant-soft sz-xs intent-danger line-clamp-1">Can</span></td>
+                            <td><span class="badge variant-danger sz-xs">Can</span></td>
                             <td>
                                 <div class="flex items-center gap-2 text-title">
                                     <div class="avatar sz-xxs">
@@ -680,7 +700,7 @@ export const components = {
                                 </label>
                             </td>
                             <td>05/21/2023</td>
-                            <td><span class="badge variant-soft sz-xs intent-success line-clamp-1">Paid</span></td>
+                            <td><span class="badge variant-success sz-xs">Paid</span></td>
                             <td>
                                 <div class="flex items-center gap-2 text-title">
                                     <div class="avatar sz-xxs">

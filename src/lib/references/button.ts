@@ -7,10 +7,7 @@ export default {
             cells: ['size', `"xs" | "sm" | "md" | "lg" | "xl"`, 'sz-[size]'],
         },
         {
-            cells: ['variant', `"solid" | "soft" | "outlined" | "ghost"`, 'variant-[variant]'],
-        },
-        {
-            cells: ['intent', `"primary" | "secondary" | "accent" | "info" | "danger" | "warning" | "success" | "gray" | "neutral"`, 'intent-[intent]'],
+            cells: ['variant', `"neutral" | "primary" | "outlined" | "destructive" | "soft" | "ghost"`, 'variant-[variant]'],
         },
     ],
 }
