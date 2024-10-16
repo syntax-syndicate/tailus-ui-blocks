@@ -280,15 +280,15 @@
     }
 
     .btn.variant-neutral{
-        @apply border-gray-800 from-gray-700 to-gray-900 shadow-gray-950/35 before:border-white/25 hover:brightness-125 active:brightness-75 dark:border-white dark:bg-white dark:from-transparent dark:to-transparent dark:hover:bg-white/75 dark:shadow-gray-950/5 dark:text-gray-950
+        @apply border-gray-800 from-gray-700 to-gray-900 shadow-gray-950/25 before:border-white/25 hover:brightness-125 active:brightness-75 dark:border-white dark:bg-white dark:from-transparent dark:to-transparent dark:hover:bg-white/75 dark:shadow-gray-950/5 dark:text-gray-950
     }
 
     .btn.variant-primary{
-        @apply border-primary-700 from-primary-500 to-primary-600 shadow-primary-950/35 before:border-white/25 hover:brightness-110 active:brightness-95 dark:border-white/15 dark:from-primary-600 dark:to-primary-600 dark:before:border-transparent dark:shadow-primary-950/10
+        @apply border-primary-700 from-primary-500 to-primary-600 shadow-primary-950/25 before:border-white/25 hover:brightness-110 active:brightness-95 dark:border-white/15 dark:from-primary-600 dark:to-primary-600 dark:before:border-transparent dark:shadow-primary-950/10
     }
 
     .btn.variant-destructive{
-        @apply border-danger-700 from-danger-500 to-danger-600 shadow-danger-950/35 before:border-white/25 hover:brightness-110 active:brightness-95 dark:border-white/15 dark:from-danger-600 dark:to-danger-600 dark:before:border-transparent dark:shadow-danger-950/10
+        @apply border-danger-700 from-danger-500 to-danger-600 shadow-danger-950/25 before:border-white/25 hover:brightness-110 active:brightness-95 dark:border-white/15 dark:from-danger-600 dark:to-danger-600 dark:before:border-transparent dark:shadow-danger-950/10
     }
 
     .btn.variant-outlined{
