@@ -10,17 +10,32 @@ import FeaturesBento from '@components/FeaturesBento'
 ---
 
 <Layout title="Tailus UI Html">
-    <div class="absolute inset-0 hidden h-16 bg-[repeating-linear-gradient(-45deg,var(--stripes-color),var(--stripes-color)_0.5px,theme(colors.transparent)_0.5px,theme(colors.transparent)_12px)] [--stripes-color:theme(colors.primary.300)] before:absolute before:inset-0 before:bg-gradient-to-t before:from-gray-50 before:via-transparent before:to-gray-50 dark:[--stripes-color:theme(colors.white/0.2)] dark:before:from-gray-950 dark:before:via-transparent dark:before:to-gray-950"></div>
+    <div class="absolute inset-0 z-[-2] hidden max-h-96 bg-[radial-gradient(ellipse_80%_70%_at_20%_-20%,var(--bg-color),theme(colors.transparent))] duration-300 [--bg-color:theme(colors.primary.400)] dark:[--bg-color:theme(colors.primary.950)]"></div>
+    <div class="absolute inset-0 isolate contain-strict">
+        <div class="absolute left-0 top-0 h-[1280px] w-[560px] -translate-y-[350px] -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(0,0%,85%,.08)_0,hsla(0,0%,55%,.02)_50%,hsla(0,0%,45%,0)_80%)]"></div>
+        <div class="absolute left-0 top-0 h-[1280px] w-[240px] -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]"></div>
+        <div class="absolute left-0 top-0 h-[1280px] w-[240px] -translate-y-[350px] -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]"></div>
+    </div>
 
     <section class="relative z-10 space-y-12 pt-20 will-change-transform sm:pt-28">
         <Container>
-            <h1 class="text-title text-balance bg-gradient-to-b text-4xl font-bold sm:text-5xl lg:text-6xl">Next generation <br /> tailwind components</h1>
-            <p class="mb-12 mt-6 text-xl md:max-w-lg lg:max-w-xl">A comprehensive suite of tailwindcss component classes for building visually stunning websites faster.</p>
+            <h1 class="text-title text-balance bg-gradient-to-b text-4xl font-bold sm:text-5xl lg:text-6xl">Reusable Tailwind Component classes</h1>
+            <p class="mb-12 mt-6 text-xl md:max-w-lg lg:max-w-xl">Free up your time with pre-built classes that update site-wide automatically. Focus on building, not fixing.</p>
 
-            <div class="bg-ui-soft size-fit rounded-[calc(var(--btn-radius)+0.25rem)] border p-1">
+            <div class="flex gap-3">
                 <a href="/get-started/installation" class="btn variant-neutral sz-md w-fit gap-2.5 bg-gray-950 !from-gray-900 to-gray-950 dark:!from-white">
-                    <svg class="-mx-px size-3.5 opacity-75" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"></path>
+                    </svg>
+
                     Get Started
+                </a>
+                <a href="/get-started/installation" class="btn variant-outlined sz-md w-fit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="-my-1 -ml-1 -mr-0.5 size-5">
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-.53 14.03a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V8.25a.75.75 0 0 0-1.5 0v5.69l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3Z" clip-rule="evenodd"></path>
+                    </svg>
+
+                    <span>Download</span>
                 </a>
             </div>
         </Container>
@@ -35,7 +50,7 @@ import FeaturesBento from '@components/FeaturesBento'
         </svg>
         <Container>
             <div data-shade="900" class="relative -mt-12 sm:-mt-64 lg:-mx-4">
-                <div class="relative grid grid-cols-3 divide-x divide-y divide-dashed border-r border-dashed *:relative *:flex *:h-32 *:items-center *:justify-center *:border-dashed sm:grid-cols-6 dark:bg-gray-950/25">
+                <div class="relative grid grid-cols-3 divide-x divide-y divide-dashed border-r border-dashed *:relative *:flex *:h-32 *:items-center *:justify-center *:border-dashed sm:grid-cols-6">
                     <div class="col-span-2 col-start-2 border-l border-t sm:col-span-1 sm:col-start-6">
                         <form class="flex gap-3">
                             <label class="field btn variant-outlined icon-only sz-sm before:!transition-none has-[:checked]:!bg-primary-600 has-[:checked]:!text-white has-[:checked]:[background-image:none] has-[:checked]:before:!border-white/15 has-[:checked]:before:!bg-primary-600" for="small">
@@ -88,7 +103,7 @@ import FeaturesBento from '@components/FeaturesBento'
             <Container>
                 <div class="relative grid divide-x divide-dashed border-x border-dashed sm:grid-cols-2 lg:-mx-4 lg:grid-cols-3 dark:-z-10">
                     <div class="p-3">
-                        <div class="card bg-ui tls-shadow-md ml-auto flex h-full flex-col justify-between shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)]">
+                        <div class="card bg-ui tls-shadow-md ml-auto flex h-full flex-col justify-between shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)] dark:[--ui-border-color:theme(colors.gray.800)]">
                             <div class="mb-6 divide-y divide-dashed border-l [--ui-border-color:theme(colors.gray.950/0.15)] dark:[--ui-border-color:theme(colors.gray.800)]">
                                 <div class="py-2">
                                     <div class="bg-ui flex h-8 w-2/3 items-center rounded-r-[--btn-radius] border border-l-0 pl-2 text-xs">Jan 2022</div>
@@ -107,7 +122,7 @@ import FeaturesBento from '@components/FeaturesBento'
                         </div>
                     </div>
                     <div class="hidden p-3 sm:block">
-                        <div class="card bg-ui tls-shadow-md h-full shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)]">
+                        <div class="card bg-ui tls-shadow-md h-full shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)] dark:[--ui-border-color:theme(colors.gray.800)]">
                             <span class="text-caption text-xs">Great UX</span>
                             <h3 class="text-title mt-2 text-sm font-medium">Realtime insights</h3>
                             <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
@@ -148,7 +163,7 @@ import FeaturesBento from '@components/FeaturesBento'
                         </div>
                     </div>
                     <div class="hidden p-3 md:block">
-                        <div class="card bg-ui tls-shadow-md ml-auto h-full shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)]">
+                        <div class="card bg-ui tls-shadow-md ml-auto h-full shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)] dark:[--ui-border-color:theme(colors.gray.800)]">
                             <div class="relative mb-6 mt-6 [--ui-bg:theme(colors.white)] [--ui-border-color:theme(colors.gray.950/0.15)] dark:[--ui-bg:theme(colors.gray.800)] dark:[--ui-border-color:theme(colors.gray.800)]">
                                 <div class="card variant-mixed absolute inset-0 bottom-auto top-8 z-10 m-auto grid items-center gap-2 p-4 [grid-template-columns:auto_1fr] dark:!shadow-xl dark:shadow-gray-950/50">
                                     <div class="avatar sz-sm">
@@ -200,7 +215,7 @@ import FeaturesBento from '@components/FeaturesBento'
                         </div>
                     </div>
                     <div class="p-3 sm:col-span-2 lg:col-span-4">
-                        <div class="card bg-ui tls-shadow-md w-full overflow-auto shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)] lg:overflow-clip">
+                        <div class="card bg-ui tls-shadow-md w-full overflow-auto shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)] lg:overflow-clip dark:[--ui-border-color:theme(colors.gray.800)]">
                             <div class="mb-6">
                                 <h2 class="text-title font-medium">Customers</h2>
                                 <p class="mt-1 text-sm">New users by First user primary channel group (Default Channel Group)</p>
@@ -257,35 +272,47 @@ import FeaturesBento from '@components/FeaturesBento'
             <div class="grid gap-x-4 gap-y-6 px-3 sm:grid-cols-2 md:mx-0 md:grid-cols-3 lg:gap-x-12">
                 <div>
                     <div class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5"> <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"></path></svg>
-                        <h3 class="text-title text-sm">Personalized Workouts</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                            <path fill-rule="evenodd" d="M9.58 1.077a.75.75 0 0 1 .405.82L9.165 6h4.085a.75.75 0 0 1 .567 1.241l-6.5 7.5a.75.75 0 0 1-1.302-.638L6.835 10H2.75a.75.75 0 0 1-.567-1.241l6.5-7.5a.75.75 0 0 1 .897-.182Z" clip-rule="evenodd"></path>
+                        </svg>
+
+                        <h3 class="text-title text-sm font-medium">Easy To Use</h3>
                     </div>
-                    <p class="mt-4 text-sm">Get customized workout plans tailored to your fitness goals and preferences.</p>
+                    <p class="mt-4 text-sm">Simply copy, paste, and style your HTML projects with familiar semantic class names.</p>
                 </div>
                 <div>
                     <div class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5"> <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"></path></svg>
-                        <h3 class="text-title text-sm">Nutrition Plans</h3>
+                        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                            <path fill-rule="evenodd" d="M11.013 2.513a1.75 1.75 0 0 1 2.475 2.474L6.226 12.25a2.751 2.751 0 0 1-.892.596l-2.047.848a.75.75 0 0 1-.98-.98l.848-2.047a2.75 2.75 0 0 1 .596-.892l7.262-7.261Z" clip-rule="evenodd"></path>
+                        </svg>
+
+                        <h3 class="text-title text-sm font-medium">Customizable</h3>
                     </div>
-                    <p class="mt-4 text-sm">Access meal plans and nutrition advice to complement your fitness routine.</p>
+                    <p class="mt-4 text-sm">Easily adjust components with utilities or use built-in attributes to modify your theme.</p>
                 </div>
                 <div>
                     <div class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5"> <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-2.25-1.313M21 7.5v2.25m0-2.25-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3 2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75 2.25-1.313M12 21.75V19.5m0 2.25-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"></path></svg>
-                        <h3 class="text-title text-sm">Progress Tracking</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                            <path
+                                fill-rule="evenodd"
+                                d="M5 4a.75.75 0 0 1 .738.616l.252 1.388A1.25 1.25 0 0 0 6.996 7.01l1.388.252a.75.75 0 0 1 0 1.476l-1.388.252A1.25 1.25 0 0 0 5.99 9.996l-.252 1.388a.75.75 0 0 1-1.476 0L4.01 9.996A1.25 1.25 0 0 0 3.004 8.99l-1.388-.252a.75.75 0 0 1 0-1.476l1.388-.252A1.25 1.25 0 0 0 4.01 6.004l.252-1.388A.75.75 0 0 1 5 4ZM12 1a.75.75 0 0 1 .721.544l.195.682c.118.415.443.74.858.858l.682.195a.75.75 0 0 1 0 1.442l-.682.195a1.25 1.25 0 0 0-.858.858l-.195.682a.75.75 0 0 1-1.442 0l-.195-.682a1.25 1.25 0 0 0-.858-.858l-.682-.195a.75.75 0 0 1 0-1.442l.682-.195a1.25 1.25 0 0 0 .858-.858l.195-.682A.75.75 0 0 1 12 1ZM10 11a.75.75 0 0 1 .728.568.968.968 0 0 0 .704.704.75.75 0 0 1 0 1.456.968.968 0 0 0-.704.704.75.75 0 0 1-1.456 0 .968.968 0 0 0-.704-.704.75.75 0 0 1 0-1.456.968.968 0 0 0 .704-.704A.75.75 0 0 1 10 11Z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+
+                        <h3 class="text-title text-sm font-medium">Modern Design</h3>
                     </div>
-                    <p class="mt-4 text-sm">Monitor your fitness journey with detailed progress tracking and analytics.</p>
+                    <p class="mt-4 text-sm">Follows modern design principles to create usable, accessible and stunning websites.</p>
                 </div>
             </div>
         </Container>
     </section>
 
-    <section id="semantic" class="relative scroll-my-12 bg-white pt-24 md:pt-32 dark:bg-transparent">
+    <section id="semantic" class="relative bg-white pt-24 md:pt-32 dark:bg-transparent">
         <Container>
             <div class="grid max-w-3xl space-y-8">
-                <h2 class="text-title text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">Less repetition, <br /> Faster Development</h2>
+                <h2 class="text-title text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">No more struggling with long utility classes</h2>
                 <div class="mt-2 max-w-xl space-y-6">
-                    <p class="sm:text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis repetition, Faster Development voluptatem accusantium nemo perspiciatis</span> delectus atque autem!</p>
+                    <p class="sm:text-lg">Simply use our copy-paste classes to keep your components consistent across your entire project.</p>
                 </div>
             </div>
         </Container>
@@ -302,8 +329,8 @@ import FeaturesBento from '@components/FeaturesBento'
         <Container>
             <div class="grid max-w-xl gap-4 md:px-4 lg:max-w-full lg:grid-cols-2 lg:px-0">
                 <h2 class="text-title text-balance pr-12 text-3xl font-semibold md:text-4xl lg:text-5xl">Built with Customization In Mind</h2>
-                <div class="mt-2 space-y-6">
-                    <p class="sm:text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis voluptatem accusantium nemo perspiciatis</span> delectus atque autem! repellat expedita consequatur! atque doloremque!</p>
+                <div class="space-y-6">
+                    <p class="sm:text-lg">Our pre-built component classes give you the flexibility to make them your own. Whether you need to tweak colors, sizes, or layouts, the TailwindCSS foundation ensures that customization is simple and intuitive.</p>
                     <a href="" class="btn variant-soft sz-sm w-fit">Learn More</a>
                 </div>
             </div>
@@ -320,7 +347,7 @@ import FeaturesBento from '@components/FeaturesBento'
             <div class="mb-12 grid gap-4 md:mb-16 md:max-w-xl md:px-4 lg:max-w-full lg:grid-cols-2 lg:px-0">
                 <h2 class="text-title text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">Build faster with modern UI Blocks</h2>
                 <div class="mt-2 space-y-6">
-                    <p class="sm:text-lg">Consectetur adipisicing elit. <span class="text-title font-medium"> Eum omnis voluptatem accusantium nemo perspiciatis</span> delectus atque autem! repellat expedita consequatur! atque doloremque!</p>
+                    <p class="sm:text-lg">Speed up your workflow with responsive, pre-built UI blocks designed for marketing websites. Perfect for landing pages, product showcases, and portfolios.</p>
                     <a href="" class="btn variant-soft sz-sm w-fit">Browse Blocks</a>
                 </div>
             </div>

@@ -2,7 +2,6 @@ import Prism from 'prismjs'
 import '@styles/code-line-numbers.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers'
 import { useEffect, useRef, useState } from 'react'
-import ScrollArea from '@tailus-ui/ScrollArea'
 import '@styles/code-theme.css'
 import { twMerge } from 'tailwind-merge'
 import { motion, useSpring, useTransform } from 'framer-motion'
@@ -20,7 +19,7 @@ const codes = {
       </div>
 
       <div class="mt-6">
-        <button class="btn sz-md variant-outlined intent-gray w-full">
+        <button class="btn sz-md variant-outlined w-full">
           <GoogleIcon />
           Continue With Google
         </button>
@@ -46,7 +45,7 @@ const codes = {
           <input class="input sz-md variant-mixed" type="password" required name="pwd" id="pwd" />
         </div>
 
-        <button class="btn variant-solid intent-primary sz-md w-full">Sign In</button>
+        <button class="btn variant-primary sz-md w-full">Sign In</button>
       </div>
     </div>
 
@@ -101,7 +100,7 @@ const codes = {
 }
 
 const TAILWINDCOUNT = 114
-const TAILUSCOUNT = 45
+const TAILUSCOUNT = 43
 
 export default function CodeComparason() {
     const [activeCode, setActiveCode] = useState<Current>('tailwind')

@@ -84,8 +84,8 @@ export default function FeaturesBento() {
                         </div>
                     </div>
                     <div className="p-4">
-                        <h3 className="text-title text-lg font-medium">You're in control</h3>
-                        <p className="mt-4 max-w-sm text-sm">Tailus UI HTML is a simple css code that you copy and paste in your project, you're free to make any change.</p>
+                        <h3 className="text-title text-lg font-medium">No Node, Just CSS</h3>
+                        <p className="mt-4 max-w-sm text-sm">No need for extra packages—simply drop in the CSS file and start building. It’s that easy and lightweight.</p>
                     </div>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
@@ -164,8 +164,8 @@ export default function FeaturesBento() {
                             </div>
                         </div>
                         <div className="p-4">
-                            <p className="mt-4 text-lg">
-                                Start with ready <span className="text-title font-medium">Palettes</span>
+                            <p className="text-lg">
+                                Kickstart with pre-built color <span className="text-title font-medium">palettes</span>
                             </p>
                         </div>
                     </div>
@@ -211,8 +211,8 @@ export default function FeaturesBento() {
                     </div>
                 </div>
                 <div className="p-4">
-                    <h3 className="text-title text-lg font-medium">You're in control</h3>
-                    <p className="mt-4 max-w-sm text-sm">Tailus UI HTML is a simple css code that you copy and paste in your project, you're free to make any change.</p>
+                    <h3 className="text-title text-lg font-medium">Flexible Theme Modes</h3>
+                    <p className="mt-4 max-w-sm text-sm">Choose from light, dark, or a combined mode with our 3 ready-to-use CSS files.</p>
                 </div>
             </div>
             <div className="card bg-ui tls-shadow grid shadow-gray-950/5  [grid-template-rows:1fr_auto]">
@@ -238,7 +238,7 @@ export default function FeaturesBento() {
                 </div>
                 <div className="h-fit p-4">
                     <h3 className="text-title text-lg font-medium">Data Attributes</h3>
-                    <p className="mt-4 max-w-sm text-sm">Tailus UI HTML is a simple css code that you copy and paste in your project, you're free to make any change.</p>
+                    <p className="mt-4 max-w-sm text-sm">Use custom data attributes to personalize your entire site or specific components effortlessly.</p>
                 </div>
             </div>
         </div>
