@@ -78,7 +78,7 @@ plugins : [
     <div data-palette="oz">
         ## Required Colors
 
-        For the theme to function properly, certain colors are necessary. Each color should have shades ranging from `50` to `950`. However, the `gray` color is an exception and must include an additional `925` shade.
+        For the theme to function properly, certain colors are necessary. Each color should have shades ranging from `50` to `950`.
 
         <div className="grid grid-cols-3 gap-3">
             <div className="space-y-3">
@@ -118,36 +118,15 @@ plugins : [
     </div>
 
     <div>
-        ## Default Palettes
-        Tailus UI HTML comes with nine pre-configured color palettes for a quick start. To use these default palettes, you need to import the `palettes` object.
-
-        <CodeSnippet code='import { palettes } from "@tailus/themer-plugins"' lang="ts" client:visible />
+        ## Some Palettes
+        We've curated a selection of TailwindCSS colors to serve as a starter palette for your projects.
 
         The available palettes are as follows:
 
         <div className="space-y-12">
             <PalettePreviewBlock />
         </div>
-    </div>
 
-    <div>
-        ## Override default palettes
-        <div className="space-y-12">
-            <div>
-                If you want to override a color in a palette, you can simply replace it with a new color. This new color can be from Tailwind's default colors or your own custom colors. 
-                
-                For instance, in the `oz` palette, `indigo` is the primary color. If you wish to change this primary color to `purple`, you can use the spread operator to merge the existing `oz` palette with your new color. This way, all the original colors are preserved, and the primary color is replaced with `purple`.
-                <CodeSnippet {...newPrimary} client:visible/>
-
-                If you wish to replace a gray color with a default gray color from Tailwind CSS, we recommend using the `grays` from `@tailus/themer-plugins` . This is because it includes a 925 shade, providing a wider range of shades.
-                <DocsStackedSnippets snippets={overrideGray} client:visible />
-            </div>
-
-            <div>
-                ### Using Css variables
-                
-                Please read the [Tailwind Css](https://tailwindcss.com/docs/customizing-colors#using-css-variables) documentation to learn more about how to define your colors as css variables
-            </div>
-        </div>
+        Learn more about colors on the TailwindCSS official [documentation](https://tailwindcss.com/docs/customizing-colors)
     </div>
 </div>

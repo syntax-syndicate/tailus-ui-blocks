@@ -13,24 +13,29 @@ export const components = {
     ..._components
 }
 
-export const configCode = `import { palettes } from "@tailus/themer-plugins"
-
-module.exports = {
+export const configCode = `module.exports = {
     content: [
-        './index.html',
+        './*.html',
         "./src/**/*.{html,js}"
     ],
     theme: {
         extend: {
-            colors : palettes.trust
-        },
+            colors: ({ colors }) => ({
+                primary : colors.indigo,
+                danger : colors.rose,
+                warning : colors.yellow,
+                success : colors.lime,
+                info : colors.blue,
+                gray : colors.zinc,
+            }),
+        }
     }
 };`
 
 export const config = {
     code: configCode,
     lang: "ts",
-    highlightedLines:"1, 10",
+    highlightedLines:"8-14",
 }
 
 
@@ -44,27 +49,21 @@ export const config = {
         ## Installation
         <div className="space-y-12">
             <div>
-                ### 1. Install Tailus Themer Plugins
-                To install Tailus Themer Plugins, run the following command in your terminal:
-                <CodeSnippet code="npm install @tailus/themer-plugins" lang="bash" client:visible/>
+                ### 1. Add component classes
+
+                To add the component classes copy-paste the following code in your main css file
+
+                <CodeSnippet code={csscode} lang="css" client:visible />
             </div>
 
             <div>
                 ### 2. Set your color palette
 
-                In your Tailwind Css config File, import the `palettes` object and add the default palette
+                Use your own colors or kickstart your project with default tailwindcss colors
 
                 <CodeSnippet {...config} client:visible />
 
                 Learn more about [palettes](/theming/palette)
-            </div>
-
-            <div>
-                ### 3. Add components classes
-
-                To add the components classes copy-paste the following code in your main css file
-
-                <CodeSnippet code={csscode} lang="css" client:visible />
             </div>
         </div>
     </div>

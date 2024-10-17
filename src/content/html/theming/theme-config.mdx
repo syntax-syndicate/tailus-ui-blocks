@@ -13,6 +13,31 @@ export const components = {
     ..._components
 }
 
+export const configCode = `module.exports = {
+    content: [
+        './*.html',
+        "./src/**/*.{html,js}"
+    ],
+    theme: {
+        extend: {
+            colors: ({ colors }) => ({
+                primary : colors.indigo,
+                danger : colors.rose,
+                warning : colors.yellow,
+                success : colors.lime,
+                info : colors.blue,
+                gray : colors.zinc,
+            }),
+        }
+    }
+};`
+
+export const config = {
+    code: configCode,
+    lang: "ts",
+    highlightedLines:"8-14",
+}
+
 export const palette = [
     {
         code: `import { palettes } from "@tailus/themer-plugins"`,
@@ -139,11 +164,11 @@ export const visualizations = {
     <div>
         ## Palette
 
-        Tailus Themer provides nine color palettes, each with primary, secondary, accent, success, danger, warning, info, gray, white, black, and transparent colors. Import these from the `@tailus/themer-plugins` package to use as a foundation for your own palette.
+        Use your own colors or kickstart your project with default tailwindcss colors
         
-        <DocsStackedSnippets snippets={palette} client:visible />
+        <CodeSnippet {...config} client:visible />
 
-        The default palettes are:
+        The curated palettes are:
         - `trust`
         - `oz`
         - `mystery`
