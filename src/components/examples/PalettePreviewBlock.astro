@@ -19,12 +19,12 @@ import { palettes } from '@lib/palettes'
                                 code: `theme: {
     extend: {
         colors: ({ colors }) => ({
-            primary : ${colors.primary},
-            danger : ${colors.danger},
-            warning : ${colors.warning},
-            success : ${colors.success},
-            info : ${colors.info},
-            gray : ${colors.gray},
+            primary : colors.${colors.primary},
+            danger : colors.${colors.danger},
+            warning : colors.${colors.warning},
+            success : colors.${colors.success},
+            info : colors.${colors.info},
+            gray : colors.${colors.gray},
         }),
     }
 }`,
