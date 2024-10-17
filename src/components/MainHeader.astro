@@ -10,40 +10,18 @@ import SeparatorRoot from './tailus-ui/Separator'
 ---
 
 <script>
-    document.addEventListener('astro:page-load', () => {
-        const navitems = document.querySelector('#mobile-navitems') as HTMLElement
-        const hamburger = document.querySelector('#mobile-navitems-trigger')
-        let isActive = navitems?.getAttribute('data-state') === 'open'
+    const navitems = document.querySelector('#mobile-navitems') as HTMLElement
+    const hamburger = document.querySelector('#mobile-navitems-trigger')
+    let isActive = navitems?.getAttribute('data-state') === 'open'
 
-        function toggleItems() {
-            isActive = !isActive
-            navitems?.setAttribute('data-state', isActive ? 'open' : 'closed')
-            hamburger?.setAttribute('data-state', isActive ? 'open' : 'closed')
-        }
+    function toggleItems() {
+        isActive = !isActive
+        navitems?.setAttribute('data-state', isActive ? 'open' : 'closed')
+        hamburger?.setAttribute('data-state', isActive ? 'open' : 'closed')
+        document.body.classList.toggle('overflow-hidden', isActive)
+    }
 
-        hamburger?.addEventListener('click', toggleItems)
-    })
-</script>
-
-<script>
-    document.addEventListener('astro:page-load', () => {
-        const menuList = document.getElementById('menu-list')
-        const menuListTrigger = document.getElementById('menu-list-trigger')
-        const tableOfContent = document.querySelector('#table-of-content')
-        const tableOfContentTrigger = document.querySelector('#table-of-content-trigger')
-
-        tableOfContentTrigger?.addEventListener('click', () => {
-            tableOfContent?.classList.toggle('hidden')
-            !menuList?.classList.contains('hidden') && menuList?.classList.toggle('hidden')
-            tableOfContent?.classList.contains('hidden') ? document.body.classList.remove('overflow-hidden') : document.body.classList.add('overflow-hidden')
-        })
-
-        menuListTrigger?.addEventListener('click', () => {
-            menuList?.classList.toggle('hidden')
-            !tableOfContent?.classList.contains('hidden') && tableOfContent?.classList.toggle('hidden')
-            menuList?.classList.contains('hidden') ? document.body.classList.remove('overflow-hidden') : document.body.classList.add('overflow-hidden')
-        })
-    })
+    hamburger?.addEventListener('click', toggleItems)
 </script>
 
 <header data-rounded="full" class="absolute inset-x-0 top-0 z-40 flex flex-col lg:h-16">
@@ -53,7 +31,7 @@ import SeparatorRoot from './tailus-ui/Separator'
                 <BrandLogo className="h-7" />
             </a>
 
-            <div data-state="closed" id="mobile-navitems" class="absolute inset-x-0 bottom-0 top-[5.78rem] -z-50 h-0 overflow-hidden border-gray-950/10 bg-white px-5 shadow-lg shadow-gray-950/5 transition-[height] duration-300 data-[state=open]:h-dvh lg:hidden dark:border-white/10 dark:bg-gray-925/75 dark:backdrop-blur-xl">
+            <div data-state="closed" id="mobile-navitems" class="absolute inset-x-0 bottom-0 top-28 -z-50 h-0 overflow-hidden border-gray-950/10 bg-white px-1 shadow-lg shadow-gray-950/5 transition-[height] duration-300 data-[state=open]:h-dvh lg:hidden dark:border-white/10 dark:bg-gray-950 dark:backdrop-blur-xl">
                 <div class="py-8">
                     <NavLinks />
                 </div>
