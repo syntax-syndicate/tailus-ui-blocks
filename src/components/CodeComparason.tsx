@@ -145,7 +145,7 @@ export default function CodeComparason() {
                     <div className="bg-ui flex h-10 items-center justify-between overflow-hidden border-b pr-8 dark:bg-transparent">
                         <div data-shade="950" className="relative h-full">
                             <div
-                                className={twMerge('bg-ui-soft absolute inset-y-0 border border-[--ui-bg] duration-300', activeCode == 'tailus' ? '[--active-bg:theme(colors.primary.500)]' : '[--active-bg:theme(colors.cyan.500)]')}
+                                className={twMerge('bg-ui-soft absolute inset-y-0 border border-[--ui-bg] duration-300 will-change-auto', activeCode == 'tailus' ? '[--active-bg:theme(colors.primary.500)]' : '[--active-bg:theme(colors.cyan.500)]')}
                                 style={{
                                     width: `${indicatorWidth}px`,
                                     left: indicatorLeft,
