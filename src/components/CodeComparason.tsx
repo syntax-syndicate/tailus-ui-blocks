@@ -181,7 +181,7 @@ export default function CodeComparason() {
                     </div>
                     <div className="p-8 lg:p-12">
                         <div className="-mt-6 text-center">
-                            <img className="mx-auto size-9 dark:invert" src="/favicon.svg" />
+                            <img className="mx-auto size-9 dark:invert" src="/favicon.svg" alt="Tailus UI Logo" loading="lazy" width={36} height={36} />
                             <h3 className="text-title mb-1 mt-6 text-xl font-semibold">Sign In to Tailus UI</h3>
                             <p className="text-sm">Welcome back! Sign in to continue</p>
                         </div>

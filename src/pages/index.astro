@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/BaseLayout.astro'
 import Container from '@components/Container.astro'
-import { BERNARD_AVATAR, MESCHAC_AVATAR } from 'src/const'
+import { BERNARD_AVATAR, MESCHAC_AVATAR, THEO_AVATAR } from 'src/const'
 import SeparatorRoot from '@components/tailus-ui/Separator'
 import BlockPreview from '@components/BlockPreview'
 import { hero1Code } from '@components/blocks/hero-section/hero1'
@@ -10,7 +10,6 @@ import FeaturesBento from '@components/FeaturesBento'
 ---
 
 <Layout title="Tailus UI Html">
-    <div class="absolute inset-0 z-[-2] hidden max-h-96 bg-[radial-gradient(ellipse_80%_70%_at_20%_-20%,var(--bg-color),theme(colors.transparent))] duration-300 [--bg-color:theme(colors.primary.400)] dark:[--bg-color:theme(colors.primary.950)]"></div>
     <div class="absolute inset-0 isolate contain-strict">
         <div class="absolute left-0 top-0 h-[1280px] w-[560px] -translate-y-[350px] -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(0,0%,85%,.08)_0,hsla(0,0%,55%,.02)_50%,hsla(0,0%,45%,0)_80%)]"></div>
         <div class="absolute left-0 top-0 h-[1280px] w-[240px] -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]"></div>
@@ -116,7 +115,7 @@ import FeaturesBento from '@components/FeaturesBento'
                                 </div>
                             </div>
                             <div>
-                                <h3 class="text-title text-sm font-medium">Realtime insights</h3>
+                                <div class="text-title text-sm font-medium">Realtime insights</div>
                                 <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
                             </div>
                         </div>
@@ -124,7 +123,7 @@ import FeaturesBento from '@components/FeaturesBento'
                     <div class="hidden p-3 sm:block">
                         <div class="card bg-ui tls-shadow-md h-full shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)] dark:[--ui-border-color:theme(colors.gray.800)]">
                             <span class="text-caption text-xs">Great UX</span>
-                            <h3 class="text-title mt-2 text-sm font-medium">Realtime insights</h3>
+                            <div class="text-title mt-2 text-sm font-medium">Realtime insights</div>
                             <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
 
                             <div class="card variant-outlined mt-12 space-y-3 p-4 [--ui-border-color:theme(colors.gray.950/0.15)] dark:[--ui-border-color:theme(colors.gray.800)]">
@@ -167,7 +166,7 @@ import FeaturesBento from '@components/FeaturesBento'
                             <div class="relative mb-6 mt-6 [--ui-bg:theme(colors.white)] [--ui-border-color:theme(colors.gray.950/0.15)] dark:[--ui-bg:theme(colors.gray.800)] dark:[--ui-border-color:theme(colors.gray.800)]">
                                 <div class="card variant-mixed absolute inset-0 bottom-auto top-8 z-10 m-auto grid items-center gap-2 p-4 [grid-template-columns:auto_1fr] dark:!shadow-xl dark:shadow-gray-950/50">
                                     <div class="avatar sz-sm">
-                                        <img src="https://avatars.githubusercontent.com/u/68236786?v=4" alt="" />
+                                        <img src={THEO_AVATAR} alt="Théo Balick" width="120" height="120" loading="lazy" />
                                     </div>
                                     <div>
                                         <div class="text-caption text-xs">Théo Balick</div>
@@ -176,7 +175,7 @@ import FeaturesBento from '@components/FeaturesBento'
                                 </div>
                                 <div class="card variant-outlined grid scale-90 items-center gap-2 p-4 opacity-50 [grid-template-columns:auto_1fr]">
                                     <div class="avatar sz-md">
-                                        <img src="https://avatars.githubusercontent.com/u/47919550?v=4" alt="" />
+                                        <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="120" height="120" loading="lazy" />
                                     </div>
                                     <div>
                                         <div class="text-caption text-xs">Méschac Irung</div>
@@ -185,7 +184,7 @@ import FeaturesBento from '@components/FeaturesBento'
                                 </div>
                                 <div class="card variant-outlined grid scale-90 items-center gap-2 p-4 opacity-50 [grid-template-columns:auto_1fr]">
                                     <div class="avatar sz-md">
-                                        <img src="https://avatars.githubusercontent.com/u/31113941?v=4" alt="" />
+                                        <img src={BERNARD_AVATAR} alt="Bernard Ngandu" width="120" height="120" loading="lazy" />
                                     </div>
                                     <div>
                                         <div class="text-caption text-xs">Bernard Ng</div>
@@ -193,7 +192,7 @@ import FeaturesBento from '@components/FeaturesBento'
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="text-title text-sm font-medium">Realtime insights</h3>
+                            <div class="text-title text-sm font-medium">Realtime insights</div>
                             <p class="mt-3 text-sm">Provident fugit vero voluptate. dolores voluptates inventore nisi.</p>
                         </div>
                     </div>
@@ -210,14 +209,14 @@ import FeaturesBento from '@components/FeaturesBento'
                             <div class="avatar sz-xs fallback-primary">N</div>
                             <SeparatorRoot orientation="vertical" className="h-full" />
                             <div class="avatar sz-xs z-10">
-                                <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                                <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="120" height="120" loading="lazy" />
                             </div>
                         </div>
                     </div>
                     <div class="p-3 sm:col-span-2 lg:col-span-4">
                         <div class="card bg-ui tls-shadow-md w-full overflow-auto shadow-gray-950/[0.035] [--ui-border-color:theme(colors.gray.950/0.05)] lg:overflow-clip dark:[--ui-border-color:theme(colors.gray.800)]">
                             <div class="mb-6">
-                                <h2 class="text-title font-medium">Customers</h2>
+                                <div class="text-title font-medium">Customers</div>
                                 <p class="mt-1 text-sm">New users by First user primary channel group (Default Channel Group)</p>
                             </div>
                             <table class="-mb-4 w-max table-auto border-collapse [--ui-border-color:theme(colors.gray.950/0.05)] lg:w-full dark:[--ui-border-color:theme(colors.gray.700/0.25)] dark:[--ui-soft-bg:var(--ui-bg)]" data-rounded="medium">
@@ -238,7 +237,7 @@ import FeaturesBento from '@components/FeaturesBento'
                                         <td>
                                             <div class="text-title flex items-center gap-2">
                                                 <div class="avatar sz-xxs">
-                                                    <img src={BERNARD_AVATAR} alt="Bernard Ng" width="" height="" />
+                                                    <img src={BERNARD_AVATAR} alt="Bernard Ng" width="120" height="120" loading="lazy" />
                                                 </div>
                                                 <span>Bernard Ng</span>
                                             </div>
@@ -252,7 +251,7 @@ import FeaturesBento from '@components/FeaturesBento'
                                         <td>
                                             <div class="text-title flex items-center gap-2">
                                                 <div class="avatar sz-xxs">
-                                                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="" height="" />
+                                                    <img src={MESCHAC_AVATAR} alt="Méschac Irung" width="120" height="120" loading="lazy" />
                                                 </div>
                                                 <span>Méschac Irung</span>
                                             </div>
@@ -269,6 +268,7 @@ import FeaturesBento from '@components/FeaturesBento'
     </section>
     <section class="relative bg-white pt-16 dark:bg-gray-950">
         <Container>
+            <h2 class="sr-only">Features</h2>
             <div class="grid gap-x-4 gap-y-6 px-3 sm:grid-cols-2 md:mx-0 md:grid-cols-3 lg:gap-x-12">
                 <div>
                     <div class="flex items-center gap-2">
