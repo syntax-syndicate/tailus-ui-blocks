@@ -1,23 +1,31 @@
 ---
 import PreviewBlock from '@components/PreviewBlock.astro'
 import { Title } from '@tailus-ui/typography'
-import { palettesArray as palettes } from '@tailus/themer'
+import { palettes } from '@lib/palettes'
 ---
 
 <>
     {
         palettes.map((palette) => {
+            const { colors } = palette
             return (
-                <div class="space-y-6" data-palette={palette}>
+                <div class="space-y-6" data-palette={palette.name}>
                     <Title size="base" weight="medium" className="capitalize">
-                        {palette}
+                        {palette.name}
                     </Title>
                     <PreviewBlock
                         codeBlocks={[
                             {
                                 code: `theme: {
     extend: {
-        colors: palettes.${palette},
+        colors: ({ colors }) => ({
+            primary : ${colors.primary},
+            danger : ${colors.danger},
+            warning : ${colors.warning},
+            success : ${colors.success},
+            info : ${colors.info},
+            gray : ${colors.gray},
+        }),
     }
 }`,
                                 lang: 'ts',
@@ -34,8 +42,8 @@ import { palettesArray as palettes } from '@tailus/themer'
                                 <button class="btn variant-primary sz-sm">Generate</button>
                             </div>
                             <div class="p-6 col-span-2 border-l border-b flex items-center justify-center">
-                                <label for={`sw-${palette}`} class="switch variant-primary">
-                                    <input checked class="peer" type="checkbox" id={`sw-${palette}`} name="switch1" />
+                                <label for={`sw-${palette.name}`} class="switch variant-primary">
+                                    <input checked class="peer" type="checkbox" id={`sw-${palette.name}`} name="switch1" />
                                     <span class="switch-thumb" />
                                 </label>
                             </div>

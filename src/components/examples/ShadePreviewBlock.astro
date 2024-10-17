@@ -3,12 +3,12 @@ import PreviewBlock from '@components/PreviewBlock.astro'
 import { Title, Text } from '@tailus-ui/typography'
 import Button from '@tailus-ui/Button'
 
-const shades = ['glassy', '800', '900', '925', '950']
+const shades = ['glassy', '800', '900', '950']
 ---
 
 <>
     {
-        shades.map(shade => {
+        shades.map((shade) => {
             return (
                 <div class="space-y-6 group">
                     <Title as="h3" size="base" weight="medium" id={shade} className="capitalize">

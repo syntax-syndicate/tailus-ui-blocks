@@ -136,10 +136,6 @@
         @apply dark:[--ui-border-color:theme(colors.gray.800)] dark:[--ui-bg:theme(colors.gray.900)] dark:[--ui-soft-bg:theme(colors.gray.800)] 
     }
 
-    [data-shade="925"] {
-        @apply dark:[--ui-border-color:theme(colors.gray.800)] dark:[--ui-bg:theme(colors.gray.925)] dark:[--ui-soft-bg:theme(colors.gray.800)]
-    }
-
     [data-shade="950"] {
         @apply dark:[--ui-border-color:theme(colors.gray.800)] dark:[--ui-bg:theme(colors.gray.950)] dark:[--ui-soft-bg:theme(colors.gray.800)]
     }
