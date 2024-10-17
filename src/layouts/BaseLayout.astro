@@ -7,6 +7,7 @@ import '@styles/color-theme.css'
 import PageLoader from '@components/utilities/PageLoader.astro'
 import MainHeader from '@components/MainHeader.astro'
 import KitHeader from '@components/KitHeader.astro'
+import Search from '@components/Search'
 
 interface Props {
     title?: string
@@ -42,6 +43,9 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props
         <main class="will-change-auto [--card-radius:theme(borderRadius.2xl)]">
             <slot />
         </main>
+        <Search client:load>
+            <div id="search"></div>
+        </Search>
         <Footer className="max-w-6xl" />
     </body>
 </html>
