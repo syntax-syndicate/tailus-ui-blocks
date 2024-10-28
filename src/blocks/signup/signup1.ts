@@ -1,7 +1,7 @@
 import type { Code } from "src/types";
 
 const htmlCode = `<section class="flex min-h-screen">
-    <form action="" class="card bg-ui tls-shadow-md m-auto h-fit w-full max-w-sm p-1">
+    <form action="" class="card bg-ui tls-shadow-md m-auto h-fit w-full max-w-md p-1">
         <div class="p-8">
             <div>
                 <h1 class="text-title mb-1 text-xl font-semibold">Sign In to Tailus UI</h1>
@@ -32,6 +32,17 @@ const htmlCode = `<section class="flex min-h-screen">
             <hr class="my-8 border-dashed" />
 
             <div class="space-y-6">
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="field">
+                        <label for="name" class="text-title text-sm">Firstname</label>
+                        <input type="text" required name="name" id="name" class="input sz-md variant-mixed" />
+                    </div>
+                    <div class="field">
+                        <label for="lname" class="text-title text-sm">Lastname</label>
+                        <input type="text" required name="lname" id="lname" class="input sz-md variant-mixed" />
+                    </div>
+                </div>
+
                 <div class="field">
                     <label for="email2" class="text-title text-sm"> Username</label>
                     <input type="email" required name="email2" id="email2" class="input sz-md variant-mixed" />
@@ -94,6 +105,17 @@ export default function LoginPage(){
                     <hr className="my-8 border-dashed" />
 
                     <div className="space-y-6">
+                        <div className="grid grid-cols-2 gap-3">
+                            <div className="field">
+                                <label htmlFor="name" className="text-title text-sm">Firstname</label>
+                                <input type="text" required name="name" id="name" className="input sz-md variant-mixed" />
+                            </div>
+                            <div className="field">
+                                <label htmlFor="lname" className="text-title text-sm">Lastname</label>
+                                <input type="text" required name="lname" id="lname" className="input sz-md variant-mixed" />
+                            </div>
+                        </div>
+
                         <div className="field">
                             <label htmFor="email2" className="text-title text-sm"> Username</label>
                             <input type="email" required name="email2" id="email2" className="input sz-md variant-mixed" />
@@ -155,6 +177,17 @@ const nuxtjsCode = `<template>
                 <hr class="my-8 border-dashed" />
 
                 <div class="space-y-6">
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="field">
+                            <label for="name" class="text-title text-sm">Firstname</label>
+                            <input type="text" required name="name" id="name" class="input sz-md variant-mixed" />
+                        </div>
+                        <div class="field">
+                            <label for="lname" class="text-title text-sm">Lastname</label>
+                            <input type="text" required name="lname" id="lname" class="input sz-md variant-mixed" />
+                        </div>
+                    </div>
+
                     <div class="field">
                         <label for="email2" class="text-title text-sm"> Username</label>
                         <input type="email" required name="email2" id="email2" class="input sz-md variant-mixed" />
@@ -184,11 +217,11 @@ const nuxtjsCode = `<template>
 
 <script>
     export default {
-        name: 'LoginPage',
+        name: 'SignUpPage',
     }
 </script>`
 
-export const loginCode1: Code = {
+export const signupCode1: Code = {
     html: htmlCode,
     astro: htmlCode,
     nextjs: nextjsCode,

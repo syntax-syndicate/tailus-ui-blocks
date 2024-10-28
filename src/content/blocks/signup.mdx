@@ -1,0 +1,20 @@
+---
+title: Sign Up
+description: Build credibility and trust by highlighting well-known or reputable brands that are connected to your business.
+priorityOrder : 1
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { signupCode1 } from "@blocks/signup/signup1"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="Sign Up 1"
+    src="/blocks-preview/signup/signup1"
+    code={signupCode1}
+    client:visible
+/>
