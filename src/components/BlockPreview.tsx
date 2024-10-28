@@ -58,7 +58,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title, fo
                 </div>
                 <div className={twMerge('relative z-10 mx-auto flex max-w-7xl justify-between px-8 py-2', forHome && 'max-w-5xl border-x px-6')}>
                     <div className="flex items-center gap-3">
-                        <Title as="h2" weight="normal" className="text-sm lg:w-20">
+                        <Title as="h2" weight="normal" className="text-sm lg:w-24">
                             {title}
                         </Title>
                         {code && (
