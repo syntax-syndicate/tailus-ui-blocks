@@ -1,0 +1,24 @@
+---
+import { twMerge } from 'tailwind-merge'
+import BaseHead from '../components/BaseHead.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../const'
+import '@styles/color-theme.css'
+
+interface Props {
+    title?: string
+    description?: string
+    className?: string
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, className } = Astro.props
+---
+
+<!doctype html>
+<html class="scroll-smooth" lang="en" data-palette="tls" data-shade="900" data-rounded="large">
+    <head>
+        <BaseHead title={title} description={description} />
+    </head>
+    <body class={twMerge('bg-gray-50 font-sans antialiased dark:bg-gray-950', className)}>
+        <slot />
+    </body>
+</html>

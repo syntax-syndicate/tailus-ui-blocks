@@ -7,6 +7,7 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@blocks/*": ["src/blocks/*"],
       "@styles/*": ["src/styles/*"],
       "@lib/*": ["src/lib/*"],
       "@tailus-ui/*": ["src/components/tailus-ui/*"],
