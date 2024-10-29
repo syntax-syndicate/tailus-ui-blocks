@@ -8,6 +8,7 @@ import _components from "@content/_components"
 import BlockPreview from "@components/BlockPreview"
 import { signupCode1 } from "@blocks/signup/signup1"
 import { signupCode2 } from "@blocks/signup/signup2"
+import { signupCode3 } from "@blocks/signup/signup3"
 
 export const components = {
     ..._components
@@ -24,5 +25,12 @@ export const components = {
     title="Sign Up 2"
     src="/blocks-preview/signup/signup2"
     code={signupCode2}
+    client:visible
+/>
+
+<BlockPreview
+    title="Sign Up 3"
+    src="/blocks-preview/signup/signup3"
+    code={signupCode3}
     client:visible
 />
