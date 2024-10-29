@@ -1,7 +1,7 @@
 import type { Code } from "src/types";
 
-const htmlCode = `<section class="bg-gradient-to-b py-32 dark:from-primary-950">
-    <div class="mx-auto max-w-5xl px-6">
+const htmlCode = `<section class="py-32">
+    <div class="mx-auto max-w-5xl rounded-[2rem] border px-6 py-16">
         <div class="text-center">
             <h2 class="text-title text-balance text-4xl font-semibold lg:text-5xl">Start Building</h2>
             <p class="text-body mt-4">Libero sapiente aliquam quibusdam aspernatur.</p>
@@ -22,8 +22,8 @@ const nextjsCode = `import Link from 'next/link';
 
 export default function CallToAction(){
     return (
-        <section className="bg-gradient-to-b py-32 dark:from-primary-950">
-            <div className="mx-auto max-w-5xl px-6">
+        <section className="py-32">
+            <div className="mx-auto max-w-5xl px-6 rounded-[2rem] border py-16">
                 <div className="text-center">
                     <h2 className="text-title text-balance text-4xl font-semibold lg:text-5xl">Start Building</h2>
                     <p className="text-body mt-4">Libero sapiente aliquam quibusdam aspernatur.</p>
@@ -44,7 +44,7 @@ export default function CallToAction(){
 
 const nuxtjsCode = ``
 
-export const ctaCode: Code = {
+export const cardCode: Code = {
     html: htmlCode,
     astro: htmlCode,
     nextjs: nextjsCode,
