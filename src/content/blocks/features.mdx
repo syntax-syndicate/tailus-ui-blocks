@@ -7,10 +7,18 @@ priorityOrder : 0
 import _components from "@content/_components"
 import BlockPreview from "@components/BlockPreview"
 import { stackedCode } from "@blocks/features/stacked"
+import { cardsCode } from "@blocks/features/cards"
 
 export const components = {
     ..._components
 }
+
+<BlockPreview
+    title="Cards"
+    src="/blocks-preview/features/cards"
+    code={cardsCode}
+    client:visible
+/>
 
 <BlockPreview
     title="Stacked"
