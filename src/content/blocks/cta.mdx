@@ -1,0 +1,20 @@
+---
+title: Call To Action
+description: Build credibility and trust by highlighting well-known or reputable brands that are connected to your business.
+priorityOrder : 1
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { ctaCode } from "@blocks/cta/cta"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="CTA 1"
+    src="/blocks-preview/cta/cta1"
+    code={ctaCode}
+    client:visible
+/>
