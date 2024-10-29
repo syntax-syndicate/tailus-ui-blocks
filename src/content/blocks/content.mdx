@@ -1,0 +1,50 @@
+---
+title: Content
+description: Build credibility and trust by highlighting well-known or reputable brands that are connected to your business.
+priorityOrder : 1
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { ctaCode } from "@blocks/cta/cta"
+import { mailCode } from "@blocks/cta/mail"
+import { cardCode } from "@blocks/cta/card"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="Grid"
+    src="/blocks-preview/content/grid"
+    code={ctaCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="With Image"
+    src="/blocks-preview/content/with-image"
+    code={ctaCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Grid Paragraphs"
+    src="/blocks-preview/content/grid-paragraphs"
+    code={ctaCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Grid Content"
+    src="/blocks-preview/content/grid-content"
+    code={ctaCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="With Image and Features"
+    src="/blocks-preview/content/image-features"
+    code={ctaCode}
+    client:visible
+/>
