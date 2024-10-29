@@ -6,31 +6,15 @@ priorityOrder : 1
 
 import _components from "@content/_components"
 import BlockPreview from "@components/BlockPreview"
-import { ctaCode } from "@blocks/cta/cta"
-import { mailCode } from "@blocks/cta/mail"
-import { cardCode } from "@blocks/cta/card"
+import { pricingCode } from "@blocks/comparator/pricing"
 
 export const components = {
     ..._components
 }
 
 <BlockPreview
-    title="CTA 1"
+    title="Pricing"
     src="/blocks-preview/comparator/pricing"
-    code={ctaCode}
-    client:visible
-/>
-
-<BlockPreview
-    title="Mail"
-    src="/blocks-preview/cta/mail"
-    code={mailCode}
-    client:visible
-/>
-
-<BlockPreview
-    title="Card"
-    src="/blocks-preview/cta/card"
-    code={cardCode}
+    code={pricingCode}
     client:visible
 />
