@@ -7,6 +7,8 @@ priorityOrder : 1
 import _components from "@content/_components"
 import BlockPreview from "@components/BlockPreview"
 import { bentoCode } from "@blocks/testimonials/bento"
+import { plainCode } from "@blocks/testimonials/plain"
+import { centeredCode } from "@blocks/testimonials/centered"
 import { bentoSoftCode } from "@blocks/testimonials/bento-soft"
 
 export const components = {
@@ -24,5 +26,19 @@ export const components = {
     title="Bento Soft Cards"
     src="/blocks-preview/testimonials/bento-soft"
     code={bentoSoftCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Plain"
+    src="/blocks-preview/testimonials/plain"
+    code={bentoSoftCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Centered Plain"
+    src="/blocks-preview/testimonials/centered"
+    code={centeredCode}
     client:visible
 />
