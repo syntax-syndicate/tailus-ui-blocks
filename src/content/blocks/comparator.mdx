@@ -1,0 +1,36 @@
+---
+title: Comparator
+description: Build credibility and trust by highlighting well-known or reputable brands that are connected to your business.
+priorityOrder : 1
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { ctaCode } from "@blocks/cta/cta"
+import { mailCode } from "@blocks/cta/mail"
+import { cardCode } from "@blocks/cta/card"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="CTA 1"
+    src="/blocks-preview/comparator/pricing"
+    code={ctaCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Mail"
+    src="/blocks-preview/cta/mail"
+    code={mailCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Card"
+    src="/blocks-preview/cta/card"
+    code={cardCode}
+    client:visible
+/>
