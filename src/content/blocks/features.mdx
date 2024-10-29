@@ -1,0 +1,20 @@
+---
+title: Features
+description: A section layout with content organized into grid-like compartments, making it easy to present multiple elements neatly and clearly.
+priorityOrder : 0
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { stackedCode } from "@blocks/features/stacked"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="Stacked"
+    src="/blocks-preview/features/stacked"
+    code={stackedCode}
+    client:visible
+/>
