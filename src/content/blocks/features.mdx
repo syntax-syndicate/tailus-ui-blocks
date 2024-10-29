@@ -8,6 +8,7 @@ import _components from "@content/_components"
 import BlockPreview from "@components/BlockPreview"
 import { stackedCode } from "@blocks/features/stacked"
 import { cardsCode } from "@blocks/features/cards"
+import { gridCode } from "@blocks/features/grid"
 import { softCardsCode } from "@blocks/features/softCards"
 
 export const components = {
@@ -32,5 +33,12 @@ export const components = {
     title="Stacked"
     src="/blocks-preview/features/stacked"
     code={stackedCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Grid"
+    src="/blocks-preview/features/grid"
+    code={gridCode}
     client:visible
 />
