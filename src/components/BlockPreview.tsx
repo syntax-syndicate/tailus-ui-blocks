@@ -111,7 +111,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title, fo
                                 </Select.Icon>
                             </Select.Trigger>
                             <Select.Portal>
-                                <Select.Content className="z-50" sideOffset={4} position="popper" mixed intent="gray" variant="soft">
+                                <Select.Content className="z-50 rounded-xl" sideOffset={4} position="popper" mixed intent="gray" variant="soft">
                                     <Select.Viewport>
                                         <SelectItem value="html" label="Html">
                                             <HTMLIcon className="h-4" />
@@ -122,7 +122,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title, fo
                                         <SelectItem value="nextjs" label="NextJs">
                                             <NextIcon className="h-4" />
                                         </SelectItem>
-                                        <SelectItem value="nuxtjs" label="NuxtJs">
+                                        <SelectItem disabled value="nuxtjs" label="NuxtJs">
                                             <NuxtIcon className="h-4" />
                                         </SelectItem>
                                     </Select.Viewport>
@@ -183,9 +183,9 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title, fo
     )
 }
 
-export const SelectItem = ({ value, children, label }: { value: string; children: ReactNode; label: string }) => {
+export const SelectItem = ({ value, children, label, disabled }: { value: string; children: ReactNode; label: string; disabled?: boolean }) => {
     return (
-        <Select.Item value={value}>
+        <Select.Item value={value} disabled={disabled} className="rounded-lg">
             <Select.ItemText>
                 <div className="flex items-center gap-2">
                     {children}
