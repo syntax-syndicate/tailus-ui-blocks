@@ -156,7 +156,7 @@ export default function Pricing(){
 
 const nuxtjsCode = ``
 
-export const oneCode: Code = {
+export const twoCode: Code = {
     html: htmlCode,
     astro: htmlCode,
     nextjs: nextjsCode,
