@@ -1,0 +1,28 @@
+---
+title: Pricing
+description: Build credibility and trust by highlighting well-known or reputable brands that are connected to your business.
+priorityOrder : 1
+---
+
+import _components from "@content/_components"
+import BlockPreview from "@components/BlockPreview"
+import { oneCode } from "@blocks/pricing/one"
+import { twoCode } from "@blocks/pricing/two"
+
+export const components = {
+    ..._components
+}
+
+<BlockPreview
+    title="One"
+    src="/blocks-preview/pricing/one"
+    code={oneCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Two"
+    src="/blocks-preview/pricing/two"
+    code={twoCode}
+    client:visible
+/>
