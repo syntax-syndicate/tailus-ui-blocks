@@ -5,7 +5,7 @@ const htmlCode = `<section class="py-32">
         <h1 class="text-title text-center text-4xl font-bold lg:text-6xl">Contact Sales</h1>
         <p class="text-body mt-4 text-center">We'll help you find the right plan and pricing for your business.</p>
 
-        <form action="" class="bg-ui tls-shadow-lg rounded-card mx-auto mt-12 max-w-lg shadow-gray-950/[0.03] sm:p-16">
+        <form action="" class="bg-ui tls-shadow-md p-8 rounded-card mx-auto mt-12 max-w-lg shadow-gray-950/[0.03] sm:p-16">
             <div>
                 <h3 class="text-title text-xl font-semibold">Let's get you to the right place</h3>
                 <p class="mt-4 text-sm">Reach out to our sales team! We’re eager to learn more about how you plan to use our application.</p>
@@ -73,7 +73,7 @@ export default function ContactSection(){
                 <h1 className="text-title text-center text-4xl font-bold lg:text-6xl">Contact Sales</h1>
                 <p className="text-body mt-4 text-center">We'll help you find the right plan and pricing for your business.</p>
 
-                <form action="" className="bg-ui tls-shadow-lg rounded-card mx-auto mt-12 max-w-lg shadow-gray-950/[0.03] sm:p-16">
+                <form action="" className="bg-ui tls-shadow-md p-8 rounded-card mx-auto mt-12 max-w-lg shadow-gray-950/[0.03] sm:p-16">
                     <div>
                         <h3 className="text-title text-xl font-semibold">Let's get you to the right place</h3>
                         <p className="mt-4 text-sm">Reach out to our sales team! We’re eager to learn more about how you plan to use our application.</p>

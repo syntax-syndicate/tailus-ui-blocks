@@ -7,6 +7,7 @@ priorityOrder : 1
 import _components from "@content/_components"
 import BlockPreview from "@components/BlockPreview"
 import { oneCode } from "@blocks/contact/one"
+import { twoCode } from "@blocks/contact/two"
 
 export const components = {
     ..._components
@@ -16,5 +17,12 @@ export const components = {
     title="One"
     src="/blocks-preview/contact/one"
     code={oneCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Two"
+    src="/blocks-preview/contact/two"
+    code={twoCode}
     client:visible
 />
