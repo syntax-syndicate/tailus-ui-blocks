@@ -8,6 +8,7 @@ import _components from "@content/_components"
 import BlockPreview from "@components/BlockPreview"
 import { oneCode } from "@blocks/team/one"
 import { twoCode } from "@blocks/team/two"
+import { threeCode } from "@blocks/team/three"
 
 
 export const components = {
@@ -25,5 +26,12 @@ export const components = {
     title="Two"
     src="/blocks-preview/team/two"
     code={oneCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Three"
+    src="/blocks-preview/team/three"
+    code={threeCode}
     client:visible
 />
