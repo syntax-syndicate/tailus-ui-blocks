@@ -75,14 +75,33 @@ const repo = 'html.tailus.io'
     })
 </script>
 
-<html class="dark scroll-smooth" lang="en" data-palette="tls" data-rounded="xlarge" data-shade="900">
+<script is:inline>
+    function setCustomization(document) {
+        const theme = localStorage.getItem('theme') || 'dark'
+
+        const root = document.documentElement.classList
+
+        if (theme == 'dark') {
+            root.add('dark')
+        } else {
+            root.remove('dark')
+        }
+    }
+
+    setCustomization(document)
+
+    document.addEventListener('astro:before-swap', (event) => {
+        setCustomization(event.newDocument)
+    })
+</script>
+
+<html class="scroll-smooth" lang="en" data-palette="tls" data-rounded="xlarge" data-shade="900">
     <head>
         <BaseHead title={`${documentation.title} - Tailus UI ${collection.charAt(0).toUpperCase() + collection.slice(1)}`} description={documentation.description} />
         <ViewTransitions />
         <script src="/pagefind/pagefind-ui.js" is:inline></script>
     </head>
-    <body class="relative bg-white font-sans leading-normal antialiased [--btn-radius:theme(borderRadius.lg)] selection:bg-info-600 selection:text-white lg:overflow-hidden lg:before:fixed lg:before:inset-0 lg:before:-z-40 dark:bg-gray-925 dark:[--ui-border-color:theme(colors.gray.800)] dark:selection:bg-info-900 dark:selection:text-info-200 lg:dark:bg-gray-900 lg:dark:before:opacity-[.015] lg:dark:before:[background-image:url('/grainy-bg.svg')]">
-        <div aria-hidden="true" class="-z-50 origin-top-right scale-0 rounded-bl-full bg-gradient-to-b from-gray-200 from-80% to-transparent opacity-0 blur-3xl transition-[transform,borderRadius] duration-1000 ease-[cubic-bezier(0.87,_0,_0.13,_1)] lg:fixed lg:-inset-56 lg:h-[200vh] dark:scale-125 dark:from-gray-925 dark:opacity-100"></div>
+    <body class="relative bg-white font-sans leading-normal antialiased [--btn-radius:theme(borderRadius.lg)] selection:bg-info-600 selection:text-white lg:overflow-hidden lg:before:fixed lg:before:inset-0 lg:before:-z-40 dark:bg-gray-925 dark:[--ui-border-color:theme(colors.gray.800)] dark:selection:bg-info-900 dark:selection:text-info-200 lg:dark:before:opacity-[.015] lg:dark:before:[background-image:url('/grainy-bg.svg')]">
         <PageLoader />
         <DocsHeader2 />
         <main class="scroll-smooth pt-20 lg:fixed lg:inset-x-0 lg:bottom-0 lg:mt-auto lg:h-[calc(100vh-4rem)] lg:w-screen lg:overflow-auto lg:pt-0" data-pagefind-body>
@@ -160,7 +179,7 @@ const repo = 'html.tailus.io'
                                 </div>
                             </div>
 
-                            <a href="https://ui.tailus.io/templates/ampire/" class="text-title bg-ui-soft rounded-btn peer mt-6 block rounded-b-sm p-0.5 transition-transform duration-300 hover:scale-105" target="_blank">
+                            <a href="https://ui.tailus.io/templates/ampire/" class="bg-ui-soft peer text-title rounded-btn mt-6 block rounded-b-sm p-0.5 transition-transform duration-300 hover:scale-105" target="_blank">
                                 <div class="bg-ui overflow-hidden rounded-[calc(var(--btn-radius)-2px)] border shadow-sm shadow-gray-950/5">
                                     <img class="dark:hidden" src="https://ui.tailus.io/images/templates/ampire/ampire-cover-2.webp" alt="Tailus UI Ampire template" loading="eager" height="" width="" />
                                     <img class="hidden dark:block" src="https://ui.tailus.io/images/templates/ampire/ampire-cover-9.webp" alt="Tailus UI Ampire template" loading="eager" height="" width="" />
@@ -168,7 +187,7 @@ const repo = 'html.tailus.io'
                                 <span class="mx-2 my-1.5 block text-center text-sm">Complete modern <span class="bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text font-medium text-transparent dark:from-primary-400 dark:to-secondary-300">Sass Startup</span> Template</span>
                             </a>
 
-                            <div class="rounded-btn bg-ui-soft mt-px flex flex-wrap items-center justify-center gap-0.5 rounded-t-sm p-3 transition-transform duration-300 peer-hover:scale-105">
+                            <div class="bg-ui-soft rounded-btn mt-px flex flex-wrap items-center justify-center gap-0.5 rounded-t-sm p-3 transition-transform duration-300 peer-hover:scale-105">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
                                     <path fill-rule="evenodd" d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z" clip-rule="evenodd"></path>
                                 </svg>

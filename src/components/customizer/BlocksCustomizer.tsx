@@ -9,14 +9,14 @@ import { useState, useEffect, useRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useStore } from '@nanostores/react'
-import { $palette, $rounded, $shade } from '@store/switchers'
+import { $palette, $rounded, $shade, $theme, setTheme } from '@store/switchers'
 import CodeSnippet from '@components/utilities/CodeSnippet'
 import { useMedia } from 'use-media'
+import type { Theme } from 'src/types'
 
 const radioItem = 'relative rounded-[calc(var(--btn-radius)-3px)] delay-75 duration-300 flex items-center justify-center h-8 px-2.5 gap-2 text-[--caption-text-color] transition-[color] hover:text-[--body-text-color] data-[state=checked]:scale-95 transition-transform will-change data-[state=checked]:text-[--title-text-color]'
 
 export default function BlocksCustomizer({ global = false }: { global?: boolean }) {
-    const [theme, setTheme] = useState<'light' | 'dark'>('dark')
     const [isActive, setIsActive] = useState(false)
     const customizerRef = useRef<HTMLDivElement>(null)
     const triggerButtonRef = useRef<HTMLButtonElement>(null)
@@ -25,21 +25,21 @@ export default function BlocksCustomizer({ global = false }: { global?: boolean 
     const palette = useStore($palette)
     const rounded = useStore($rounded)
     const shade = useStore($shade)
+    const theme = useStore($theme)
 
     const initialAnimation = isMedium ? { x: 560 } : { y: 720 }
     const animate = isMedium ? { x: 0 } : { y: 0 }
     const exitAnimation = isMedium ? { x: 560, opacity: 0, scale: 0.95 } : { y: 720, opacity: 0, scale: 0.95 }
 
-    const handleValueChange = (value: string) => {
-        const newTheme = value === '100' ? 'light' : 'dark'
-        setTheme(newTheme)
+    const handleValueChange = (theme: Theme) => {
+        setTheme(theme)
 
         const iframes = document.querySelectorAll('iframe') as NodeListOf<HTMLIFrameElement>
         iframes.forEach((iframe) => {
             try {
                 const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document
                 if (iframeDoc && iframeDoc.location.origin === window.location.origin) {
-                    if (newTheme === 'dark') {
+                    if (theme === 'dark') {
                         iframeDoc.documentElement.classList.add('dark')
                     } else {
                         iframeDoc.documentElement.classList.remove('dark')
@@ -50,14 +50,6 @@ export default function BlocksCustomizer({ global = false }: { global?: boolean 
             }
         })
     }
-
-    useEffect(() => {
-        if (theme === 'dark') {
-            document.documentElement.classList.add('dark')
-        } else {
-            document.documentElement.classList.remove('dark')
-        }
-    }, [theme])
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -111,7 +103,7 @@ export default function BlocksCustomizer({ global = false }: { global?: boolean 
                         animate={animate}
                         exit={exitAnimation}
                         data-shade="glassy"
-                        className="md:rounded-card fixed inset-x-0 -bottom-px z-50 h-fit rounded-t-2xl border bg-white p-8 shadow-2xl shadow-gray-950/5 outline outline-1 outline-transparent dark:feedback-bg md:right-[5.2rem] md:top-16 md:max-w-sm md:shadow-md lg:bottom-auto lg:left-auto dark:border-white/5 dark:shadow-gray-950/25 dark:outline-gray-950/50">
+                        className="fixed inset-x-0 -bottom-px z-50 h-fit rounded-t-2xl border bg-white p-8 shadow-2xl shadow-gray-950/5 outline outline-1 outline-transparent md:rounded-card dark:feedback-bg md:right-[5.2rem] md:top-16 md:max-w-sm md:shadow-md lg:bottom-auto lg:left-auto dark:border-white/5 dark:shadow-gray-950/25 dark:outline-gray-950/50">
                         <div>
                             <Title size="base" weight="medium" as="div">
                                 Personalize Your Theme
@@ -124,12 +116,12 @@ export default function BlocksCustomizer({ global = false }: { global?: boolean 
                         <div className="mb-8 mt-6 space-y-6">
                             <div className="relative">
                                 <div className={twMerge('absolute inset-[3px] w-1/2 rounded-[calc(var(--btn-radius)-3px)] border border-transparent bg-white shadow transition-transform duration-300 ease-in-out dark:border-white/5 dark:bg-[--ui-soft-bg]', theme == 'dark' && 'translate-x-[calc(100%-6px)]')}></div>
-                                <RadioGroup.Root className="grid grid-cols-2 gap-0.5 rounded-[--btn-radius] border border-gray-950/5 bg-gray-950/5 p-0.5 dark:border-white/5 dark:bg-gray-950/50" defaultValue="0" onValueChange={handleValueChange}>
-                                    <RadioGroup.Item aria-label="Light theme" value="100" className={radioItem}>
+                                <RadioGroup.Root className="grid grid-cols-2 gap-0.5 rounded-[--btn-radius] border border-gray-950/5 bg-gray-950/5 p-0.5 dark:border-white/5 dark:bg-gray-950/50" defaultValue="dark" onValueChange={handleValueChange}>
+                                    <RadioGroup.Item aria-label="Light theme" value="light" className={radioItem}>
                                         <Sun className="size-4" />
                                         <span className="text-sm">Light</span>
                                     </RadioGroup.Item>
-                                    <RadioGroup.Item aria-label="Dark theme" value="0" className={radioItem}>
+                                    <RadioGroup.Item aria-label="Dark theme" value="dark" className={radioItem}>
                                         <Moon className="size-4" />
                                         <span className="text-sm">Dark</span>
                                     </RadioGroup.Item>

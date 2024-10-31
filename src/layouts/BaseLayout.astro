@@ -17,7 +17,26 @@ interface Props {
 const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props
 ---
 
-<!doctype html>
+<script>
+    function setCustomization(document) {
+        const theme = localStorage.getItem('theme') || 'dark'
+
+        const root = document.documentElement.classList
+
+        if (theme == 'dark') {
+            root.add('dark')
+        } else {
+            root.remove('dark')
+        }
+    }
+
+    setCustomization(document)
+
+    document.addEventListener('astro:before-swap', (event) => {
+        setCustomization(event.newDocument)
+    })
+</script>
+
 <html class="scroll-smooth" lang="en" data-palette="tls" data-shade="900" data-rounded="large">
     <head>
         <BaseHead title={title} description={description} />
