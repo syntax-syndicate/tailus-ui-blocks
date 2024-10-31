@@ -62,7 +62,7 @@ const links = blocks
                 {
                     links.map((link) => (
                         <div class="snap-center">
-                            <a href={link.href} class={twMerge(`relative block w-max text-nowrap px-3 pb-3 pt-2.5 text-sm transition-colors duration-200 hover:text-title before:absolute before:inset-x-3 before:bottom-0 before:h-0.5 before:rounded-t ${link.active ? 'text-title before:bg-primary-600' : 'text-body'}`)}>
+                            <a href={link.href} class={twMerge(`relative block w-max text-nowrap px-3 pb-3 pt-2.5 text-sm transition-colors duration-200 hover:text-title before:absolute before:inset-x-3 before:bottom-0 before:h-0.5 before:rounded ${link.active ? 'text-title before:bg-primary-600 dark:before:bg-primary-400' : 'text-body'}`)}>
                                 {link.name}
                             </a>
                         </div>

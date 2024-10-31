@@ -5,6 +5,7 @@ import { BlurDivs } from './utilities/DocsProgressiveBlur'
 import Separator from '@tailus-ui/Separator'
 
 const html = await getCollection('html')
+const blocks = await getCollection('blocks')
 const currentPath = Astro.url.pathname
 
 const sidebarPages = {
@@ -19,7 +20,14 @@ const { target } = Astro.props
 const activeLinkClasses = 'font-medium text-info-600 dark:text-info-400 hover:text-info-700 dark:hover:text-info-300'
 
 const reactOrder = ['get-started', 'theming', 'guides', 'typography', 'components', 'visualizations', 'blocks']
-console.log(currentPath)
+const blocksLinks = blocks
+    .map((page) => ({
+        name: page.data.title,
+        href: page.slug,
+        active: currentPath.includes(page.slug),
+        priority: page.data.priorityOrder || 0,
+    }))
+    .sort((a, b) => a.priority - b.priority)
 ---
 
 <script>
@@ -29,7 +37,7 @@ console.log(currentPath)
         const currentScroll = sessionStorage.getItem('scrollPosition') || '0'
         linksParent!.scrollTop = JSON.parse(currentScroll)
 
-        const handleScroll = event => {
+        const handleScroll = (event) => {
             if (timeoutId !== null) {
                 clearTimeout(timeoutId)
             }
@@ -39,21 +47,21 @@ console.log(currentPath)
             }, 100)
         }
 
-        linksParent?.addEventListener('scroll', event => {
+        linksParent?.addEventListener('scroll', (event) => {
             handleScroll(event)
         })
     })
 </script>
 
-<div class="h-full relative px-8 lg:px-0 pt-6 lg:pt-0 lg:-ml-4 lg:pl-4">
-    <div aria-hidden="true" class="h-10 absolute top-0 left-0 right-3 pointer-events-none">
+<div class="relative h-full px-8 pt-6 lg:-ml-4 lg:px-0 lg:pl-4 lg:pt-0">
+    <div aria-hidden="true" class="pointer-events-none absolute left-0 right-3 top-0 h-10">
         <BlurDivs />
     </div>
-    <div aria-hidden="true" class="h-10 absolute z-10 bottom-0 left-0 right-3 rotate-180 pointer-events-none">
+    <div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-3 z-10 h-10 rotate-180">
         <BlurDivs />
     </div>
-    <div class="h-full -ml-2 pl-2 overflow-y-scroll custom-scrollbar" id="linksParent">
-        <div class="space-y-6 pt-6 pb-12 lg:pb-6 lg:pt-12 [--body-text-color:theme(colors.gray.600)] dark:[--body-text-color:theme(colors.gray.400)]" data-rounded="full" data-shade="900">
+    <div class="custom-scrollbar -ml-2 h-full overflow-y-scroll pl-2" id="linksParent">
+        <div class="space-y-6 pb-12 pt-6 [--body-text-color:theme(colors.gray.600)] lg:pb-6 lg:pt-12 dark:[--body-text-color:theme(colors.gray.400)]" data-rounded="full" data-shade="900">
             <div class="space-y-4" data-shade="800">
                 <a href="https://ui.tailus.io/react/get-started/introduction" class="flex items-center gap-3 text-[--body-text-color] hover:text-[--title-text-color]">
                     <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="1.13em" height="1em" viewBox="0 0 256 228"
@@ -105,12 +113,12 @@ console.log(currentPath)
                             <Caption as="span" weight="medium" neutral className="capitalize">
                                 {subdirectory.replace('-', ' ')}
                             </Caption>
-                            <ul class="space-y-2 mt-4">
+                            <ul class="mt-4 space-y-2">
                                 {pages
                                     ?.sort((a, b) => a.data.priorityOrder - b.data.priorityOrder)
-                                    .map(page => (
+                                    .map((page) => (
                                         <li>
-                                            <a href={`/${page.slug}`} class:list={currentPath === `/${page.slug}` ? activeLinkClasses : ''} class="text-[15px] text-[--body-text-color] hover:text-gray-950 dark:hover:text-white transition duration-200">
+                                            <a href={`/${page.slug}`} class:list={currentPath === `/${page.slug}` ? activeLinkClasses : ''} class="text-[15px] text-[--body-text-color] transition duration-200 hover:text-gray-950 dark:hover:text-white">
                                                 <span class="capitalize">{pages[0].slug.split('/')[0] === page.slug.split('/').pop() ? 'Overview' : page.slug.split('/').pop().replace('-', ' ')}</span>
                                             </a>
                                         </li>
@@ -119,6 +127,20 @@ console.log(currentPath)
                         </div>
                     ))
             }
+            <div>
+                <Caption as="span" weight="medium" neutral className="capitalize">Blocks</Caption>
+                <ul class="mt-4 space-y-2">
+                    {
+                        blocksLinks.map((page) => (
+                            <li>
+                                <a href={`/blocks/${page.href}`} class:list={currentPath === `/${page.href}` ? activeLinkClasses : ''} class="text-[15px] text-[--body-text-color] transition duration-200 hover:text-gray-950 dark:hover:text-white">
+                                    <span class="capitalize">{page.name}</span>
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
         </div>
     </div>
 </div>
