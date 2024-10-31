@@ -7,6 +7,7 @@ priorityOrder : 0
 import _components from "@content/_components"
 import BlockPreview from "@components/BlockPreview"
 import { hero1Code } from "@blocks/herosection/saas/saas1"
+import { hero2Code } from "@blocks/herosection/saas/saas2"
 
 export const components = {
     ..._components
@@ -14,6 +15,13 @@ export const components = {
 
 <BlockPreview
     title="SaaS 1"
+    src="/blocks-preview/herosection/saas2"
+    code={hero2Code}
+    client:visible
+/>
+
+<BlockPreview
+    title="SaaS 2"
     src="/blocks-preview/herosection/saas1"
     code={hero1Code}
     client:visible
