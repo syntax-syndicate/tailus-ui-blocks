@@ -19,6 +19,25 @@ const links = blocks
     document.addEventListener('astro:page-load', () => {
         const blocksNav = document.querySelector('#blocks-nav') as HTMLElement
 
+        let timeoutId
+        const linksParent = document.querySelector('#linksParent')
+        const currentScroll = sessionStorage.getItem('blocksScrollPosition') || '0'
+        linksParent!.scrollLeft = JSON.parse(currentScroll)
+
+        const handleScroll = (event) => {
+            if (timeoutId !== null) {
+                clearTimeout(timeoutId)
+            }
+
+            timeoutId = setTimeout(() => {
+                sessionStorage.setItem('blocksScrollPosition', event.target.scrollLeft)
+            }, 100)
+        }
+
+        linksParent?.addEventListener('scroll', (event) => {
+            handleScroll(event)
+        })
+
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY
 
@@ -39,17 +58,17 @@ const links = blocks
 <div id="blocks-nav" class="rounded-card sticky top-1 z-30 mx-1 max-w-[calc(80rem-6px)] border border-transparent px-3.5 outline outline-1 outline-transparent duration-300 lg:top-2 lg:mx-auto lg:px-4 dark:outline-transparent">
     <div class="[--body-text-color:theme(colors.gray.600)] dark:[--body-text-color:theme(colors.gray.400)]">
         <nav class="relative">
-            <ul class="flex gap-3 overflow-x-auto">
+            <div id="linksParent" class="blocksnav-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-scroll">
                 {
                     links.map((link) => (
-                        <li>
+                        <div class="snap-center">
                             <a href={link.href} class={twMerge(`relative block w-max text-nowrap px-3 pb-3 pt-2.5 text-sm transition-colors duration-200 hover:text-title before:absolute before:inset-x-3 before:bottom-0 before:h-0.5 before:rounded-t ${link.active ? 'text-title before:bg-primary-600' : 'text-body'}`)}>
                                 {link.name}
                             </a>
-                        </li>
+                        </div>
                     ))
                 }
-            </ul>
+            </div>
         </nav>
     </div>
 </div>
