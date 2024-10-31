@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from '../const'
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_IMAGE } from '../const'
 import '@styles/utilities.css'
 import '@styles/tailus.css'
 
@@ -9,7 +9,7 @@ export interface Props {
     image?: string
 }
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = '/html-og.png' } = Astro.props
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = SITE_IMAGE } = Astro.props
 ---
 
 <!-- Global Metadata -->
