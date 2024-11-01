@@ -11,6 +11,14 @@ export const components = {
 }
 
 <div className="space-y-20">
+
+    <div className="aspect-[16/10] z-[1] relative rounded-card overflow-hidden">
+        <video className="size-full aspect-[16/10] grayscale-[50%] contrast-150" autoPlay playsInline loop poster="/snippets-poster.webp">
+            <source src="https://res.cloudinary.com/dg4jhba5c/video/upload/v1730459764/snippets_qq3f6y.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
     <div>
         ## Prerequisites
         Before you install the extension, ensure that you have already installed Tailus UI HTML in your project. If not, please follow the [Tailus UI HTML installation guide](/get-started/installation).
