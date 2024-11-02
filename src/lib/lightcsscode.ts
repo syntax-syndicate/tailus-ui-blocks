@@ -1,3 +1,5 @@
+export default `/* Tailus UI HTML Light css file */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,8 +46,6 @@
         --ui-bg-opacity: 1;
 
         color : var(--body-text-color);
-
-        @apply dark:[--ui-border-color:theme('colors.gray.800')] dark:[--ui-disabled-bg:theme('colors.gray.900')] dark:[--ui-bg:theme('colors.gray.900/var(--ui-bg-opacity)')] dark:[--ui-soft-bg:theme('colors.gray.800')] dark:[--display-text-color:theme('colors.white')] dark:[--body-text-color:theme('colors.gray.300')] dark:[--placeholder-text-color:theme('colors.gray.600')]
     }
 
     *,.border{
@@ -71,8 +71,6 @@
         --ui-border-color: var(--ui-error-border);
         --input-outline : var(--ui-error-border);
         --title-text-color : theme(colors.danger.600);
-
-        @apply dark:[--title-text-color:theme(colors.danger.400)]
     }
 
     /* Data attributes */
@@ -124,20 +122,6 @@
         --ui-bd-blur: theme("blur[2xl]");
         --ui-bg-opacity: 0.75;
         --ui-bg: theme("colors.white/var(--ui-bg-opacity)");
-
-        @apply dark:[--ui-bg-opacity:0.5] dark:[--ui-border-color:theme(colors.gray.50/0.1)] dark:[--ui-bg:theme(colors.gray.700/var(--ui-bg-opacity))] dark:[--ui-soft-bg:theme(colors.gray.600/0.50)]
-    }
-
-    [data-shade="800"] {
-        @apply dark:[--ui-border-color:theme(colors.gray.700)] dark:[--ui-bg:theme(colors.gray.800)] dark:[--ui-soft-bg:theme(colors.gray.900)]
-    }
-
-    [data-shade="900"] {
-        @apply dark:[--ui-border-color:theme(colors.gray.800)] dark:[--ui-bg:theme(colors.gray.900)] dark:[--ui-soft-bg:theme(colors.gray.800)] 
-    }
-
-    [data-shade="950"] {
-        @apply dark:[--ui-border-color:theme(colors.gray.800)] dark:[--ui-bg:theme(colors.gray.950)] dark:[--ui-soft-bg:theme(colors.gray.800)]
     }
 }
 
@@ -259,9 +243,6 @@
         @apply relative [text-shadow:_0_1px_0_var(--tw-shadow-color)]
     }
 
-    .btn.variant-neutral > .btn-label{
-        @apply dark:[text-shadow:none]
-    }
 
     .btn.variant-neutral,.btn.variant-primary,.btn.variant-destructive{
         @apply transition-[filter] text-white duration-300 before:inset-0
@@ -276,27 +257,27 @@
     }
 
     .btn.variant-neutral{
-        @apply border-gray-800 from-gray-700 to-gray-900 shadow-gray-950/25 before:border-white/25 hover:brightness-125 active:brightness-75 dark:border-white dark:bg-white dark:from-transparent dark:to-transparent dark:hover:bg-white/75 dark:shadow-gray-950/5 dark:text-gray-950
+        @apply border-gray-800 from-gray-700 to-gray-900 shadow-gray-950/25 before:border-white/25 hover:brightness-125 active:brightness-75 
     }
 
     .btn.variant-primary{
-        @apply border-primary-700 from-primary-500 to-primary-600 shadow-primary-950/25 before:border-white/25 hover:brightness-110 active:brightness-95 dark:border-white/15 dark:from-primary-600 dark:to-primary-600 dark:before:border-transparent dark:shadow-primary-950/10
+        @apply border-primary-700 from-primary-500 to-primary-600 shadow-primary-950/25 before:border-white/25 hover:brightness-110 active:brightness-95 
     }
 
     .btn.variant-destructive{
-        @apply border-danger-700 from-danger-500 to-danger-600 shadow-danger-950/25 before:border-white/25 hover:brightness-110 active:brightness-95 dark:border-white/15 dark:from-danger-600 dark:to-danger-600 dark:before:border-transparent dark:shadow-danger-950/10
+        @apply border-danger-700 from-danger-500 to-danger-600 shadow-danger-950/25 before:border-white/25 hover:brightness-110 active:brightness-95 
     }
 
     .btn.variant-outlined{
-        @apply text-gray-950 from-gray-300/75 from-85% to-gray-400/50 before:inset-px before:border-t before:border-white before:bg-white before:transition-[background,border-color] before:duration-300 hover:before:bg-gray-100 active:before:bg-gray-200 dark:from-transparent dark:to-transparent dark:before:inset-0 dark:before:border dark:before:border-white/10 dark:before:bg-white/5 dark:hover:before:bg-white/10 dark:active:before:bg-white/15 dark:text-white
+        @apply text-gray-950 from-gray-300/75 from-85% to-gray-400/50 before:inset-px before:border-t before:border-white before:bg-white before:transition-[background,border-color] before:duration-300 hover:before:bg-gray-100 active:before:bg-gray-200 
     }
 
     .btn.variant-soft{
-        @apply border-transparent bg-gray-950/[0.07] transition-[background,border-color] duration-300 hover:border-gray-950/10 active:bg-gray-950/15 dark:bg-gray-500/15 dark:hover:border-white/10 dark:active:bg-gray-500/20
+        @apply border-transparent bg-gray-950/[0.07] transition-[background,border-color] duration-300 hover:border-gray-950/10 active:bg-gray-950/15
     }
 
     .btn.variant-ghost{
-        @apply transition-[background] duration-300 hover:bg-gray-950/[0.07] active:bg-gray-950/15 dark:hover:bg-gray-500/15 dark:active:bg-gray-500/20
+        @apply transition-[background] duration-300 hover:bg-gray-950/[0.07] active:bg-gray-950/15 
     }
 
     .btn.sz-xs {
@@ -350,23 +331,23 @@
     }
 
     .badge.variant-neutral{
-        @apply bg-gray-500/10 border-gray-500/15 text-[--body-text-color] dark:bg-gray-500/15 dark:border-gray-500/20
+        @apply bg-gray-500/10 border-gray-500/15 text-[--body-text-color] 
     }
 
     .badge.variant-info{
-        @apply bg-info-500/15 border-info-500/15 text-info-700 dark:text-info-300 dark:border-info-500/20
+        @apply bg-info-500/15 border-info-500/15 text-info-700
     }
 
     .badge.variant-success{
-        @apply bg-success-500/15 border-success-500/25 text-success-800 dark:text-success-300 dark:border-success-500/15
+        @apply bg-success-500/15 border-success-500/25 text-success-800
     }
 
     .badge.variant-warning{
-        @apply bg-warning-500/15 border-warning-500/25 text-warning-800 dark:text-warning-200 dark:border-warning-500/15
+        @apply bg-warning-500/15 border-warning-500/25 text-warning-800
     }
 
     .badge.variant-danger{
-        @apply bg-danger-500/15 border-danger-500/15 text-danger-700 dark:text-danger-300
+        @apply bg-danger-500/15 border-danger-500/15 text-danger-700
     }
 
     .badge.variant-urgent{
@@ -391,7 +372,7 @@
 
     /* Form field, input and textarea */
     .field{
-        @apply relative space-y-2.5 *:has-[:disabled]:opacity-50 *:has-[:disabled]:pointer-events-none has-[:user-invalid]:[--caption-text-color:theme(colors.danger.600)] dark:has-[:user-invalid]:[--caption-text-color:theme(colors.danger.400)]
+        @apply relative space-y-2.5 *:has-[:disabled]:opacity-50 *:has-[:disabled]:pointer-events-none has-[:user-invalid]:[--caption-text-color:theme(colors.danger.600)]
     }
 
     .input, .textarea{
@@ -399,15 +380,15 @@
     }
 
     .input.variant-outlined, .textarea.variant-outlined{
-        @apply outline-2 bg-transparent focus:outline-[--input-outline] -outline-offset-1 focus:outline border
+        @apply outline-2 bg-transparent focus:outline-[--input-outline] -outline-offset-1 focus:outline border border-[--input-border]
     }
 
     .input.variant-mixed, .textarea.variant-mixed{
-        @apply shadow-sm shadow-gray-950/5 dark:shadow-gray-950/35 outline-2 bg-[--ui-bg] focus:outline-[--input-outline] -outline-offset-1 focus:outline border
+        @apply shadow-sm shadow-gray-950/5 outline-2 bg-[--ui-bg] focus:outline-[--input-outline] -outline-offset-1 focus:outline border border-[--input-border]
     }
 
     .input.variant-soft, .textarea.variant-soft {
-        @apply outline-none bg-[--ui-soft-bg] focus:brightness-95 dark:focus:brightness-105
+        @apply outline-none bg-[--ui-soft-bg] focus:brightness-95
     }
 
     .input.variant-plain, .textarea.variant-plain {
@@ -415,7 +396,7 @@
     }
 
     .input.variant-bottomOutlined, .textarea.variant-bottomOutlined {
-        @apply rounded-none bg-transparent focus:outline-none border-b focus:border-[--input-outline] focus:border-b-2
+        @apply rounded-none bg-transparent focus:outline-none border-b border-[--input-border] focus:border-[--input-outline] focus:border-b-2
     }
 
     .input.sz-sm {
@@ -467,7 +448,7 @@
     }
 
     .switch{
-        @apply block relative w-8 h-5 border transition duration-300 rounded-full bg-ui-soft dark:bg-[--ui-bg] has-[:checked]:border-white/5
+        @apply block relative w-8 h-5 border transition duration-300 rounded-full bg-ui-soft has-[:checked]:border-white/5
     }
 
     .switch-thumb{
@@ -475,7 +456,7 @@
     }
 
     .switch-thumb.variant-neutral{
-        @apply absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3 dark:peer-checked:bg-gray-900
+        @apply absolute inset-x-[1px] inset-y-0 my-auto size-4 rounded-full bg-white shadow-sm shadow-gray-950/25 transition-[transform,width] ease-in-out duration-300 will-change-transform peer-checked:translate-x-3
     }
 
     .switch.variant-primary{
@@ -483,19 +464,19 @@
     }
 
     .switch.variant-neutral{
-        @apply has-[:checked]:bg-gray-950 dark:has-[:checked]:bg-white
+        @apply has-[:checked]:bg-gray-950
     }
 
     .checkbox, .radio{
-        @apply block relative size-[1.125rem] border border-gray-300 dark:border-[--ui-border-color] transition duration-300 rounded shadow-sm shadow-gray-950/5 dark:bg-ui has-[:checked]:bg-primary-600 has-[:checked]:border-white/5
+        @apply block relative size-[1.125rem] border border-gray-300 transition duration-300 rounded shadow-sm shadow-gray-950/5 has-[:checked]:bg-primary-600 has-[:checked]:border-white/5
     }
 
     .checkbox-icon{
-        @apply absolute inset-0 m-auto size-3.5 transition duration-300 text-gray-950 dark:text-white scale-75 opacity-0 group-hover:opacity-25 peer-checked:scale-100 peer-checked:text-white peer-checked:opacity-100
+        @apply absolute inset-0 m-auto size-3.5 transition duration-300 text-gray-950 scale-75 opacity-0 group-hover:opacity-25 peer-checked:scale-100 peer-checked:text-white peer-checked:opacity-100
     }
 
     .radio-indicator{
-        @apply absolute inset-0 m-auto size-2 rounded-full peer-checked:shadow peer-checked:shadow-gray-950/25 transition duration-300 bg-gray-950 dark:bg-white scale-75 opacity-0 group-hover:opacity-25 peer-checked:scale-100 peer-checked:bg-white peer-checked:opacity-100
+        @apply absolute inset-0 m-auto size-2 rounded-full peer-checked:shadow peer-checked:shadow-gray-950/25 transition duration-300 bg-gray-950 scale-75 opacity-0 group-hover:opacity-25 peer-checked:scale-100 peer-checked:bg-white peer-checked:opacity-100
     }
 
     .checkbox, .radio, .switch{
@@ -526,7 +507,7 @@
     /* Kbd */
 
     .kbd {
-        @apply inline-flex items-center justify-center text-gray-800 dark:text-white h-5 text-[11px] min-w-5 px-1.5 rounded font-sans bg-gray-100 dark:bg-white/10 ring-1 border-b border-t border-t-white border-b-gray-200 dark:border-t-transparent dark:border-b-gray-950 ring-gray-300 dark:ring-white/15
+        @apply inline-flex items-center justify-center text-gray-800 h-5 text-[11px] min-w-5 px-1.5 rounded font-sans bg-gray-100 ring-1 border-b border-t border-t-white border-b-gray-200 ring-gray-300
     }
 
     /* Code */
@@ -536,7 +517,7 @@
     }
 
     .code.variant-primary {
-        @apply border bg-primary-50 text-primary-600 dark:text-primary-300 border-primary-200 dark:border-primary-500/20 dark:bg-primary-500/5
+        @apply border bg-primary-50 text-primary-600 border-primary-200
     }
 
     .code.variant-gray {
@@ -544,13 +525,13 @@
     }
 
     .code.variant-neutral {
-        @apply border bg-gray-50 text-gray-950 dark:text-white dark:bg-gray-500/5 dark:border-gray-500/20
+        @apply border bg-gray-50 text-gray-950
     }
 
     /* Link */
 
     .link {
-        @apply transition text-primary-600 dark:text-primary-400
+        @apply transition text-primary-600 
     }
 
     .link.variant-ghost{
@@ -566,27 +547,27 @@
     }
 
     .link.intent-info {
-        @apply text-info-600 dark:text-info-400
+        @apply text-info-600 
     }
 
     .link.intent-neutral {
-        @apply text-gray-950 dark:text-white
+        @apply text-gray-950 
     }
 
     .link.variant-animated.intent-neutral{
-        @apply before:bg-gray-950/50 dark:before:bg-white/50
+        @apply before:bg-gray-950/50 
     }
 
     .link.variant-animated.intent-info{
-        @apply before:bg-info-300 dark:before:bg-info-600
+        @apply before:bg-info-300 
     }
 
     .link.variant-animated.intent-primary{
-        @apply before:bg-primary-300 dark:before:bg-primary-600
+        @apply before:bg-primary-300 
     }
 
     .link.variant-underlined.intent-neutral, .link.variant-ghost.intent-neutral{
-        @apply decoration-gray-950/50 dark:decoration-white/50
+        @apply decoration-gray-950/50 
     }
 
     /* Separator */
@@ -612,7 +593,7 @@
     }
 
     .annonce.variant-mixed{
-        @apply border bg-[--ui-bg] shadow-sm shadow-gray-950/5 dark:shadow-gray-950/25
+        @apply border bg-[--ui-bg] shadow-sm shadow-gray-950/5
     }
 
     .annonce.sz-xs{
@@ -656,7 +637,7 @@
     }
 
     .annonce-concern.variant-neutral {
-        @apply border bg-gray-500/15 border-gray-500/15 text-gray-950 dark:text-white
+        @apply border bg-gray-500/15 border-gray-500/15 text-gray-950 
     }
 
     /* Progress */
@@ -704,12 +685,12 @@
         @apply bg-gray-600
     }
     .progress-indicator.variant-neutral{
-        @apply bg-gray-950 dark:bg-white
+        @apply bg-gray-950 
     }
 
     /* Avatar */
     .avatar{
-        @apply block border border-gray-950/5 dark:border-white/5 relative rounded-[--avatar-radius] *:rounded-[--avatar-radius] before:hidden
+        @apply block border border-gray-950/5  relative rounded-[--avatar-radius] *:rounded-[--avatar-radius] before:hidden
     }
 
     .avatar img{
@@ -717,7 +698,7 @@
     }
 
     .avatar.avatar-status{
-        @apply before:absolute before:z-[1] before:block before:right-px before:rounded-full before:border-white dark:before:border-gray-950
+        @apply before:absolute before:z-[1] before:block before:right-px before:rounded-full before:border-white
     }
 
     .avatar.sz-xs, .avatar.sz-sm{
@@ -757,19 +738,19 @@
     }
 
     .avatar.status-online{
-        @apply before:bg-success-600 dark:before:bg-success-400
+        @apply before:bg-success-600 
     }
 
     .avatar.status-offline{
-        @apply before:bg-gray-600 dark:before:bg-gray-400
+        @apply before:bg-gray-600 
     }
 
     .avatar.status-away{
-        @apply before:bg-warning-600 dark:before:bg-warning-500
+        @apply before:bg-warning-600 
     }
 
     .avatar.status-busy{
-        @apply before:bg-danger-600 dark:before:bg-danger-400
+        @apply before:bg-danger-600 
     }
 
     .avatar.fallback-neutral, .avatar.fallback-primary{
@@ -777,11 +758,11 @@
     }
 
     .avatar.fallback-neutral{
-        @apply bg-gray-500/15 border-gray-500/15 text-gray-800 dark:text-gray-300
+        @apply bg-gray-500/15 border-gray-500/15 text-gray-800 
     }
 
     .avatar.fallback-primary{
-        @apply bg-primary-500/15 border-primary-500/15 text-primary-800 dark:text-primary-300
+        @apply bg-primary-500/15 border-primary-500/15 text-primary-800
     }
 
     .callout{
@@ -801,12 +782,12 @@
     }
 
     .callout.variant-warning{
-        @apply bg-warning-50 [--title-text-color:theme(colors.warning.950)] dark:bg-warning-500/5 dark:border-white/5 dark:[--title-text-color:theme(colors.white)]
+        @apply bg-warning-50 [--title-text-color:theme(colors.warning.950)] 
     }
     .callout.variant-danger{
-        @apply bg-danger-50 [--title-text-color:theme(colors.danger.950)] dark:bg-danger-500/5 dark:border-white/5 dark:[--title-text-color:theme(colors.white)]
+        @apply bg-danger-50 [--title-text-color:theme(colors.danger.950)] 
     }
     .callout.variant-neutral{
-        @apply bg-gray-50 [--title-text-color:theme(colors.gray.950)] dark:bg-gray-500/5 dark:[--title-text-color:theme(colors.white)]
+        @apply bg-gray-50 [--title-text-color:theme(colors.gray.950)] 
     }
-}
+}`

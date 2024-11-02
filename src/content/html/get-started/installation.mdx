@@ -7,7 +7,7 @@ priorityOrder : 1
 import _components from "@content/_components"
 import CodeSnippet from "@components/utilities/CodeSnippet"
 import BoilerplateCard from "@components/utilities/BoilerplateCard"
-import csscode from "@lib/csscode"
+import InstallationCode from "@components/InstallationCode"
 
 export const components = {
     ..._components
@@ -49,11 +49,15 @@ export const config = {
         ## Installation
         <div className="space-y-12">
             <div>
-                ### 1. Add component classes
-
-                To add the component classes copy-paste the following code in your main css file
-
-                <CodeSnippet code={csscode} lang="css" client:visible />
+                ### 1. Add Component Classes
+            
+                Select from three CSS files designed for different themes: one for light mode, one for dark mode, and one that supports both modes. Choose the file that aligns with your project requirements and kickstart your development journey.
+            
+                <InstallationCode client:visible/>
+            
+                - **Light**: Ideal for websites with only a light mode.
+                - **Dark**: Perfect for websites with only a dark mode.
+                - **Both**: Best for websites that support both light and dark themes.
             </div>
 
             <div>
