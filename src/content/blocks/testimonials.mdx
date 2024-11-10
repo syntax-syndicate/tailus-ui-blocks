@@ -10,6 +10,7 @@ import { bentoCode } from "@blocks/testimonials/bento"
 import { plainCode } from "@blocks/testimonials/plain"
 import { centeredCode } from "@blocks/testimonials/centered"
 import { bentoSoftCode } from "@blocks/testimonials/bento-soft"
+import { freeGridCode } from "@blocks/testimonials/free-grid"
 
 export const components = {
     ..._components
@@ -40,5 +41,12 @@ export const components = {
     title="Centered Plain"
     src="/blocks-preview/testimonials/centered"
     code={centeredCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Free Grid"
+    src="/blocks-preview/testimonials/free-grid"
+    code={freeGridCode}
     client:visible
 />
