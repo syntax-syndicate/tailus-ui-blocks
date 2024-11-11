@@ -125,7 +125,7 @@ const htmlCode = `<footer class="card variant-outlined !bg-transparent">
                 </form>
             </div>
         </div>
-        <div class="flex items-center justify-between rounded-md px-6 py-3 card variant-soft">
+        <div class="mt-16 flex items-center justify-between rounded-md px-6 py-3 card variant-soft">
             <span class="text-title">&copy; tailus 2021 - Present</span>
             <a href="#" class="text-sm text-body hover:text-primary-600 dark:hover:text-primary-500">Licence</a>
         </div>
