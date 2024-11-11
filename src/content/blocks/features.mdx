@@ -9,6 +9,7 @@ import BlockPreview from "@components/BlockPreview"
 import { stackedCode } from "@blocks/features/stacked"
 import { cardsCode } from "@blocks/features/cards"
 import { gridCode } from "@blocks/features/grid"
+import { gridTwoCode } from "@blocks/features/grid-two"
 import { softCardsCode } from "@blocks/features/softCards"
 import { bentoOneCode } from "@blocks/features/bento-one"
 
@@ -45,7 +46,14 @@ export const components = {
 />
 
 <BlockPreview
-    title="Bento One"
+    title="Grid 2"
+    src="/blocks-preview/features/grid-two"
+    code={gridTwoCode}
+    client:visible
+/>
+
+<BlockPreview
+    title="Bento 1"
     src="/blocks-preview/features/bento-one"
     code={bentoOneCode}
     client:visible
