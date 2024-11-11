@@ -1,6 +1,6 @@
 import type { Code } from "src/types";
 
-const htmlCode = `<section>
+const htmlCode = `<section class="py-32">
     <div class="pb-36">
         <div class="mx-auto px-6 max-w-5xl">
             <div class="text-center">

@@ -1,7 +1,7 @@
 import type { Code } from "src/types";
 
 const htmlCode = `<section>
-    <div class="py-36">
+    <div class="py-32">
         <div class="mx-auto px-6 max-w-5xl">
             <div class="text-center">
                 <h2 class="text-3xl text-title font-semibold">Loved by the Community</h2>
