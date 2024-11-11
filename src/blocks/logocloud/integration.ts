@@ -1,7 +1,7 @@
 import type { Code } from "src/types";
 
 const htmlCode = `<section>
-    <div class="pt-36">
+    <div class="py-32">
         <div class="mx-auto px-6 max-w-5xl">
             <div class="text-center">
                 <h2 class="text-3xl text-gray-950 dark:text-white font-semibold">Seamlessly integrates with <br> your favorite frontend tools</h2>
