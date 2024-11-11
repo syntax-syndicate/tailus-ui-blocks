@@ -216,7 +216,7 @@ const htmlCode = `<header id="header" class="group">
     </section>
 </main>
 
-<script type="module">
+<script>
     import Swiper from 'swiper/bundle';
     import { Pagination } from 'swiper/modules';
     import 'swiper/css/bundle';
@@ -233,8 +233,7 @@ const htmlCode = `<header id="header" class="group">
         },
         loop: true,
         autoplay : {
-            delay: 3000,
-            duration : 500
+            delay: 3000
         },
         grabCursor: true,
         modules: [Pagination],
@@ -245,15 +244,13 @@ const htmlCode = `<header id="header" class="group">
     });
 </script>`
 
-const astroCode =`Coming very soon!`
-
 const nextjsCode = `Coming very soon!`
 
 const nuxtjsCode = `Coming very soon!`
 
 export const hero3Code: Code = {
     html: htmlCode,
-    astro: astroCode,
+    astro: htmlCode,
     nextjs: nextjsCode,
     nuxtjs: nuxtjsCode,
 }
