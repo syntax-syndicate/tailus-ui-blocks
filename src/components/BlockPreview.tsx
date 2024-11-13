@@ -40,15 +40,6 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title, fo
     const ref = useRef<ImperativePanelGroupHandle>(null)
     const isLarge = useMedia('(min-width: 1024px)')
 
-    const tweetText = `Check out these stunning ${title} blocks built with Tailus UI React!
-
-🔹 100% customizable
-🔹 Modern and trendy
-🔹 Open Source
-
-@tailus_ui  html.tailus.io/blocks/${title.toLowerCase()}`
-    const encodedTweetText = encodeURI(tweetText)
-
     return (
         <div className="group mb-32 border-b [--ui-border-color:theme(colors.gray.200/0.75)] dark:[--ui-border-color:theme(colors.gray.800/0.6)]">
             <div className="relative border-y">
@@ -85,24 +76,6 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({ code, src, title, fo
                         )}
                     </div>
                     <div className="flex items-center gap-2">
-                        <div className="hidden md:block">
-                            <Tooltip.Provider delayDuration={200} skipDelayDuration={0}>
-                                <Tooltip.Root>
-                                    <Tooltip.Trigger asChild>
-                                        {/* @ts-ignore */}
-                                        <Button.Root href={`https://twitter.com/intent/tweet?text=${encodedTweetText}`} target="_blank" rel="noopener noreferrer" size="sm" variant="ghost" intent="gray" aria-label="share on x">
-                                            <Button.Icon size="xs" type="only">
-                                                <TwitterLogoIcon />
-                                            </Button.Icon>
-                                        </Button.Root>
-                                    </Tooltip.Trigger>
-                                    <Tooltip.Content fancy className="z-10" inverted={false}>
-                                        Share on 𝕏
-                                    </Tooltip.Content>
-                                </Tooltip.Root>
-                            </Tooltip.Provider>
-                        </div>
-                        <Separator className="h-4" fancy orientation="vertical" />
                         <Select.Root defaultValue={stack} value={stack} onValueChange={(value: Stack) => setStack(value)}>
                             <Select.Trigger variant="plain" size="sm" className="w-fit gap-2 data-[state=open]:bg-gray-950/5" aria-label="Change palette">
                                 <Select.Value />
