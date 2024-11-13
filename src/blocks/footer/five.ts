@@ -1,6 +1,6 @@
 import type { Code } from "src/types";
 
-const htmlCode = `<footer class="card variant-outlined !bg-transparent">
+const htmlCode = `<footer class="card variant-outlined bg-white dark:!bg-transparent">
     <div class="max-w-5xl mx-auto space-y-16 px-6 py-16 ">
         <div class="flex flex-wrap items-center justify-between gap-4 border-b pb-8">
             <a href="/" aria-label="tailus logo">
