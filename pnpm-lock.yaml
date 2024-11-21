@@ -32,6 +32,9 @@ importers:
       '@flexilla/flexilla':
         specifier: ^2.0.7
         version: 2.0.7
+      '@flexilla/popover':
+        specifier: ^0.0.2
+        version: 0.0.2
       '@nanostores/persistent':
         specifier: ^0.10.2
         version: 0.10.2(nanostores@0.9.5)

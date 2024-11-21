@@ -1,0 +1,108 @@
+---
+title: Popover
+description: Displays rich content in a portal, triggered by a button.
+frameworkDocs : 
+    name : Flexilla Popover
+    link : https://flexilla-docs.vercel.app/docs/components/popover
+priorityOrder : 10
+---
+
+import _components from "@content/_components"
+import PreviewBlock from "@components/PreviewBlock.astro"
+import Table from "@components/Table.astro"
+import reference from "@lib/references/avatar"
+import { MESCHAC_AVATAR, BERNARD_AVATAR, THEO_AVATAR, GLODIE_AVATAR } from "src/const"
+import CodeSnippet from "@components/utilities/CodeSnippet"
+import Popover from "@components/interactive/Popover.astro"
+
+export const components = {
+    ..._components
+}
+
+<div className="space-y-20">
+    <PreviewBlock codeBlocks={
+              [{
+            code:`<button data-popover-trigger data-popover-id="demo-popover" class="btn variant-outlined sz-md">
+    <span class="btn-label">Show PopOver</span>
+</button>
+<div data-fx-popover id="demo-popover" aria-describedby="popover-1" class="card variant-outlined invisible fixed left-[--fx-popper-placement-x] top-[--fx-popper-placement-y] z-50 max-w-xs scale-95 opacity-0 shadow-lg duration-200 data-[state=open]:visible data-[state=open]:scale-100 data-[state=open]:opacity-100">
+    <h2 id="popover-1" class="text-title text-lg font-medium">Help</h2>
+    <p class="text-body mt-3 text-sm">Nisi suscipit ab illo molestiae! Cum possimus necessitatibus enim ipsum sapiente!</p>
+</div>`,
+              lang: "html"
+          }]}>
+        <Popover />
+    </PreviewBlock>
+
+    <div>
+        ## Installation
+
+        To install the Tabs component, copy and paste the following typescript code into your project.
+
+        <CodeSnippet
+            lang="js"
+            client:visible
+            code={`document.addEventListener('DOMContentLoaded', () => {
+    const dialogTriggers = document.querySelectorAll('[data-dialog-trigger]') as NodeListOf<HTMLButtonElement>;
+
+    dialogTriggers.forEach((dialogTrigger) => {
+        const dialogId = dialogTrigger.getAttribute('data-dialog-trigger') as string;
+        const dialog = document.getElementById(dialogId) as HTMLDialogElement;
+
+        !dialog && console.error(\`Dialog with ID "\${dialogId}" not found.\`);
+
+        const dialogClose = dialog.querySelector('[data-dialog-close]') as HTMLButtonElement;
+
+        !dialogClose && console.error(\`Close button not found in dialog with ID "\${dialogId}".\`);
+
+        dialogTrigger.addEventListener('click', () => dialog.showModal());
+        dialogClose.addEventListener('click', () => dialog.close());
+    });
+});`} />
+
+        ### Add Css for animation
+
+                <CodeSnippet
+            lang="js"
+            client:visible
+            code={`dialog[open]{
+    opacity: 1;
+    transform: scale(1);
+}
+
+dialog{
+    opacity: 0;
+    transform: scale(0.9);
+    transition:
+        opacity 0.1s ease-out,
+        transform 0.1s ease-out allow-discrete,
+        overlay 0.1s ease-out allow-discrete,
+        display 0.1s ease-out allow-discrete;
+}
+
+@starting-style {
+    dialog[open] {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+dialog::backdrop{
+    background-color: rgb(0 0 0 / 0%);
+    transition:
+        display 0.1s allow-discrete,
+        overlay 0.1s allow-discrete,
+        background-color 0.1s;
+}
+
+dialog[open]::backdrop {
+    background-color: var(--overlay-bg);
+}
+
+@starting-style {
+    dialog[open]::backdrop {
+        background-color: rgb(0 0 0 / 0%);
+    }
+}`} />
+    </div>
+</div>
