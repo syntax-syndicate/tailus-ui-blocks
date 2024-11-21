@@ -48,6 +48,46 @@
         @apply dark:[--ui-border-color:theme('colors.gray.800')] dark:[--ui-disabled-bg:theme('colors.gray.900')] dark:[--ui-bg:theme('colors.gray.900/var(--ui-bg-opacity)')] dark:[--ui-soft-bg:theme('colors.gray.800')] dark:[--display-text-color:theme('colors.white')] dark:[--body-text-color:theme('colors.gray.300')] dark:[--placeholder-text-color:theme('colors.gray.600')]
     }
 
+    dialog[open]{
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    dialog{
+        opacity: 0;
+        transform: scale(0.9);
+        transition:
+            opacity 0.1s ease-out,
+            transform 0.1s ease-out allow-discrete,
+            overlay 0.1s ease-out allow-discrete,
+            display 0.1s ease-out allow-discrete;
+    }
+
+    @starting-style {
+        dialog[open] {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+    }
+
+    dialog::backdrop{
+        background-color: rgb(0 0 0 / 0%);
+        transition:
+            display 0.1s allow-discrete,
+            overlay 0.1s allow-discrete,
+            background-color 0.1s;
+    }
+
+    dialog[open]::backdrop {
+        background-color: var(--overlay-bg);
+    }
+
+    @starting-style {
+        dialog[open]::backdrop {
+            background-color: rgb(0 0 0 / 0%);
+        }
+    }
+
     *,.border{
         border-color: var(--ui-border-color);
     }
