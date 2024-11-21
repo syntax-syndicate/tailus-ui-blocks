@@ -101,12 +101,12 @@ const repo = 'html.tailus.io'
         <ViewTransitions />
         <script src="/pagefind/pagefind-ui.js" is:inline></script>
     </head>
-    <body class="relative bg-white font-sans leading-normal antialiased [--btn-radius:theme(borderRadius.lg)] selection:bg-info-600 selection:text-white lg:overflow-hidden lg:before:fixed lg:before:inset-0 lg:before:-z-40 dark:bg-gray-925 dark:[--ui-border-color:theme(colors.gray.800)] dark:selection:bg-info-900 dark:selection:text-info-200 lg:dark:before:opacity-[.015] lg:dark:before:[background-image:url('/grainy-bg.svg')]">
+    <body class="relative bg-white font-sans leading-normal antialiased [--btn-radius:theme(borderRadius.lg)] selection:bg-info-600 selection:text-white dark:bg-gray-925">
         <PageLoader />
         <DocsHeader2 />
-        <main class="scroll-smooth pt-20 lg:fixed lg:inset-x-0 lg:bottom-0 lg:mt-auto lg:h-[calc(100vh-4rem)] lg:w-screen lg:overflow-auto lg:pt-0" data-pagefind-body>
+        <main class="scroll-smooth pt-20 " data-pagefind-body>
             <div class="px-8 lg:mx-auto lg:flex lg:max-w-[76rem] lg:gap-24 xl:px-0">
-                <div id="menu-list" class="fixed bottom-0 left-0 z-50 hidden h-[calc(100dvh-5.75rem)] w-full bg-white lg:left-auto lg:flex lg:h-[calc(100dvh-4rem)] lg:w-48 lg:flex-col lg:justify-end lg:bg-transparent dark:bg-gray-925 dark:lg:bg-transparent" data-pagefind-ignore>
+                <div id="menu-list" class="fixed bottom-0 left-0 z-50 hidden w-full bg-white lg:left-auto lg:flex lg:w-48 lg:flex-col lg:justify-end lg:bg-transparent dark:bg-gray-925 dark:lg:bg-transparent" data-pagefind-ignore>
                     <DocsSideBar target={collection} />
                 </div>
                 <div class="w-full pt-12 lg:ml-auto lg:w-[calc(100%-17rem)]">
