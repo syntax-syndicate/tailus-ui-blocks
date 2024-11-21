@@ -23,6 +23,7 @@
     "@astrojs/starlight": "^0.28.2",
     "@astrojs/tailwind": "^5.1.1",
     "@flexilla/accordion": "^2.0.3",
+    "@flexilla/dropdown": "^2.0.31",
     "@flexilla/flexilla": "^2.0.7",
     "@nanostores/persistent": "^0.10.2",
     "@nanostores/react": "^0.7.1",

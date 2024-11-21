@@ -26,6 +26,9 @@ importers:
       '@flexilla/accordion':
         specifier: ^2.0.3
         version: 2.0.3
+      '@flexilla/dropdown':
+        specifier: ^2.0.31
+        version: 2.0.31
       '@flexilla/flexilla':
         specifier: ^2.0.7
         version: 2.0.7
