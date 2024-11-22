@@ -101,10 +101,10 @@ const repo = 'html.tailus.io'
         <ViewTransitions />
         <script src="/pagefind/pagefind-ui.js" is:inline></script>
     </head>
-    <body class="relative bg-white font-sans leading-normal antialiased [--btn-radius:theme(borderRadius.lg)] selection:bg-info-600 selection:text-white lg:overflow-hidden lg:before:fixed lg:before:inset-0 lg:before:-z-40 dark:bg-gray-925 dark:[--ui-border-color:theme(colors.gray.800)] dark:selection:bg-info-900 dark:selection:text-info-200 lg:dark:before:opacity-[.015] lg:dark:before:[background-image:url('/grainy-bg.svg')]">
+    <body class="relative bg-white font-sans leading-normal antialiased [--btn-radius:theme(borderRadius.lg)] selection:bg-info-600 selection:text-white lg:before:fixed lg:before:inset-0 lg:before:-z-40 dark:bg-gray-925">
         <PageLoader />
         <DocsHeader2 />
-        <main class="scroll-smooth pt-20 lg:fixed lg:inset-x-0 lg:bottom-0 lg:mt-auto lg:h-[calc(100vh-4rem)] lg:w-screen lg:overflow-auto lg:pt-0" data-pagefind-body>
+        <main class="pt-20 lg:mt-auto" data-pagefind-body>
             <div class="px-8 lg:mx-auto lg:flex lg:max-w-[76rem] lg:gap-24 xl:px-0">
                 <div id="menu-list" class="fixed bottom-0 left-0 z-50 hidden h-[calc(100dvh-5.75rem)] w-full bg-white lg:left-auto lg:flex lg:h-[calc(100dvh-4rem)] lg:w-48 lg:flex-col lg:justify-end lg:bg-transparent dark:bg-gray-925 dark:lg:bg-transparent" data-pagefind-ignore>
                     <DocsSideBar target={collection} />
@@ -137,7 +137,7 @@ const repo = 'html.tailus.io'
                                 <BlurDivs />
                             </div>
                         </div>
-                        <div data-pagefind-ignore id="table-of-content" class="feedback-shadow fancy-border fixed right-4 top-24 z-50 ml-auto hidden size-fit rounded-[--card-radius] bg-[--ui-bg] p-[--card-padding] lg:sticky lg:top-12 lg:h-fit lg:w-44 lg:rounded-none lg:!border-none lg:bg-transparent lg:p-0 lg:shadow-none lg:!outline-none xl:block">
+                        <div data-pagefind-ignore id="table-of-content" class="feedback-shadow fancy-border fixed right-4 top-24 ml-auto hidden size-fit rounded-[--card-radius] bg-[--ui-bg] p-[--card-padding] lg:sticky lg:top-32 lg:h-fit lg:w-44 lg:rounded-none lg:!border-none lg:bg-transparent lg:p-0 lg:shadow-none lg:!outline-none xl:block">
                             <div class="text-sm font-medium text-gray-900 dark:text-white">On this page</div>
                             <div class="relative ml-px mt-3 h-fit max-h-[calc(100vh-26rem)] w-fit overflow-y-auto">
                                 <div id="heading-indicator" aria-hidden="true" class="absolute left-0 top-0 z-[1] hidden border-l-[1.5px] border-gray-950 transition-all duration-300 lg:block dark:border-white"></div>
