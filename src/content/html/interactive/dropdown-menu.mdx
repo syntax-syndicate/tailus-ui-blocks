@@ -87,73 +87,40 @@ export const components = {
 
     <div>
         ## Installation
+    
+        <div class="space-y-12">
+            <div>
+                ### 1. Install the component
 
-        To install the Tabs component, copy and paste the following typescript code into your project.
-
-        <CodeSnippet
-            lang="js"
-            client:visible
-            code={`document.addEventListener('DOMContentLoaded', () => {
-    const dialogTriggers = document.querySelectorAll('[data-dialog-trigger]') as NodeListOf<HTMLButtonElement>;
-
-    dialogTriggers.forEach((dialogTrigger) => {
-        const dialogId = dialogTrigger.getAttribute('data-dialog-trigger') as string;
-        const dialog = document.getElementById(dialogId) as HTMLDialogElement;
-
-        !dialog && console.error(\`Dialog with ID "\${dialogId}" not found.\`);
-
-        const dialogClose = dialog.querySelector('[data-dialog-close]') as HTMLButtonElement;
-
-        !dialogClose && console.error(\`Close button not found in dialog with ID "\${dialogId}".\`);
-
-        dialogTrigger.addEventListener('click', () => dialog.showModal());
-        dialogClose.addEventListener('click', () => dialog.close());
-    });
-});`} />
-
-        ### Add Css for animation
+                Install flexilla dropdown using your package manager
 
                 <CodeSnippet
-            lang="js"
-            client:visible
-            code={`dialog[open]{
-    opacity: 1;
-    transform: scale(1);
-}
+                    lang="bash"
+                    client:visible
+                    code="npm install @flexilla/dropdown"
+                />
+            </div>
+            <div>
+                ### Configure your dropdown
 
-dialog{
-    opacity: 0;
-    transform: scale(0.9);
-    transition:
-        opacity 0.1s ease-out,
-        transform 0.1s ease-out allow-discrete,
-        overlay 0.1s ease-out allow-discrete,
-        display 0.1s ease-out allow-discrete;
-}
+                Add your component's config in a `.js` or `.ts` file 
 
-@starting-style {
-    dialog[open] {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-}
+                <CodeSnippet
+                    lang="js"
+                    client:visible
+                    code={`import { Dropdown } from '@flexilla/dropdown'
 
-dialog::backdrop{
-    background-color: rgb(0 0 0 / 0%);
-    transition:
-        display 0.1s allow-discrete,
-        overlay 0.1s allow-discrete,
-        background-color 0.1s;
-}
-
-dialog[open]::backdrop {
-    background-color: var(--overlay-bg);
-}
-
-@starting-style {
-    dialog[open]::backdrop {
-        background-color: rgb(0 0 0 / 0%);
-    }
-}`} />
+new Dropdown('#myDropdown', {
+    offsetDistance: 8,
+    placement: 'bottom-middle',
+    onShow: () => {
+        document.documentElement.classList.add('overflow-hidden')
+    },
+    onHide: () => {
+        document.documentElement.classList.remove('overflow-hidden')
+    },
+})`} />
+            </div>
+        </div>
     </div>
 </div>
