@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('astro:page-load', () => {
     const tabGroups = document.querySelectorAll('[data-tabgroup]');
 
     tabGroups.forEach((tabGroup) => {

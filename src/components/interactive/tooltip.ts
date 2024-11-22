@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('astro:page-load', () => {
     const triggers = document.querySelectorAll('[data-tooltip]') as NodeListOf<HTMLElement>;
     let activeTooltip: HTMLElement | null = null;
 

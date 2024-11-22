@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('astro:page-load', function () {
     const accordions = document.querySelectorAll('[data-accordion]');
 
     accordions.forEach((accordion) => {
