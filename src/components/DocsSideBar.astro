@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content'
 import { Caption } from './tailus-ui/typography'
 import { BlurDivs } from './utilities/DocsProgressiveBlur'
 import Separator from '@tailus-ui/Separator'
+import DocsBadge from './DocsBadge'
 
 const html = await getCollection('html')
 const blocks = await getCollection('blocks')
@@ -19,7 +20,7 @@ interface Props {
 const { target } = Astro.props
 const activeLinkClasses = 'font-medium text-info-600 dark:text-info-400 hover:text-info-700 dark:hover:text-info-300'
 
-const reactOrder = ['get-started', 'theming', 'guides', 'typography', 'components', 'visualizations', 'blocks']
+const reactOrder = ['get-started', 'theming', 'guides', 'typography', 'components', 'interactive', 'visualizations', 'blocks']
 const blocksLinks = blocks
     .map((page) => ({
         name: page.data.title,
@@ -118,8 +119,9 @@ const blocksLinks = blocks
                                     ?.sort((a, b) => a.data.priorityOrder - b.data.priorityOrder)
                                     .map((page) => (
                                         <li>
-                                            <a href={`/${page.slug}`} class:list={currentPath === `/${page.slug}` ? activeLinkClasses : ''} class="text-[15px] text-[--body-text-color] transition duration-200 hover:text-gray-950 dark:hover:text-white">
+                                            <a href={`/${page.slug}`} class:list={currentPath === `/${page.slug}` ? activeLinkClasses : ''} class="flex items-center gap-2 text-[15px] text-[--body-text-color] transition duration-200 hover:text-gray-950 dark:hover:text-white">
                                                 <span class="capitalize">{pages[0].slug.split('/')[0] === page.slug.split('/').pop() ? 'Overview' : page.slug.split('/').pop().replace('-', ' ')}</span>
+                                                {page.data.badge && <DocsBadge badge={page.data.badge} />}
                                             </a>
                                         </li>
                                     ))}

@@ -16,14 +16,23 @@ module.exports = withTV({
 			fontFamily: {
 				sans: ['Inter', ...defaultTheme.fontFamily.sans],
 				mono: ['GeistMono', 'fira-code', ...defaultTheme.fontFamily.mono],
-			}
+			},
+			keyframes: {
+                inTooltip: {
+                    from: { scale: "0.75", opacity: "0" },
+                    to: { scale: "1", opacity: "1" },
+                },
+            },
+            animation: {
+                inTooltip: "inTooltip 200ms cubic-bezier(0.87, 0, 0.13, 1)",
+            },
 		}
 	},
 	plugins: [
 		components,
 		shade,
-		animations,
 		palette,
+		animations,
 		containerQueries,
 	],
 }) satisfies Config;

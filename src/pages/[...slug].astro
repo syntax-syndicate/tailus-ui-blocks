@@ -1,27 +1,27 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import DocsLayout from '@layouts/DocsLayout.astro';
+import { type CollectionEntry, getCollection } from 'astro:content'
+import DocsLayout from '@layouts/DocsLayout.astro'
 
 export async function getStaticPaths() {
-    const component = await getCollection('html');
-    component.sort((a, b) => a.data.priorityOrder! - b.data.priorityOrder!);
+    const component = await getCollection('html')
+    component.sort((a, b) => a.data.priorityOrder! - b.data.priorityOrder!)
     return component.map((page, index) => ({
         params: { slug: page.slug },
         props: {
             ...page,
             prev: component[index - 1],
-            next: component[index + 1]
-        }
-    }));
+            next: component[index + 1],
+        },
+    }))
 }
 
 type Props = CollectionEntry<'html'> & {
-    prev: CollectionEntry<'html'>;
-    next: CollectionEntry<'html'>;
-};
+    prev: CollectionEntry<'html'>
+    next: CollectionEntry<'html'>
+}
 
-const page = Astro.props;
-const { Content } = await page.render();
+const page = Astro.props
+const { Content } = await page.render()
 ---
 
 <DocsLayout {...page}>
