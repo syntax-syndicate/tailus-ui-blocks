@@ -17,6 +17,8 @@ import Search from '@components/Search'
 import PageLoader from '@components/utilities/PageLoader.astro'
 import { ViewTransitions } from 'astro:transitions'
 import { Bug, Lightbulb, MessageCircle } from 'lucide-react'
+import { Image } from 'astro:assets'
+import tlsBundle from '../images/tls-bundle-thumb.png'
 
 type Props = CollectionEntry<'html'>
 const docs = Astro.props
@@ -181,7 +183,7 @@ const repo = 'html.tailus.io'
 
                             <a href="https://tailus.lemonsqueezy.com/buy/c5ae32bd-2455-4f0c-9ed2-c01ded19a4c2" class="rounded-card mx-auto mt-6 block w-fit max-w-xs border bg-gray-950 p-0.5 text-left shadow-xl duration-200 hover:bg-gray-900">
                                 <div class="grid gap-3">
-                                    <img class="rounded-[calc(var(--card-radius)-2.5px)]" src="http://localhost:4321/tls-bundle-thumb.png" alt="Tailus UI Bundle" loading="lazy" width="756" height="512" />
+                                    <Image class="rounded-[calc(var(--card-radius)-2.5px)]" src={tlsBundle} alt="Tailus UI Bundle" />
                                     <div class="px-3 pb-3">
                                         <div class="text-sm font-bold text-white">Black Friday Deal</div>
                                         <p class="mt-1.5 text-sm text-gray-300">Get all templates for <span class="line-through opacity-50">$537</span> $59.99</p>
