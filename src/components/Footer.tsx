@@ -7,8 +7,12 @@ export default function Footer() {
     const links: { url: string; label: string }[] = [
         { url: SITE_BLOG, label: 'Blog' },
         { url: SITE_STORE, label: 'Store' },
-        { url: 'https://tailus.gumroad.com/', label: 'Gumroad' }
-    ];
+        { url: 'https://tailus.gumroad.com/', label: 'Gumroad' },
+        { url: SITE_STORE, label: 'VS Code extension' },
+        { url: "https://tailtips.dev", label: 'Tailtips' },
+        { url: "https://spectr.irung.me", label: 'Spectr' },
+        { url: "https://aspect.irung.me", label: 'Aspect' },
+    ]
 
     const templatesLinks: { url: string; label: string }[] = [
         { url: 'https://tailus.io/templates/ampire', label: 'Ampire' },

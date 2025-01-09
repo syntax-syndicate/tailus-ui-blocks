@@ -1,13 +1,16 @@
-import { SITE_SOCIAL_GITHUB, SITE_SOCIAL_LINKEDIN, SITE_SOCIAL_THREADS, SITE_SOCIAL_TWITTER, SITE_SOCIAL_FACEBOOK, SITE_SOCIAL_YOUTUBE, SITE_BLOG, SITE_STORE } from '../const'
+import { SITE_SOCIAL_GITHUB, SITE_SOCIAL_LINKEDIN, SITE_SOCIAL_TWITTER, SITE_SOCIAL_YOUTUBE, SITE_BLOG, SITE_STORE } from '../const'
 import { Link, Title } from '@tailus-ui/typography'
 import BrandLogo from './utilities/BrandLogo'
 import { twMerge } from 'tailwind-merge'
+
 const links: { url: string; label: string }[] = [
     { url: SITE_BLOG, label: 'Blog' },
     { url: SITE_STORE, label: 'Store' },
     { url: 'https://tailus.gumroad.com/', label: 'Gumroad' },
-    { url: SITE_STORE, label: 'Preview' },
     { url: SITE_STORE, label: 'VS Code extension' },
+    { url: "https://tailtips.dev", label: 'Tailtips' },
+    { url: "https://spectr.irung.me", label: 'Spectr' },
+    { url: "https://aspect.irung.me", label: 'Aspect' },
 ]
 
 const templatesLinks: { url: string; label: string }[] = [

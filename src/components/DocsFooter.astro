@@ -1,5 +1,5 @@
 ---
-import { SITE_SOCIAL_GITHUB, SITE_SOCIAL_TWITTER, SITE_SOCIAL_LINKEDIN, SITE_SOCIAL_FACEBOOK, SITE_SOCIAL_YOUTUBE, SITE_STORE, SITE_BLOG } from '../const';
+import { SITE_SOCIAL_GITHUB, SITE_SOCIAL_TWITTER, SITE_SOCIAL_LINKEDIN, SITE_SOCIAL_YOUTUBE, SITE_STORE, SITE_BLOG } from '../const';
 import BrandIcon from '../components/utilities/BrandIcon';
 import { Link } from './tailus-ui/typography/Link';
 
@@ -21,17 +21,19 @@ const socialLinks = [
         url: SITE_SOCIAL_LINKEDIN
     },
     {
-        name: 'Facebook',
-        url: SITE_SOCIAL_FACEBOOK
-    },
-    {
         name: 'Store',
         url: SITE_STORE
     },
     {
         name: 'Blog',
         url: SITE_BLOG
-    }
+    },
+    {
+        name: 'TailwindCSS Tips',
+        url: "https://tailtips.dev"
+    },
+    { url: "https://spectr.irung.me", name: 'Spectr' },
+    { url: "https://aspect.irung.me", name: 'Aspect' },
 ];
 
 const { asThemer = false } = Astro.props;
@@ -44,7 +46,7 @@ const { asThemer = false } = Astro.props;
             <div class="flex flex-wrap gap-x-4 gap-y-2">
                 {
                     socialLinks.map(link => (
-                        <Link intent="gray" variant="animated" href={link.url}>
+                        <Link intent="gray" size="sm" variant="animated" href={link.url}>
                             {link.name}
                         </Link>
                     ))
